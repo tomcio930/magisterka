@@ -17,56 +17,324 @@
 
 #define MA_DISTANCE                                                  3
 #define MA_FAST                                                     10
-#define MA_SLOW                                                     15
+#define MA_SLOW                                                     20
 #define TREND_UP                                                     0
 #define TREND_DOWN                                                   1
 #define TREND_HORIZONTAL                                             2
 
+extern double takeProfitExtern=100;
+
+bool work=true;
+string symbol;
+bool openSell=false; 
+bool openBuy=false;
+bool closeSell=false; 
+bool closeBuy=false;
+double prevPrice=NULL;
 
 //+------------------------------------------------------------------+
 //| expert initialization function                                   |
 //+------------------------------------------------------------------+
 int init()
-  {
+{
 //----
    
 //----
    return(0);
-  }
+}
+
 //+------------------------------------------------------------------+
 //| expert deinitialization function                                 |
 //+------------------------------------------------------------------+
 int deinit()
-  {
+{
 //----
    
 //----
    return(0);
-  }
+}
+
 //+------------------------------------------------------------------+
 //| expert start function                                            |
 //+------------------------------------------------------------------+
 int start()
-  {
+{
+   //reset variables
+   openSell=false; 
+   openBuy=false;
+   closeSell=false; 
+   closeBuy=false;
+    
 
-   int iPeriod=Period();
-   int bars_count=WindowBarsPerChart();
-   int bar=WindowFirstVisibleBar();
-   if(Volume[0] == 1) // if the latest bar have only one tick (new bar appear)
+   // preliminary processing
+   if(work==false)                             
    {
-      Print("period: ", iPeriod, "bars: ", bars_count, "bar: ", bar, "high: ", High[1], "low: ", Low[1], "open: ", Open[1], "close: ", Close[1], "trend: ", trend() , "point: ", Point);
+      Print("Critical error. Candle advisor doesn't work");
+      Alert("Critical error. Candle advisor doesn't work");
+      return;                                  
    }
+   
+   //if it is first function start call 
+   if(prevPrice==NULL)
+   {
+      RefreshRates(); 
+      prevPrice=Ask;
+      return;
+   }
+   
+   // if the latest bar have only one tick (new bar appear)
+ //  if(Volume[0]==1)
+   //{     
+      symbol=Symbol();
+      //check close criteria, set closeBuy and closeSell, close order
+      bandsCloseCriteria();
+      //check open criteria, set openBuy and openSell
+      //traidingCriteria();
+      bandsOpenCriteria();
+      //try to open new order
+      openOrder();
+      
+      
+      
+     //Print("prev price: ",prevPrice," price: ",Ask);
 
+ //  }//end if(Volume[0]==1)
+   
+   RefreshRates(); 
+   prevPrice=Ask; //set prevPrice
    return(0);
-  }
+}
 
+//+------------------------------------------------------------------+
+//|         candles trading criteria, set openBuy and openSell       | 
+//+------------------------------------------------------------------+
+void traidingCriteria()
+{
+   /* if(isHammer(1))         
+   {                                         
+      openBuy=true;
+      Print("Hammer candle appears"); 
+      Alert("Hammer candle appears");                            
+   }
+   else if(isHangingMan(1))         
+   {       
+      Print("Hanging man candle appears"); 
+      Alert("Hanging man candle appears");                                   
+      openSell=true;                              
+   }
+   */
+   
+   double diff=iMA(NULL,0,MA_FAST,0,MODE_EMA,PRICE_CLOSE,0)-iMA(NULL,0,MA_SLOW,0,MODE_EMA,PRICE_CLOSE,0);
+   if(diff>0)
+   {
+      openBuy=true;
+      Print("Signal to buy"); 
+      Alert("Signal to buy");        
+   }
+   else if(diff<0)
+   {
+      openSell=true; 
+      Print("Signal to sell"); 
+      Alert("Signal to sell"); 
+   }
+}
+
+//+------------------------------------------------------------------+
+//| open criteria for strategy bollinger bands                    |
+//| set openBuy and openSell                                         | 
+//+------------------------------------------------------------------+
+void bandsOpenCriteria()
+{
+   double midBand=iMA(NULL,0,20,0,MODE_SMA,PRICE_CLOSE,0);
+      
+   if(TREND_UP==trend())
+   {
+      RefreshRates();
+      if(Ask>=midBand && prevPrice<midBand)
+         openBuy=true;
+
+   }
+   else if(TREND_DOWN==trend())
+   {
+      RefreshRates();
+      if(Ask<=midBand && prevPrice>midBand)
+         openSell=true;
+   }
+}
+
+//+------------------------------------------------------------------+
+//| closing criteria for strategy bollinger bands                    |
+//| set closeBuy and closeSell                                       | 
+//+------------------------------------------------------------------+
+void bandsCloseCriteria()
+{
+   double upperBand=iBands(NULL,0,20,2,0,PRICE_CLOSE,MODE_UPPER,0);
+   double lowerBand=iBands(NULL,0,20,2,0,PRICE_CLOSE,MODE_LOWER,0);
+   int orderType=NULL;
+   for(int i=0; i<OrdersTotal(); i++)
+   {
+      if(OrderSelect(i,SELECT_BY_POS))
+      {
+         closeBuy=false;
+         closeSell=false;
+         orderType=OrderType();
+         if(orderType>1)
+         {
+            Print("Pending order detected. Candle advisor doesn't work");
+            Alert("Pending order detected. Candle advisor doesn't work");
+            return;                             
+         }
+         else if(orderType==OP_BUY)
+         {
+            if(prevPrice>upperBand && Ask<=upperBand)
+               closeBuy=true;
+         }
+         else if(orderType==OP_SELL)
+         {
+            if(prevPrice<lowerBand && Ask>=lowerBand)
+               closeSell=true;
+         }
+         closeOrder();
+      }
+   }//end for
+}
+
+//+------------------------------------------------------------------+
+//| try to close selected order                                      | 
+//+------------------------------------------------------------------+
+void closeOrder()
+{  
+   int orderType=OrderType();
+   int ticket=OrderTicket();
+   double lots=OrderLots();
+   bool ans=false;
+   while(true)                                
+   {
+      if(orderType==OP_BUY && closeBuy==true)                
+      {
+         Print("Attempt to close Buy ",ticket,". Waiting for response..");                                      
+         Alert("Attempt to close Buy ",ticket,". Waiting for response..");
+         RefreshRates();                        
+         ans=OrderClose(ticket,lots,Bid,2);      
+         if(ans==true)                        
+         {
+            Print("Closed order Buy ",ticket);
+            Alert("Closed order Buy ",ticket);
+            break;                             
+         }
+         if(processError(GetLastError())==1)      
+            continue;                           
+         return;                               
+      }
+ 
+      if(orderType==OP_SELL && closeSell==true)                
+      {                                       
+         Print("Attempt to close Sell ",ticket,". Waiting for response..");                                      
+         Alert("Attempt to close Sell ",ticket,". Waiting for response..");
+         RefreshRates();                        
+         ans=OrderClose(ticket,lots,Ask,2);    
+         if(ans==true)                         
+         {
+            Alert("Closed order Sell ",ticket);
+            break;                             
+         }
+         if(processError(GetLastError())==1)      
+            continue;                          
+         return;                              
+      }
+      break;                                    // Exit while
+   }//end while
+}
+
+//+------------------------------------------------------------------+
+//| try to open new order                                            | 
+//+------------------------------------------------------------------+
+void openOrder()
+{
+   double minLot=MarketInfo(symbol,MODE_MINLOT);
+   double lots=getLotsToOrder();
+   if(lots<minLot)
+   {
+      //Print(" Not enough money for ", minLot," lots.");
+      //Alert(" Not enough money for ", minLot," lots.");
+      return;
+   }
+   double stopLoss=NULL;
+   double takeProfit=NULL;
+   int ticket=NULL;
+
+   while(true)                               
+   {
+      if(openBuy==true)              
+      {                                    
+         RefreshRates();                      
+         stopLoss=Bid-MarketInfo(symbol,MODE_STOPLEVEL)*Point;    
+         takeProfit=Bid+takeProfitExtern*Point;   
+            
+         Print("Attempt to open Buy. Waiting for response...");
+         Alert("Attempt to open Buy. Waiting for response...");
+         ticket=OrderSend(symbol,OP_BUY,lots,Ask,2,stopLoss,takeProfit);
+         if(ticket>0)                      
+         {
+            Print("Opened order Buy ",ticket);
+            Alert("Opened order Buy ",ticket);
+            return;                            
+         }
+         if(processError(GetLastError())==1)     
+            continue;                          
+         return;                               
+      }//end if
+      if(openSell==true)              
+      {                                      
+         RefreshRates();                        
+         stopLoss=Ask+MarketInfo(symbol,MODE_STOPLEVEL)*Point;   
+         takeProfit=Ask-takeProfitExtern*Point;  
+            
+         Print("Attempt to open Sell. Waiting for response...");
+         Alert("Attempt to open Sell. Waiting for response...");
+      
+         ticket=OrderSend(symbol,OP_SELL,lots,Bid,2,stopLoss,takeProfit);
+         if(ticket>0)                       
+         {
+            Print("Opened order Sell ",ticket);
+            Alert("Opened order Sell ",ticket);
+            return;                             
+         }
+         if(processError(GetLastError())==1)      
+            continue;                           
+         return;                             
+      }//end if
+      break;                                    
+   }//end while
+}
+
+//+------------------------------------------------------------------+
+//| calculate max lots to order                                      |
+//+------------------------------------------------------------------+
+double getLotsToOrder()
+{
+   double lots=NULL;
+   double freeMargin=NULL;
+   double oneLot=NULL;
+   double step=NULL;
+   
+   RefreshRates();    
+        
+   freeMargin=AccountFreeMargin();               
+   oneLot=MarketInfo(symbol,MODE_MARGINREQUIRED);    
+   step=MarketInfo(symbol,MODE_LOTSTEP);
+      
+   lots=MathFloor(freeMargin/oneLot/step)*step;
+   
+   return(lots);
+}
 
 //+------------------------------------------------------------------+
 //| check if candle is HAMMER                                        |
 //+------------------------------------------------------------------+
 bool isHammer(int candle)
 {
-   if(TREND_DOWN == trend() && 2.0 < lowerShadow(candle) && 0.0 == upperShadow(candle) && isWhite(candle))
+   if(TREND_DOWN==trend() && 2.0<lowerShadow(candle) && 0.0==upperShadow(candle) && isWhite(candle))
       return(true);
    else
       return(false);
@@ -77,7 +345,7 @@ bool isHammer(int candle)
 //+------------------------------------------------------------------+
 bool isHangingMan(int candle)
 {
-   if(TREND_UP == trend() && 3.0 < lowerShadow(candle) && 0.0 == upperShadow(candle) && !isWhite(candle))
+   if(TREND_UP == trend() && 3.0<lowerShadow(candle) && 0.0==upperShadow(candle) && !isWhite(candle))
       return(true);
    else
       return(false);
@@ -88,7 +356,7 @@ bool isHangingMan(int candle)
 //+------------------------------------------------------------------+
 int trend()
 {
-   double diff=iMA(NULL,0,MA_FAST,0,MODE_EMA,PRICE_CLOSE,0) - iMA(NULL,0,MA_SLOW,0,MODE_EMA,PRICE_CLOSE,0);
+   double diff=iMA(NULL,0,MA_FAST,0,MODE_EMA,PRICE_CLOSE,0)-iMA(NULL,0,MA_SLOW,0,MODE_EMA,PRICE_CLOSE,0);
    if(diff-Point*MA_DISTANCE > 0)
       return(TREND_UP);
    else if(diff+Point*MA_DISTANCE < 0)
@@ -171,6 +439,48 @@ int candleBodySize(int candle)
       return(SMALL_CANDLE);
    else
       return(NORMAL_CANDLE);
+}
+
+//+------------------------------------------------------------------+
+//| process Errors 0 - critical error 1 - not crucial error          | 
+//+------------------------------------------------------------------+
+int processError(int error)                       
+{
+   switch(error)
+   {
+      // Not crucial errors                                                     
+      case  4: Alert("Trade server is busy. Trying once again...");
+         Sleep(3000);                        
+         return(1);                             
+      case 135:Alert("Price changed. Trying once again..");
+         RefreshRates();                  
+         return(1);                           
+      case 136:Alert("No prices. Waiting for a new tick..");
+         while(RefreshRates()==false)          
+            Sleep(1);                          
+         return(1);                            
+      case 137:Alert("Broker is busy. Trying once again..");
+         Sleep(3000);                         
+         return(1);                        
+      case 146:Alert("Trading subsystem is busy. Trying once again..");
+         Sleep(500);                          
+         return(1);                      
+      // Critical errors
+      case  2: Alert("Common error.");
+         return(0);                            
+      case  5: Alert("Old terminal version.");
+         work=false;                           
+         return(0);                             
+      case 64: Alert("Account blocked.");
+         work=false;                          
+         return(0);                             
+      case 133:Alert("Trading forbidden.");
+         return(0);                           
+      case 134:Alert("Not enough money to execute operation.");
+         return(0);                             
+      default: Alert("Error occurred: ",error);  
+         return(0);                             
+   }
 }
  
 //+------------------------------------------------------------------+
