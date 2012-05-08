@@ -15,14 +15,19 @@
 #define NORMAL_CANDLE                                                2
 #define BIG_CANDLE                                                   3
 
-#define MA_DISTANCE                                                  3
-#define MA_FAST                                                     10
-#define MA_SLOW                                                     20
+//#define MA_DISTANCE                                                  3
+//#define MA_FAST                                                     10
+//#define MA_SLOW                                                     15
+extern int MA_DISTANCE=3;
+extern int MA_FAST=10;
+extern int MA_SLOW=15;
+
 #define TREND_UP                                                     0
 #define TREND_DOWN                                                   1
 #define TREND_HORIZONTAL                                             2
 
-extern double takeProfitExtern=100;
+int takeProfitExtern=20;
+int stopLossExtern=20;
 
 bool work=true;
 string symbol;
@@ -32,13 +37,16 @@ bool closeSell=false;
 bool closeBuy=false;
 double prevPrice=NULL;
 
+double lots=0.1;
+bool lastWin=true;
+double lastFreeMargin=NULL;
 //+------------------------------------------------------------------+
 //| expert initialization function                                   |
 //+------------------------------------------------------------------+
 int init()
 {
 //----
-   
+   lastFreeMargin=AccountFreeMargin();
 //----
    return(0);
 }
@@ -73,6 +81,16 @@ int start()
       Alert("Critical error. Candle advisor doesn't work");
       return;                                  
    }
+
+   if(OrdersTotal()>=1)
+      return;
+      
+   if(DayOfWeek()>=4 && Hour()>21)
+   {
+      if(OrdersTotal()>0)
+         closeOrder(true, true);
+         
+   }
    
    //if it is first function start call 
    if(prevPrice==NULL)
@@ -83,14 +101,13 @@ int start()
    }
    
    // if the latest bar have only one tick (new bar appear)
- //  if(Volume[0]==1)
-   //{     
+   if(Volume[0]==1)
+   {     
       symbol=Symbol();
       //check close criteria, set closeBuy and closeSell, close order
-      bandsCloseCriteria();
+      //bandsCloseCriteria();
       //check open criteria, set openBuy and openSell
-      //traidingCriteria();
-      bandsOpenCriteria();
+      candleOpenCriteria();
       //try to open new order
       openOrder();
       
@@ -98,7 +115,7 @@ int start()
       
      //Print("prev price: ",prevPrice," price: ",Ask);
 
- //  }//end if(Volume[0]==1)
+   }//end if(Volume[0]==1)
    
    RefreshRates(); 
    prevPrice=Ask; //set prevPrice
@@ -106,24 +123,10 @@ int start()
 }
 
 //+------------------------------------------------------------------+
-//|         candles trading criteria, set openBuy and openSell       | 
+//|         random trading criteria, set openBuy                     | 
 //+------------------------------------------------------------------+
-void traidingCriteria()
+void randomOpenCriteria()
 {
-   /* if(isHammer(1))         
-   {                                         
-      openBuy=true;
-      Print("Hammer candle appears"); 
-      Alert("Hammer candle appears");                            
-   }
-   else if(isHangingMan(1))         
-   {       
-      Print("Hanging man candle appears"); 
-      Alert("Hanging man candle appears");                                   
-      openSell=true;                              
-   }
-   */
-   
    double diff=iMA(NULL,0,MA_FAST,0,MODE_EMA,PRICE_CLOSE,0)-iMA(NULL,0,MA_SLOW,0,MODE_EMA,PRICE_CLOSE,0);
    if(diff>0)
    {
@@ -137,6 +140,52 @@ void traidingCriteria()
       Print("Signal to sell"); 
       Alert("Signal to sell"); 
    }
+   //Print("last: ", lastFreeMargin, " current: ", AccountFreeMargin());
+   if(lastFreeMargin>AccountFreeMargin())
+      lots=lots*2;
+   else
+      lots=0.1;
+   lastFreeMargin=AccountFreeMargin();
+}
+
+//+------------------------------------------------------------------+
+//|         candles trading criteria, set openBuy and openSell       | 
+//+------------------------------------------------------------------+
+void candleOpenCriteria()
+{  
+   //hammer and later confirmation
+   if(isHammer(1) && Open[0]>=Close[1])         
+   {                                         
+      openBuy=true;
+      Print("Hammer candle appears"); 
+      Alert("Hammer candle appears");                            
+   }
+   //hanging man and later confirmation
+   else if(isHangingMan(1) && Open[0]<=Close[1])         
+   {  
+      openSell=true;      
+      Print("Hanging man candle appears"); 
+      Alert("Hanging man candle appears");                                                 
+   }
+   else if(isShootingStar(1)) 
+   {
+      openSell=true;      
+      Print("Shooting Star candle appears"); 
+      Alert("Shooting Star candle appears"); 
+   }
+   else if(isBullishEngulfing(1)) 
+   {
+      openBuy=true;      
+      Print("BullishEngulfing candle appears"); 
+      Alert("BullishEngulfing candle appears"); 
+   }
+   else if(isBearishEngulfing(1)) 
+   {
+      openSell=true;      
+      Print("BearishEngulfing candle appears"); 
+      Alert("BearishEngulfing candle appears"); 
+   }
+
 }
 
 //+------------------------------------------------------------------+
@@ -194,7 +243,7 @@ void bandsCloseCriteria()
             if(prevPrice<lowerBand && Ask>=lowerBand)
                closeSell=true;
          }
-         closeOrder();
+         closeOrder(closeBuy, closeSell);
       }
    }//end for
 }
@@ -202,7 +251,7 @@ void bandsCloseCriteria()
 //+------------------------------------------------------------------+
 //| try to close selected order                                      | 
 //+------------------------------------------------------------------+
-void closeOrder()
+void closeOrder(bool closeBuy, bool closeSell)
 {  
    int orderType=OrderType();
    int ticket=OrderTicket();
@@ -251,8 +300,10 @@ void closeOrder()
 //+------------------------------------------------------------------+
 void openOrder()
 {
+
    double minLot=MarketInfo(symbol,MODE_MINLOT);
-   double lots=getLotsToOrder();
+   if(lots<0)
+      lots=getLotsToOrder(); 
    if(lots<minLot)
    {
       //Print(" Not enough money for ", minLot," lots.");
@@ -268,7 +319,8 @@ void openOrder()
       if(openBuy==true)              
       {                                    
          RefreshRates();                      
-         stopLoss=Bid-MarketInfo(symbol,MODE_STOPLEVEL)*Point;    
+         //stopLoss=Bid-MarketInfo(symbol,MODE_STOPLEVEL)*Point;    
+         stopLoss=Bid-stopLossExtern*Point;   
          takeProfit=Bid+takeProfitExtern*Point;   
             
          Print("Attempt to open Buy. Waiting for response...");
@@ -287,7 +339,7 @@ void openOrder()
       if(openSell==true)              
       {                                      
          RefreshRates();                        
-         stopLoss=Ask+MarketInfo(symbol,MODE_STOPLEVEL)*Point;   
+         stopLoss=Ask+stopLossExtern*Point;   
          takeProfit=Ask-takeProfitExtern*Point;  
             
          Print("Attempt to open Sell. Waiting for response...");
@@ -346,6 +398,39 @@ bool isHammer(int candle)
 bool isHangingMan(int candle)
 {
    if(TREND_UP == trend() && 3.0<lowerShadow(candle) && 0.0==upperShadow(candle) && !isWhite(candle))
+      return(true);
+   else
+      return(false);
+}
+
+//+------------------------------------------------------------------+
+//| check if candle is SHOOTING STAR                                 |
+//+------------------------------------------------------------------+
+bool isShootingStar(int candle)
+{
+   if(TREND_UP == trend() && 3.0<upperShadow(candle) && 0.0==lowerShadow(candle))
+      return(true);
+   else
+      return(false);
+}
+
+//+------------------------------------------------------------------+
+//| check if candle is BULLISH ENGULFING                             |
+//+------------------------------------------------------------------+
+bool isBullishEngulfing(int candle)
+{
+   if(TREND_DOWN == trend() && !isWhite(candle+1) && Close[candle]>High[candle+1] && Open[candle]<Low[candle+1])
+      return(true);
+   else
+      return(false);
+}
+
+//+------------------------------------------------------------------+
+//| check if candle is BEARISH ENGULFING                             |
+//+------------------------------------------------------------------+
+bool isBearishEngulfing(int candle)
+{
+   if(TREND_UP == trend() && isWhite(candle+1) && Close[candle]<Low[candle+1] && Open[candle]>High[candle+1])
       return(true);
    else
       return(false);
