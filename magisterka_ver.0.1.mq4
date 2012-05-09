@@ -26,7 +26,7 @@ extern int MA_SLOW=15;
 #define TREND_DOWN                                                   1
 #define TREND_HORIZONTAL                                             2
 
-int takeProfitExtern=20;
+int takeProfitExtern=22;
 int stopLossExtern=20;
 
 bool work=true;
@@ -78,7 +78,6 @@ int start()
    if(work==false)                             
    {
       Print("Critical error. Candle advisor doesn't work");
-      Alert("Critical error. Candle advisor doesn't work");
       return;                                  
    }
 
@@ -131,14 +130,12 @@ void randomOpenCriteria()
    if(diff>0)
    {
       openBuy=true;
-      Print("Signal to buy"); 
-      Alert("Signal to buy");        
+      Print("Signal to buy");         
    }
    else if(diff<0)
    {
       openSell=true; 
       Print("Signal to sell"); 
-      Alert("Signal to sell"); 
    }
    //Print("last: ", lastFreeMargin, " current: ", AccountFreeMargin());
    if(lastFreeMargin>AccountFreeMargin())
@@ -154,36 +151,33 @@ void randomOpenCriteria()
 void candleOpenCriteria()
 {  
    //hammer and later confirmation
-   if(isHammer(1) && Open[0]>=Close[1])         
+   if(isHammer(2) && Close[1]>=Close[2])         
    {                                         
       openBuy=true;
-      Print("Hammer candle appears"); 
-      Alert("Hammer candle appears");                            
+      Print("Hammer candle appears", " Open: ", Open[2], " High: ", High[2], " Low: ", Low[2], " Close: ", Close[2], " Time: ",TimeMinute(Time[2]));                           
    }
    //hanging man and later confirmation
-   else if(isHangingMan(1) && Open[0]<=Close[1])         
+   else if(isHangingMan(2) && Close[1]<=Close[2])         
    {  
       openSell=true;      
-      Print("Hanging man candle appears"); 
-      Alert("Hanging man candle appears");                                                 
+      Print("Hanging man candle appears", " Open: ", Open[2], " High: ", High[2], " Low: ", Low[2], " Close: ", Close[2], " Time: ",TimeMinute(Time[2]));                                                  
    }
+   /*
    else if(isShootingStar(1)) 
    {
       openSell=true;      
-      Print("Shooting Star candle appears"); 
-      Alert("Shooting Star candle appears"); 
+      Print("Shooting Star candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
+   */
    else if(isBullishEngulfing(1)) 
    {
       openBuy=true;      
-      Print("BullishEngulfing candle appears"); 
-      Alert("BullishEngulfing candle appears"); 
+      Print("BullishEngulfing candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
    else if(isBearishEngulfing(1)) 
    {
       openSell=true;      
-      Print("BearishEngulfing candle appears"); 
-      Alert("BearishEngulfing candle appears"); 
+      Print("BearishEngulfing candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
 
 }
@@ -230,7 +224,6 @@ void bandsCloseCriteria()
          if(orderType>1)
          {
             Print("Pending order detected. Candle advisor doesn't work");
-            Alert("Pending order detected. Candle advisor doesn't work");
             return;                             
          }
          else if(orderType==OP_BUY)
@@ -262,13 +255,11 @@ void closeOrder(bool closeBuy, bool closeSell)
       if(orderType==OP_BUY && closeBuy==true)                
       {
          Print("Attempt to close Buy ",ticket,". Waiting for response..");                                      
-         Alert("Attempt to close Buy ",ticket,". Waiting for response..");
          RefreshRates();                        
          ans=OrderClose(ticket,lots,Bid,2);      
          if(ans==true)                        
          {
             Print("Closed order Buy ",ticket);
-            Alert("Closed order Buy ",ticket);
             break;                             
          }
          if(processError(GetLastError())==1)      
@@ -279,12 +270,11 @@ void closeOrder(bool closeBuy, bool closeSell)
       if(orderType==OP_SELL && closeSell==true)                
       {                                       
          Print("Attempt to close Sell ",ticket,". Waiting for response..");                                      
-         Alert("Attempt to close Sell ",ticket,". Waiting for response..");
          RefreshRates();                        
          ans=OrderClose(ticket,lots,Ask,2);    
          if(ans==true)                         
          {
-            Alert("Closed order Sell ",ticket);
+            Print("Closed order Sell ",ticket);
             break;                             
          }
          if(processError(GetLastError())==1)      
@@ -307,7 +297,6 @@ void openOrder()
    if(lots<minLot)
    {
       //Print(" Not enough money for ", minLot," lots.");
-      //Alert(" Not enough money for ", minLot," lots.");
       return;
    }
    double stopLoss=NULL;
@@ -324,12 +313,10 @@ void openOrder()
          takeProfit=Bid+takeProfitExtern*Point;   
             
          Print("Attempt to open Buy. Waiting for response...");
-         Alert("Attempt to open Buy. Waiting for response...");
          ticket=OrderSend(symbol,OP_BUY,lots,Ask,2,stopLoss,takeProfit);
          if(ticket>0)                      
          {
             Print("Opened order Buy ",ticket);
-            Alert("Opened order Buy ",ticket);
             return;                            
          }
          if(processError(GetLastError())==1)     
@@ -343,13 +330,11 @@ void openOrder()
          takeProfit=Ask-takeProfitExtern*Point;  
             
          Print("Attempt to open Sell. Waiting for response...");
-         Alert("Attempt to open Sell. Waiting for response...");
       
          ticket=OrderSend(symbol,OP_SELL,lots,Bid,2,stopLoss,takeProfit);
          if(ticket>0)                       
          {
             Print("Opened order Sell ",ticket);
-            Alert("Opened order Sell ",ticket);
             return;                             
          }
          if(processError(GetLastError())==1)      
@@ -386,7 +371,7 @@ double getLotsToOrder()
 //+------------------------------------------------------------------+
 bool isHammer(int candle)
 {
-   if(TREND_DOWN==trend() && 2.0<lowerShadow(candle) && 0.0==upperShadow(candle) && isWhite(candle))
+   if(TREND_DOWN==bbFilter(candle) && TREND_DOWN == trend() && 2.0<(lowerShadow(candle)/candleHigh(candle)) && 2>=upperShadow(candle) && isWhite(candle) && lowerShadow(candle)>averageCandleBody(BARS_TO_AVERAGE))
       return(true);
    else
       return(false);
@@ -397,7 +382,7 @@ bool isHammer(int candle)
 //+------------------------------------------------------------------+
 bool isHangingMan(int candle)
 {
-   if(TREND_UP == trend() && 3.0<lowerShadow(candle) && 0.0==upperShadow(candle) && !isWhite(candle))
+   if(TREND_UP == bbFilter(candle) && TREND_UP == trend() && 3.0<(lowerShadow(candle)/candleHigh(candle)) && 2>=upperShadow(candle) && !isWhite(candle) && lowerShadow(candle)>averageCandleBody(BARS_TO_AVERAGE))
       return(true);
    else
       return(false);
@@ -408,7 +393,7 @@ bool isHangingMan(int candle)
 //+------------------------------------------------------------------+
 bool isShootingStar(int candle)
 {
-   if(TREND_UP == trend() && 3.0<upperShadow(candle) && 0.0==lowerShadow(candle))
+   if(TREND_UP == bbFilter(candle) && TREND_UP == trend() && 3.0<(upperShadow(candle)/candleHigh(candle)) && 2>=lowerShadow(candle) && upperShadow(candle)>averageCandleBody(BARS_TO_AVERAGE))
       return(true);
    else
       return(false);
@@ -419,7 +404,7 @@ bool isShootingStar(int candle)
 //+------------------------------------------------------------------+
 bool isBullishEngulfing(int candle)
 {
-   if(TREND_DOWN == trend() && !isWhite(candle+1) && Close[candle]>High[candle+1] && Open[candle]<Low[candle+1])
+   if(TREND_DOWN == bbFilter(candle) && TREND_DOWN == trend() && !isWhite(candle+1) && Close[candle]>High[candle+1] && Open[candle]<Low[candle+1])
       return(true);
    else
       return(false);
@@ -430,7 +415,7 @@ bool isBullishEngulfing(int candle)
 //+------------------------------------------------------------------+
 bool isBearishEngulfing(int candle)
 {
-   if(TREND_UP == trend() && isWhite(candle+1) && Close[candle]<Low[candle+1] && Open[candle]>High[candle+1])
+   if(TREND_UP == bbFilter(candle) && TREND_UP == trend() && isWhite(candle+1) && Close[candle]<Low[candle+1] && Open[candle]>High[candle+1])
       return(true);
    else
       return(false);
@@ -451,6 +436,21 @@ int trend()
 }
 
 //+------------------------------------------------------------------+
+//| bollinger bands filter                                           |
+//+------------------------------------------------------------------+
+int bbFilter(int candle)
+{
+   double upperBand=iBands(NULL,0,20,2,0,PRICE_CLOSE,MODE_UPPER,candle);
+   double lowerBand=iBands(NULL,0,20,2,0,PRICE_CLOSE,MODE_LOWER,candle);
+   if(High[candle]>upperBand)
+      return(TREND_UP);
+   else if(Low[candle]<lowerBand)
+      return(TREND_DOWN);
+   else
+      return(TREND_HORIZONTAL);
+}
+
+//+------------------------------------------------------------------+
 //| return average body size from candles                            |
 //+------------------------------------------------------------------+
 double averageCandleBody(int candles)
@@ -460,7 +460,7 @@ double averageCandleBody(int candles)
    {
       average+=MathAbs(Close[candle]-Open[candle]);
    }
-   return(average/candles);
+   return(average/(Point*candles));
 }
 
 //+------------------------------------------------------------------+
@@ -468,31 +468,36 @@ double averageCandleBody(int candles)
 //+------------------------------------------------------------------+
 double upperShadow(int candle)
 {
-   double candleHigh = MathAbs(Close[candle]-Open[candle]);
-   if(candleHigh == 0)
-      candleHigh = Point;
-   double upperShadow = 0.0;
+   double upperShadow = NULL;
    if(isWhite(candle))
       upperShadow = High[candle]-Close[candle];
    else
       upperShadow = High[candle]-Open[candle];
-   return(upperShadow/candleHigh);
+   return(upperShadow/Point);
 }
 
 //+------------------------------------------------------------------+
 //| return lower shadow size divide by candle high                   |
 //+------------------------------------------------------------------+
 double lowerShadow(int candle)
-{
-   double candleHigh = MathAbs(Close[candle]-Open[candle]);
-   if(candleHigh == 0)
-      candleHigh = Point;
-   double lowerShadow = 0.0;
+{ 
+   double lowerShadow = NULL;
    if(isWhite(candle))
       lowerShadow = Open[candle]-Low[candle];
    else
       lowerShadow = Close[candle]-Low[candle];
-   return(lowerShadow/candleHigh);
+   return(lowerShadow/Point);
+}
+
+//+------------------------------------------------------------------+
+//| return candle high in points                                     |
+//+------------------------------------------------------------------+
+double candleHigh(int candle)
+{
+   double candleHigh = MathAbs(Close[candle]-Open[candle]);
+   if(candleHigh == 0)
+      candleHigh = Point;
+   return(candleHigh/Point);
 }
 
 //+------------------------------------------------------------------+
@@ -534,36 +539,36 @@ int processError(int error)
    switch(error)
    {
       // Not crucial errors                                                     
-      case  4: Alert("Trade server is busy. Trying once again...");
+      case  4: Print("Trade server is busy. Trying once again...");
          Sleep(3000);                        
          return(1);                             
-      case 135:Alert("Price changed. Trying once again..");
+      case 135:Print("Price changed. Trying once again..");
          RefreshRates();                  
          return(1);                           
-      case 136:Alert("No prices. Waiting for a new tick..");
+      case 136:Print("No prices. Waiting for a new tick..");
          while(RefreshRates()==false)          
             Sleep(1);                          
          return(1);                            
-      case 137:Alert("Broker is busy. Trying once again..");
+      case 137:Print("Broker is busy. Trying once again..");
          Sleep(3000);                         
          return(1);                        
-      case 146:Alert("Trading subsystem is busy. Trying once again..");
+      case 146:Print("Trading subsystem is busy. Trying once again..");
          Sleep(500);                          
          return(1);                      
       // Critical errors
-      case  2: Alert("Common error.");
+      case  2: Print("Common error.");
          return(0);                            
-      case  5: Alert("Old terminal version.");
+      case  5: Print("Old terminal version.");
          work=false;                           
          return(0);                             
-      case 64: Alert("Account blocked.");
+      case 64: Print("Account blocked.");
          work=false;                          
          return(0);                             
-      case 133:Alert("Trading forbidden.");
+      case 133:Print("Trading forbidden.");
          return(0);                           
-      case 134:Alert("Not enough money to execute operation.");
+      case 134:Print("Not enough money to execute operation.");
          return(0);                             
-      default: Alert("Error occurred: ",error);  
+      default: Print("Error occurred: ",error);  
          return(0);                             
    }
 }
