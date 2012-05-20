@@ -26,8 +26,8 @@ extern int MA_SLOW=15;
 #define TREND_DOWN                                                   1
 #define TREND_HORIZONTAL                                             2
 
-int takeProfitExtern=22;
-int stopLossExtern=20;
+int takeProfitExtern=2200;
+int stopLossExtern=40;
 
 bool work=true;
 string symbol;
@@ -37,7 +37,7 @@ bool closeSell=false;
 bool closeBuy=false;
 double prevPrice=NULL;
 
-double lots=0.1;
+double lots= 0.1;
 bool lastWin=true;
 double lastFreeMargin=NULL;
 //+------------------------------------------------------------------+
@@ -80,10 +80,10 @@ int start()
       Print("Critical error. Candle advisor doesn't work");
       return;                                  
    }
-
-   if(OrdersTotal()>=1)
-      return;
-      
+   
+   
+   
+   //close order if it is end of week
    if(DayOfWeek()>=4 && Hour()>21)
    {
       if(OrdersTotal()>0)
@@ -98,6 +98,12 @@ int start()
       prevPrice=Ask;
       return;
    }
+   //modify stop loss
+   modifyStopLoss();
+   
+   //work only with one order
+   if(OrdersTotal()>0)
+      return;
    
    // if the latest bar have only one tick (new bar appear)
    if(Volume[0]==1)
@@ -179,11 +185,33 @@ void candleOpenCriteria()
       openSell=true;      
       Print("BearishEngulfing candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
+   //Bullish Harami and later confirmation
+   else if(isBullishHarami(2) && Close[1]>=Close[2]) 
+   {
+      openBuy=true;      
+      Print("BullishHarami candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
+   }
+   //Bearish Harami and later confirmation
+   else if(isBearishHarami(2) && Close[1]<=Close[2]) 
+   {
+      openSell=true;      
+      Print("BearishHarami candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
+   }
+   else if(isDarkCloudCover(1))
+   {
+      openSell=true;      
+      Print("DarkCloudCover candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
+   }
+   else if(isPiercingLine(1))
+   {
+      openBuy=true;      
+      Print("DarkCloudCover candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
+   }
 
 }
 
 //+------------------------------------------------------------------+
-//| open criteria for strategy bollinger bands                    |
+//| open criteria for strategy bollinger bands                       |
 //| set openBuy and openSell                                         | 
 //+------------------------------------------------------------------+
 void bandsOpenCriteria()
@@ -200,9 +228,64 @@ void bandsOpenCriteria()
    else if(TREND_DOWN==trend())
    {
       RefreshRates();
-      if(Ask<=midBand && prevPrice>midBand)
+      if(Bid<=midBand && prevPrice>midBand)
          openSell=true;
    }
+}
+
+//+------------------------------------------------------------------+
+//| modify stop loss                                                 |
+//+------------------------------------------------------------------+
+void modifyStopLoss()
+{
+   double sl;
+   double tp;
+   double price;
+   int    ticket;
+   bool ans;
+
+   for(int i=0; i<OrdersTotal(); i++)
+   {
+      if(OrderSelect(i,SELECT_BY_POS))
+      {
+         sl=OrderStopLoss();
+         if(OrderType()==OP_BUY)
+         {
+            if( ( (Bid-sl) / Point ) > (1.5*stopLossExtern) )
+            {
+               tp    =OrderTakeProfit();    // tp of the selected order
+               price =OrderOpenPrice();     // price of the selected order
+               ticket=OrderTicket();        // ticket of the selected order
+               sl = Bid - Point*10;
+               Print("Modification buy order: ",ticket,". Awaiting response..");
+               
+               ans=OrderModify(ticket, price, sl, tp, 0);//Modify it!
+               if(ans)
+                  Print("Modificated buy order: ", ticket);
+               else
+                  processError(GetLastError());
+            }   
+         }
+         else if(OrderType()==OP_SELL)
+         {
+            if( ( (sl-Ask) / Point ) > (1.5*stopLossExtern) )
+            {
+               tp    =OrderTakeProfit();    // tp of the selected order
+               price =OrderOpenPrice();     // price of the selected order
+               ticket=OrderTicket();        // ticket of the selected order
+               sl = Ask + Point*10;
+               Print("Modification buy order: ",ticket,". Awaiting response..");
+               
+               ans=OrderModify(ticket, price, sl, tp, 0);//Modify it!
+               if(ans)
+                  Print("Modificated buy order: ", ticket);
+               else
+                  processError(GetLastError());
+            } 
+            
+         }
+      }
+   } 
 }
 
 //+------------------------------------------------------------------+
@@ -228,7 +311,7 @@ void bandsCloseCriteria()
          }
          else if(orderType==OP_BUY)
          {
-            if(prevPrice>upperBand && Ask<=upperBand)
+            if(prevPrice>upperBand && Bid<=upperBand)
                closeBuy=true;
          }
          else if(orderType==OP_SELL)
@@ -371,7 +454,7 @@ double getLotsToOrder()
 //+------------------------------------------------------------------+
 bool isHammer(int candle)
 {
-   if(TREND_DOWN==bbFilter(candle) && TREND_DOWN == trend() && 2.0<(lowerShadow(candle)/candleHigh(candle)) && 2>=upperShadow(candle) && isWhite(candle) && lowerShadow(candle)>averageCandleBody(BARS_TO_AVERAGE))
+   if(TREND_DOWN==bbFilter(candle) && TREND_DOWN == trend() && 3.0<(lowerShadow(candle)/candleHigh(candle)) && 2>=upperShadow(candle) && isWhite(candle) && lowerShadow(candle)>averageCandleBody(BARS_TO_AVERAGE))
       return(true);
    else
       return(false);
@@ -404,7 +487,7 @@ bool isShootingStar(int candle)
 //+------------------------------------------------------------------+
 bool isBullishEngulfing(int candle)
 {
-   if(TREND_DOWN == bbFilter(candle) && TREND_DOWN == trend() && !isWhite(candle+1) && Close[candle]>High[candle+1] && Open[candle]<Low[candle+1])
+   if(TREND_DOWN == bbFilter(candle) && TREND_DOWN == trend() && !isWhite(candle+1) && Close[candle]>High[candle+1] && Open[candle]<Low[candle+1] && candleBodySize(candle+1)>SMALL_CANDLE)
       return(true);
    else
       return(false);
@@ -415,7 +498,51 @@ bool isBullishEngulfing(int candle)
 //+------------------------------------------------------------------+
 bool isBearishEngulfing(int candle)
 {
-   if(TREND_UP == bbFilter(candle) && TREND_UP == trend() && isWhite(candle+1) && Close[candle]<Low[candle+1] && Open[candle]>High[candle+1])
+   if(TREND_UP == bbFilter(candle) && TREND_UP == trend() && isWhite(candle+1) && Close[candle]<Low[candle+1] && Open[candle]>High[candle+1] && candleBodySize(candle+1)>SMALL_CANDLE)
+      return(true);
+   else
+      return(false);
+}
+
+//+------------------------------------------------------------------+
+//| check if candle is BULLISH HARAMI                                |
+//+------------------------------------------------------------------+
+bool isBullishHarami(int candle)
+{
+   if(TREND_DOWN == bbFilter(candle) && TREND_DOWN == trend() && !isWhite(candle+1) && Open[candle+1]>Close[candle] && Close[candle+1]<Open[candle] && candleBodySize(candle+1)==BIG_CANDLE)
+      return(true);
+   else
+      return(false);
+}
+
+//+------------------------------------------------------------------+
+//| check if candle is BEARISH HARAMI                                |
+//+------------------------------------------------------------------+
+bool isBearishHarami(int candle)
+{
+   if(TREND_UP == bbFilter(candle) && TREND_UP == trend() && isWhite(candle+1) && Close[candle+1]>Open[candle] && Open[candle+1]<Close[candle] && candleBodySize(candle+1)==BIG_CANDLE)
+      return(true);
+   else
+      return(false);
+}
+
+//+------------------------------------------------------------------+
+//| check if candle is DARK CLOUD COVER                              |
+//+------------------------------------------------------------------+
+bool isDarkCloudCover(int candle)
+{
+   if(TREND_UP == bbFilter(candle) && TREND_UP == trend() && isWhite(candle+1) && Open[candle]>High[candle+1] && ( (Open[candle+1]+Close[candle+1])/2 )>Close[candle] && Close[candle]>Open[candle+1] && candleBodySize(candle+1)>SMALL_CANDLE)
+      return(true);
+   else
+      return(false);
+}
+
+//+------------------------------------------------------------------+
+//| check if candle is PIERCING LINE                                 |
+//+------------------------------------------------------------------+
+bool isPiercingLine(int candle)
+{
+   if(TREND_DOWN == bbFilter(candle) && TREND_DOWN == trend() && !isWhite(candle+1) && Open[candle]<Low[candle+1] && ( (Open[candle+1]+Close[candle+1])/2 )<Close[candle] && Close[candle]<Open[candle+1] && candleBodySize(candle+1)>SMALL_CANDLE)
       return(true);
    else
       return(false);
@@ -477,7 +604,7 @@ double upperShadow(int candle)
 }
 
 //+------------------------------------------------------------------+
-//| return lower shadow size divide by candle high                   |
+//| return lower shadow size divide by candle high in points         |
 //+------------------------------------------------------------------+
 double lowerShadow(int candle)
 { 
@@ -518,7 +645,7 @@ bool isWhite(int candle)
 //+------------------------------------------------------------------+
 int candleBodySize(int candle)
 {
-   double candleBody = MathAbs(Close[candle]-Open[candle]);
+   double candleBody = MathAbs(Close[candle]-Open[candle])/Point;
    double average = averageCandleBody(BARS_TO_AVERAGE);
    double ratio = candleBody/average;
    if(ratio>(1+TRESHOLD_HIGH_CANDLE))
