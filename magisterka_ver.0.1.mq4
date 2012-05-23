@@ -15,19 +15,19 @@
 #define NORMAL_CANDLE                                                2
 #define BIG_CANDLE                                                   3
 
-//#define MA_DISTANCE                                                  3
-//#define MA_FAST                                                     10
-//#define MA_SLOW                                                     15
-extern int MA_DISTANCE=3;
-extern int MA_FAST=10;
-extern int MA_SLOW=15;
+#define MA_DISTANCE                                                  3
+#define MA_FAST                                                     10
+#define MA_SLOW                                                     15
+//extern int MA_DISTANCE=3;
+//extern int MA_FAST=10;
+//extern int MA_SLOW=15;
 
 #define TREND_UP                                                     0
 #define TREND_DOWN                                                   1
 #define TREND_HORIZONTAL                                             2
 
-int takeProfitExtern=2200;
-int stopLossExtern=40;
+int takeProfitExtern=32;
+int stopLossExtern=20;
 
 bool work=true;
 string symbol;
@@ -36,6 +36,7 @@ bool openBuy=false;
 bool closeSell=false; 
 bool closeBuy=false;
 double prevPrice=NULL;
+int    spread;
 
 double lots= 0.1;
 bool lastWin=true;
@@ -47,6 +48,8 @@ int init()
 {
 //----
    lastFreeMargin=AccountFreeMargin();
+   symbol=Symbol();
+   spread=MarketInfo(symbol,MODE_SPREAD);
 //----
    return(0);
 }
@@ -73,57 +76,54 @@ int start()
    closeSell=false; 
    closeBuy=false;
     
-
-   // preliminary processing
    if(work==false)                             
    {
-      Print("Critical error. Candle advisor doesn't work");
+      Print("Critical error.");
       return;                                  
    }
    
-   
-   
    //close order if it is end of week
+   /*
    if(DayOfWeek()>=4 && Hour()>21)
    {
       if(OrdersTotal()>0)
-         closeOrder(true, true);
-         
+      {
+         for(int i=0; i<OrdersTotal(); i++)
+         {
+            if(OrderSelect(i,SELECT_BY_POS))
+               closeOrder(true, true);
+         }
+      }  
    }
-   
-   //if it is first function start call 
+   */
+
    if(prevPrice==NULL)
    {
       RefreshRates(); 
       prevPrice=Ask;
       return;
    }
+
    //modify stop loss
-   modifyStopLoss();
+   //modifyStopLoss();
    
+   //check close criteria, set closeBuy and closeSell, close order
+   //bandsCloseCriteria();
+   RefreshRates(); 
+   prevPrice=Ask;
    //work only with one order
    if(OrdersTotal()>0)
       return;
-   
-   // if the latest bar have only one tick (new bar appear)
+   //new bar appear (if the latest bar have only one tick)
    if(Volume[0]==1)
    {     
-      symbol=Symbol();
-      //check close criteria, set closeBuy and closeSell, close order
-      //bandsCloseCriteria();
       //check open criteria, set openBuy and openSell
       candleOpenCriteria();
       //try to open new order
-      openOrder();
-      
-      
-      
-     //Print("prev price: ",prevPrice," price: ",Ask);
-
-   }//end if(Volume[0]==1)
+      openOrder();    
+   }
    
-   RefreshRates(); 
-   prevPrice=Ask; //set prevPrice
+   
    return(0);
 }
 
@@ -157,55 +157,75 @@ void randomOpenCriteria()
 void candleOpenCriteria()
 {  
    //hammer and later confirmation
+
    if(isHammer(2) && Close[1]>=Close[2])         
    {                                         
       openBuy=true;
       Print("Hammer candle appears", " Open: ", Open[2], " High: ", High[2], " Low: ", Low[2], " Close: ", Close[2], " Time: ",TimeMinute(Time[2]));                           
    }
+  
    //hanging man and later confirmation
+   
    else if(isHangingMan(2) && Close[1]<=Close[2])         
    {  
       openSell=true;      
       Print("Hanging man candle appears", " Open: ", Open[2], " High: ", High[2], " Low: ", Low[2], " Close: ", Close[2], " Time: ",TimeMinute(Time[2]));                                                  
    }
-   /*
+   
    else if(isShootingStar(1)) 
    {
       openSell=true;      
       Print("Shooting Star candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
-   */
+
    else if(isBullishEngulfing(1)) 
    {
       openBuy=true;      
       Print("BullishEngulfing candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
+   
    else if(isBearishEngulfing(1)) 
    {
       openSell=true;      
       Print("BearishEngulfing candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
+   
    //Bullish Harami and later confirmation
    else if(isBullishHarami(2) && Close[1]>=Close[2]) 
    {
       openBuy=true;      
       Print("BullishHarami candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
+
    //Bearish Harami and later confirmation
    else if(isBearishHarami(2) && Close[1]<=Close[2]) 
    {
       openSell=true;      
       Print("BearishHarami candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
+
    else if(isDarkCloudCover(1))
    {
       openSell=true;      
       Print("DarkCloudCover candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
+
    else if(isPiercingLine(1))
    {
       openBuy=true;      
-      Print("DarkCloudCover candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
+      Print("PiercingLine candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
+   }
+   
+   else if(isMorningStar(1))
+   {
+      openBuy=true;      
+      Print("MorningStar candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
+   }
+
+   else if(isEveningStar(1))
+   {
+      openSell=true;      
+      Print("EveningStar candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
 
 }
@@ -296,6 +316,7 @@ void bandsCloseCriteria()
 {
    double upperBand=iBands(NULL,0,20,2,0,PRICE_CLOSE,MODE_UPPER,0);
    double lowerBand=iBands(NULL,0,20,2,0,PRICE_CLOSE,MODE_LOWER,0);
+   double midBand=iMA(NULL,0,20,0,MODE_SMA,PRICE_CLOSE,0);
    int orderType=NULL;
    for(int i=0; i<OrdersTotal(); i++)
    {
@@ -311,13 +332,23 @@ void bandsCloseCriteria()
          }
          else if(orderType==OP_BUY)
          {
-            if(prevPrice>upperBand && Bid<=upperBand)
+            Print("prevPrice: ", prevPrice-spread*Point, " Bid: ", Bid);
+            //if(prevPrice-spread*Point>upperBand && Bid<=upperBand)
+            if(prevPrice-spread*Point>midBand && Bid<=midBand)
+            {
+               Print("Close order BUY: true ");
                closeBuy=true;
+            }
          }
          else if(orderType==OP_SELL)
          {
-            if(prevPrice<lowerBand && Ask>=lowerBand)
+            Print("prevPrice: ", prevPrice, " Ask: ", Ask);
+            //if(prevPrice<lowerBand && Ask>=lowerBand)
+            if(prevPrice<midBand && Ask>=midBand)
+            {
+               Print("Close order SELL: true ");
                closeSell=true;
+            }
          }
          closeOrder(closeBuy, closeSell);
       }
@@ -339,7 +370,7 @@ void closeOrder(bool closeBuy, bool closeSell)
       {
          Print("Attempt to close Buy ",ticket,". Waiting for response..");                                      
          RefreshRates();                        
-         ans=OrderClose(ticket,lots,Bid,2);      
+         ans=OrderClose(ticket,lots,NormalizeDouble(Bid,Digits),2);      
          if(ans==true)                        
          {
             Print("Closed order Buy ",ticket);
@@ -354,7 +385,7 @@ void closeOrder(bool closeBuy, bool closeSell)
       {                                       
          Print("Attempt to close Sell ",ticket,". Waiting for response..");                                      
          RefreshRates();                        
-         ans=OrderClose(ticket,lots,Ask,2);    
+         ans=OrderClose(ticket,lots,NormalizeDouble(Ask,Digits),2);    
          if(ans==true)                         
          {
             Print("Closed order Sell ",ticket);
@@ -396,7 +427,7 @@ void openOrder()
          takeProfit=Bid+takeProfitExtern*Point;   
             
          Print("Attempt to open Buy. Waiting for response...");
-         ticket=OrderSend(symbol,OP_BUY,lots,Ask,2,stopLoss,takeProfit);
+         ticket=OrderSend(symbol,OP_BUY,lots,NormalizeDouble(Ask,Digits),2,stopLoss,takeProfit);
          if(ticket>0)                      
          {
             Print("Opened order Buy ",ticket);
@@ -414,7 +445,7 @@ void openOrder()
             
          Print("Attempt to open Sell. Waiting for response...");
       
-         ticket=OrderSend(symbol,OP_SELL,lots,Bid,2,stopLoss,takeProfit);
+         ticket=OrderSend(symbol,OP_SELL,lots,NormalizeDouble(Bid,Digits),2,stopLoss,takeProfit);
          if(ticket>0)                       
          {
             Print("Opened order Sell ",ticket);
@@ -476,7 +507,7 @@ bool isHangingMan(int candle)
 //+------------------------------------------------------------------+
 bool isShootingStar(int candle)
 {
-   if(TREND_UP == bbFilter(candle) && TREND_UP == trend() && 3.0<(upperShadow(candle)/candleHigh(candle)) && 2>=lowerShadow(candle) && upperShadow(candle)>averageCandleBody(BARS_TO_AVERAGE))
+   if(TREND_UP == bbFilter(candle) && TREND_UP == trend() && 3.0<(upperShadow(candle)/candleHigh(candle)) && 3>=lowerShadow(candle) && upperShadow(candle)>averageCandleBody(BARS_TO_AVERAGE))
       return(true);
    else
       return(false);
@@ -547,6 +578,39 @@ bool isPiercingLine(int candle)
    else
       return(false);
 }
+
+//+------------------------------------------------------------------+
+//| check if candle is MORNING STAR                                  |
+//+------------------------------------------------------------------+
+bool isMorningStar(int candle)
+{  
+   double star;
+   if(isWhite(candle+1))
+      star = Close[candle+1];
+   else
+      star = Open[candle+1]; 
+   if(TREND_DOWN == bbFilter(candle) && TREND_DOWN == trend() && !isWhite(candle+2) && isWhite(candle) && candleBodySize(candle+2)>SMALL_CANDLE && candleBodySize(candle)>SMALL_CANDLE && Close[candle+2]>star && Open[candle]>star)
+      return(true);
+   else
+      return(false);
+}
+
+//+------------------------------------------------------------------+
+//| check if candle is EVENING STAR                                  |
+//+------------------------------------------------------------------+
+bool isEveningStar(int candle)
+{  
+   double star;
+   if(!isWhite(candle+1))
+      star = Close[candle+1];
+   else
+      star = Open[candle+1]; 
+   if(TREND_UP == bbFilter(candle) && TREND_UP == trend() && isWhite(candle+2) && !isWhite(candle) && candleBodySize(candle+2)>SMALL_CANDLE && candleBodySize(candle)>SMALL_CANDLE && Close[candle+2]<star && Open[candle]<star)
+      return(true);
+   else
+      return(false);
+}
+
 
 //+------------------------------------------------------------------+
 //| return trend 0-TREND_UP 1-TREND_DOWN 2-TREND_HORIZONTAL          |
