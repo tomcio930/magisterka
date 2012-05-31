@@ -19,13 +19,13 @@
 //#define MA_FAST                                                      5
 //#define MA_SLOW                                                     10
 extern int MA_DISTANCE=1;
-extern int MA_FAST=25;
-extern int MA_SLOW=20;
+extern int MA_FAST=20;
+extern int MA_SLOW=25;
 extern int hammerTreshold1=4;
 extern double hammerTreshold2=1.5;
 
-extern int hangingManTreshold1=4;
-extern double hangingManTreshold2=2;
+extern int hangingManTreshold1=3;
+extern double hangingManTreshold2=1.5;
 
 #define TREND_UP                                                     0
 #define TREND_DOWN                                                   1
