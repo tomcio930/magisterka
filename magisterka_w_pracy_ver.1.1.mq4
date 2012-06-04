@@ -30,6 +30,14 @@ extern double hangingManTreshold2=1.5;
 extern int shootingStarTreshold1=3;
 extern double shootingStarTreshold2=2;
 
+extern double engulfingTreshold1=1.5;
+extern double engulfingTreshold2=1.5;
+
+extern double haramiTreshold1=1.5;
+extern double haramiTreshold2=1.5;
+
+
+
 #define TREND_UP                                                     0
 #define TREND_DOWN                                                   1
 #define TREND_HORIZONTAL                                             2
@@ -44,7 +52,7 @@ double prevPrice=NULL;
 int    spread;
 double point = 0.0001;
 double stopLossMin;
-double lots= 0.1;
+double lots= -1.1;
 bool lastWin=true;
 double lastFreeMargin=NULL;
 //+------------------------------------------------------------------+
@@ -158,7 +166,7 @@ void candleOpenCriteria()
 {  
    //hammer and later confirmation
 
-/*
+
    if(isHammer(2) && Close[1]>Close[2])         
    {   
       //1 18 25 - trend parameters                                      
@@ -169,38 +177,39 @@ void candleOpenCriteria()
   
    //hanging man and later confirmation
    
-   if(isHangingMan(2) && Close[2]>=Close[1])         
+   else if(isHangingMan(2) && Close[2]>=Close[1])         
    {    
       Print("HIGH[2]: ", High[2]);
       openOrder(false, true, lots, takeProfitExtern, High[2]);
       Print("Hanging man candle appears", " Open: ", Open[2], " High: ", High[2], " Low: ", Low[2], " Close: ", Close[2], " Time: ",TimeMinute(Time[2]));                                                  
    }
-  
-   if(isShootingStar(2) && Close[2]>=Close[1]) 
+ 
+   else if(isShootingStar(2) && Close[2]>=Close[1]) 
    {   
       openOrder(false, true, lots, takeProfitExtern, High[2]);  
       Print("Shooting Star candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
-*/
-   if(isBullishEngulfing(1)) 
+
+   // zysk ale tylko 20% trafnych transakcji
+   else if(isBullishEngulfing(1)) 
    {
       openOrder(true, false, lots, takeProfitExtern, Low[1]);      
       Print("BullishEngulfing candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
- /*  
+  
    else if(isBearishEngulfing(1)) 
    {
-      openSell=true;      
+      openOrder(false, true, lots, takeProfitExtern, High[1]);     
       Print("BearishEngulfing candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
-   
+   /*
    //Bullish Harami and later confirmation
    else if(isBullishHarami(2) && Close[1]>=Close[2]) 
    {
-      openBuy=true;      
+      openOrder(true, false, lots, takeProfitExtern, Low[3]);    
       Print("BullishHarami candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
-
+/*
    //Bearish Harami and later confirmation
    else if(isBearishHarami(2) && Close[1]<=Close[2]) 
    {
@@ -524,7 +533,7 @@ bool isShootingStar(int candle)
 //+------------------------------------------------------------------+
 bool isBullishEngulfing(int candle)
 {
-   if(TREND_UP == trend() && TREND_DOWN == bbFilter(candle) && !isWhite(candle+1) && Close[candle]>Open[candle+1] && Open[candle]<Close[candle+1] && candleBodySize(candle+1)==BIG_CANDLE)
+   if(TREND_UP == trend() && TREND_DOWN == bbFilter(candle) && !isWhite(candle+1) && Close[candle]>Open[candle+1] && Open[candle]<Close[candle+1] && candleHigh(candle+1)>engulfingTreshold1*averageCandleBody(BARS_TO_AVERAGE))
       return(true);
    else
       return(false);
@@ -535,7 +544,7 @@ bool isBullishEngulfing(int candle)
 //+------------------------------------------------------------------+
 bool isBearishEngulfing(int candle)
 {
-   if(TREND_UP == bbFilter(candle) && TREND_DOWN == trend() && isWhite(candle+1) && Close[candle]<Low[candle+1] && Open[candle]>High[candle+1] && candleBodySize(candle+1)>SMALL_CANDLE)
+   if(TREND_DOWN == bbFilter(candle) && TREND_UP == trend() && isWhite(candle+1) && Close[candle]<Low[candle+1] && Open[candle]>High[candle+1] && candleHigh(candle+1)>engulfingTreshold2*averageCandleBody(BARS_TO_AVERAGE))
       return(true);
    else
       return(false);
@@ -546,7 +555,7 @@ bool isBearishEngulfing(int candle)
 //+------------------------------------------------------------------+
 bool isBullishHarami(int candle)
 {
-   if(TREND_DOWN == bbFilter(candle) && TREND_UP == trend() && !isWhite(candle+1) && Open[candle+1]>Close[candle] && Close[candle+1]<Open[candle] && candleBodySize(candle+1)==BIG_CANDLE)
+   if(TREND_UP == bbFilter(candle) && TREND_DOWN == trend() && !isWhite(candle+1) && Open[candle+1]>Close[candle] && Close[candle+1]<Open[candle] && candleHigh(candle)>haramiTreshold1*averageCandleBody(BARS_TO_AVERAGE))
       return(true);
    else
       return(false);
@@ -557,7 +566,7 @@ bool isBullishHarami(int candle)
 //+------------------------------------------------------------------+
 bool isBearishHarami(int candle)
 {
-   if(TREND_UP == bbFilter(candle) && TREND_DOWN == trend() && isWhite(candle+1) && Close[candle+1]>Open[candle] && Open[candle+1]<Close[candle] && candleBodySize(candle+1)==BIG_CANDLE)
+   if(TREND_DOWN == bbFilter(candle) && TREND_UP == trend() && isWhite(candle+1) && Close[candle+1]>Open[candle] && Open[candle+1]<Close[candle] && candleBodySize(candle+1)==BIG_CANDLE)
       return(true);
    else
       return(false);
