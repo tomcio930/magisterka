@@ -52,7 +52,7 @@ double prevPrice=NULL;
 int    spread;
 double point = 0.0001;
 double stopLossMin;
-double lots= -1.1;
+double lots= 0.1;
 bool lastWin=true;
 double lastFreeMargin=NULL;
 //+------------------------------------------------------------------+
@@ -166,7 +166,7 @@ void candleOpenCriteria()
 {  
    //hammer and later confirmation
 
-
+/*
    if(isHammer(2) && Close[1]>Close[2])         
    {   
       //1 18 25 - trend parameters                                      
@@ -196,15 +196,15 @@ void candleOpenCriteria()
       openOrder(true, false, lots, takeProfitExtern, Low[1]);      
       Print("BullishEngulfing candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
-  
-   else if(isBearishEngulfing(1)) 
+ 
+   if(isBearishEngulfing(1)) 
    {
       openOrder(false, true, lots, takeProfitExtern, High[1]);     
       Print("BearishEngulfing candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
-   /*
+   */
    //Bullish Harami and later confirmation
-   else if(isBullishHarami(2) && Close[1]>=Close[2]) 
+   if(isBullishHarami(2) && Close[1]>=Close[2]) 
    {
       openOrder(true, false, lots, takeProfitExtern, Low[3]);    
       Print("BullishHarami candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
@@ -533,7 +533,7 @@ bool isShootingStar(int candle)
 //+------------------------------------------------------------------+
 bool isBullishEngulfing(int candle)
 {
-   if(TREND_UP == trend() && TREND_DOWN == bbFilter(candle) && !isWhite(candle+1) && Close[candle]>Open[candle+1] && Open[candle]<Close[candle+1] && candleHigh(candle+1)>engulfingTreshold1*averageCandleBody(BARS_TO_AVERAGE))
+   if(TREND_UP == trend() && TREND_DOWN == bbFilter(candle) && !isWhite(candle+1) && isWhite(candle) && Close[candle]>Open[candle+1] && Open[candle]<Close[candle+1] && candleHigh(candle+1)>engulfingTreshold1*averageCandleBody(BARS_TO_AVERAGE))
       return(true);
    else
       return(false);
@@ -544,7 +544,7 @@ bool isBullishEngulfing(int candle)
 //+------------------------------------------------------------------+
 bool isBearishEngulfing(int candle)
 {
-   if(TREND_DOWN == bbFilter(candle) && TREND_UP == trend() && isWhite(candle+1) && Close[candle]<Low[candle+1] && Open[candle]>High[candle+1] && candleHigh(candle+1)>engulfingTreshold2*averageCandleBody(BARS_TO_AVERAGE))
+   if(TREND_DOWN == trend() && TREND_UP == bbFilter(candle) && isWhite(candle+1) && !isWhite(candle) && Close[candle]<Low[candle+1] && Open[candle]>High[candle+1] && candleHigh(candle+1)>engulfingTreshold2*averageCandleBody(BARS_TO_AVERAGE))
       return(true);
    else
       return(false);
@@ -555,7 +555,7 @@ bool isBearishEngulfing(int candle)
 //+------------------------------------------------------------------+
 bool isBullishHarami(int candle)
 {
-   if(TREND_UP == bbFilter(candle) && TREND_DOWN == trend() && !isWhite(candle+1) && Open[candle+1]>Close[candle] && Close[candle+1]<Open[candle] && candleHigh(candle)>haramiTreshold1*averageCandleBody(BARS_TO_AVERAGE))
+   if(TREND_UP == trend() && TREND_DOWN == bbFilter(candle) && !isWhite(candle+1) && isWhite(candle) && Open[candle+1]>Close[candle] && Close[candle+1]<Open[candle] && candleHigh(candle)>haramiTreshold1*averageCandleBody(BARS_TO_AVERAGE))
       return(true);
    else
       return(false);
@@ -566,7 +566,7 @@ bool isBullishHarami(int candle)
 //+------------------------------------------------------------------+
 bool isBearishHarami(int candle)
 {
-   if(TREND_DOWN == bbFilter(candle) && TREND_UP == trend() && isWhite(candle+1) && Close[candle+1]>Open[candle] && Open[candle+1]<Close[candle] && candleBodySize(candle+1)==BIG_CANDLE)
+   if(TREND_DOWN == trend() && TREND_UP == bbFilter(candle) && isWhite(candle+1) && !isWhite(candle) && Close[candle+1]>Open[candle] && Open[candle+1]<Close[candle] && candleBodySize(candle+1)==BIG_CANDLE)
       return(true);
    else
       return(false);
