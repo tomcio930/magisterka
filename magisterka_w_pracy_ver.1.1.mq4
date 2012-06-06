@@ -36,6 +36,10 @@ extern double engulfingTreshold2=1.5;
 extern double haramiTreshold1=1.5;
 extern double haramiTreshold2=1.5;
 
+extern double darkCloudTreshold1=1.5;
+
+extern double piercingLineTreshold1=1.5;
+
 
 
 #define TREND_UP                                                     0
@@ -91,20 +95,8 @@ int start()
       return;                                  
    }
    
-   //close order if it is end of week
-   /*
-   if(DayOfWeek()>=4 && Hour()>21)
-   {
-      if(OrdersTotal()>0)
-      {
-         for(int i=0; i<OrdersTotal(); i++)
-         {
-            if(OrderSelect(i,SELECT_BY_POS))
-               closeOrder(true, true);
-         }
-      }  
-   }
-   */
+   
+   
 
    if(prevPrice==NULL)
    {
@@ -120,21 +112,45 @@ int start()
    bandsCloseCriteria();
    RefreshRates(); 
    prevPrice=Ask;
+   if(Volume[0]==1)
+   {
+      closeEndOfWeek(); 
+   
+   }
    //work only with one order
    if(OrdersTotal()>0)
       return;
    //new bar appear (if the latest bar have only one tick)
    if(Volume[0]==1)
-   {     
+   {
       //check open criteria and open order
       candleOpenCriteria();
-
+      //bandsOpenCriteria();
    }
    
    
    return(0);
 }
 
+//+------------------------------------------------------------------+
+//|         weekend - close all orders                               | 
+//+------------------------------------------------------------------+
+void closeEndOfWeek()
+{
+//close order if it is end of week
+  
+   if(DayOfWeek()==5 && Hour()>21 && Minute()>30)
+   {  
+      if(OrdersTotal()>0)
+      {
+         for(int i=0; i<OrdersTotal(); i++)
+         {
+            if(OrderSelect(i,SELECT_BY_POS))
+               closeOrder(true, true);
+         }
+      }  
+   }
+}
 //+------------------------------------------------------------------+
 //|         random trading criteria, set openBuy                     | 
 //+------------------------------------------------------------------+
@@ -166,7 +182,6 @@ void candleOpenCriteria()
 {  
    //hammer and later confirmation
 
-/*
    if(isHammer(2) && Close[1]>Close[2])         
    {   
       //1 18 25 - trend parameters                                      
@@ -197,72 +212,78 @@ void candleOpenCriteria()
       Print("BullishEngulfing candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
  
-   if(isBearishEngulfing(1)) 
+   else if(isBearishEngulfing(1)) 
    {
       openOrder(false, true, lots, takeProfitExtern, High[1]);     
       Print("BearishEngulfing candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
-   */
+   
+   
    //Bullish Harami and later confirmation
-   if(isBullishHarami(2) && Close[1]>=Close[2]) 
+   else if(isBullishHarami(2) && Close[1]>=Close[2]) 
    {
       openOrder(true, false, lots, takeProfitExtern, Low[3]);    
       Print("BullishHarami candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
-/*
+
    //Bearish Harami and later confirmation
+   
    else if(isBearishHarami(2) && Close[1]<=Close[2]) 
    {
-      openSell=true;      
+      openOrder(false, true, lots, takeProfitExtern, High[3]);       
       Print("BearishHarami candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
 
    else if(isDarkCloudCover(1))
    {
-      openSell=true;      
+      openOrder(false, true, lots, takeProfitExtern, High[1]);      
       Print("DarkCloudCover candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
 
+   //ma³o decyzji, niski zysk
    else if(isPiercingLine(1))
    {
-      openBuy=true;      
+      openOrder(true, false, lots, takeProfitExtern, Low[1]);     
       Print("PiercingLine candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
-   
+  
+   //ma³o decyzji, s³aby zysk
    else if(isMorningStar(1))
    {
-      openBuy=true;      
+      openOrder(true, false, lots, takeProfitExtern, Low[2]);      
       Print("MorningStar candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
 
    else if(isEveningStar(1))
    {
-      openSell=true;      
+      openOrder(false, true, lots, takeProfitExtern, High[2]);       
       Print("EveningStar candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
-*/
+
 }
 
 //+------------------------------------------------------------------+
 //| open criteria for strategy bollinger bands                       |
 //| set openBuy and openSell                                         | 
 //+------------------------------------------------------------------+
-void bandsOpenCriteria(bool openBuy, bool openSell)
+void bandsOpenCriteria()
 {
+   double upperBand=iBands(NULL,0,20,2,0,PRICE_CLOSE,MODE_UPPER,0);
+   double lowerBand=iBands(NULL,0,20,2,0,PRICE_CLOSE,MODE_LOWER,0);
    double midBand=iMA(NULL,0,20,0,MODE_SMA,PRICE_CLOSE,0);
       
    if(TREND_UP==trend())
    {
       RefreshRates();
-      if(Ask>=midBand && prevPrice<midBand)
-         openBuy=true;
+      if(Low[2]<lowerBand && High[1]>lowerBand)
+         openOrder(true, false, lots, takeProfitExtern, Low[2]);   
 
    }
    else if(TREND_DOWN==trend())
    {
       RefreshRates();
-      if(Bid<=midBand && prevPrice>midBand)
-         openSell=true;
+      if(High[2]>upperBand && Low[1]<upperBand)
+         openOrder(false, true, lots, takeProfitExtern, High[2]);   
    }
 }
 
@@ -357,7 +378,6 @@ void bandsCloseCriteria()
          }
          else if(orderType==OP_SELL)
          {
-            Print("prevPrice: ", prevPrice, " Ask: ", Ask);
             //if(prevPrice<lowerBand && Ask>=lowerBand)
             if(Low[2]<lowerBand && High[1]>=lowerBand)
             {
@@ -566,7 +586,7 @@ bool isBullishHarami(int candle)
 //+------------------------------------------------------------------+
 bool isBearishHarami(int candle)
 {
-   if(TREND_DOWN == trend() && TREND_UP == bbFilter(candle) && isWhite(candle+1) && !isWhite(candle) && Close[candle+1]>Open[candle] && Open[candle+1]<Close[candle] && candleBodySize(candle+1)==BIG_CANDLE)
+   if(TREND_DOWN == trend() && TREND_UP == bbFilter(candle) && isWhite(candle+1) && !isWhite(candle) && Close[candle+1]>Open[candle] && Open[candle+1]<Close[candle] && candleHigh(candle)>haramiTreshold2*averageCandleBody(BARS_TO_AVERAGE))
       return(true);
    else
       return(false);
@@ -577,7 +597,7 @@ bool isBearishHarami(int candle)
 //+------------------------------------------------------------------+
 bool isDarkCloudCover(int candle)
 {
-   if(TREND_UP == bbFilter(candle) && TREND_DOWN == trend() && isWhite(candle+1) && Open[candle]>High[candle+1] && ( (Open[candle+1]+Close[candle+1])/2 )>Close[candle] && Close[candle]>Open[candle+1] && candleBodySize(candle+1)>SMALL_CANDLE)
+   if(TREND_DOWN == trend() && TREND_UP == bbFilter(candle) && isWhite(candle+1) && !isWhite(candle) && Open[candle]>High[candle+1] && ( (Open[candle+1]+Close[candle+1])/2 )>Close[candle] && Close[candle]>Open[candle+1] && candleHigh(candle)>darkCloudTreshold1*averageCandleBody(BARS_TO_AVERAGE))
       return(true);
    else
       return(false);
@@ -588,7 +608,7 @@ bool isDarkCloudCover(int candle)
 //+------------------------------------------------------------------+
 bool isPiercingLine(int candle)
 {
-   if(TREND_DOWN == bbFilter(candle) && TREND_UP == trend() && !isWhite(candle+1) && Open[candle]<Low[candle+1] && ( (Open[candle+1]+Close[candle+1])/2 )<Close[candle] && Close[candle]<Open[candle+1] && candleBodySize(candle+1)>SMALL_CANDLE)
+   if(TREND_UP == trend() && TREND_DOWN == bbFilter(candle)  && !isWhite(candle+1) && isWhite(candle) && Open[candle]<Low[candle+1] && ( (Open[candle+1]+Close[candle+1])/2 )<Close[candle] && Close[candle]<Open[candle+1] && candleHigh(candle)>piercingLineTreshold1*averageCandleBody(BARS_TO_AVERAGE))
       return(true);
    else
       return(false);
@@ -604,7 +624,7 @@ bool isMorningStar(int candle)
       star = Close[candle+1];
    else
       star = Open[candle+1]; 
-   if(TREND_DOWN == bbFilter(candle) && TREND_UP == trend() && !isWhite(candle+2) && isWhite(candle) && candleBodySize(candle+2)>SMALL_CANDLE && candleBodySize(candle)>SMALL_CANDLE && Close[candle+2]>star && Open[candle]>star)
+   if(TREND_UP == trend() && TREND_DOWN == bbFilter(candle) && !isWhite(candle+2) && isWhite(candle) && candleBodySize(candle+2)>SMALL_CANDLE && candleBodySize(candle)>SMALL_CANDLE && Close[candle+2]-point>star && Open[candle]-point>star)
       return(true);
    else
       return(false);
@@ -620,7 +640,7 @@ bool isEveningStar(int candle)
       star = Close[candle+1];
    else
       star = Open[candle+1]; 
-   if(TREND_UP == bbFilter(candle) && TREND_DOWN== trend() && isWhite(candle+2) && !isWhite(candle) && candleBodySize(candle+2)>SMALL_CANDLE && candleBodySize(candle)>SMALL_CANDLE && Close[candle+2]<star && Open[candle]<star)
+   if(TREND_DOWN == trend() && TREND_UP == bbFilter(candle) && isWhite(candle+2) && !isWhite(candle) && candleBodySize(candle+2)>SMALL_CANDLE && candleBodySize(candle)>SMALL_CANDLE && Close[candle+2]+point<star && Open[candle]+point<star)
       return(true);
    else
       return(false);
