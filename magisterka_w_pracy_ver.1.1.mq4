@@ -40,6 +40,9 @@ extern double darkCloudTreshold1=1.5;
 
 extern double piercingLineTreshold1=1.5;
 
+extern int morningStarTreshold1=1;
+
+extern int eveningStarTreshold1=1;
 
 
 #define TREND_UP                                                     0
@@ -624,7 +627,7 @@ bool isMorningStar(int candle)
       star = Close[candle+1];
    else
       star = Open[candle+1]; 
-   if(TREND_UP == trend() && TREND_DOWN == bbFilter(candle) && !isWhite(candle+2) && isWhite(candle) && candleBodySize(candle+2)>SMALL_CANDLE && candleBodySize(candle)>SMALL_CANDLE && Close[candle+2]-point>star && Open[candle]-point>star)
+   if(TREND_UP == trend() && TREND_DOWN == bbFilter(candle) && !isWhite(candle+2) && isWhite(candle) && candleBodySize(candle+2)>SMALL_CANDLE && candleBodySize(candle)>SMALL_CANDLE && Close[candle+2]-morningStarTreshold1*point>star && Open[candle]-morningStarTreshold1*point>star)
       return(true);
    else
       return(false);
@@ -640,7 +643,7 @@ bool isEveningStar(int candle)
       star = Close[candle+1];
    else
       star = Open[candle+1]; 
-   if(TREND_DOWN == trend() && TREND_UP == bbFilter(candle) && isWhite(candle+2) && !isWhite(candle) && candleBodySize(candle+2)>SMALL_CANDLE && candleBodySize(candle)>SMALL_CANDLE && Close[candle+2]+point<star && Open[candle]+point<star)
+   if(TREND_DOWN == trend() && TREND_UP == bbFilter(candle) && isWhite(candle+2) && !isWhite(candle) && candleBodySize(candle+2)>SMALL_CANDLE && candleBodySize(candle)>SMALL_CANDLE && Close[candle+2]+eveningStarTreshold1*point<star && Open[candle]+eveningStarTreshold1*point<star)
       return(true);
    else
       return(false);
