@@ -1,0 +1,34 @@
+\select@language {polish}
+\contentsline {chapter}{\numberline {1}Wst\IeC {\k e}p}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {section}{\numberline {1.1}Cele pracy}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {section}{\numberline {1.2}Zawarto\IeC {\'s}\IeC {\'c} pracy}{7}
+\contentsline {paragraph}{}{7}
+\contentsline {chapter}{\numberline {2}Podstawy teoretyczne}{8}
+\contentsline {section}{\numberline {2.1}Rynek Forex}{8}
+\contentsline {paragraph}{}{8}
+\contentsline {section}{\numberline {2.2}Analiza techniczna}{10}
+\contentsline {paragraph}{}{10}
+\contentsline {section}{\numberline {2.3}\IeC {\'S}rednie ruchome}{13}
+\contentsline {paragraph}{}{13}
+\contentsline {paragraph}{}{14}
+\contentsline {paragraph}{}{17}
+\contentsline {section}{\numberline {2.4}Oscylatory}{17}
+\contentsline {paragraph}{}{17}
+\contentsline {section}{\numberline {2.5}Formacje \IeC {\'s}wiec japo\IeC {\'n}skich}{20}
+\contentsline {paragraph}{}{20}
+\contentsline {section}{\numberline {2.6}Systemy transakcyjne}{27}
+\contentsline {paragraph}{}{27}
+\contentsline {chapter}{\numberline {3}Projekt systemu}{30}
+\contentsline {paragraph}{}{30}
+\contentsline {section}{\numberline {3.1}Cele pracy}{30}
+\contentsline {paragraph}{}{30}
+\contentsline {section}{\numberline {3.2}Diagramy UML}{30}
+\contentsline {paragraph}{}{30}
+\contentsline {subsection}{\numberline {3.2.1}Diagramy przypadk\IeC {\'o}w u\IeC {\.z}ycia}{30}
+\contentsline {paragraph}{}{30}
+\contentsline {subsection}{\numberline {3.2.2}Diagramy aktywno\IeC {\'s}ci}{30}
+\contentsline {paragraph}{}{30}
+\contentsline {subsection}{\numberline {3.2.3}Diagramy sekwencjii}{30}
+\contentsline {paragraph}{}{30}
