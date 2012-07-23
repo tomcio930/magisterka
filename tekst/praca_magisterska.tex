@@ -495,15 +495,34 @@ Diagram \ref{ogolny} obrazuje ogólny algorytm przeprowadzania transakcji w syst
 \end{center}
 \end{figure} 
 
-Na powyższym diagramie\ref{ogolny} przedstawiono sposób generowania sygnałów kupna, bądź sprzedaży. Znalezienie konkretnej formacji nie może być podstawą do podejmowania decyzji na rynku. Oprócz zidentyfikowania okreśłonej sekwencji świec należy również przeanalizować miejsce, w którym dana formacja się znajduje. Przedstawiony algorytm opiera się na wyszukiwaniu świec w miejscach korekt rynku. Dlatego, też elementami algorytmu są fazy rozpoznania trendów długoterminowego i krótkoterminowego. Trend dłuższy oznaczać będzie główny kierunek rynku, w którym zawierane będą transakcje. Natomiast trend krótszy używany będzie do zlokalizowania korekt trendu długoterminowego. Oczekiwaną sytuacją będzie, moment w którym trend długoterminowy będzie w kierunku przeciwnym do trendu krótkoterminowego. W tych miejscach poszukiwane będą formacje odwrócenia trendu prognozującę zmianę trendu którkookresowego w kierunku trendu głównego. Dodatkowo sygnały te filtorowane będą wskaźnikiem analizy technicznej.   
+Na powyższym diagramie\ref{ogolny} przedstawiono sposób generowania sygnałów kupna, bądź sprzedaży. Znalezienie konkretnej formacji nie może być podstawą do podejmowania decyzji na rynku. Oprócz zidentyfikowania okreśłonej sekwencji świec należy również przeanalizować miejsce, w którym dana formacja się znajduje. Przedstawiony algorytm opiera się na wyszukiwaniu świec w miejscach korekt rynku. Dlatego, też elementami algorytmu są fazy rozpoznania trendów długoterminowego i krótkoterminowego. Trend dłuższy oznaczać będzie główny kierunek rynku, w którym zawierane będą transakcje. Natomiast trend krótszy używany będzie do zlokalizowania korekt trendu długoterminowego. Oczekiwaną sytuacją będzie, moment w którym trend długoterminowy będzie w kierunku przeciwnym do trendu krótkoterminowego. W tych miejscach poszukiwane będą formacje odwrócenia trendu prognozującę zmianę trendu którkookresowego w kierunku trendu głównego. Dodatkowo sygnały filtorowane będą wskaźnikiem analizy technicznej.   
 
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=12cm]{formacje_hossy.png}
-\caption{Diagrm przedstawiający ogólny algorytm rozpoznawania dostępnych formacji hossy}
+\caption{Diagram przedstawiający ogólny algorytm rozpoznawania dostępnych formacji hossy}
 \label{hossy}
 \end{center}
 \end{figure} 
+
+Diagram \ref{hossy} przedstawia etap poszukiwania formacji hossy. W momencie wystąpienia trendu głównego o kierunku wzrostowym wraz z krótkookresowym trendem malejącym następuje wywołanie tego fragmentu algorytmu. Opisywana część algorytmu dzieli się na szukanie formacji:
+\begin{enumerate}
+\item młota
+\item gwiazdy polarnej
+\item objęcia hossy
+\item harami wzrostowego
+\item przenikania
+\end{enumerate}
+
+Proces znajdowania formacji bessy uruchamiany jest w momencie znalezienia rosnącego trendu krótkookresowego przy malejącym trendzie głównym. Poszukiwane formacje to:
+\begin{enumerate}
+\item wisielec
+\item spadająca gwiazda
+\item objęcia bessy
+\item harami spadkowe
+\item zasłona ciemnej chmury
+\end{enumerate}
+
 
 \begin{figure}[ht]
 \begin{center}
@@ -512,6 +531,8 @@ Na powyższym diagramie\ref{ogolny} przedstawiono sposób generowania sygnałów
 \label{otwarcie}
 \end{center}
 \end{figure} 
+
+Powyższy diagram objasnia proces składania zlecenia kupna, bądź sprzedaży. Jeśli przed uruchomieniem systemu użytkownik nie poda ilości lotów do transakcji, zostanie ona automatycznie obliczona jako wartość maksymalna. Takie postępowanie zwiększa ryzyko zawieranych transakcji. Jego ograniczeniem będzie ustawienie zarówno limitów stop loss jak i take profit. W zależności czy wcześniej wystąpiła formacji hossy czy bessy, sposób określenia limitów oraz typ transakcji będzie się różnić. Dla większości rozpoznawanych formacji pułap stop loss będzie ustawiany na krańcową wartość. W przypadku formacji hossy będzie to minimalna cena z całej formacji, a w formacji bessy wartość maksymalna. Zamykanie transakcji będzie opierać się głównie na oddzielnym algorytmie, dlatego pułap take profit ustawiany będzie na stałą wartość. Przy wystąpieniu formacji hossy wysyłane będzie zlecenie kupna, a zlecenie sprzedaży podczas znalezienia formacji bessy.   
 
 \subsection{Diagramy sekwencjii}
 \paragraph{}
