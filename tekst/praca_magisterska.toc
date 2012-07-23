@@ -8,12 +8,12 @@
 \contentsline {chapter}{\numberline {2}Podstawy teoretyczne}{8}
 \contentsline {section}{\numberline {2.1}Rynek Forex}{8}
 \contentsline {paragraph}{}{8}
-\contentsline {section}{\numberline {2.2}Analiza techniczna}{10}
-\contentsline {paragraph}{}{10}
-\contentsline {section}{\numberline {2.3}\IeC {\'S}rednie ruchome}{13}
-\contentsline {paragraph}{}{13}
+\contentsline {section}{\numberline {2.2}Analiza techniczna}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {section}{\numberline {2.3}\IeC {\'S}rednie ruchome}{14}
 \contentsline {paragraph}{}{14}
-\contentsline {paragraph}{}{17}
+\contentsline {paragraph}{}{14}
+\contentsline {paragraph}{}{16}
 \contentsline {section}{\numberline {2.4}Oscylatory}{17}
 \contentsline {paragraph}{}{17}
 \contentsline {section}{\numberline {2.5}Formacje \IeC {\'s}wiec japo\IeC {\'n}skich}{20}
@@ -22,13 +22,13 @@
 \contentsline {paragraph}{}{27}
 \contentsline {chapter}{\numberline {3}Projekt systemu}{30}
 \contentsline {paragraph}{}{30}
-\contentsline {section}{\numberline {3.1}Cele pracy}{30}
+\contentsline {section}{\numberline {3.1}Okre\IeC {\'s}lenie wymaga\IeC {\'n} i za\IeC {\l }o\IeC {\.z}e\IeC {\'n} projektu}{30}
 \contentsline {paragraph}{}{30}
-\contentsline {section}{\numberline {3.2}Diagramy UML}{30}
-\contentsline {paragraph}{}{30}
-\contentsline {subsection}{\numberline {3.2.1}Diagramy przypadk\IeC {\'o}w u\IeC {\.z}ycia}{30}
-\contentsline {paragraph}{}{30}
-\contentsline {subsection}{\numberline {3.2.2}Diagramy aktywno\IeC {\'s}ci}{30}
-\contentsline {paragraph}{}{30}
-\contentsline {subsection}{\numberline {3.2.3}Diagramy sekwencjii}{30}
-\contentsline {paragraph}{}{30}
+\contentsline {section}{\numberline {3.2}Diagramy UML}{31}
+\contentsline {paragraph}{}{31}
+\contentsline {subsection}{\numberline {3.2.1}Diagramy przypadk\IeC {\'o}w u\IeC {\.z}ycia}{31}
+\contentsline {paragraph}{}{31}
+\contentsline {subsection}{\numberline {3.2.2}Diagramy aktywno\IeC {\'s}ci}{32}
+\contentsline {paragraph}{}{32}
+\contentsline {subsection}{\numberline {3.2.3}Diagramy sekwencjii}{33}
+\contentsline {paragraph}{}{33}

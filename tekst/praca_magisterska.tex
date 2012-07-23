@@ -147,6 +147,7 @@ Inwestując na rynku Forex można spotkać się z wieloma specjalistycznymi term
 \begin{itemize}
 \item Lot to jednostka określająca minimalna ilość danej waluty, którą można wykupić na danej platformie i danym typie konta. W większości przypadków dla kont mini wartość ta wynosi 10.000, a dla kont standardowych 100.000. Przy dźwigni 200:1 za jeden lot stanowiący 10.000 jednostek waluty, do otwarcia transakcji wymagane jest 50\$. Na koncie standardowym z lewarem 100:1 oraze lotem wynoszącym 100.000, wymagane jest 1000\$.
 \item Spread to termin pochodzący z angielskiego i oznacza różnicę między cenami kupna i sprzedaży danej pary walutowej. Jest to prowizja transakcji, którą pobiera broker. Każda para walutowa ma określony swój własny spread, który w zależności od brokera i konta może być zmienny w czasie lub stały.
+\item Luka cenowa to różnica pomiędzy ceną zamknięcia świecy poprzedniej, a ceną otwarcia kolejnej świecy. Spowodowana jest nagłymi zmianami kursów. Szczególnie niebezpieczna dla inwestora, może okazać się luka cenowa tworząca się w trakcie trwania weekendu. Istotny jest fakt, że zlecenia stop loss nie są realizowane w trakcie weekendu. Dlatego jeśli pojawiająca się luka jest w kierunku przeciwnym do pozycji inwestora, może spowodować ona wyzerowanie się konta, a nawet zaciągnięcie kredytu. Warto zauważyć, że pozytywna luka cenowa, której kierunek zgadza się z kierunkiem pozycji inwestora zapewni maksymalnie zysk ustawiony limitem take profit.  
 \item Dźwignia to narzędzie, dzięki któremu małą sumą pieniędzy można kontrolować pozycję o znacznie większej wartości. Jest to relacja pomiędzy kapitałem o stałym oprocentowaniu pożyczonym przez firmę brokerską (kredyt), a wartością zainwestowanego kapitału (depozyt).
 \item Pozycja krótka. Jest to transakcja sprzedaży danej ilości waluty po okreśłonej cenie. Zajmując pozycję krótką oczekuje się spadku cen. 
 \item Pozucja długa. To transakcja zakupu danej ilości waluty po określonej cenie. W tym wypadku zysk jest osiągany przy zwyżkach cen.
@@ -431,8 +432,16 @@ Niestety większość z nich cechuje kilka wad:
 \paragraph{}
 W poprzednich rozdziałach pracy przedstawione zostały teoretyczne zasady analizy technicznej. Dzięki właściwemu stosowaniu prezentowanych metod można osiągać wymierne korzyści na rynkach finansowych. Opierając się na tychże zasadach istnieje możliwość skonstruowania efektywnego automatycznego systemu inwestycyjnego. Oprócz przynoszenia zysków tego typu system stawia wiele innych wymagań, które zostana przedstawione w dalszej części rozdziału wraz ze sposobem realizacji projektu.
 
-\section{Cele pracy}
+\section{Określenie wymagań i założeń projektu}
 \paragraph{}
+
+Opisywany automatyczny system inwestycyjny stawia szereg wymogów. Głównym zadaniem tworzenego algorytmu jest zdolność do przeprowadzania transakcji na rynku Forex przy minimalnej ingerencji gracza. Użytkownik oprócz wyboru waluty na której będzie działał system, powinien mieć możwliość jedynie zmiany podstawowych parametrów działania programu przed jego uruchomieniem. Oczywiście tego typu system powinien zapewniać zyski przy jednoczesnej ochronie kapitału gracza. Na użytkowniku powinna spoczywać decyzja co do stopnia ryzyka przeprowadzanych inwestycji. W trakcie ciągłej pracy aplikacji, może pojawiać się wiele wyjątków, które zakłócą działanie systemu. Każdy z nich musi być obsłużony. Jeśli to możliwe, po wystąpieniu takiej sytuacji, powinna zostać wznowiona praca programu. W innym wypadku działanie aplikacji powinno zostać natychmiast przerwane, a użytkownik poinformowany o zaistniałym zdarzeniu. Dodatkowo inne istotne sytuacje powinny zostać zaraportowane i udostępnione użytkownikowi.  
+
+Projekt systemu został opracowany przy uwzględnieniu kilku założeń. Algorytm dostosowano do najpopularniejszej pary walutowej EUR/USD. Oznacza to, że wszystkie domyślne parametry zostały zoptymalizowane pod kątem tego instumentu. Mimo to, sprawdzają się również na innych parach walutowych. W celu dopasowania ustawień użyte zostały dane historyczne z różnych okresów. Analizie poddano świece 15-miutowe. W celu prostszego testowania strategii, w każdym momencie działania programu, dopuszcza się istnienie jedynie jednej otwartej pozycji. Do stworzenia algorytmów została użyta platforma Metatrader 4 wraz z językiem mql4. Testy przeprowadzono na koncie demo największego polskiego brokera XTB. 
+
+W dalczej części pracy zostana zaprezentowane diagramy UML obrazujące funkcjonalność systemu, sposób działania zaimplementowanych algorytmów oraz interakcje z innymi systemami.
+
+
 
 \section{Diagramy UML}
 \paragraph{}
@@ -440,10 +449,35 @@ W poprzednich rozdziałach pracy przedstawione zostały teoretyczne zasady anali
 \subsection{Diagramy przypadków użycia}
 \paragraph{}
 
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=16cm]{usecase.PNG}
+\caption{Diagram przypadków użycia}
+\label{usecase}
+\end{center}
+\end{figure} 
+
+\begin{itemize}
+\item
+Gracz - aktor użytkownik uruchamiający automatyczny system inwestycyjny na wybranej parze walutowej. Ma możliwość zmiany ustawień przy starcie aplikacji. 
+\item
+Uruchom system - Uruchomienie algorytmu na wybranej parze walutowej.
+\item
+Wybierz walute - Wybranie waluty, spośród oferowanych przez brokera, na której ma działać algorytm. 
+\item
+Zmień parametry - Zmiana parametrów działania algorytmu.
+\item
+Ustaw ilość lotów - Ustawienie parametru odpowiedzialnego za ryzyko inwestycji gracza. Szczegółowe informacje na temat tego parametru znajdują się w części teoretycznej \ref{sec:forex}.
+\item
+Ustaw parametry średnich - Ustawienie parametrów średnich wykładniczych odpowiedzialnych za rozpoznawanie trendów.
+\item
+Ustaw paremetry świec - Ustawienie parametrów odpowiedzialnych za rozpoznawanie danej formacji świecowej.
+\end{itemize}
+
 \subsection{Diagramy aktywności}
 \paragraph{}
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=16cm]{ogolny.png}
 \caption{Diagram przedstawiający ogólny algorytm działania systemu}
@@ -451,13 +485,17 @@ W poprzednich rozdziałach pracy przedstawione zostały teoretyczne zasady anali
 \end{center}
 \end{figure} 
 
-\begin{figure}[ht]
+Diagram \ref{ogolny} obrazuje ogólny algorytm przeprowadzania transakcji w systemie. Przedstawiona procedura zostaje uruchomiona każdorazowo po pojawieniu się nowej świecy 15-minutowej. Program obsługuje jedynie jedno zlecenie w danym momencie. Dlatego, jeśli zlecenie jest otware sprawdzane są warunki zamknięcia pozycji. W przeciwnym razie sprawdzana jest możliwość zlożenia zlecenia zakupu, bądź sprzedaży. Ze względu, że rynek Forex nie działa w weekendy, zamykane są pozycje, które chwile przed końcem sesji piątkowej są nadal otwarte. Dodatkowo w tym czasie nie przeprowadzane są inne transakcje. Takie postępowanie, chroni gracza przed ewentualną utratą kapitału po wystąpieniu luki cenowej. Zjawisko to opisane jest dokładniej w rozdziale \ref{sec:forex}. Przy wystąpieniu sygnału kupna, bądź sprzedaży zostaje wysłane rządanie otwarcia danej pozycji. W tym momencie następuje obsłużenie ewentualnych błędów. 
+
+\begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=16cm]{warunki_otwarcia.png}
 \caption{Diagram przedstawiający algorytm szukania formacji}
 \label{warunki_otwarcia}
 \end{center}
 \end{figure} 
+
+Na powyższym diagramie\ref{ogolny} przedstawiono sposób generowania sygnałów kupna, bądź sprzedaży. Znalezienie konkretnej formacji nie może być podstawą do podejmowania decyzji na rynku. Oprócz zidentyfikowania okreśłonej sekwencji świec należy również przeanalizować miejsce, w którym dana formacja się znajduje. Przedstawiony algorytm opiera się na wyszukiwaniu świec w miejscach korekt rynku. Dlatego, też elementami algorytmu są fazy rozpoznania trendów długoterminowego i krótkoterminowego. Trend dłuższy oznaczać będzie główny kierunek rynku, w którym zawierane będą transakcje. Natomiast trend krótszy używany będzie do zlokalizowania korekt trendu długoterminowego. Oczekiwaną sytuacją będzie, moment w którym trend długoterminowy będzie w kierunku przeciwnym do trendu krótkoterminowego. W tych miejscach poszukiwane będą formacje odwrócenia trendu prognozującę zmianę trendu którkookresowego w kierunku trendu głównego. Dodatkowo sygnały te filtorowane będą wskaźnikiem analizy technicznej.   
 
 \begin{figure}[ht]
 \begin{center}
