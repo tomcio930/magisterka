@@ -30,5 +30,5 @@
 \contentsline {paragraph}{}{31}
 \contentsline {subsection}{\numberline {3.2.2}Diagramy aktywno\IeC {\'s}ci}{32}
 \contentsline {paragraph}{}{32}
-\contentsline {subsection}{\numberline {3.2.3}Diagramy sekwencjii}{33}
-\contentsline {paragraph}{}{33}
+\contentsline {subsection}{\numberline {3.2.3}Diagramy sekwencjii}{35}
+\contentsline {paragraph}{}{35}

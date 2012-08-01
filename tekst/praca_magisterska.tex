@@ -495,17 +495,17 @@ Diagram \ref{ogolny} obrazuje ogólny algorytm przeprowadzania transakcji w syst
 \end{center}
 \end{figure} 
 
-Na powyższym diagramie\ref{ogolny} przedstawiono sposób generowania sygnałów kupna, bądź sprzedaży. Znalezienie konkretnej formacji nie może być podstawą do podejmowania decyzji na rynku. Oprócz zidentyfikowania okreśłonej sekwencji świec należy również przeanalizować miejsce, w którym dana formacja się znajduje. Przedstawiony algorytm opiera się na wyszukiwaniu świec w miejscach korekt rynku. Dlatego, też elementami algorytmu są fazy rozpoznania trendów długoterminowego i krótkoterminowego. Trend dłuższy oznaczać będzie główny kierunek rynku, w którym zawierane będą transakcje. Natomiast trend krótszy używany będzie do zlokalizowania korekt trendu długoterminowego. Oczekiwaną sytuacją będzie, moment w którym trend długoterminowy będzie w kierunku przeciwnym do trendu krótkoterminowego. W tych miejscach poszukiwane będą formacje odwrócenia trendu prognozującę zmianę trendu którkookresowego w kierunku trendu głównego. Dodatkowo sygnały filtorowane będą wskaźnikiem analizy technicznej.   
+Na powyższym diagramie \ref{warunki_otwarcia} przedstawiono sposób generowania sygnałów kupna, bądź sprzedaży. Znalezienie konkretnej formacji nie może być podstawą do podejmowania decyzji na rynku. Oprócz zidentyfikowania okreśłonej sekwencji świec należy również przeanalizować miejsce, w którym dana formacja się znajduje. Przedstawiony algorytm opiera się na wyszukiwaniu świec w miejscach korekt rynku. Dlatego, też elementami algorytmu są fazy rozpoznania trendów długoterminowego i krótkoterminowego. Trend dłuższy oznaczać będzie główny kierunek rynku, w którym zawierane będą transakcje. Natomiast trend krótszy używany będzie do zlokalizowania korekt trendu długoterminowego. Oczekiwaną sytuacją będzie, moment w którym trend długoterminowy będzie w kierunku przeciwnym do trendu krótkoterminowego. W tych miejscach poszukiwane będą formacje odwrócenia trendu prognozującę zmianę trendu którkookresowego w kierunku trendu głównego. Dodatkowo sygnały filtorowane będą wskaźnikiem analizy technicznej.   
 
-\begin{figure}[ht]
-\begin{center}
-\includegraphics[width=12cm]{formacje_hossy.png}
-\caption{Diagram przedstawiający ogólny algorytm rozpoznawania dostępnych formacji hossy}
-\label{hossy}
-\end{center}
-\end{figure} 
+%\begin{figure}[ht]
+%\begin{center}
+%\includegraphics[width=12cm]{formacje_hossy.png}
+%\caption{Diagram przedstawiający ogólny algorytm rozpoznawania dostępnych formacji hossy}
+%\label{hossy}
+%\end{center}
+%\end{figure} 
 
-Diagram \ref{hossy} przedstawia etap poszukiwania formacji hossy. W momencie wystąpienia trendu głównego o kierunku wzrostowym wraz z krótkookresowym trendem malejącym następuje wywołanie tego fragmentu algorytmu. Opisywana część algorytmu dzieli się na szukanie formacji:
+Poszukiwanie formacji hossy lub bessy, w algorytmie z diagramu \ref{warunki_otwarcia}, opiera się na próbie znalezienia sekwencji świeć, pasującej do grupy obługiwanych przez program wzorców. W przypadku analizy formacji hossy odpowiedni fragment kodu wywołuje się w momencie wystąpienia trendu głównego o kierunku wzrostowym wraz z krótkookresowym trendem malejącym. Opisywana część algorytmu dzieli się na szukanie formacji:
 \begin{enumerate}
 \item młota
 \item gwiazdy polarnej
@@ -523,6 +523,7 @@ Proces znajdowania formacji bessy uruchamiany jest w momencie znalezienia rosną
 \item zasłona ciemnej chmury
 \end{enumerate}
 
+Problem subiektywizmu, przy klasyfikacji danego zbioru świec do odpowiedniego wzorca, uniemożliwia zdefiniowanie jednoznaczych wytycznych opisujących konkretną formację. Każdy z przedstawionych warunków w rozdziale \ref{swiece_rozdzial}, w którym opisanywany jest wygląd poszczególnych sekwencji świec, daje pewien zakres dowolnej interpretacji. 
 
 \begin{figure}[ht]
 \begin{center}
