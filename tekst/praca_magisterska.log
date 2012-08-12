@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.27)  27 JUL 2012 14:19
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.27)  12 AUG 2012 22:33
 entering extended mode
 **praca_magisterska.tex
 (D:\magisterka\magisterka\tekst\praca_magisterska.tex
@@ -729,35 +729,41 @@ Package pdftex.def Info: ogolny.png used on input line 482.
 Underfull \vbox (badness 4084) has occurred while \output is active []
 
  [32 <D:/magisterka/magisterka/tekst/ogolny.png>]
-<warunki_otwarcia.png, id=140, 664.73344pt x 840.13875pt>
+<warunki_otwarcia.png, id=141, 604.50844pt x 840.13875pt>
 File: warunki_otwarcia.png Graphic file (type png)
 
 <use warunki_otwarcia.png>
 Package pdftex.def Info: warunki_otwarcia.png used on input line 492.
-(pdftex.def)             Requested size: 455.24408pt x 575.3762pt.
+(pdftex.def)             Requested size: 455.24408pt x 632.69205pt.
 
-<formacje_hossy.png, id=141, 520.94624pt x 234.8775pt>
-File: formacje_hossy.png Graphic file (type png)
 
-<use formacje_hossy.png>
-Package pdftex.def Info: formacje_hossy.png used on input line 502.
-(pdftex.def)             Requested size: 341.43306pt x 153.94086pt.
- <otwarcie.png, id=142, 545.03625pt x 392.96812pt>
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[33]
+
+LaTeX Warning: Text page 34 contains only floats.
+
+[34 <D:/magisterka/magisterka/tekst/warunki_otwarcia.png>]
+<otwarcie.png, id=149, 320.69812pt x 392.96812pt>
 File: otwarcie.png Graphic file (type png)
-
-<use otwarcie.png>
-Package pdftex.def Info: otwarcie.png used on input line 529.
-(pdftex.def)             Requested size: 341.43306pt x 246.1681pt.
- [33] [34 <D:/magisterka/magisterka/tekst/warunki_otwarcia.png>] <sekwencji.png
-, id=149, 638.385pt x 887.56593pt>
+ <use otwarcie.png>
+Package pdftex.def Info: otwarcie.png used on input line 530.
+(pdftex.def)             Requested size: 341.43306pt x 418.38504pt.
+ [35 <D:/magisterka/magisterka/tekst/otwarcie.png>]
+<sekwencji.png, id=154, 638.385pt x 887.56593pt>
 File: sekwencji.png Graphic file (type png)
  <use sekwencji.png>
-Package pdftex.def Info: sekwencji.png used on input line 542.
+Package pdftex.def Info: sekwencji.png used on input line 543.
 (pdftex.def)             Requested size: 455.24408pt x 632.93903pt.
 
-(D:\magisterka\magisterka\tekst\praca_magisterska.bbl [35 <D:/magisterka/magist
-erka/tekst/formacje_hossy.png>] [36 <D:/magisterka/magisterka/tekst/otwarcie.pn
-g>] [37 <D:/magisterka/magisterka/tekst/sekwencji.png>]) [38
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+(D:\magisterka\magisterka\tekst\praca_magisterska.bbl [36]
+
+LaTeX Warning: Text page 37 contains only floats.
+
+[37 <D:/magisterka/magisterka/tekst/sekwencji.png>]) [38
 
 ]
 (D:\magisterka\magisterka\tekst\praca_magisterska.aux)
@@ -766,13 +772,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4998 strings out of 494045
- 66118 string characters out of 3148387
+ 4992 strings out of 494045
+ 66002 string characters out of 3148387
  158930 words of memory out of 3000000
- 8168 multiletter control sequences out of 15000+200000
+ 8163 multiletter control sequences out of 15000+200000
  90455 words of font info for 71 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 34i,12n,45p,2009b,344s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,12n,45p,2042b,344s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fon
@@ -786,9 +792,9 @@ eX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on praca_magisterska.pdf (38 pages, 881162 bytes).
+Output written on praca_magisterska.pdf (38 pages, 849760 bytes).
 PDF statistics:
- 210 PDF objects out of 1000 (max. 8388607)
+ 212 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

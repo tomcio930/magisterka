@@ -449,7 +449,7 @@ W dalczej części pracy zostana zaprezentowane diagramy UML obrazujące funkcjo
 \subsection{Diagramy przypadków użycia}
 \paragraph{}
 
-\begin{figure}[ht]
+\begin{figure}[h!]
 \begin{center}
 \includegraphics[width=16cm]{usecase.PNG}
 \caption{Diagram przypadków użycia}
@@ -477,7 +477,7 @@ Ustaw paremetry świec - Ustawienie parametrów odpowiedzialnych za rozpoznawani
 \subsection{Diagramy aktywności}
 \paragraph{}
 
-\begin{figure}[!ht]
+\begin{figure}[h!]
 \begin{center}
 \includegraphics[width=16cm]{ogolny.png}
 \caption{Diagram przedstawiający ogólny algorytm działania systemu}
@@ -487,7 +487,7 @@ Ustaw paremetry świec - Ustawienie parametrów odpowiedzialnych za rozpoznawani
 
 Diagram \ref{ogolny} obrazuje ogólny algorytm przeprowadzania transakcji w systemie. Przedstawiona procedura zostaje uruchomiona każdorazowo po pojawieniu się nowej świecy 15-minutowej. Program obsługuje jedynie jedno zlecenie w danym momencie. Dlatego, jeśli zlecenie jest otware sprawdzane są warunki zamknięcia pozycji. W przeciwnym razie sprawdzana jest możliwość zlożenia zlecenia zakupu, bądź sprzedaży. Ze względu, że rynek Forex nie działa w weekendy, zamykane są pozycje, które chwile przed końcem sesji piątkowej są nadal otwarte. Dodatkowo w tym czasie nie przeprowadzane są inne transakcje. Takie postępowanie, chroni gracza przed ewentualną utratą kapitału po wystąpieniu luki cenowej. Zjawisko to opisane jest dokładniej w rozdziale \ref{sec:forex}. Przy wystąpieniu sygnału kupna, bądź sprzedaży zostaje wysłane rządanie otwarcia danej pozycji. W tym momencie następuje obsłużenie ewentualnych błędów. 
 
-\begin{figure}[!ht]
+\begin{figure}[h!]
 \begin{center}
 \includegraphics[width=16cm]{warunki_otwarcia.png}
 \caption{Diagram przedstawiający algorytm szukania formacji}
@@ -495,7 +495,7 @@ Diagram \ref{ogolny} obrazuje ogólny algorytm przeprowadzania transakcji w syst
 \end{center}
 \end{figure} 
 
-Na powyższym diagramie \ref{warunki_otwarcia} przedstawiono sposób generowania sygnałów kupna, bądź sprzedaży. Znalezienie konkretnej formacji nie może być podstawą do podejmowania decyzji na rynku. Oprócz zidentyfikowania okreśłonej sekwencji świec należy również przeanalizować miejsce, w którym dana formacja się znajduje. Przedstawiony algorytm opiera się na wyszukiwaniu świec w miejscach korekt rynku. Dlatego, też elementami algorytmu są fazy rozpoznania trendów długoterminowego i krótkoterminowego. Trend dłuższy oznaczać będzie główny kierunek rynku, w którym zawierane będą transakcje. Natomiast trend krótszy używany będzie do zlokalizowania korekt trendu długoterminowego. Oczekiwaną sytuacją będzie, moment w którym trend długoterminowy będzie w kierunku przeciwnym do trendu krótkoterminowego. W tych miejscach poszukiwane będą formacje odwrócenia trendu prognozującę zmianę trendu którkookresowego w kierunku trendu głównego. Dodatkowo sygnały filtorowane będą wskaźnikiem analizy technicznej.   
+Na diagramie \ref{warunki_otwarcia} przedstawiono sposób generowania sygnałów kupna, bądź sprzedaży. Znalezienie konkretnej formacji nie może być podstawą do podejmowania decyzji na rynku. Oprócz zidentyfikowania okreśłonej sekwencji świec należy również przeanalizować miejsce, w którym dana formacja się znajduje. Przedstawiony algorytm opiera się na wyszukiwaniu świec w miejscach korekt rynku. Dlatego, też elementami algorytmu są fazy rozpoznania trendów długoterminowego i krótkoterminowego. Trend dłuższy oznaczać będzie główny kierunek rynku, w którym zawierane będą transakcje. Natomiast trend krótszy używany będzie do zlokalizowania korekt trendu długoterminowego. Oczekiwaną sytuacją będzie, moment w którym trend długoterminowy będzie w kierunku przeciwnym do trendu krótkoterminowego. W tych miejscach poszukiwane będą formacje odwrócenia trendu prognozującę zmianę trendu którkookresowego w kierunku trendu głównego. Dodatkowo sygnały filtorowane będą wskaźnikiem analizy technicznej.   
 
 %\begin{figure}[ht]
 %\begin{center}
@@ -525,7 +525,7 @@ Proces znajdowania formacji bessy uruchamiany jest w momencie znalezienia rosną
 
 Problem subiektywizmu, przy klasyfikacji danego zbioru świec do odpowiedniego wzorca, uniemożliwia zdefiniowanie jednoznaczych wytycznych opisujących konkretną formację. Każdy z przedstawionych warunków w rozdziale \ref{swiece_rozdzial}, w którym opisanywany jest wygląd poszczególnych sekwencji świec, daje pewien zakres dowolnej interpretacji. 
 
-\begin{figure}[ht]
+\begin{figure}[h!]
 \begin{center}
 \includegraphics[width=12cm]{otwarcie.png}
 \caption{Diagram przedstawiający algorytm otwierania zlecenia}
@@ -533,18 +533,21 @@ Problem subiektywizmu, przy klasyfikacji danego zbioru świec do odpowiedniego w
 \end{center}
 \end{figure} 
 
-Powyższy diagram objasnia proces składania zlecenia kupna, bądź sprzedaży. Jeśli przed uruchomieniem systemu użytkownik nie poda ilości lotów do transakcji, zostanie ona automatycznie obliczona jako wartość maksymalna. Takie postępowanie zwiększa ryzyko zawieranych transakcji. Jego ograniczeniem będzie ustawienie zarówno limitów stop loss jak i take profit. W zależności czy wcześniej wystąpiła formacji hossy czy bessy, sposób określenia limitów oraz typ transakcji będzie się różnić. Dla większości rozpoznawanych formacji pułap stop loss będzie ustawiany na krańcową wartość. W przypadku formacji hossy będzie to minimalna cena z całej formacji, a w formacji bessy wartość maksymalna. Zamykanie transakcji będzie opierać się głównie na oddzielnym algorytmie, dlatego pułap take profit ustawiany będzie na stałą wartość. Przy wystąpieniu formacji hossy wysyłane będzie zlecenie kupna, a zlecenie sprzedaży podczas znalezienia formacji bessy.   
+Powyższy diagram objasnia proces składania zlecenia kupna, bądź sprzedaży. Jeśli przed uruchomieniem systemu użytkownik nie poda ilości lotów do transakcji, zostanie ona automatycznie obliczona jako wartość maksymalna. Takie postępowanie zwiększa ryzyko zawieranych transakcji. Jego ograniczeniem będzie ustawienie zarówno limitów stop loss jak i take profit. W zależności czy wcześniej wystąpiła formacja hossy czy bessy, sposób określenia limitów oraz typ transakcji będzie się różnić. Dla większości rozpoznawanych formacji pułap stop loss będzie ustawiany na krańcową wartość. W przypadku formacji hossy będzie to minimalna cena z całej formacji, a w formacji bessy wartość maksymalna. Zamykanie transakcji będzie opierać się głównie na oddzielnym algorytmie, dlatego pułap take profit ustawiany będzie na stałą wartość. Przy wystąpieniu formacji hossy wysyłane będzie zlecenie kupna, a zlecenie sprzedaży podczas znalezienia formacji bessy.   
 
 \subsection{Diagramy sekwencjii}
 \paragraph{}
 
-\begin{figure}[ht]
+\begin{figure}[h!]
 \begin{center}
 \includegraphics[width=16cm]{sekwencji.png}
 \caption{Diagram opisujący interakcje pomiędzy częściami systemu}
 \label{sekwencji}
 \end{center}
 \end{figure} 
+
+Na diagramie \ref{sekwencji} został przedstawiony sposób komunikacji pomiędzy zaimplementowanym algorytmem, a systemami, które uczestniczą w czasie działania programu. Wyszczególnione zostały komunikaty, pojawiające się podczas procesu zamykania zlecenia. Do podjemowania decyzji na rynku Forex niezbędne są aktualne notowania. Najnowsze dane są pobierane przez brokerów bezpośrednio z rynku Forex. Jednak nie są one natychmiast przekazywane do klientów. Broker, po analizie aktualnie otwartych pozycji, może zmienić dane notowanie. Po przeanalizowaniu danych oraz ewentualnej korekcie, notowanie trafia do platformy inwestycyjnej. Aplikacja kliencka odpytuje co powien czas serwer brokera w celu pobrania aktualnie dostępnych danych. Algorytm uruchomiony na platformie odczytuje wcześniej pobrane notowanie. Opisywany system analizuje każdą, nowo przychodzącą, daną. W pierwszym etapie sprawdzana jest ilość otwartych zleceń. Dane o zleceniach są przechowywane zarówno przez platformę inwestycyjną jak i system brokera. Algorytm poddaje analizie istniejące zlecenia. W przypadku decyzji o zamknięciu pozycji wysyłana jest odpowiednia informacja do MetaTrader'a wraz z niezbędnymi danymi. Platforma sprawdza poprawność przesłanych danych i w przypadku braku błędów wysyła żądanie zamknięcia pozycji do brokera. Wystąpienie błędu powoduje przesłąnie sterowania do algorytmu wraz z komunikatem o błędzie. Błąd zostaje obłużony, po czym następuje ponowienie akcji zamknięcia zlecenia. Żądanie zostaje dalej przekazane z platformy handlowej do systemu brokera. Tam poddawane jest analizie przez system brokerski. W przypadku akceptacji zlecenie zostaje ostatecznie zamknięte. Przesyłane są komunikaty zwrotne do każdego z systemów oraz odświeżane informacje o obecnych pozycjach. Informacja o ewentualnie pojawiającym się błędzie zostaje przekazana, aż do algorytmu inwestycyjnego, gdzie następuje obługa oraz ponowne wykonanie akcji.
+
 
 % itd.
 % \appendix
