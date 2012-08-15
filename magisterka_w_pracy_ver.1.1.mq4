@@ -62,16 +62,15 @@ double stopLossMin;
 double lots= 0.1;
 bool lastWin=true;
 double lastFreeMargin=NULL;
+
 //+------------------------------------------------------------------+
 //| expert initialization function                                   |
 //+------------------------------------------------------------------+
 int init()
 {
-//----
    lastFreeMargin=AccountFreeMargin();
    symbol=Symbol();
    spread=MarketInfo(symbol,MODE_SPREAD);
-//----
    return(0);
 }
 
@@ -80,9 +79,6 @@ int init()
 //+------------------------------------------------------------------+
 int deinit()
 {
-//----
-   
-//----
    return(0);
 }
 
@@ -98,9 +94,6 @@ int start()
       return;                                  
    }
    
-   
-   
-
    if(prevPrice==NULL)
    {
       RefreshRates(); 
@@ -118,7 +111,6 @@ int start()
    if(Volume[0]==1)
    {
       closeEndOfWeek(); 
-   
    }
    //work only with one order
    if(OrdersTotal()>0)
@@ -141,7 +133,6 @@ int start()
 void closeEndOfWeek()
 {
 //close order if it is end of week
-  
    if(DayOfWeek()==5 && Hour()>21 && Minute()>30)
    {  
       if(OrdersTotal()>0)
@@ -154,6 +145,7 @@ void closeEndOfWeek()
       }  
    }
 }
+
 //+------------------------------------------------------------------+
 //|         random trading criteria, set openBuy                     | 
 //+------------------------------------------------------------------+
@@ -170,7 +162,6 @@ void randomOpenCriteria(bool openBuy, bool openSell)
       openSell=true; 
       Print("Signal to sell"); 
    }
-   //Print("last: ", lastFreeMargin, " current: ", AccountFreeMargin());
    if(lastFreeMargin>AccountFreeMargin())
       lots=lots*2;
    else
@@ -184,7 +175,6 @@ void randomOpenCriteria(bool openBuy, bool openSell)
 void candleOpenCriteria()
 {  
    //hammer and later confirmation
-
    if(isHammer(2) && Close[1]>Close[2])         
    {   
       //1 18 25 - trend parameters                                      
@@ -194,7 +184,6 @@ void candleOpenCriteria()
 
   
    //hanging man and later confirmation
-   
    else if(isHangingMan(2) && Close[2]>=Close[1])         
    {    
       Print("HIGH[2]: ", High[2]);
@@ -230,7 +219,6 @@ void candleOpenCriteria()
    }
 
    //Bearish Harami and later confirmation
-   
    else if(isBearishHarami(2) && Close[1]<=Close[2]) 
    {
       openOrder(false, true, lots, takeProfitExtern, High[3]);       

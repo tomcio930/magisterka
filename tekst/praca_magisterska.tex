@@ -3,6 +3,7 @@
 % \documentclass[pdflatex,en]{aghdpl}  % praca w języku angielskim
 \usepackage[polish]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{float}
 
 % dodatkowe pakiety
 \usepackage{enumerate}
@@ -449,7 +450,7 @@ W dalczej części pracy zostana zaprezentowane diagramy UML obrazujące funkcjo
 \subsection{Diagramy przypadków użycia}
 \paragraph{}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=16cm]{usecase.PNG}
 \caption{Diagram przypadków użycia}
@@ -477,7 +478,7 @@ Ustaw paremetry świec - Ustawienie parametrów odpowiedzialnych za rozpoznawani
 \subsection{Diagramy aktywności}
 \paragraph{}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=16cm]{ogolny.png}
 \caption{Diagram przedstawiający ogólny algorytm działania systemu}
@@ -487,7 +488,7 @@ Ustaw paremetry świec - Ustawienie parametrów odpowiedzialnych za rozpoznawani
 
 Diagram \ref{ogolny} obrazuje ogólny algorytm przeprowadzania transakcji w systemie. Przedstawiona procedura zostaje uruchomiona każdorazowo po pojawieniu się nowej świecy 15-minutowej. Program obsługuje jedynie jedno zlecenie w danym momencie. Dlatego, jeśli zlecenie jest otware sprawdzane są warunki zamknięcia pozycji. W przeciwnym razie sprawdzana jest możliwość zlożenia zlecenia zakupu, bądź sprzedaży. Ze względu, że rynek Forex nie działa w weekendy, zamykane są pozycje, które chwile przed końcem sesji piątkowej są nadal otwarte. Dodatkowo w tym czasie nie przeprowadzane są inne transakcje. Takie postępowanie, chroni gracza przed ewentualną utratą kapitału po wystąpieniu luki cenowej. Zjawisko to opisane jest dokładniej w rozdziale \ref{sec:forex}. Przy wystąpieniu sygnału kupna, bądź sprzedaży zostaje wysłane rządanie otwarcia danej pozycji. W tym momencie następuje obsłużenie ewentualnych błędów. 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=16cm]{warunki_otwarcia.png}
 \caption{Diagram przedstawiający algorytm szukania formacji}
@@ -525,7 +526,7 @@ Proces znajdowania formacji bessy uruchamiany jest w momencie znalezienia rosną
 
 Problem subiektywizmu, przy klasyfikacji danego zbioru świec do odpowiedniego wzorca, uniemożliwia zdefiniowanie jednoznaczych wytycznych opisujących konkretną formację. Każdy z przedstawionych warunków w rozdziale \ref{swiece_rozdzial}, w którym opisanywany jest wygląd poszczególnych sekwencji świec, daje pewien zakres dowolnej interpretacji. 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=12cm]{otwarcie.png}
 \caption{Diagram przedstawiający algorytm otwierania zlecenia}
@@ -538,7 +539,7 @@ Powyższy diagram objasnia proces składania zlecenia kupna, bądź sprzedaży. 
 \subsection{Diagramy sekwencjii}
 \paragraph{}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=16cm]{sekwencji.png}
 \caption{Diagram opisujący interakcje pomiędzy częściami systemu}
@@ -548,6 +549,92 @@ Powyższy diagram objasnia proces składania zlecenia kupna, bądź sprzedaży. 
 
 Na diagramie \ref{sekwencji} został przedstawiony sposób komunikacji pomiędzy zaimplementowanym algorytmem, a systemami, które uczestniczą w czasie działania programu. Wyszczególnione zostały komunikaty, pojawiające się podczas procesu zamykania zlecenia. Do podjemowania decyzji na rynku Forex niezbędne są aktualne notowania. Najnowsze dane są pobierane przez brokerów bezpośrednio z rynku Forex. Jednak nie są one natychmiast przekazywane do klientów. Broker, po analizie aktualnie otwartych pozycji, może zmienić dane notowanie. Po przeanalizowaniu danych oraz ewentualnej korekcie, notowanie trafia do platformy inwestycyjnej. Aplikacja kliencka odpytuje co powien czas serwer brokera w celu pobrania aktualnie dostępnych danych. Algorytm uruchomiony na platformie odczytuje wcześniej pobrane notowanie. Opisywany system analizuje każdą, nowo przychodzącą, daną. W pierwszym etapie sprawdzana jest ilość otwartych zleceń. Dane o zleceniach są przechowywane zarówno przez platformę inwestycyjną jak i system brokera. Algorytm poddaje analizie istniejące zlecenia. W przypadku decyzji o zamknięciu pozycji wysyłana jest odpowiednia informacja do MetaTrader'a wraz z niezbędnymi danymi. Platforma sprawdza poprawność przesłanych danych i w przypadku braku błędów wysyła żądanie zamknięcia pozycji do brokera. Wystąpienie błędu powoduje przesłąnie sterowania do algorytmu wraz z komunikatem o błędzie. Błąd zostaje obłużony, po czym następuje ponowienie akcji zamknięcia zlecenia. Żądanie zostaje dalej przekazane z platformy handlowej do systemu brokera. Tam poddawane jest analizie przez system brokerski. W przypadku akceptacji zlecenie zostaje ostatecznie zamknięte. Przesyłane są komunikaty zwrotne do każdego z systemów oraz odświeżane informacje o obecnych pozycjach. Informacja o ewentualnie pojawiającym się błędzie zostaje przekazana, aż do algorytmu inwestycyjnego, gdzie następuje obługa oraz ponowne wykonanie akcji.
 
+\section{Algorytmy rozpoznawania formacji świec japońskich}
+\paragraph{}
+
+W podrozdziale zostanie przedstawiony sposób w jaki identyfikowane będą poszczególne formacje świec japońskich. Opierając się na informacjach teoretycznych zawartych w rozdziale \ref{swiece_rozdzial}, zostały stworzone algorytmy realizujące kolejne reguły. 
+
+Najważniejszym elementem przy klasyfikacji świec do odpowiedniego wzorca jest poprawne rozpoznanie trendu. Często miejsce wystąpienia formacji w odniesieniu do aktualnego trendu decyduje o tym czy mamy doczynienia z formacja hossy czy bessy.  Miejscami szczególnymi, w których wyszukiwane będą szablony świec japońskich są obszary korekt trendów głównych. Według diagramu \ref{warunki_otwarcia} w takich punktach można wyznaczyć trend główny oraz trend krótkookresowy. Wystąpienie w tym momencie formacji odwrócenia może świadczyć o końcu korekty i powrocie notowań do trendu głównego. Ewentualne decyzje o transakcji będą zgodne z głównym trendem na rynku.
+
+Trend długookresowy, oznaczający trend główny, wyznaczono za pomocą przecięcia dwóch średnich wykładniczych. Ten sposób rozpoznawania trendu cieszy się duża popularnością wśród inwestorów i z powodzeniem sprawdza się na wielu rynkach.  Algorytm polega na odjęciu od siebie dwóch średnich wykładniczych z różnych okresów. Średnia biorąca pod uwagę mniej okresów odpowiada trendowi krótkookresowemu. Od niej odejmowana jest wartość sredniej biorącej pod uwagę większą ilość notowań historycznych. Ilości okresów obu średnich to dwie zmienne, które należy odpowiednio dobrać w drodze optymalizacji. Dodatkowo w celu wykluczenia pomyłek przy trendach horyzontalnych, został wprowadzony parametr, który określa poziom oddalenia dwóch średnich. Jeśli wartość różnicy jest wystarczająco większa od 0 trend uznawany jest za rosnący. Wartości bliskie 0 to trend horyzontalny, w trakcie którego nie są podejmowane decyzje o kupnie, bądź sprzedaży. Wynik odpowiednio mniejszy od 0 mówi o pojawieniu się trendu spadkowego. 
+
+Po rozpoznaniu trendu głównego poszukiwany jest moment w którym występuje korekta notowań. Do tego celu została użyta metoda Wstęg Bollingera omówiona w rozdziale \ref{sec:srednie}. Chwilowe odwrócenie rynku syganalizowane jest pojawieniem się trendu krótkookresowego. Wstęgi Bollingera, opierając się na załóżeniach średnich kroczących, często używane są do identyfikowania zmian trendu. W metodzie używane są dwa paremetry. Pierwszy z nich określa ilośc okresów branych pod uwagę przy wyznaczaniu średniej kroczącej, która wyznacza środkową wstęgę. Drugi parametr oznacza o ile odchyleń standardowych odległe są wstęgi skrajne od wstęgi środkowej. Te dwie wartości można poddawać optymalizacji jednak na rynkach najczęściej używa się 20 okresów oraz 2 odchyleń standardowych. 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=12cm]{trend.png}
+\caption{Wykres przedstawiający proces rozpoznawania korekty na rynku}
+\label{trend}
+\end{center}
+\end{figure} 
+
+W przypadku istnienia trendu głównego linia notowań znajduje się blisko skrajnych Wstęg Bollingera. Początek korekty występuje w sytuacji gdy wstęga środkowa zostaje przecięta przez notowania. W momencie gdy ceny oscylują pomiędzy środkową, a skrajną wstęgą wyszukiwane są formacje świec. Sytuacja taka została przedstawiona na wykresie \ref{trend}. Linie czerwona i żółta oznaczają odpowiednio średnią wykładniczą krótszą oraz dłuższą. Położenie średniej krótszej poniżej średniej dłuższej wskazuje na występowanie spadkowego trendu długookresowego. Niebieskie linie to wstęgi bollingera. Obszar pomiędzy pionowymi czerwonymi liniami wskazuje miejsce korekty trendu. W takim miejscu poszukiwane są formacje świec zapowiadające koniec korekty i powrót do trendu główneoo. Będą to formacje odwrócenia trendu prognozujące kolejne spadki. Sekwencje świec zwiastujące wzrosty będą występować przy rosnącym trendzie głównym oraz oscylacji notowań pomiędzy środkową, a dolną wstęgą bollingera.  
+
+Kolejność rozpoznawania formacji zależy od sprawdzalności sygnałów z niej płynących. Świece, które w danym momencie najlepiej prognozują przyszłą sytuację na rynku będą poszukiwane w pierwszej kolejności. Do najbardziej popularnych świeć należy formacja młota opisana w rozdziale \ref{swiece}. Tak jak inne formacje zapowiadające wzrosty będzie ona wyszukiwana w momencie wystąpienia korekty trendu rosnącego. Z informacji teoretycznych wynika, że świeca powinna mieć krótki cień górny oraz kilkakrotnie dłuższy cień dolny od korpusu. Wysokość cienia górnego to pierwszy parametr, który zostanie poddany optymalizacji. Jest to próg powyżej którego analizowana świeca nie zostanie zaklasyfikowana do wzorca młota. W fazie optymalizacji poszukiwana wartość znajdować się będzie w przedzial <0;2>. Kolejny parametr określa stosunek długości cienia dolnego do wysokości korpusu świecy. Poszukiwana wartość zawiera się w przedziale <2;5>. Dodatkowo dodano warunek sprawdzający relatywną wysokość dolnego cienia w stosunku do świec poprzednich. W tym celu została zliczona średnia wysokość świec poprzednich oraz przemnożona przez zmienną z zakresu <1;2>. Potwierdzeniem formacji jest zamknięcie się kolejnej świecy na wyższym poziomie. Ewentualna decyzja o zajęciu pozycji długiej następuje więc dopiero po 15 minutach od pojawienia się formacji młota. Zakładamy, że analizie zostały poddanne świece 15 minutowe. 
+
+Wisielec jest formacją przeciwną do młota. Algorytm rozpoznający ten wzorzec ma warunki podobne do tych zdefiniowanych w formcji młota. Posiada jednak własne parametry, które zostaną poddane optymalizacji niezależnie od zmiennych z algorytmu młota. Dodatkowo wisielec poszukiwany jest w obszarach korekt trendu spadkowego, gdyż zalicza się do formacji zapowiadających odwrócenie trendu wzrostowego. W celu zoastrzenia warunków wybierane są jedynie świece z czarnym korpusem.
+
+Ostatnią z formacji zawierających pojedyńczą świecę jest spadająca gwiazda. Wyszukiwana jest w momentach korekt rynku niedźwiedzia. Górny cień musi mieć kilkakrotnie dłuższy od wysokości świecy. Do zapisu tego warunki posłużył oddzielny parametr, którego wartości są z przedziału <2;4>. Również długość dolnego cienia będzie oznaczona przez zmienną, której zakres zawiera się w <0;3>. Wartości te określają długość cienia w pipsach. Ostatniom warunkiem, wybierającym jedynie zauważalne dla większości graczy świece, jest wymóg dużej dłogości cienia górnego w stosunku do aktualnie występujących świec. Parametr jest z przedziału <1; 2> i dotyczy mnożnika średniej wielkości świec w danym okresie czasowym.  
+
+Objęcie hossy to kolejna formacja zapowiadająca wzrosty. Składa się z dwóch święc przez co ilość warunków pozwalających na zakwalifikowanie danej sekwencji świec do tego wzorca wzrata. Oprócz wystąpowania w obszarze korekty trendu wzrostowego od formacji wymagane jest aby pierwsza świeca była koloru czarnego, druga kolory białego oraz korpus świecy białej w całości obejmował świecę czarną. Dodatkowo dodany został warunek na wielkość świecy czarnej, po to by cała formacja była bardziej znacząca. Parametr odpowiedzialny za przemnożenie średniej wielkości świec  zawiera się w przedziale <1; 2>. W przypadku formacji objęcia bessy nie było stosowane potwierdzenie.
+
+Algorytm rozpoznający formację objęcia bessy posiada podobną konstrukcję jak w przypadku objęcia hossy. Różnicą są jedynie warunki, które zostały zdefiniowane na podstawie informacji zawartych w rozdziale \ref{swiece}. W formacji występuje parametr określającu wielkość pierwszej ze świec.
+
+Harami wzrostowe składa się z dwóch świec. Algorytm klasyfikacji do tego wzorca jest ściśle zdefiniowany. Pierwsza świeca musi być koloru czarnego, druga przyjmować kolor biały oraz powinna zawierać się w całości w korpusie świecy poprzedniej. Dodatkowym warunkiem zwiększającym znaczenie danej formacji jest wielkość drugiej ze świec. Jak w poprzednich przypadkach obliczana jest średnia wysokość wcześniejszych świec, a następnie wartość ta przemnażana przez parametr z przedziału <1;1,5>. Zamknięcie kolejnej świecy na poziomie wyższym jest wymogiem potwierdzenia formacji.
+
+Harami spodkowe jako formacja odwrotna do harami wzrostowego jest rozpoznawana przez podobny algorytm. Również posiada jeden parametr odpowiedzialny za ograniczenia na wielkość pierwszej ze świec. Potwierdzeniem jest zamknięcie na niższym poziomie.
+
+Sposób identyfikowania formacji przenikania posiada jednoznaczne warunki. Pierwsza ze świec ma kolor czarny, druga biały, otwarcie drugej jest poniżej minimum świecy poprzedniej, a zamknięcie powyżej połowy korpusu świecy pierwszej. Tak jak w poprzednich algorytmach istnieje dodatkowo parametr opisujący wielkość jednej ze świec. W tym przypadku odnosi się on do wysokości drugiej świecy. Wzorzec ten zapowiada odwrócenie trenu spadkowego, więc będzie wyszukiwany w momencie korekty trendu rosnącego.
+
+Zasłona ciemnej chmury jest odpowiednikiem poprzedniej formacji. Występuje przy malejącym trendzie długoterminowym. W miejscach korekt zapowiada powrót do głównego kierunku rynku. Algorytm klasyfikuje pary świec z których pierwsza jest biała, druga czarna, otwarcie drugiej jest większe od maksimum świecy poprzedniej, zamknięcie drugiej występuje w połowie korpusu świecy poprzedniej oraz otwarcie pierwszej jest poniżej zamknięcia drugiej świecy. Warunkiem zawężającym ilość sekwencji zaliczających się do tego wzorca jest parametr określający wysokość drugiej świecy. Analogicznie jak w poprzednich przypadkach jest on oddzielnie optymalizowany i może zawierać się w przedziale <1;1,5>. Algorytm nie wymaga potwierdzenia pojawiającej się formacji.
+
+Formacje gwiazdy wieczornej i porannej składają się z trzech świec. Dlatego posiadają najbardziej złożone warunki. Gwiazda poranna występuje w obszarze korekty trendu wzrostowego. Zapowiada powrót do głównego kierunku rynku. Pierwsza świeca musi być koloru czarnego, natomiast trzecia ma mieć barwę białą. W formacji występuje parametr określający wielkość luki cenowej pomiędzy drugą swięcą, zwaną gwiazdą, a świecami sąsiadującymi. Dodatkowo w celu znalezienia bardziej znaczących przypadków, poszukiwane są trójki świec, w których pierwsza i druga świeca nie są małe. W algorytmie istnieje funkcja, która określa stopień wielkości danej świecy w odniesieniu do świec ostatnio pojawiających się. W fazie testów zostały dobrane wartości parametrów, które pozwalają na sklasyfikowanie danej świecy pod kątem wielkości.
+
+Gwiazda wieczorna posiada szereg warunków analogicznych do gwiazdy porannej. Należy do formacji zwiastujących trend spadkowy. W algorytmie proces jej wykrywania uruchamiany jest w momencie korekty trendu spadkowego. Pojawienie się opisywanej formacji w punkcie krótkotrwałego trendu wzrostowego daje sygnał na powrót rynku w kierunku spadkowym. Oprócz sprawdzenia czy pierwsza świeca jest koloru białego i trzecia koloru czarnego wymgagane jest aby świeca środkowa była ponad sąsiadującymi z nią świecami. Wielkość występującej luki cenowej posiada oddzielny parametr, który również będzie poddany optymalizacji. Dodatkowo, tak jak w przypadku gwiazdy porannej, nałożony jest warunek na wielkości krańcowych świec. 
+
+W tabeli \ref{parametry_przedzialy} zostały zebrane przedziały wartości parametrów dla poszczególnych formacji. Sposób wyznaczania optymalnych wartości zostanie przedstawiony w kolejnym rozdziale.  
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+formacja & parametr & przedział \\
+\hline
+ & stosunek długości cienia dolnego do korpusu & <2; 5>\\
+młot & długość cienia górnego & <0; 2>\\
+& mnożnik długości cienia dolnego & <1; 2>\\
+\hline
+ & stosunek długości cienia dolnego do korpusu & <2; 4>\\
+wisielec & długość cienia górnego & <0; 2>\\
+& mnożnik długości cienia dolnego & <1; 2>\\
+\hline
+ & stosunek długości cienia górnego do korpusu & <2; 4>\\
+spadająca gwiazda & długość cienia dolnego & <0; 3>\\
+& mnożnik długości cienia górnego & <1; 2>\\
+\hline
+objęcie hossy & mnożnik wysokości pierwszej świecy & <1; 2>\\
+\hline
+objęcie bessy & mnożnik wysokości pierwszej świecy & <1; 2>\\
+\hline
+harami wzrostowe & mnożnik wysokości drugiej świecy & <1; 2>\\
+\hline
+harami spadkowe & mnożnik wysokości pierwszej świecy & <1; 2>\\
+\hline
+zasłona ciemnej chmury & mnożnik wysokości pierwszej świecy & <1; 2>\\
+\hline
+przenikanie & mnożnik wysokości pierwszej świecy & <1; 2>\\
+\hline
+gwiazda poranna & wielkość luki cenowej & <1; 5>\\
+\hline
+gwiazda wieczorna & wielkość luki cenowej & <1; 5>\\
+\hline
+\end{tabular} 
+\caption{Przedziały wartości parametrów dla poszczególnych formacji}
+\label{parametry_przedzialy}
+\end{center}
+\end{table}
+
+
+  
 
 % itd.
 % \appendix

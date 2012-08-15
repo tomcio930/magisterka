@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.27)  12 AUG 2012 22:33
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.27)  15 AUG 2012 23:22
 entering extended mode
 **praca_magisterska.tex
 (D:\magisterka\magisterka\tekst\praca_magisterska.tex
@@ -422,29 +422,37 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count95
+\float@exts=\toks19
+\float@box=\box27
+\@float@everytoks=\toks20
+\@floatcapt=\box28
+)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\enumerate.sty"
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
-\@enLab=\toks19
+\@enLab=\toks21
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
-\lst@mode=\count95
-\lst@gtempboxa=\box27
-\lst@token=\toks20
-\lst@length=\count96
+\lst@mode=\count96
+\lst@gtempboxa=\box29
+\lst@token=\toks22
+\lst@length=\count97
 \lst@currlwidth=\dimen123
-\lst@column=\count97
-\lst@pos=\count98
+\lst@column=\count98
+\lst@pos=\count99
 \lst@lostspace=\dimen124
 \lst@width=\dimen125
-\lst@newlines=\count99
-\lst@lineno=\count100
+\lst@newlines=\count100
+\lst@lineno=\count101
 \lst@maxwidth=\dimen126
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count101
-\lst@skipnumbers=\count102
-\lst@framebox=\box28
+\c@lstnumber=\count102
+\lst@skipnumbers=\count103
+\lst@framebox=\box30
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
 File: listings.cfg 2007/02/22 1.4 listings configuration
@@ -481,35 +489,35 @@ LaTeX Warning: Label `eqn:wzor' multiply defined.
 LaTeX Warning: Label `eqn:wzor' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 66.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 67.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count103
+\scratchcounter=\count104
 \scratchdimen=\dimen127
-\scratchbox=\box29
-\nofMPsegments=\count104
-\nofMParguments=\count105
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count106
+\scratchbox=\box31
+\nofMPsegments=\count105
+\nofMParguments=\count106
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count107
 \MPscratchDim=\dimen128
-\MPnumerator=\count107
-\makeMPintoPDFobject=\count108
-\everyMPtoPDFconversion=\toks22
+\MPnumerator=\count108
+\makeMPintoPDFobject=\count109
+\everyMPtoPDFconversion=\toks24
 )
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -545,39 +553,39 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count109
-LaTeX Font Info:    Try loading font information for T1+phv on input line 68.
+\c@lstlisting=\count110
+LaTeX Font Info:    Try loading font information for T1+phv on input line 69.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 68.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 69.
 LaTeX Font Info:    Font shape `T1/phv/bx/sc' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/sc' tried instead on input line 68.
+(Font)              Font shape `T1/phv/b/sc' tried instead on input line 69.
 
 <agh.jpg, id=1, 146.4672pt x 284.7438pt>
 File: agh.jpg Graphic file (type jpg)
  <use agh.jpg>
-Package pdftex.def Info: agh.jpg used on input line 68.
+Package pdftex.def Info: agh.jpg used on input line 69.
 (pdftex.def)             Requested size: 43.94049pt x 85.4238pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 68.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 69.
 LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 68.
+(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 69.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 68.
+(Font)              <10.95> on input line 69.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 68.
+(Font)              <8> on input line 69.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 68.
+(Font)              <6> on input line 69.
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <D:/magisterka/magisterka/
 tekst/agh.jpg>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <12> not available
-(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 68.
+(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 69.
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
 
  []
 
@@ -586,7 +594,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--68
 ]
 File: agh.jpg Graphic file (type jpg)
  <use agh.jpg>
-Package pdftex.def Info: agh.jpg used on input line 68.
+Package pdftex.def Info: agh.jpg used on input line 69.
 (pdftex.def)             Requested size: 43.94049pt x 85.4238pt.
  [1
 
@@ -594,9 +602,9 @@ Package pdftex.def Info: agh.jpg used on input line 68.
 
 ]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 70.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 70.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 71.
  (D:\magisterka\magisterka\tekst\praca_magisterska.toc)
 \tf@toc=\write3
  [5
@@ -614,7 +622,7 @@ Rozdzia\l  2.
 File: candles.png Graphic file (type png)
 
 <use candles.png>
-Package pdftex.def Info: candles.png used on input line 189.
+Package pdftex.def Info: candles.png used on input line 190.
 (pdftex.def)             Requested size: 426.79134pt x 296.62755pt.
  [12]
 Underfull \vbox (badness 1024) has occurred while \output is active []
@@ -623,13 +631,13 @@ Underfull \vbox (badness 1024) has occurred while \output is active []
 <ma.png, id=61, 621.07031pt x 432.86719pt>
 File: ma.png Graphic file (type png)
  <use ma.png>
-Package pdftex.def Info: ma.png used on input line 236.
+Package pdftex.def Info: ma.png used on input line 237.
 (pdftex.def)             Requested size: 426.79134pt x 297.46335pt.
  [15 <D:/magisterka/magisterka/tekst/ma.png>] <bb.png, id=65, 624.83438pt x 432
 .86719pt>
 File: bb.png Graphic file (type png)
  <use bb.png>
-Package pdftex.def Info: bb.png used on input line 253.
+Package pdftex.def Info: bb.png used on input line 254.
 (pdftex.def)             Requested size: 426.79134pt x 295.67339pt.
 
 Underfull \vbox (badness 1953) has occurred while \output is active []
@@ -639,20 +647,20 @@ Underfull \vbox (badness 1953) has occurred while \output is active []
 <macd.png, id=76, 624.08156pt x 431.36156pt>
 File: macd.png Graphic file (type png)
  <use macd.png>
-Package pdftex.def Info: macd.png used on input line 279.
+Package pdftex.def Info: macd.png used on input line 280.
 (pdftex.def)             Requested size: 426.79134pt x 295.0004pt.
  [19 <D:/magisterka/magisterka/tekst/macd.png>] <reduction.png, id=81, 376.4062
 5pt x 268.00125pt>
 File: reduction.png Graphic file (type png)
 
 <use reduction.png>
-Package pdftex.def Info: reduction.png used on input line 296.
+Package pdftex.def Info: reduction.png used on input line 297.
 (pdftex.def)             Requested size: 284.52756pt x 202.59937pt.
  [20] <hammer.png, id=86, 373.395pt x 270.25969pt>
 File: hammer.png Graphic file (type png)
 
 <use hammer.png>
-Package pdftex.def Info: hammer.png used on input line 305.
+Package pdftex.def Info: hammer.png used on input line 306.
 (pdftex.def)             Requested size: 284.52756pt x 205.94795pt.
 
 Underfull \vbox (badness 1303) has occurred while \output is active []
@@ -661,7 +669,7 @@ Underfull \vbox (badness 1303) has occurred while \output is active []
 <invert_hammer.png, id=91, 373.395pt x 270.25969pt>
 File: invert_hammer.png Graphic file (type png)
  <use invert_hammer.png>
-Package pdftex.def Info: invert_hammer.png used on input line 320.
+Package pdftex.def Info: invert_hammer.png used on input line 321.
 (pdftex.def)             Requested size: 284.52756pt x 205.94795pt.
 
 Underfull \vbox (badness 4024) has occurred while \output is active []
@@ -670,7 +678,7 @@ Underfull \vbox (badness 4024) has occurred while \output is active []
 <engulfing.png, id=96, 536.75531pt x 255.20343pt>
 File: engulfing.png Graphic file (type png)
  <use engulfing.png>
-Package pdftex.def Info: engulfing.png used on input line 333.
+Package pdftex.def Info: engulfing.png used on input line 334.
 (pdftex.def)             Requested size: 284.52756pt x 135.28053pt.
 
 Underfull \vbox (badness 2326) has occurred while \output is active []
@@ -679,19 +687,19 @@ Underfull \vbox (badness 2326) has occurred while \output is active []
 <harami.png, id=101, 489.32813pt x 258.9675pt>
 File: harami.png Graphic file (type png)
  <use harami.png>
-Package pdftex.def Info: harami.png used on input line 346.
+Package pdftex.def Info: harami.png used on input line 347.
 (pdftex.def)             Requested size: 284.52756pt x 150.58453pt.
  [24 <D:/magisterka/magisterka/tekst/engulfing.png> <D:/magisterka/magisterka/t
 ekst/harami.png>] <piercing.png, id=107, 503.63156pt x 255.95625pt>
 File: piercing.png Graphic file (type png)
  <use piercing.png>
-Package pdftex.def Info: piercing.png used on input line 359.
+Package pdftex.def Info: piercing.png used on input line 360.
 (pdftex.def)             Requested size: 284.52756pt x 144.60382pt.
  [25 <D:/magisterka/magisterka/tekst/piercing.png>]
 <stars.png, id=113, 611.28375pt x 255.20343pt>
 File: stars.png Graphic file (type png)
  <use stars.png>
-Package pdftex.def Info: stars.png used on input line 374.
+Package pdftex.def Info: stars.png used on input line 375.
 (pdftex.def)             Requested size: 341.43306pt x 142.543pt.
 
 Underfull \vbox (badness 2529) has occurred while \output is active []
@@ -700,7 +708,7 @@ Underfull \vbox (badness 2529) has occurred while \output is active []
 <metatrader.png, id=118, 1027.84pt x 770.88pt>
 File: metatrader.png Graphic file (type png)
  <use metatrader.png>
-Package pdftex.def Info: metatrader.png used on input line 395.
+Package pdftex.def Info: metatrader.png used on input line 396.
 (pdftex.def)             Requested size: 426.79134pt x 320.09744pt.
  [27]
 [28 <D:/magisterka/magisterka/tekst/metatrader.png>] [29]
@@ -712,70 +720,85 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 449.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 450.
 
 <usecase.PNG, id=131, 624.08156pt x 475.7775pt>
 File: usecase.PNG Graphic file (type png)
  <use usecase.PNG>
-Package pdftex.def Info: usecase.PNG used on input line 454.
+Package pdftex.def Info: usecase.PNG used on input line 455.
 (pdftex.def)             Requested size: 455.24408pt x 347.06784pt.
  [31 <D:/magisterka/magisterka/tekst/usecase.PNG>]
 <ogolny.png, id=136, 671.50874pt x 743.02594pt>
 File: ogolny.png Graphic file (type png)
  <use ogolny.png>
-Package pdftex.def Info: ogolny.png used on input line 482.
+Package pdftex.def Info: ogolny.png used on input line 483.
 (pdftex.def)             Requested size: 455.24408pt x 503.7317pt.
 
-Underfull \vbox (badness 4084) has occurred while \output is active []
+Underfull \vbox (badness 3590) has occurred while \output is active []
 
  [32 <D:/magisterka/magisterka/tekst/ogolny.png>]
 <warunki_otwarcia.png, id=141, 604.50844pt x 840.13875pt>
 File: warunki_otwarcia.png Graphic file (type png)
 
 <use warunki_otwarcia.png>
-Package pdftex.def Info: warunki_otwarcia.png used on input line 492.
+Package pdftex.def Info: warunki_otwarcia.png used on input line 493.
 (pdftex.def)             Requested size: 455.24408pt x 632.69205pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[33]
-
-LaTeX Warning: Text page 34 contains only floats.
-
+ [33]
 [34 <D:/magisterka/magisterka/tekst/warunki_otwarcia.png>]
 <otwarcie.png, id=149, 320.69812pt x 392.96812pt>
 File: otwarcie.png Graphic file (type png)
  <use otwarcie.png>
-Package pdftex.def Info: otwarcie.png used on input line 530.
+Package pdftex.def Info: otwarcie.png used on input line 531.
 (pdftex.def)             Requested size: 341.43306pt x 418.38504pt.
- [35 <D:/magisterka/magisterka/tekst/otwarcie.png>]
-<sekwencji.png, id=154, 638.385pt x 887.56593pt>
+ [35]
+<sekwencji.png, id=153, 638.385pt x 887.56593pt>
 File: sekwencji.png Graphic file (type png)
  <use sekwencji.png>
-Package pdftex.def Info: sekwencji.png used on input line 543.
+Package pdftex.def Info: sekwencji.png used on input line 544.
 (pdftex.def)             Requested size: 455.24408pt x 632.93903pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36 <D:/magisterka/magisterka/tekst/otwarcie.png>]
+Overfull \vbox (8.51976pt too high) has occurred while \output is active []
+
+
+[37 <D:/magisterka/magisterka/tekst/sekwencji.png>] [38]
+<trend.png, id=165, 356.0803pt x 488.57532pt>
+File: trend.png Graphic file (type png)
+ <use trend.png>
+Package pdftex.def Info: trend.png used on input line 565.
+(pdftex.def)             Requested size: 341.43306pt x 468.49767pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(D:\magisterka\magisterka\tekst\praca_magisterska.bbl [36]
 
-LaTeX Warning: Text page 37 contains only floats.
+LaTeX Warning: Reference `swiece' on page 39 undefined on input line 573.
 
-[37 <D:/magisterka/magisterka/tekst/sekwencji.png>]) [38
+[39] [40 <D:/magisterka/magisterka/tekst/trend.png>]
+
+LaTeX Warning: Reference `swiece' on page 41 undefined on input line 581.
+
+[41] (D:\magisterka\magisterka\tekst\praca_magisterska.bbl [42]) [43
 
 ]
 (D:\magisterka\magisterka\tekst\praca_magisterska.aux)
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4992 strings out of 494045
- 66002 string characters out of 3148387
- 158930 words of memory out of 3000000
- 8163 multiletter control sequences out of 15000+200000
+ 5058 strings out of 494045
+ 66847 string characters out of 3148387
+ 160352 words of memory out of 3000000
+ 8224 multiletter control sequences out of 15000+200000
  90455 words of font info for 71 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  34i,12n,45p,2042b,344s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -792,9 +815,9 @@ eX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on praca_magisterska.pdf (38 pages, 849760 bytes).
+Output written on praca_magisterska.pdf (43 pages, 879767 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
+ 229 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 
