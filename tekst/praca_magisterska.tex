@@ -633,9 +633,45 @@ gwiazda wieczorna & wielkość luki cenowej & <1; 5>\\
 \end{center}
 \end{table}
 
+\chapter{Optymalizacja systemu}
+\label{chap:optymalizacja}
+\paragraph{}
+Każdy system transakcyjny zawiera określony zestaw zasad, według których otwierane i zamykane są długie i krótkie pozycje. Zasady te zazwyczaj wymagają wprowadzenia parametrów, od których zależeć będzie moment wygenerowania sygnału kupna lub sprzedaży. Zmiana tych parametrów spowoduje również zmianę dochodowości całego systemu, dlatego kluczowa jest ich optymalizacja. Każdy z algorytmów, rozpoznających konkretną formację, zostanie poddany oddzielnej optymalizacji. Następnie będzie przetestowany na danych historycznych z różnych okresów. Po przeprowadzeniu cząstkowych optymalizacji i testów, do końcowego algorytmu, zostaną wybrane formacje przynoszące największy zwrot. Dodatkowo kolejność ich rozpoznawania, będzie również zależeć od wyników jakie osiągnęły. 
 
-  
+Przed optymalizacją kolejnych, cząstkowych algorytmów, zostanie opisany sposób w jaki przebiega proces optymalizacji na platformie MetaTrader. Zostanie również poruszony problem doboru odpowiednich opcji. Przedstawione zostaną najważniejsze zasady poprawnego wykonania optymalizacji oraz jej interpretacji. 
 
+\section{Sposób działania optymalizatora w MetaTrader}
+\paragraph{}
+
+Najpopularniejszy program do handlowania na Forexie, MetaTrader, udostępnia narzędzie do testowania i optymalizowania strategii napisanych w języku MQL na danych historycznych. Posłużą one do dopasowania odpowiednich wartości dla parametrów w systemie transakcyjnym opartym na japońskich świecach.
+
+Narzędzie testowe w MetaTrader podczas optymalizacji wykorzystuje dane historyczne. Każda ze świec posiada jedynie dane o poziomie otwarcia, zamknięcia, cenie maksymalnej i minimalnej. Zachowanie kursu pomiędzy otwarciem, a zamknięciem musi być więc modelowane. MetaTrader umożliwia wybranie jednego z trzech sposobów:
+\begin{itemize}
+\item tylko ceny otwarcia
+\item kontrola punktów
+\item każdy tick
+\end{itemize}
+Pierwszy ze sposobów jest użyteczny tylko dla strategii, która generuje sygnały wyłącznie w oparciu o ceny otwarcia świec. Pozwala na znaczne skrócenie procesu optymalizacji. Metoda kontroli punktów modeluje zachowanie kursu na podstawie danych z najbliższego krótszego okresu czasowego. Przykładowo dla świec jednogodzinnych użyte zostaną dane trzydziestominutowe. Metoda daje bardzo uproszczone wyniki. Powinna być wykorzystywana podczas pierwszego testu strategii w trybie wizualnym, aby sprawdzić, czy sygnały są generowaneprawidłowo. Najbardziej dokładna metoda, każdy tick, wykorzystuje najmniejszy dostępny przedział czasowy do modelowania zachowań kursu wewnątrz świecy. Najczęściej są to dane jednominutowe, gdyż poszczególne ticki nie są udostępniane przez dostawców notowań. MetaTrader przechowuje dane o pojedynczych tikach jedynie z krótkiego przedziału czasowego. Są one jednak systematycznie usuwane wraz z pojawianiem się nowych.
+ 
+Wynika stąd pewien problem. Wykorzystanie danych jednominutowych zamiast ticków sprawia, że testowanie jakiegokolwiek systemu skalpingowego lub docelowo mającego handlować na wykresie jednominutowym mija się z celem. Jedyny sposób na poradzenie sobie z tym problemem to odpowiednie dostosowanie kodu strategii tak, aby zachowanie kursu wewnątrz świecy nie było kluczowym czynnikiem generującym sygnały kupna i sprzedaży. W budowanym systemie opartym na analizie formacji świec japońskich decyzje podajmowane są na podstawie nowo pojawiającej się świecy 15-minutowej. Problem nie dotyczy jednak wyłącznie świec jednominutowych. Pojawia się również w przypadku optymalizacji strategii z użyciem świec o większych okresach, na szerokich przedziałach czasowych. Narzędzie do testowania, w chwili uruchomienia, wyszuka świece o najmniejszym okresie pokrywające wybrane większe świece. Zazwyczaj, do tego celu, MetaTrader będzie chciał użyć świec jednominutowych. Jednak większość brokerów nie udostępnia tak dużych baz danych świec jednominutowych. Istnieje więc możliwość, że do modelowania użyte zostaną świece o większych okresach. W celu zapewnienia najwyższej jakości modelowania, konieczne jest posiadanie szerokiej bazy danych świec jednominutowych.
+ 
+MetaTrader umożliwia importowanie zewnętrznych danych z plików tekstowych lub CSV. Dane takie można ściągnąć za darmo z kilku serwisów forexowych. Niestety dane darmowe często nie są najlepszej jakości i zawierają przekłamania. Istnieje więc możliwość, że zaimportowane dane jednominutowe nie będą się pokrywać z wyższymi przedziałami
+czasowymi, tworząc niespójność. W takim wypadku tester odrzuci wartości jednominutowe, tym samym obniżając jakość modelowania.
+ 
+Rynek Forex wykazuje się duża dynamiką. Prawidłowości, które można było zauważyć na niektórych parach walutowych, po kilku latach, a nawet miesiącach mogą się już nie sprawdzać. Dlatego też, optymalizowanie strategii na danych późniejszych niż rok wstecz nie ma sensu. Budowany system zostął więc przetestowany i zoptymalizowany na podstawie ostatnich 12 miesięcy. Dokładne dane o świecach jednominutowych z takiego okresu, są dostępne na serwerze MetaTrader. Niestety mogą się one różnić od danych dostarczonych przez brokera.
+
+MetaTrader umożliwia dokonanie własnej analizy jakości modelowania. W momencie uruchomienia testera program generuje szereg czasowy, który jest wykorzystywany podczas testu i optymalizacji. Istnieje możliwość podglądu wygenerowanego szeregu. Jeśli otrzymany wykres będzie się charakteryzował długimi ruchami kursu w linii prostej, to jakość modelu jest niska, gdyż notowania zostały uśrednione. Częsta zmiana kierunku ruchu wskazuje na użycie dokładniejszych danych z mniejszych okresów czasowych zapewniających wyższą jakość modelowania. 
+
+Kolejny problem, niezależny od użytkownika i MetaTradera, wynika z rodzaju konta, naktórym docelowo ma działać dany system. Najpopu
+larniejszym obecnie jest model market maker, w którym broker jest stroną transakcji. Zazwyczaj posiadanie takiego konta nie wiąże się z jakimikolwiek opłatami lub prowizjami, a broker zarabia wyłącznie na spreadzie. Model ten posiada dwa warianty. W jednym z nich spread pozostaje na stałym poziomie, w drugim natomiast podlega ciągłym zmianom. Ponieważ terminal nie przechowuje historycznych
+danych dotyczących wielkości spreadu, podczas testowania i optymalizacji przyjmowany jest jego aktualny poziom. Jeśli obecnie jest on wyjątkowo niski, to wyniki zwracane przez tester będą zawyżone w stosunku do rzeczywistości, a jeśli wysoki –zaniżone. Dla najbardziej płynnych par walutowych o niskim średnim spreadzie błędy będą niewielkie, jednak dla pozostałych może znacznie zafałszować obraz dochodowości strategii.
+ 
+Największy problem pojawia się jednak, jeśli korzystamy modelu NDD (no dealing desk). Broker nie występuje tutaj jako strona transakcji i nie ustala kursu. Ceny podawane są w czasie rzeczywistym z rynku międzybankowego. W tym modelu broker pobiera prowizję od każdej transakcji, uzależnioną od wielkości pozycji. Prowizja naliczana jest dopiero po otworzeniu pozycji. Język MQL niedostarcza narzędzi pozwalających na uzyskanie jej wysokości w momencie wyliczania ilości lotów. Z tego powodu wyniki zwracane przez tester nie uwzględniają prowizji. Sprawia to, że w modelu NDD strategia będzie zawsze przynosić gorsze rezultaty niż wynikało by to z optymalizacji na danych.
+
+Budowany system został przetestowany na koncie typu market maker ze stałymi spreadami. Dodatkowo analizie i optymalizacji została poddana najbardziej płynna para walutowa EUR/USD. Dzięki temu żaden z opisanych problemów nie występował.
+
+Kolejny problem pojawia się na bardzo płynnych rynkach, gdzie między chwilą wysłania zlecenia buy lub sell a jego realizacją, kurs może się zmienić, powodując otwarcie pozycji na poziomie innym niż pożądany. Ma toszczególne znaczenie dla strategii skalpingowych i grających
+na niewielkich zmianach kursu wysokimi lotami. Jednym z parametrów funkcji OrderSend() w MQL jest tzw. slippage. Określa on maksymalne odchylenie kursu, wyrażone w pipsach, od poziomu z chwili wysłania zlecenia z egzekucją rynkową. Podczas testowania i optymalizacji strategii tester zawsze otwiera zlecenia po cenie z danej chwili, odchylenia zawsze wynoszą 0 pipsów. Konieczna staje się więc analiza wrażliwości strategii na możliwe odchylenia od cen rynkowych. Najlepszym narzędziem umożliwiającym jej przeprowadzenie jest arkusz kalkulacyjny, do którego importujemy historię wykonanychprzez tester zleceń i modyfikujemy ceny otwarcia tak, abyśmy uzyskali kilka wariantów pesymistycznych, czyli zakładających średnie odchylenie od ceny rynkowej w wysokości 1 lub 2 pipsów. Następnie sprawdzamy, czy w istotnym stopniu wpłynęło to na wyniki osiągane przez daną strategię przy danych parametrach wejściowych.
 % itd.
 % \appendix
 % \include{dodatekA}
