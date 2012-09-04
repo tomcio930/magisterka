@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.27)  19 AUG 2012 22:27
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.27)  27 AUG 2012 00:22
 entering extended mode
 **praca_magisterska.tex
 (D:\magisterka\magisterka\tekst\praca_magisterska.tex
@@ -472,23 +472,7 @@ File: lstlang3.sty 2004/09/05 1.3 listings language file
 LaTeX Warning: Unused global option(s):
     [pdflatex,11pt].
 
-(D:\magisterka\magisterka\tekst\praca_magisterska.aux
-
-LaTeX Warning: Label `eqn:wzor' multiply defined.
-
-
-LaTeX Warning: Label `eqn:wzor' multiply defined.
-
-
-LaTeX Warning: Label `eqn:wzor' multiply defined.
-
-
-LaTeX Warning: Label `eqn:wzor' multiply defined.
-
-
-LaTeX Warning: Label `eqn:wzor' multiply defined.
-
-)
+(D:\magisterka\magisterka\tekst\praca_magisterska.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
@@ -502,7 +486,8 @@ LaTeX Font Info:    ... okay on input line 67.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 67.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
@@ -616,50 +601,122 @@ Rozdzia\l  1.
 
 ] [7]
 Rozdzia\l  2.
+
+LaTeX Warning: Citation `9' on page 8 undefined on input line 108.
+
 [8
 
-] [9] [10] [11] <candles.png, id=43, 619.56468pt x 430.60875pt>
-File: candles.png Graphic file (type png)
+] [9] [10]
 
-<use candles.png>
+LaTeX Warning: Citation `5' on page 11 undefined on input line 160.
+
+
+LaTeX Warning: Citation `5' on page 11 undefined on input line 162.
+
+
+LaTeX Warning: Citation `5' on page 11 undefined on input line 164.
+
+
+LaTeX Warning: Citation `5' on page 11 undefined on input line 166.
+
+[11]
+
+LaTeX Warning: Citation `8' on page 12 undefined on input line 183.
+
+
+LaTeX Warning: Citation `6' on page 12 undefined on input line 183.
+
+
+LaTeX Warning: Citation `3' on page 12 undefined on input line 187.
+
+
+LaTeX Warning: Reference `swieca' on page 12 undefined on input line 187.
+
+
+LaTeX Warning: Reference `swieca' on page 12 undefined on input line 187.
+
+<candles.png, id=43, 619.56468pt x 430.60875pt>
+File: candles.png Graphic file (type png)
+ <use candles.png>
 Package pdftex.def Info: candles.png used on input line 190.
 (pdftex.def)             Requested size: 426.79134pt x 296.62755pt.
- [12]
+
+
+LaTeX Warning: Reference `swiece_rozdzial' on page 12 undefined on input line 1
+95.
+
+[12]
 Underfull \vbox (badness 1024) has occurred while \output is active []
 
- [13 <D:/magisterka/magisterka/tekst/candles.png>] [14]
+ [13 <D:/magisterka/magisterka/tekst/candles.png>]
+
+LaTeX Warning: Citation `8' on page 14 undefined on input line 230.
+
+[14]
+
+LaTeX Warning: Citation `1' on page 15 undefined on input line 234.
+
 <ma.png, id=61, 621.07031pt x 432.86719pt>
 File: ma.png Graphic file (type png)
  <use ma.png>
 Package pdftex.def Info: ma.png used on input line 237.
 (pdftex.def)             Requested size: 426.79134pt x 297.46335pt.
- [15 <D:/magisterka/magisterka/tekst/ma.png>] <bb.png, id=65, 624.83438pt x 432
-.86719pt>
+
+
+LaTeX Warning: Reference `ma' on page 15 undefined on input line 243.
+
+[15 <D:/magisterka/magisterka/tekst/ma.png>]
+
+LaTeX Warning: Citation `5' on page 16 undefined on input line 245.
+
+
+LaTeX Warning: Citation `5' on page 16 undefined on input line 251.
+
+<bb.png, id=65, 624.83438pt x 432.86719pt>
 File: bb.png Graphic file (type png)
  <use bb.png>
 Package pdftex.def Info: bb.png used on input line 254.
 (pdftex.def)             Requested size: 426.79134pt x 295.67339pt.
 
+
+LaTeX Warning: Citation `5' on page 16 undefined on input line 264.
+
+
 Underfull \vbox (badness 1953) has occurred while \output is active []
 
  [16]
-[17 <D:/magisterka/magisterka/tekst/bb.png>] [18]
+[17 <D:/magisterka/magisterka/tekst/bb.png>]
+
+LaTeX Warning: Citation `1' on page 18 undefined on input line 273.
+
+
+LaTeX Warning: Citation `1' on page 18 undefined on input line 275.
+
+[18]
+
+LaTeX Warning: Citation `5' on page 19 undefined on input line 277.
+
 <macd.png, id=76, 624.08156pt x 431.36156pt>
 File: macd.png Graphic file (type png)
  <use macd.png>
 Package pdftex.def Info: macd.png used on input line 280.
 (pdftex.def)             Requested size: 426.79134pt x 295.0004pt.
- [19 <D:/magisterka/magisterka/tekst/macd.png>] <reduction.png, id=81, 376.4062
-5pt x 268.00125pt>
-File: reduction.png Graphic file (type png)
+ [19 <D:/magisterka/magisterka/tekst/macd.png>]
 
-<use reduction.png>
+LaTeX Warning: Reference `redukcja' on page 20 undefined on input line 294.
+
+
+LaTeX Warning: Reference `redukcja' on page 20 undefined on input line 294.
+
+<reduction.png, id=81, 376.40625pt x 268.00125pt>
+File: reduction.png Graphic file (type png)
+ <use reduction.png>
 Package pdftex.def Info: reduction.png used on input line 297.
 (pdftex.def)             Requested size: 284.52756pt x 202.59937pt.
- [20] <hammer.png, id=86, 373.395pt x 270.25969pt>
+ [20]
+<hammer.png, id=86, 373.395pt x 270.25969pt>
 File: hammer.png Graphic file (type png)
-
-<use hammer.png>
+ <use hammer.png>
 Package pdftex.def Info: hammer.png used on input line 306.
 (pdftex.def)             Requested size: 284.52756pt x 205.94795pt.
 
@@ -705,6 +762,9 @@ Package pdftex.def Info: stars.png used on input line 375.
 Underfull \vbox (badness 2529) has occurred while \output is active []
 
  [26 <D:/magisterka/magisterka/tekst/stars.png>]
+
+LaTeX Warning: Citation `8' on page 27 undefined on input line 391.
+
 <metatrader.png, id=118, 1027.84pt x 770.88pt>
 File: metatrader.png Graphic file (type png)
  <use metatrader.png>
@@ -727,12 +787,23 @@ File: usecase.PNG Graphic file (type png)
  <use usecase.PNG>
 Package pdftex.def Info: usecase.PNG used on input line 455.
 (pdftex.def)             Requested size: 455.24408pt x 347.06784pt.
- [31 <D:/magisterka/magisterka/tekst/usecase.PNG>]
+
+
+LaTeX Warning: Reference `sec:forex' on page 31 undefined on input line 471.
+
+[31 <D:/magisterka/magisterka/tekst/usecase.PNG>]
 <ogolny.png, id=136, 671.50874pt x 743.02594pt>
 File: ogolny.png Graphic file (type png)
  <use ogolny.png>
 Package pdftex.def Info: ogolny.png used on input line 483.
 (pdftex.def)             Requested size: 455.24408pt x 503.7317pt.
+
+
+LaTeX Warning: Reference `ogolny' on page 32 undefined on input line 489.
+
+
+LaTeX Warning: Reference `sec:forex' on page 32 undefined on input line 489.
+
 
 Underfull \vbox (badness 3590) has occurred while \output is active []
 
@@ -747,7 +818,19 @@ Package pdftex.def Info: warunki_otwarcia.png used on input line 493.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [33]
+
+LaTeX Warning: Reference `warunki_otwarcia' on page 34 undefined on input line 
+499.
+
 [34 <D:/magisterka/magisterka/tekst/warunki_otwarcia.png>]
+
+LaTeX Warning: Reference `warunki_otwarcia' on page 35 undefined on input line 
+509.
+
+
+LaTeX Warning: Reference `swiece_rozdzial' on page 35 undefined on input line 5
+27.
+
 <otwarcie.png, id=149, 320.69812pt x 392.96812pt>
 File: otwarcie.png Graphic file (type png)
  <use otwarcie.png>
@@ -766,7 +849,22 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Overfull \vbox (8.51976pt too high) has occurred while \output is active []
 
 
-[37 <D:/magisterka/magisterka/tekst/sekwencji.png>] [38]
+[37 <D:/magisterka/magisterka/tekst/sekwencji.png>]
+
+LaTeX Warning: Reference `sekwencji' on page 38 undefined on input line 550.
+
+
+LaTeX Warning: Reference `swiece_rozdzial' on page 38 undefined on input line 5
+55.
+
+
+LaTeX Warning: Reference `warunki_otwarcia' on page 38 undefined on input line 
+557.
+
+[38]
+
+LaTeX Warning: Reference `sec:srednie' on page 39 undefined on input line 561.
+
 <trend.png, id=165, 356.0803pt x 488.57532pt>
 File: trend.png Graphic file (type png)
  <use trend.png>
@@ -777,17 +875,60 @@ Package pdftex.def Info: trend.png used on input line 565.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `swiece' on page 39 undefined on input line 573.
+LaTeX Warning: Reference `trend' on page 39 undefined on input line 571.
+
+
+LaTeX Warning: Reference `swiece_rozdzial' on page 39 undefined on input line 5
+73.
 
 [39] [40 <D:/magisterka/magisterka/tekst/trend.png>]
 
-LaTeX Warning: Reference `swiece' on page 41 undefined on input line 581.
+LaTeX Warning: Reference `swiece_rozdzial' on page 41 undefined on input line 5
+81.
 
-[41] [42]
+[41]
+
+LaTeX Warning: Reference `parametry_przedzialy' on page 42 undefined on input l
+ine 595.
+
+[42]
 Rozdzia\l  4.
 [43
 
-] [44] (D:\magisterka\magisterka\tekst\praca_magisterska.bbl [45]) [46
+] [44] [45] <optymalizacja.png, id=188, 341.77687pt x 246.1697pt>
+File: optymalizacja.png Graphic file (type png)
+
+<use optymalizacja.png>
+Package pdftex.def Info: optymalizacja.png used on input line 700.
+(pdftex.def)             Requested size: 341.43306pt x 245.93994pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[46] <optymalizacja_zla.png, id=192, 800.9925pt x 232.61906pt>
+File: optymalizacja_zla.png Graphic file (type png)
+
+<use optymalizacja_zla.png>
+Package pdftex.def Info: optymalizacja_zla.png used on input line 712.
+(pdftex.def)             Requested size: 341.43306pt x 99.15816pt.
+
+<optymalizacja_dobra.png, id=193, 806.26219pt x 230.36063pt>
+File: optymalizacja_dobra.png Graphic file (type png)
+
+<use optymalizacja_dobra.png>
+Package pdftex.def Info: optymalizacja_dobra.png used on input line 719.
+(pdftex.def)             Requested size: 341.43306pt x 97.55222pt.
+
+
+LaTeX Warning: Reference `liniakapzla' on page 47 undefined on input line 724.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[47 <D:/magisterka/magisterka/tekst/optymalizacja.png> <D:/magisterka/magisterk
+a/tekst/optymalizacja_zla.png>]
+(D:\magisterka\magisterka\tekst\praca_magisterska.bbl [48 <D:/magisterka/magist
+erka/tekst/optymalizacja_dobra.png>]) [49
 
 ]
 (D:\magisterka\magisterka\tekst\praca_magisterska.aux)
@@ -795,17 +936,17 @@ Rozdzia\l  4.
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 5059 strings out of 494045
- 66867 string characters out of 3148387
+ 5076 strings out of 494045
+ 67259 string characters out of 3148387
  161352 words of memory out of 3000000
- 8225 multiletter control sequences out of 15000+200000
+ 8239 multiletter control sequences out of 15000+200000
  90455 words of font info for 71 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 34i,12n,45p,2043b,344s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,12n,45p,2049b,344s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fon
@@ -819,9 +960,9 @@ eX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on praca_magisterska.pdf (46 pages, 890850 bytes).
+Output written on praca_magisterska.pdf (49 pages, 928885 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
+ 253 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

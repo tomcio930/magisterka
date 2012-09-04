@@ -38,3 +38,5 @@
 \contentsline {paragraph}{}{43}
 \contentsline {section}{\numberline {4.1}Spos\IeC {\'o}b dzia\IeC {\l }ania optymalizatora w MetaTrader}{43}
 \contentsline {paragraph}{}{43}
+\contentsline {section}{\numberline {4.2}Najcz\IeC {\k e}stsze problemy i b\IeC {\l }\IeC {\k e}dy w procesie optymalizacji}{45}
+\contentsline {paragraph}{}{45}
