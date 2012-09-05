@@ -15,39 +15,53 @@
 #define NORMAL_CANDLE                                                2
 #define BIG_CANDLE                                                   3
 
-//#define MA_DISTANCE                                                  3
-//#define MA_FAST                                                      5
-//#define MA_SLOW                                                     10
+#define TREND_UP                                                     0
+#define TREND_DOWN                                                   1
+#define TREND_HORIZONTAL                                             2
+
+#define HAMMER                                                       1
+#define HANGINGMAN                                                   0
+#define SHOOTINGSTAR                                                 1
+#define BULLISH_ENGULFING                                            1
+#define BEARISH_ENGULFING                                            1
+#define BULLISH_HARAMI                                               1
+#define BEARISH_HARAMI                                               1
+#define DARK_CLOUD_COVER                                             1
+#define PIERCING_LINE                                                0
+#define MORNING_STAR                                                 0
+#define EVENING_STAR                                                 0
+
 extern int MA_DISTANCE=1;
-extern int MA_FAST=18;
-extern int MA_SLOW=25;
-extern int hammerTreshold1=4;
-extern double hammerTreshold2=1.5;
+extern int MA_FAST=15;
+extern int MA_SLOW=30;
+extern int hammerTreshold1=2;
+extern double hammerTreshold2=2;
+extern int hammerTreshold3=2;
 
 extern int hangingManTreshold1=3;
 extern double hangingManTreshold2=1.5;
+extern int hangingManTreshold3=3;
 
-extern int shootingStarTreshold1=3;
+extern int shootingStarTreshold1=2;
 extern double shootingStarTreshold2=2;
+extern int shootingStarTreshold3=2;
 
 extern double engulfingTreshold1=1.5;
-extern double engulfingTreshold2=1.5;
+extern double engulfingTreshold2=1;
 
-extern double haramiTreshold1=1.5;
-extern double haramiTreshold2=1.5;
+extern double haramiTreshold1=1;
+extern double haramiTreshold2=1;
 
-extern double darkCloudTreshold1=1.5;
+extern double darkCloudTreshold1=1;
 
-extern double piercingLineTreshold1=1.5;
+extern double piercingLineTreshold1=1;
 
 extern int morningStarTreshold1=1;
 
 extern int eveningStarTreshold1=1;
 
 
-#define TREND_UP                                                     0
-#define TREND_DOWN                                                   1
-#define TREND_HORIZONTAL                                             2
+
 
 int takeProfitExtern=1000;
 int stopLossExtern= 20;
@@ -62,6 +76,7 @@ double stopLossMin;
 double lots= 0.1;
 bool lastWin=true;
 double lastFreeMargin=NULL;
+
 
 //+------------------------------------------------------------------+
 //| expert initialization function                                   |
@@ -100,30 +115,21 @@ int start()
       prevPrice=Ask;
       return;
    }
-
-   //modify stop loss
-   //modifyStopLoss();
    
-   //check close criteria, set closeBuy and closeSell, close order
-   bandsCloseCriteria();
    RefreshRates(); 
    prevPrice=Ask;
-   if(Volume[0]==1)
-   {
-      closeEndOfWeek(); 
-   }
-   //work only with one order
-   if(OrdersTotal()>0)
-      return;
+   
    //new bar appear (if the latest bar have only one tick)
    if(Volume[0]==1)
    {
-      //check open criteria and open order
+      bandsCloseCriteria();
+      closeEndOfWeek(); 
+      //work only with one order
+      if(OrdersTotal()>0)
+         return;
       candleOpenCriteria();
-      //bandsOpenCriteria();
    }
-   
-   
+     
    return(0);
 }
 
@@ -175,36 +181,37 @@ void randomOpenCriteria(bool openBuy, bool openSell)
 void candleOpenCriteria()
 {  
    //hammer and later confirmation
-   if(isHammer(2) && Close[1]>Close[2])         
+ 
+   if(HAMMER && isHammer(2) && Close[1]>Close[2])         
    {   
       //1 18 25 - trend parameters                                      
       openOrder(true, false, lots, takeProfitExtern, Low[2]);
       Print("Hammer candle appears", " Open: ", Open[2], " High: ", High[2], " Low: ", Low[2], " Close: ", Close[2], " Time: ",TimeMinute(Time[2]));                           
    }
 
-  
    //hanging man and later confirmation
-   else if(isHangingMan(2) && Close[2]>=Close[1])         
+   else if(HANGINGMAN && isHangingMan(2) && Close[2]>=Close[1])         
    {    
       Print("HIGH[2]: ", High[2]);
       openOrder(false, true, lots, takeProfitExtern, High[2]);
       Print("Hanging man candle appears", " Open: ", Open[2], " High: ", High[2], " Low: ", Low[2], " Close: ", Close[2], " Time: ",TimeMinute(Time[2]));                                                  
    }
+
  
-   else if(isShootingStar(2) && Close[2]>=Close[1]) 
+   else if(SHOOTINGSTAR && isShootingStar(2) && Close[2]>=Close[1]) 
    {   
       openOrder(false, true, lots, takeProfitExtern, High[2]);  
       Print("Shooting Star candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
 
    // zysk ale tylko 20% trafnych transakcji
-   else if(isBullishEngulfing(1)) 
+   else if(BULLISH_ENGULFING && isBullishEngulfing(1)) 
    {
       openOrder(true, false, lots, takeProfitExtern, Low[1]);      
       Print("BullishEngulfing candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
  
-   else if(isBearishEngulfing(1)) 
+   else if(BEARISH_ENGULFING && isBearishEngulfing(1)) 
    {
       openOrder(false, true, lots, takeProfitExtern, High[1]);     
       Print("BearishEngulfing candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
@@ -212,40 +219,40 @@ void candleOpenCriteria()
    
    
    //Bullish Harami and later confirmation
-   else if(isBullishHarami(2) && Close[1]>=Close[2]) 
+   else if(BULLISH_HARAMI && isBullishHarami(2) && Close[1]>=Close[2]) 
    {
       openOrder(true, false, lots, takeProfitExtern, Low[3]);    
       Print("BullishHarami candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
 
    //Bearish Harami and later confirmation
-   else if(isBearishHarami(2) && Close[1]<=Close[2]) 
+   else if(BEARISH_HARAMI && isBearishHarami(2) && Close[1]<=Close[2]) 
    {
       openOrder(false, true, lots, takeProfitExtern, High[3]);       
       Print("BearishHarami candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
 
-   else if(isDarkCloudCover(1))
+   else if(DARK_CLOUD_COVER && isDarkCloudCover(1))
    {
       openOrder(false, true, lots, takeProfitExtern, High[1]);      
       Print("DarkCloudCover candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
 
    //ma³o decyzji, niski zysk
-   else if(isPiercingLine(1))
+   else if(PIERCING_LINE && isPiercingLine(1))
    {
       openOrder(true, false, lots, takeProfitExtern, Low[1]);     
       Print("PiercingLine candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
   
    //ma³o decyzji, s³aby zysk
-   else if(isMorningStar(1))
+   else if(MORNING_STAR && isMorningStar(1))
    {
       openOrder(true, false, lots, takeProfitExtern, Low[2]);      
       Print("MorningStar candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
    }
 
-   else if(isEveningStar(1))
+   else if(EVENING_STAR && isEveningStar(1))
    {
       openOrder(false, true, lots, takeProfitExtern, High[2]);       
       Print("EveningStar candle appears", " Open: ", Open[1], " High: ", High[1], " Low: ", Low[1], " Close: ", Close[1], " Time: ",TimeMinute(Time[1])); 
@@ -511,7 +518,7 @@ double getLotsToOrder()
 //+------------------------------------------------------------------+
 bool isHammer(int candle)
 {
-   if(TREND_UP== trend() && TREND_DOWN == bbFilter(candle) && hammerTreshold1<(lowerShadow(candle)/candleHigh(candle)) && 2>=upperShadow(candle) && lowerShadow(candle)>hammerTreshold2*averageCandleBody(BARS_TO_AVERAGE))
+   if(TREND_UP== trend() && TREND_DOWN == bbFilter(candle) && hammerTreshold1<(lowerShadow(candle)/candleHigh(candle)) && hammerTreshold3>=upperShadow(candle) && lowerShadow(candle)>hammerTreshold2*averageCandleBody(BARS_TO_AVERAGE))
       return(true);
    else
       return(false);
@@ -522,7 +529,7 @@ bool isHammer(int candle)
 //+------------------------------------------------------------------+
 bool isHangingMan(int candle)
 {
-   if(TREND_DOWN == trend() && TREND_UP == bbFilter(candle) && hangingManTreshold1<(lowerShadow(candle)/candleHigh(candle)) && 2>=upperShadow(candle) && !isWhite(candle) && lowerShadow(candle)>hangingManTreshold2*averageCandleBody(BARS_TO_AVERAGE))
+   if(TREND_DOWN == trend() && TREND_UP == bbFilter(candle) && hangingManTreshold1<(lowerShadow(candle)/candleHigh(candle)) && hangingManTreshold3>=upperShadow(candle) && !isWhite(candle) && lowerShadow(candle)>hangingManTreshold2*averageCandleBody(BARS_TO_AVERAGE))
       return(true);
    else
       return(false);
@@ -533,7 +540,7 @@ bool isHangingMan(int candle)
 //+------------------------------------------------------------------+
 bool isShootingStar(int candle)
 {
-   if(TREND_DOWN == trend() && TREND_UP == bbFilter(candle) && shootingStarTreshold1<(upperShadow(candle)/candleHigh(candle)) && 3>=lowerShadow(candle) && upperShadow(candle)>shootingStarTreshold2*averageCandleBody(BARS_TO_AVERAGE))
+   if(TREND_DOWN == trend() && TREND_UP == bbFilter(candle) && shootingStarTreshold1<(upperShadow(candle)/candleHigh(candle)) && shootingStarTreshold3>=lowerShadow(candle) && upperShadow(candle)>shootingStarTreshold2*averageCandleBody(BARS_TO_AVERAGE))
       return(true);
    else
       return(false);
