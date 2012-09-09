@@ -422,7 +422,7 @@ Nie ma wątpliwości, że komputer zrewolucjonizował analizę rynków finansowy
 
 Niestety większość z nich cechuje kilka wad:
 \begin{enumerate}
-\item Większość systemów mechanicznych podąża za trendem.
+\item Przeważająca ilość systemów mechanicznych podąża za trendem.
 \item Systemy podążające za trendem potrzebują wyraźnych trendów, aby przynosic zyski.
 \item Systemy zależne od trendu nie przynoszą na ogół zysków, kiedy na rynku nie ma wyraźnego trendu.
 \item Okresy bez wyraźnych trendów bywają bardzo długie, co utrudnia stosowanie tego podejścia.
@@ -509,7 +509,7 @@ Na diagramie \ref{warunki_otwarcia} przedstawiono sposób generowania sygnałów
 Poszukiwanie formacji hossy lub bessy, w algorytmie z diagramu \ref{warunki_otwarcia}, opiera się na próbie znalezienia sekwencji świeć, pasującej do grupy obsługiwanych przez program wzorców. W przypadku analizy formacji hossy odpowiedni fragment kodu wywołuje się w momencie wystąpienia trendu głównego o kierunku wzrostowym wraz z krótkookresowym trendem malejącym. Opisywana część algorytmu dzieli się na szukanie formacji:
 \begin{enumerate}
 \item młota
-\item gwiazdy polarnej
+\item gwiazdy porannej
 \item objęcia hossy
 \item harami wzrostowego
 \item przenikania
@@ -534,8 +534,9 @@ Problem subiektywizmu, przy klasyfikacji danego zbioru świec do odpowiedniego w
 \end{center}
 \end{figure} 
 
-Powyższy diagram objaśnia proces składania zlecenia kupna, bądź sprzedaży. Jeśli przed uruchomieniem systemu użytkownik nie poda ilości lotów do transakcji, zostanie ona automatycznie obliczona jako wartość maksymalna. Takie postępowanie zwiększa ryzyko zawieranych transakcji. Jego ograniczeniem będzie ustawienie zarówno limitów stop loss jak i take profit. Sposób określenia limitów oraz typ transakcji będzie się różnić w zależności od tego czy wcześniej wystąpiła formacja hossy czy bessy, . Dla większości rozpoznawanych formacji pułap stop loss będzie ustawiany na krańcową wartość. W przypadku formacji hossy będzie to minimalna cena z całej formacji, a w formacji bessy wartość maksymalna. Zamykanie transakcji będzie opierać się głównie na oddzielnym algorytmie, dlatego pułap take profit ustawiany będzie na stałą wartość. Przy wystąpieniu formacji hossy wysyłane będzie zlecenie kupna, a zlecenie sprzedaży podczas znalezienia formacji bessy.   
+Powyższy diagram objaśnia proces składania zlecenia kupna, bądź sprzedaży. Jeśli przed uruchomieniem systemu użytkownik nie poda ilości lotów do transakcji, zostanie ona automatycznie obliczona jako wartość maksymalna. Takie postępowanie zwiększa ryzyko zawieranych transakcji. Jego ograniczeniem będzie ustawienie zarówno limitów stop loss jak i take profit. Sposób określenia limitów oraz typ transakcji będzie się różnić w zależności od tego czy wcześniej wystąpiła formacja hossy czy bessy, . Dla większości rozpoznawanych formacji pułap stop loss będzie ustawiany na krańcową wartość. W przypadku formacji hossy będzie to minimalna cena z całej formacji, a w formacji bessy wartość maksymalna. Zamykanie transakcji będzie opierać się głównie na oddzielnym algorytmie, dlatego pułap take profit ustawiany będzie na stałą wartość. Przy wystąpieniu formacji hossy wysyłane będzie zlecenie kupna, a zlecenie sprzedaży podczas znalezienia formacji bessy. 
 
+Znalezienie konkretnej formacji i ruch cen w odpowiednim kierunku nie gwarantują zysku. Jednym z najważniejszych elementów jest odpowiedni czas wyjścia z rynku, czyli zamknięcia zlecenia. Często inwestorzy robią to zbyt wcześnie, ograniczając swoje zyski. Innym razem moment ten jest zbyt długo przeciągany i ostatecznie pozycja zamykana jest ze znacznie mniejszym zyskiem lub nawet stratą. Sam proces zamykania zlecenia został dobrany po wielu testach. Ostatecznie moment zamykania pozycji ustalają krańcowe wstęgi bollingera. W przypadku pozycji długiej zlecenie zamyka się gdy ceny przetną od góry górną wstęgę. Pozycje krótkie są natomias zamykane w czasie przecięcia od dołu dolnej wstęgi. Takie rozwiązanie pozwala na maksymalnie długie trzymanie pozycji zyskownych. Inne rozwiązania, które testowano to ustalanie limitów take profit na poziomie kilkukrotnie wyższym niż stop loss. Próbując dobierać różne poziomy okazało się, że często mimo ruchu cen w pożądanym kierunku limit nie został osiągany. Tym samym pozycja nie została zamykana z zyskiem, a zamiast tego często osiągany był poziom stop loss. Ustalenie obu limitów na tym samym poziomie, również nie przynosiło zadowalających rezultatów. Mimo tego, że sprawdzalność była powyżej 50\% to sposób ten nie pozwalał na osiąganie większych zysków. Problem tkwił w dużej zmienności dynamiki kursów. Dlatego w niektórych momentach poziom take profit był absolutnie nie do osiągnięcia, a w innych zbyt mały. Kolejne rozwiązanie opierało się na modyfikacji poziomu stop loss w czasie trwania zlecenia. W tym przypadku poziom take profit był praktycznie nie używany. Metoda opierała się na stopniowym przesuwaniu poziomu stop loss w kierunku poruszających się cen, zachowując przy tym pewną odległość. Odległość ta stanowiła zabezpieczenie przed możliwymi wachaniami kursu. Zbyt mała mogła prowadzic do szybkiego zakończenia zlecenia, natomiast zbyt duża ograniczać zyski. Niestety w tym przypadku problem zmiennej dynamiki rynku również nie został do końca rozwiązany. W niektórych przypadkach ruchy cen były na tyle małe, że próg stop loss nie był w ogóle zmieniany. W innych przypadkach wysokie skoki notowań zbyt szybko osiągały ustalony limit. Zastosowanie wstęg bollingera pozwoliło na dostosowanie się algorytmu do aktualnej siły rynku. Przykłady otwierania i zamykania zleceń zostaną przedstawione w rozdziale \ref{sec:wyniki_optymalizacji}.
 \subsection{Diagramy sekwencjii}
 \paragraph{}
 
@@ -724,10 +725,284 @@ Po wyborze zbioru wartości parametrów, dla którego system uzyskuje najlepsze 
 W obu przypadkach został osiągnięty zysk. Jednak na wykresie \ref{liniakapzla} można zauważyć duże wahania kapitału. Gracz powinien natychmiast odrzucić ten zestaw parametrów i spróbować innego zestawu sugerowanego przez tester. Linia kapitału zachowuje się chaotycznie, skokowo wzrastając i opadając. Transakcje przynoszące duże zyski, są szybko niwelowane przez zlecenia stratne. Zachodzi więc podejrzenie, że system ten może dla różnych okresów czasu przynosić zupełnie różne rezultaty. Dodatkowo takie zachowanie się systemu może prowadzić do dużych strat w krótkim okresie czasu, a nawet wyzerowania konta inwestora. Drugi przypadek jest przykładem pożądanej linii kapitału. Długie serie zysków są przecinane krótkimi seriami strat, a zyski osiągane są równomiernie i stabilnie. Tego typu system teoretycznie będzie przynosił podobne zyski w różnych okresach czasu.
 
 \section{Wyniki optymalizacji}
+\label{sec:wyniki_optymalizacji}
+\paragraph{}
+Testy przeprowadzono dla każdego rodzaju formacji opisanej w pracy. Zbióry wartości parametrów użyte podczas optymalizacji zamieszczono w tabeli \ref{parametry_przedzialy}. Analizie poddano okres od 1.05.2011r. do 1.05.2012r. Kapitał początkowy wynosił 1000\$. Wysokość każdej transakcji określono z góry na wartość 0.1 lota. Optymalizowano wartość całkowitego zysku netto.
+
+\subsection{Formacja młota}
 \paragraph{}
 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=14cm]{hammer/optymalizacja.png}
+\caption{Raport z optymalizacji parametrów formacji młota}
+\label{opt_mlot}
+\end{center}
+\end{figure} 
+Wykres \ref{opt_mlot} przedstawia częściowy raport z optymalizacji formacji młota. Poszukiwano odpowiednich wartości dla 3 parametrów: stosunku długości cienia dolnego do korpusu, długości cienia górnego oraz zmiennej określającej długość cienia dolnego. Największy osiągnięto w przebiegu 13. Wynosił on 112.41\$, jednak wartość wskaźnika zysku była w tym przypadku zbyt mała. Wskaźnik ten określa stosunek zysku brutto do straty brutto. Wartość 1.84 oznacza, że suma transakcji zyskownych wynosiła 1.84 sumy transakcji stratnych. Pod tym względem znacznie lepszy wynik osiągnięto w iteracji 4. W tym wypadku wskaxnik zysku wynosił aż 4.65. Przy jedynie 6 transakcjach osiągnięto wynik 103.70\$, który jest tylko o niecałe 10\$ gorszy od opcji w której przeprowadzono aż 17 transakcji. Wariant numer 4 został wybrany za optymalny również ze względu na niską maksymalną stratę kapitału wynoszącą jedynie 3.67\%. Wartości parametów dla wybranej optymalizacji zostały przedstawione w tabeli \ref{parametry_mlot}. Mnożnik długości cienia dolnego wynoszący 1.5 oznacza, że cień dolny musi być przynajmniej 1.5 razy większy od średniej wysokości 100 ostatnich świec. Dodatkowo warunek na brak cienia górnego oraz przynajmniej dwa razy mniejszy korpus od cienia dolnego w sposób drastyczny zaostrzają warunki na klasyfikacje świecy jako młota. 
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+parametr & wartość \\
+\hline
+stosunek długości cienia dolnego do korpusu & 2\\
+\hline
+długość cienia górnego & 0\\
+\hline
+mnożnik długości cienia dolnego & 1.5\\
+\hline
+\end{tabular} 
+\caption{Optymalne parametry dla formacji młota}
+\label{parametry_mlot}
+\end{center}
+\end{table}
+Wykres \ref{przyklad_mlot} przedstawia rozpoznaną formację młota oraz transakcje wykonaną na jej podstawie. Świece oznaczono żółtym prostokątem. Wyraźnie widać, że rozpoznana świeca to klasyczna formacja młota, którą z pewnością dostrzegł każdy gracz. Dlatego też jej wymowa jest znacząca i w tym wypadku przyczynia się do uzyskania zysku. Analizując wyniki optymalizacji formacji młota okazuje się, że surowsze warunki, pozwalają osiągnąć duże zyski, mimo małej ilości transakcji. Dzieje się tak, gdyż każda z rozpoznanych w ten sposób formacji jest bardziej wiarygodna, a tym samym przynosi większe zyski. 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=14cm]{hammer/przyklad.png}
+\caption{Przykład rozpoznania formacji młota wraz z transakcją kupna}
+\label{przyklad_mlot}
+\end{center}
+\end{figure} 
+Tabela \ref{raport_mlot} zawiera najważniejsze wartości z raportu, na temat wyników jakie osiągneła formacja młota na przestrzeni 1 roku, przy optymalnie dobranych parametrach. Jedna stratna transakcja stratna była spowodowana wystąpieniem zbyt dużej świecy potwierdzającej, jednak sam kierunek ruchu cen sprawdził się. Warto zwrócić uwagę, że średnia zyskowna transakcja jest większa od średniej stratnej, prawie o 9\%. Algorytm został w ten sposób skonstruowany, aby zamykać szybko transakcje stratne, a zyskowne trzymać jak najdłużej.
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+Całkowity zysk netto & 103.70 \\
+\hline
+Zysk brutto & 132.10 \\
+\hline
+Strata brutto & -28.40 \\
+\hline
+Wskaźnik zysku & 4.65 \\
+\hline
+\hline
+Ilość transakcji & 6 \\
+\hline
+Transakcje zyskowne & 5 (83.33\%) \\
+\hline
+Transakcje stratne & 1 (16.67\%) \\
+\hline
+\hline
+Średnia zyskowna transakcja & 37.20 \\
+\hline
+Średnia stratna transakcja & -28.40 \\
+\hline
+\end{tabular} 
+\caption{Wynik testu dla formacji młota}
+\label{raport_mlot}
+\end{center}
+\end{table}
+
+\subsection{Formacja spadającej gwiazdy}
+\paragraph{}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=14cm]{shootingstar/optymalizacja.png}
+\caption{Raport z optymalizacji parametrów formacji spadającej gwiazdy}
+\label{opt_gwiazda}
+\end{center}
+\end{figure} 
+Proces optymalizacji parametrów formacji spadającej gwiazdy przedstawiono na wykresie \ref{opt_gwiazda}. Poszukiwane wartości to stosunek długości cienia górnego do korpusu, długość cienia dolnego oraz mnożnik długości cienia górnego. Najlepszy wynik został osiągnięty dla zestawu danych w iteracji 13. Otrzymano wynik 116.20\$ przy wysokim wskaźniku zysku wynoszącym, aż 9.13. Dodatkowo największa zanotowana strata w tym wypadku osiągnęła jedynie 3.44\%. Lepszy wskaźnik zysku uzyskano w opcji 7 i 8 jednak z powodu mniejszej ilości transakcji zanotowano znacznie mnejszy dochód netto. Optymalne wartości parametrów z przebiegu 13 zostały zebrane w tabeli \ref{parametry_gwiazda}. Znaczenie parametrów jest analogiczne do przypadku formacji młota. Warto zwrócić uwagę, że cien krótki może odstawać od korpusu, aż do 2 pipsów. Mniejsze wartości tego parametru powodowały brak rozpoznania jakichkolwiek formacji spadającej gwiazdy.
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+parametr & wartość \\
+\hline
+stosunek długości cienia górnego do korpusu & 2\\
+\hline
+długość cienia dolnego & 2\\
+\hline
+mnożnik długości cienia górnego & 2\\
+\hline
+\end{tabular} 
+\caption{Optymalne parametry dla formacji młota}
+\label{parametry_gwiazda}
+\end{center}
+\end{table}
+
+Przykład rozpoznania spadającej gwiazdy został przedstawiony na wykresie \ref{przyklad_gwiazda}. Na podstawie świecy, którą oznaczono żółtym prostokątem, dokonano transakcji sprzedaży. Zamknięcie nastąpiło przy przecięciiu dolnej wstęgi bollingera od dołu. Punkt ten okazał się optymalnym miejscem wyjścia z rynku Transakcja zakończyła się znaczącym zyskiem. Rozpoznana formacja przedstawia klasyczną spadającą, gwiazdę umiejscowioną na szczycie krótkoterminiowego trendu wzrostowego.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=14cm]{shootingstar/przyklad.png}
+\caption{Przykład rozpoznania formacji spadającej gwiazdy wraz z transakcją sprzedaży.}
+\label{przyklad_gwiazda}
+\end{center}
+\end{figure} 
+W tabeli \ref{raport_gwiazda} znajdują się wyniki symulacji dla formacji spadającej gwiazdy. Zysk netto, ilość transakcji oraz wskaźnik zysku są większę niż w przypadku formacji młota. Zanotowano więcej stratnych transakcji, jednak średnia ich wartość jest niewielka i wynosi 7.12\$ przy trzykrotnie większej średniej z transakcji przynoszących dochód.  
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+Całkowity zysk netto & 116.20\\
+\hline
+Zysk brutto & 130.50 \\
+\hline
+Strata brutto & -14.30 \\
+\hline
+Wskaźnik zysku & 9.13 \\
+\hline
+\hline
+Ilość transakcji & 8 \\
+\hline
+Transakcje zyskowne & 6 (75\%) \\
+\hline
+Transakcje stratne & 2 (25\%) \\
+\hline
+\hline
+Średnia zyskowna transakcja & 21.75 \\
+\hline
+Średnia stratna transakcja & 7.15 \\
+\hline
+\end{tabular} 
+\caption{Wynik testu dla formacji spadającej gwiazdy}
+\label{raport_gwiazda}
+\end{center}
+\end{table}
+
+\subsection{Formacje objęcia}
+\paragraph{}
+
+Warunki występujące w formacjach objęcia hossy i bessy są na tyle jasno określone, że jedynym parametrem, który został optymalizowany była relatywna wielkość pierwszej ze świec. Sprawdzane były 4 wartości z przedziału <1;2> z krokiem 0.5. W obu przypadkach optymalnym wynikiem była liczba 1. Okazało się, że jedynie dla tej wartości znajdywane były jakiekolwiek formacje objęcia. Ich liczba była niewielka, jednak transakcje przeprowadzane na ich podstawie dawały zyski. W przypadku formacji objęcia hossy była to jedna transakcja przynosząca 37\$. Dla formacji objęcia bessy znaleziono dwie sekwencje świec z czego pierwsza dała zysk w wysokości aż 95.75\$, a druga strate 10.80\$. Tabela \ref{objecie} zbiera wyniki z symulacji dla obu formacji objęcia.
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+Całkowity zysk netto & 121.95\\
+\hline
+Zysk brutto & 132.75 \\
+\hline
+Strata brutto & -10.80 \\
+\hline
+Wskaźnik zysku & 12.29 \\
+\hline
+\hline
+Ilość transakcji & 3 \\
+\hline
+Transakcje zyskowne & 2 (66\%) \\
+\hline
+Transakcje stratne & 1 (33\%) \\
+\hline
+\hline
+Średnia zyskowna transakcja & 66.38 \\
+\hline
+Średnia stratna transakcja & -10.80 \\
+\hline
+\end{tabular} 
+\caption{Wynik testu dla formacji objęcia}
+\label{raport_objecie}
+\end{center}
+\end{table}
+Mimo wystąpienia jedynie 3 zleceń okazuje się, że formacje objęcia uzyskały lepszy rezultat, niż formacje jedno świecowe. Na poniższych wykresach przedstawiających znalezione formacje, widać przyczynę tak dobrego wyniku. Formacja objęcia hossy, przedstawiona na \ref{przyklad_objecie_hossy}, okazała się początkiem dłuższego trendu wzrostowego. 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=14cm]{bullishengulfing/przyklad.png}
+\caption{Przykład rozpoznania formacji objęcia hossy wraz z transakcją kupna}
+\label{przyklad_objecie_hossy}
+\end{center}
+\end{figure} 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=2cm]{bearishengulfing/przyklad.png}
+\caption{Przykład rozpoznania formacji objęcia bessy wraz z transakcją sprzedaży}
+\label{przyklad_objecie_bessy}
+\end{center}
+\end{figure} 
+Zamknięcie, które jest wykonywane po przekroczeniu od góry wstęgi bollingera następuje dopiero przy trzecim szczycie trendu. Dlatego zysk z tej transakcji jest tak duży. Warto jednak zauważyć, że znalezioną formację objęcia hossy można zaliczyć do idealnych przykładów tego rodzaju wzorca. Mogło mieć to wpływ na tak wyraźny wzrost cen w tym okresie. Na wykresie 30 minutowym, po złożeniu dwóch świec otrzymamy wyraźną świecę typu młot. Fakt ten mógł dodatkowo wpłynąć na siłę formacji objęcia hossy. W przypadku formacji bessy, znalezione świece na wykresie \ref{przyklad_objecie_bessy}, nie są aż tak jednoznaczne. Dodatkowo ich złożenie nie daje idealnej świecy typu spadająca gwiazda. Jednak jej kształ i usytułowanie wystarczyły, żeby rynek zawrócił w stronę wcześniejszego trendu spadkowego.
 
 
+\subsection{Formacje harami}
+\paragraph{}
+Pary świec harami są bardzo zbliżone do formacji objęcia. Optymalizacji podlega parametr odpowiadający za relatywną wielkość drugiej ze świec. W tym przypadku został on również ustawiony na wartość 1. W tabeli \ref{raport_harami_hossy} przedstawiono wyniki symulacji systemu opartego na formacji harami hossy. Zanotowano jedynie 4 transakcje, jednak 3 z nich były zyskowne i dały wysoki wskaźnik zysku. Dodatkowo strata osiągnięta przy jednej transakcji była niewielka. 
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+Całkowity zysk netto & 85\\
+\hline
+Zysk brutto & 96.80 \\
+\hline
+Strata brutto & -11.80 \\
+\hline
+Wskaźnik zysku & 8.20 \\
+\hline
+\hline
+Ilość transakcji & 4 \\
+\hline
+Transakcje zyskowne & 3 (75\%) \\
+\hline
+Transakcje stratne & 1 (25\%) \\
+\hline
+\hline
+Średnia zyskowna transakcja & 32.27 \\
+\hline
+Średnia stratna transakcja & -11.80 \\
+\hline
+\end{tabular} 
+\caption{Wynik testu dla formacji harami hossy}
+\label{raport_harami_hossy}
+\end{center}
+\end{table}
+
+Wykres \ref{przyklad_harami_hossy} pokazuje przykładowo znalezioną formację harami hossy. Po kolejnej świecy potwierdzającej nastąpiło otwarcie pozycji długiej. Zamknięcie wystąpiło w idealnym momencie zakończenia trendu wzrostowego. Wygląd i usytuowanie znalezionych świec jednoznacznie klasyfikuje je do wzorca harami wzrostowego. Tak jak w poprzednich przypadkach okazuje się, że jedynie sekwencje świec, które w sposób widoczny przypominają określoną formację, mogą przynieść zyski. 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=14cm]{bullishharami/przyklad.png}
+\caption{Przykład rozpoznania formacji harami hossy wraz z transakcją kupna}
+\label{przyklad_harami_hossy}
+\end{center}
+\end{figure} 
+Znacznie więcej formacji wystąpiło w przypadku harami bessy. Wyniki znajdują się w tabeli \ref{raport_harami_bessy}. Jak widać osiągnięto porównywalny zysk jak w poprzednich formacjach. Niestety wskaźnik zysku nie jest już tak duży. Na jego wartość wpłynęło kilka stratnych transakcji. 
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+Całkowity zysk netto & 85.90\\
+\hline
+Zysk brutto & 246.80 \\
+\hline
+Strata brutto & -160.90 \\
+\hline
+Wskaźnik zysku & 1.53 \\
+\hline
+\hline
+Ilość transakcji & 24 \\
+\hline
+Transakcje zyskowne & 14 (58.33\%) \\
+\hline
+Transakcje stratne & 10 (41.67\%) \\
+\hline
+\hline
+Średnia zyskowna transakcja & 17.63 \\
+\hline
+Średnia stratna transakcja & -16.09 \\
+\hline
+\end{tabular} 
+\caption{Wynik testu dla formacji harami bessy}
+\label{raport_harami_bessy}
+\end{center}
+\end{table}
+W szczególności niepokojące było obsunięcie kapitału rozpoczynające się od transakcji 17, które widać na wykresie \ref{linia_kap_harami} przedstawiającym przebieg lini kapitału. Były to 3 stratne zlecenia. Problemem znowu okazała się zbyt długa świeca potwierdzająca formację. Ruch cen w trakcie jej trwania był na tyl duży, że zajęcie pozycji po jej wystąpieniu nie przyniosło już żadnych zysków. Rynek zaczął zawracać znowu w przeciwną stronę, tworząc kolejną korektę. W ten sposób zostały osiągnięte limity stop loss i zaliczone 3 kolejne strante transakcje.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=16cm]{bearishharami/linia_kap.png}
+\caption{Przebieg linii kapitału dla systemu używającego formacji objęcia bessy}
+\label{linia_kap_harami}
+\end{center}
+\end{figure} 
+
+Jedną z zyskownych transakcji ukazuje wykres \ref{przyklad_harami_bessy}. Widać delikatny trend spadkowy, następnie lekkie wybicie do górny, na którym pojawia się formacja harami spadkowego. Po potwierdzeniu kolejną świecą spadkową pojawiają się jescze 3 świece czarne. Zamknięcie przy dolnej wstędzie bollingera dało zysk w wysokości 43.10\$. 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=10cm]{bearishharami/przyklad.png}
+\caption{Przykład rozpoznania formacji harami bessy wraz z transakcją sprzedaży}
+\label{przyklad_harami_bessy}
+\end{center}
+\end{figure} 
 % itd.
 % \appendix
 % \include{dodatekA}

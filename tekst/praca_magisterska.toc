@@ -30,13 +30,23 @@
 \contentsline {paragraph}{}{31}
 \contentsline {subsection}{\numberline {3.2.2}Diagramy aktywno\IeC {\'s}ci}{32}
 \contentsline {paragraph}{}{32}
-\contentsline {subsection}{\numberline {3.2.3}Diagramy sekwencjii}{37}
-\contentsline {paragraph}{}{37}
-\contentsline {section}{\numberline {3.3}Algorytmy rozpoznawania formacji \IeC {\'s}wiec japo\IeC {\'n}skich}{38}
+\contentsline {subsection}{\numberline {3.2.3}Diagramy sekwencjii}{38}
 \contentsline {paragraph}{}{38}
-\contentsline {chapter}{\numberline {4}Optymalizacja systemu}{43}
-\contentsline {paragraph}{}{43}
-\contentsline {section}{\numberline {4.1}Spos\IeC {\'o}b dzia\IeC {\l }ania optymalizatora w MetaTrader}{43}
-\contentsline {paragraph}{}{43}
-\contentsline {section}{\numberline {4.2}Najcz\IeC {\k e}stsze problemy i b\IeC {\l }\IeC {\k e}dy w procesie optymalizacji}{45}
-\contentsline {paragraph}{}{45}
+\contentsline {section}{\numberline {3.3}Algorytmy rozpoznawania formacji \IeC {\'s}wiec japo\IeC {\'n}skich}{39}
+\contentsline {paragraph}{}{39}
+\contentsline {chapter}{\numberline {4}Optymalizacja systemu}{44}
+\contentsline {paragraph}{}{44}
+\contentsline {section}{\numberline {4.1}Spos\IeC {\'o}b dzia\IeC {\l }ania optymalizatora w MetaTrader}{44}
+\contentsline {paragraph}{}{44}
+\contentsline {section}{\numberline {4.2}Najcz\IeC {\k e}stsze problemy i b\IeC {\l }\IeC {\k e}dy w procesie optymalizacji}{46}
+\contentsline {paragraph}{}{46}
+\contentsline {section}{\numberline {4.3}Wyniki optymalizacji}{49}
+\contentsline {paragraph}{}{49}
+\contentsline {subsection}{\numberline {4.3.1}Formacja m\IeC {\l }ota}{49}
+\contentsline {paragraph}{}{49}
+\contentsline {subsection}{\numberline {4.3.2}Formacja spadaj\IeC {\k a}cej gwiazdy}{51}
+\contentsline {paragraph}{}{51}
+\contentsline {subsection}{\numberline {4.3.3}Formacje obj\IeC {\k e}cia}{53}
+\contentsline {paragraph}{}{53}
+\contentsline {subsection}{\numberline {4.3.4}Formacje harami}{55}
+\contentsline {paragraph}{}{55}
