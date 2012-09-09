@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.27)  9 SEP 2012 18:45
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.27)  9 SEP 2012 23:27
 entering extended mode
 **praca_magisterska.tex
 (D:\magisterka\magisterka\tekst\praca_magisterska.tex
@@ -909,22 +909,32 @@ File: bearishharami/przyklad.png Graphic file (type png)
 <use bearishharami/przyklad.png>
 Package pdftex.def Info: bearishharami/przyklad.png used on input line 1001.
 (pdftex.def)             Requested size: 284.52756pt x 215.3876pt.
- [56 <D:/magisterka/magisterka/tekst/bullishharami/przyklad.png>] (D:\magisterk
-a\magisterka\tekst\praca_magisterska.bbl
-[57 <D:/magisterka/magisterka/tekst/bearishharami/linia_kap.png> <D:/magisterka
-/magisterka/tekst/bearishharami/przyklad.png>]) [58
+ [56 <D:/magisterka/magisterka/tekst/bullishharami/przyklad.png>]
+
+LaTeX Warning: Reference `raport_zaslona' on page 57 undefined on input line 10
+10.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+(D:\magisterka\magisterka\tekst\praca_magisterska.bbl [57 <D:/magisterka/magist
+erka/tekst/bearishharami/linia_kap.png> <D:/magisterka/magisterka/tekst/bearish
+harami/przyklad.png>] [58]) [59
 
 ]
 (D:\magisterka\magisterka\tekst\praca_magisterska.aux)
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5137 strings out of 494045
- 68821 string characters out of 3148387
+ 5138 strings out of 494045
+ 68837 string characters out of 3148387
  162352 words of memory out of 3000000
- 8292 multiletter control sequences out of 15000+200000
+ 8293 multiletter control sequences out of 15000+200000
  90455 words of font info for 71 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  34i,12n,45p,2579b,344s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -941,9 +951,9 @@ eX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on praca_magisterska.pdf (58 pages, 1068648 bytes).
+Output written on praca_magisterska.pdf (59 pages, 1071673 bytes).
 PDF statistics:
- 292 PDF objects out of 1000 (max. 8388607)
+ 295 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -995,7 +995,7 @@ W szczególności niepokojące było obsunięcie kapitału rozpoczynające się 
 \end{center}
 \end{figure} 
 
-Jedną z zyskownych transakcji ukazuje wykres \ref{przyklad_harami_bessy}. Widać delikatny trend spadkowy, następnie lekkie wybicie do górny, na którym pojawia się formacja harami spadkowego. Po potwierdzeniu kolejną świecą spadkową pojawiają się jescze 3 świece czarne. Zamknięcie przy dolnej wstędzie bollingera dało zysk w wysokości 43.10\$. 
+Jedną z zyskownych transakcji ukazuje wykres \ref{przyklad_harami_bessy}. Widać delikatny trend spadkowy, następnie lekkie wybicie do góry, na którym pojawia się formacja harami spadkowego. Po potwierdzeniu kolejną świecą spadkową pojawiają się jescze 3 świece czarne. Zamknięcie przy dolnej wstędzie bollingera dało zysk w wysokości 43.10\$. 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=10cm]{bearishharami/przyklad.png}
@@ -1003,6 +1003,40 @@ Jedną z zyskownych transakcji ukazuje wykres \ref{przyklad_harami_bessy}. Wida�
 \label{przyklad_harami_bessy}
 \end{center}
 \end{figure} 
+
+\subsection{Formacje zasłony ciemnej chmury}
+\paragraph{}
+
+Tak jak w poprzednich formacjach dwuświecowych formacja zasłony ciemnej chmury posiada do optymalizacji tylko jeden parametr. Zmienną tą jest relatywna wielkość drugiej ze świec. W tym wypadku równie dobrze warunek mógłbyć nałożony na świecę pierwszą. Określona wielkość świecy ma jedynie za zadanie wyłapać formacje, które są lepiej widoczne na wykresie. Podobnie jak we wcześniejszych optymalizacjach parametr został ustawiony na 1. Oznacza to, że wymagane jest aby świeca była wielkości przynajmniej średniej wielkości 100 ostatnich świec. Wieksza wartość powodowała, że nie zostały znalezione jakiekolwiek formacje zasłony ciemnej chmury. Tabela \ref{raport_zaslona} zawiera zestawienie wyników dla 4 znalezionych sekwencji świec. Zysk z tej formacji okazał się najmniejszy jednak wskaźnik zysku został utrzymany ciągle na wysokim poziomie. Średnia zyskowna transakcja znacznie przewyższa średnia ze zleceń stratnych. Pojedyncze obsuniecię kapitału to jedynie około 1\%. 
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+Całkowity zysk netto & 41.10\\
+\hline
+Zysk brutto & 51.20\\
+\hline
+Strata brutto & -10.10\\
+\hline
+Wskaźnik zysku & 5.07 \\
+\hline
+\hline
+Ilość transakcji & 4 \\
+\hline
+Transakcje zyskowne & 3 (75\%) \\
+\hline
+Transakcje stratne & 1 (25\%) \\
+\hline
+\hline
+Średnia zyskowna transakcja & 17.07 \\
+\hline
+Średnia stratna transakcja & -10.10 \\
+\hline
+\end{tabular} 
+\caption{Wynik testu dla formacji zasłony ciemnej chmury}
+\label{raport_zaslona}
+\end{center}
+\end{table}
 % itd.
 % \appendix
 % \include{dodatekA}
