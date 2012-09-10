@@ -50,5 +50,7 @@
 \contentsline {paragraph}{}{53}
 \contentsline {subsection}{\numberline {4.3.4}Formacje harami}{55}
 \contentsline {paragraph}{}{55}
-\contentsline {subsection}{\numberline {4.3.5}Formacje zas\IeC {\l }ony ciemnej chmury}{57}
+\contentsline {subsection}{\numberline {4.3.5}Formacja zas\IeC {\l }ony ciemnej chmury}{57}
 \contentsline {paragraph}{}{57}
+\contentsline {subsection}{\numberline {4.3.6}Ko\IeC {\'n}cowa posta\IeC {\'c} systemu}{59}
+\contentsline {paragraph}{}{59}

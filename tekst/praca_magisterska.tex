@@ -1004,10 +1004,10 @@ Jedną z zyskownych transakcji ukazuje wykres \ref{przyklad_harami_bessy}. Wida�
 \end{center}
 \end{figure} 
 
-\subsection{Formacje zasłony ciemnej chmury}
+\subsection{Formacja zasłony ciemnej chmury}
 \paragraph{}
 
-Tak jak w poprzednich formacjach dwuświecowych formacja zasłony ciemnej chmury posiada do optymalizacji tylko jeden parametr. Zmienną tą jest relatywna wielkość drugiej ze świec. W tym wypadku równie dobrze warunek mógłbyć nałożony na świecę pierwszą. Określona wielkość świecy ma jedynie za zadanie wyłapać formacje, które są lepiej widoczne na wykresie. Podobnie jak we wcześniejszych optymalizacjach parametr został ustawiony na 1. Oznacza to, że wymagane jest aby świeca była wielkości przynajmniej średniej wielkości 100 ostatnich świec. Wieksza wartość powodowała, że nie zostały znalezione jakiekolwiek formacje zasłony ciemnej chmury. Tabela \ref{raport_zaslona} zawiera zestawienie wyników dla 4 znalezionych sekwencji świec. Zysk z tej formacji okazał się najmniejszy jednak wskaźnik zysku został utrzymany ciągle na wysokim poziomie. Średnia zyskowna transakcja znacznie przewyższa średnia ze zleceń stratnych. Pojedyncze obsuniecię kapitału to jedynie około 1\%. 
+Tak jak w poprzednich formacjach dwuświecowych formacja zasłony ciemnej chmury posiada do optymalizacji tylko jeden parametr. Zmienną tą jest relatywna wielkość drugiej ze świec. W tym wypadku równie dobrze warunek mógłbyć nałożony na świecę pierwszą. Określona wielkość świecy ma jedynie za zadanie wyłapać formacje, które są lepiej widoczne na wykresie. Podobnie jak we wcześniejszych optymalizacjach parametr został ustawiony na 1. Oznacza to, że wymagane jest aby świeca była wielkości przynajmniej średniej wielkości 100 ostatnich świec. Wieksza wartość powodowała, że nie zostały znalezione jakiekolwiek formacje zasłony ciemnej chmury. Tabela \ref{raport_zaslona} zawiera zestawienie wyników dla 4 znalezionych sekwencji świec. Zysk z tej formacji okazał się najmniejszy jednak wskaźnik zysku został utrzymany ciągle na wysokim poziomie. Średnia zyskowna transakcja znacznie przewyższa średnią ze zleceń stratnych. Pojedyncze obsuniecię kapitału to jedynie około 1\%. 
 \begin{table}[h!]
 \begin{center}
 \begin{tabular}{|c|c|}
@@ -1037,6 +1037,31 @@ Transakcje stratne & 1 (25\%) \\
 \label{raport_zaslona}
 \end{center}
 \end{table}
+Rozpoznanie przykładowej formacji zasłony ciemnej chmury prezentuje wykres \ref{przyklad_zaslona}. W czasie pojawienia się wzorca występuje wyraźny długookresowy trend spadkowy. Formacja ciemnej chmury tworzy pewną korektę trendu. Natychmiast po jej wystąpieniu kurs wraca do trendu głównego. W przypadku zasłony ciemnej chmury nie było stosowane potwierdzenie formacji. Kolejna świeca występująca po formacji posiada bardzo długi korpus. Jeśli byłaby świecą potwierdzającą, to zysk osiągnięty w tej transakcji byłby o wiele mniejszy. Problem ten występował w innych formacjach gdzie wymagane było potwierdzenie. Często długie świece potwierdzające formację, znacząco zmniejszały dochód z transakcji a nawet powodowały straty. Z drugiej strony, brak warunku potwierdzającego prowadził często prowadził do generacji mylnych sygnałów. Obie świece tworzące zasłonę ciemnej chmury są stosunkowo wysokie w porównaniu do świec z widocznego okresu. Dzięki temu cała formacja, jest dobrze widoczna.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=6cm]{darkcloudcover/przyklad.png}
+\caption{Przykład rozpoznania formacji zasłony ciemnej chmury wraz z transakcją sprzedaży}
+\label{przyklad_zaslona}
+\end{center}
+\end{figure} 
+
+\subsection{Końcowa postać systemu}
+\paragraph{}
+
+Po fazach optymalizacji algorytmów rozpoznających każdą z opisanych formacji świec, został stworzony ostateczny system inwestycyjny. Okazało się, że w przypadku formacji wisielca, przenikania, gwiazdy wieczornej i porannej nie znaleziono parametrów, dla których formacje te przynosiłyby zyski. Warto zauważyć, że straty były osiągane tylko przy parametrach mniej rygorystycznych. Ustawienie wartości wyższych sprawiało, że wyszczególnione formacjie nie były w ogóle znajdowane. Z analizy transakcji stratnych, osiąganych przy parametrach ustawianych w sposób nierestrykcyjny, widać, że rozpoznane formacje nie można jednoznacznie sklasyfikować jako dane wzorzec. Bardzo prawdopodobne, że z tego powodu przynosiły one straty.
+
+Ostatecznie do systemu zostały wybrane formacje:
+\begin{itemize}
+\item objęcia hossy
+\item objęcie bessy
+\item spadająca gwiazda
+\item harami hossy
+\item zasłona ciemnej chmury
+\item młot
+\item harami bessy
+\end{itemize}
+W takiej też kolejności będą wyszukiwane w trakcie działania systemu. Kolejność ustalono na podstawie wskaźników zysku. W niektórych przypadkach w grupie kilku świec można rozpoznać wiele formacji. Dlatego, też faworyzowane są te, które posiadają większy wskaźnik zysku. 
 % itd.
 % \appendix
 % \include{dodatekA}
