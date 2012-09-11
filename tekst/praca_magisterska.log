@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.28)  10 SEP 2012 17:05
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.28)  11 SEP 2012 12:46
 entering extended mode
 **D:/magisterka/tekst/praca_magisterska.tex
 (D:/magisterka/tekst/praca_magisterska.tex
@@ -928,7 +928,21 @@ ishharami/przyklad.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [58 <D:/magisterka/tekst/darkcloudcover/przyklad.png>]
-(D:\magisterka\tekst\praca_magisterska.bbl [59]) [60
+<wszystkie/linia_kap.png, id=246, 1416.79312pt x 501.37312pt>
+File: wszystkie/linia_kap.png Graphic file (type png)
+
+<use wszystkie/linia_kap.png>
+Package pdftex.def Info: wszystkie/linia_kap.png used on input line 1067.
+(pdftex.def)             Requested size: 170.71652pt x 60.40698pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[59 <D:/magisterka/tekst/wszystkie/linia_kap.png>] [60]
+Rozdzia\l  5.
+(D:\magisterka\tekst\praca_magisterska.bbl [61
+
+]) [62
 
 ]
 (D:\magisterka\tekst\praca_magisterska.aux)
@@ -937,10 +951,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5151 strings out of 494045
- 69596 string characters out of 3145963
+ 5158 strings out of 494045
+ 69754 string characters out of 3145963
  162479 words of memory out of 3000000
- 8305 multiletter control sequences out of 15000+200000
+ 8311 multiletter control sequences out of 15000+200000
  90455 words of font info for 71 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  34i,12n,45p,2599b,344s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -958,9 +972,9 @@ type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
 w/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utm
 r8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on praca_magisterska.pdf (60 pages, 1081335 bytes).
+Output written on praca_magisterska.pdf (62 pages, 1110767 bytes).
 PDF statistics:
- 299 PDF objects out of 1000 (max. 8388607)
+ 307 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 161 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
 

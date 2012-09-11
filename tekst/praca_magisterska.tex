@@ -1061,7 +1061,57 @@ Ostatecznie do systemu zostały wybrane formacje:
 \item młot
 \item harami bessy
 \end{itemize}
-W takiej też kolejności będą wyszukiwane w trakcie działania systemu. Kolejność ustalono na podstawie wskaźników zysku. W niektórych przypadkach w grupie kilku świec można rozpoznać wiele formacji. Dlatego, też faworyzowane są te, które posiadają większy wskaźnik zysku. 
+W takiej też kolejności będą wyszukiwane w trakcie działania systemu. Kolejność ustalono na podstawie wskaźników zysku. W niektórych przypadkach w grupie kilku świec można rozpoznać wiele formacji. Dlatego, też faworyzowane są te, które posiadają większy wskaźnik zysku.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=6cm]{wszystkie/linia_kap.png}
+\caption{Przebieg lini kapitału dla systemu końcowego w okresie od 1.05.2011 do 1.05.2012}
+\label{system_linia_kap}
+\end{center}
+\end{figure}
+Na wykresie \ref{system_linia_kap} został przedstawiony przebieg lini kapitału, otrzymany przy symulacji systemu na danych historycznych. Testowano okres 1 roku od 1.05.2011 do 1.05.2012. Zyski osiągane przez system, w przeciągu całego okresu, zwiększały się. Nie zarejestrowano również znaczących spadków. Można zauważyć, że większa część zysku została uzyskana dzięki kilku wysoko dochodowym transakcjom. Skoki te widoczne są na wykresie w okolicach 7., 33. i 73. transakcji. W okresach pomiędzy tymi punktami, linia kapitału wzrasta w sposób nieznaczny. Istotny jest fakt, że mimo braku występowania w tych okresach znaczących zysków, straty są minimalizowane. Rozwiązanie polegające na ustawianiu limitów stop loss, blisko punktów rozpoczęcia transakcji, przyniosło oczekiwane rezultaty.  
+
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+Całkowity zysk netto & 455.98\\
+\hline
+Zysk brutto & 1078.16\\
+\hline
+Strata brutto & -622.18\\
+\hline
+Wskaźnik zysku & 1.73 \\
+\hline
+\hline
+Ilość transakcji & 95 \\
+\hline
+Transakcje zyskowne & 3 (75\%) \\
+\hline
+Transakcje stratne & 1 (25\%) \\
+\hline
+\hline
+Średnia zyskowna transakcja & 17.07 \\
+\hline
+Średnia stratna transakcja & -10.10 \\
+\hline
+\end{tabular} 
+\caption{Wynik testu dla końcowego systemu}
+\label{raport_system}
+\end{center}
+\end{table}
+
+\chapter{Podsumowanie}
+\paragraph{}
+Celem pracy było zaprojektowanie oraz zaimplementowanie automatycznego systemu inwestycyjnego opartego na japońskich technikach analizy wykresy. Algorytm dostosowywany był do rynku Forex, a do jego implementacji posłużyła platforma MetaTrader wraz z językiem MQL. Testy zostały przeprowadzone na parze walutowej EUR/USD z wykorzystaniem świec 15-minutowych. System opiera się kilku podstawowych zasadach inwestowania: 
+\begin{itemize}
+\item pozycje składane zgodnie z kierunkiem trendu
+\item maksymalizacja zysków
+\item minimalizacja strat
+\item poparcie decyzji innymi wskaźnikami
+\end{itemize}
+
 % itd.
 % \appendix
 % \include{dodatekA}
