@@ -727,7 +727,7 @@ W obu przypadkach został osiągnięty zysk. Jednak na wykresie \ref{liniakapzla
 \section{Wyniki optymalizacji}
 \label{sec:wyniki_optymalizacji}
 \paragraph{}
-Testy przeprowadzono dla każdego rodzaju formacji opisanej w pracy. Zbióry wartości parametrów użyte podczas optymalizacji zamieszczono w tabeli \ref{parametry_przedzialy}. Analizie poddano okres od 1.05.2011r. do 1.05.2012r. Kapitał początkowy wynosił 1000\$. Wysokość każdej transakcji określono z góry na wartość 0.1 lota. Optymalizowano wartość całkowitego zysku netto.
+Testy przeprowadzono dla każdego rodzaju formacji opisanej w pracy. Zbiory wartości parametrów użyte podczas optymalizacji zamieszczono w tabeli \ref{parametry_przedzialy}. Analizie poddano okres od 1.05.2011r. do 1.05.2012r. Kapitał początkowy wynosił 1000\$. Wysokość każdej transakcji określono z góry na wartość 0.1 lota. Optymalizowano wartość całkowitego zysku netto.
 
 \subsection{Formacja młota}
 \paragraph{}
@@ -739,7 +739,7 @@ Testy przeprowadzono dla każdego rodzaju formacji opisanej w pracy. Zbióry war
 \label{opt_mlot}
 \end{center}
 \end{figure} 
-Wykres \ref{opt_mlot} przedstawia częściowy raport z optymalizacji formacji młota. Poszukiwano odpowiednich wartości dla 3 parametrów: stosunku długości cienia dolnego do korpusu, długości cienia górnego oraz zmiennej określającej długość cienia dolnego. Największy osiągnięto w przebiegu 13. Wynosił on 112.41\$, jednak wartość wskaźnika zysku była w tym przypadku zbyt mała. Wskaźnik ten określa stosunek zysku brutto do straty brutto. Wartość 1.84 oznacza, że suma transakcji zyskownych wynosiła 1.84 sumy transakcji stratnych. Pod tym względem znacznie lepszy wynik osiągnięto w iteracji 4. W tym wypadku wskaxnik zysku wynosił aż 4.65. Przy jedynie 6 transakcjach osiągnięto wynik 103.70\$, który jest tylko o niecałe 10\$ gorszy od opcji w której przeprowadzono aż 17 transakcji. Wariant numer 4 został wybrany za optymalny również ze względu na niską maksymalną stratę kapitału wynoszącą jedynie 3.67\%. Wartości parametów dla wybranej optymalizacji zostały przedstawione w tabeli \ref{parametry_mlot}. Mnożnik długości cienia dolnego wynoszący 1.5 oznacza, że cień dolny musi być przynajmniej 1.5 razy większy od średniej wysokości 100 ostatnich świec. Dodatkowo warunek na brak cienia górnego oraz przynajmniej dwa razy mniejszy korpus od cienia dolnego w sposób drastyczny zaostrzają warunki na klasyfikacje świecy jako młota. 
+Wykres \ref{opt_mlot} przedstawia częściowy raport z optymalizacji formacji młota. Poszukiwano odpowiednich wartości dla 3 parametrów: stosunku długości cienia dolnego do korpusu, długości cienia górnego oraz zmiennej określającej długość cienia dolnego. Największy osiągnięto w przebiegu 13. Wynosił on 112.41\$, jednak wartość wskaźnika zysku była w tym przypadku zbyt mała. Wskaźnik ten określa stosunek zysku brutto do straty brutto. Wartość 1.84 oznacza, że suma transakcji zyskownych wynosiła 1.84 sumy transakcji stratnych. Pod tym względem znacznie lepszy wynik osiągnięto w iteracji 4. W tym wypadku wskaźnik zysku wynosił, aż 4.65. Przy jedynie 6 transakcjach osiągnięto wynik 103.70\$, który jest tylko o niecałe 10\$ gorszy od opcji w której przeprowadzono aż 17 transakcji. Wariant numer 4 został wybrany za optymalny również ze względu na niską maksymalną stratę kapitału wynoszącą jedynie 3.67\%. Wartości parametrów dla wybranej optymalizacji zostały przedstawione w tabeli \ref{parametry_mlot}. Mnożnik długości cienia dolnego wynoszący 1.5 oznacza, że cień dolny musi być przynajmniej 1.5 razy większy od średniej wysokości 100 ostatnich świec. Dodatkowo warunek na brak cienia górnego oraz przynajmniej dwa razy mniejszy korpus od cienia dolnego w sposób drastyczny zaostrzają warunki na klasyfikacje świecy jako młota. 
 \begin{table}[h!]
 \begin{center}
 \begin{tabular}{|c|c|}
@@ -765,7 +765,7 @@ Wykres \ref{przyklad_mlot} przedstawia rozpoznaną formację młota oraz transak
 \label{przyklad_mlot}
 \end{center}
 \end{figure} 
-Tabela \ref{raport_mlot} zawiera najważniejsze wartości z raportu, na temat wyników jakie osiągneła formacja młota na przestrzeni 1 roku, przy optymalnie dobranych parametrach. Jedna stratna transakcja stratna była spowodowana wystąpieniem zbyt dużej świecy potwierdzającej, jednak sam kierunek ruchu cen sprawdził się. Warto zwrócić uwagę, że średnia zyskowna transakcja jest większa od średniej stratnej, prawie o 9\%. Algorytm został w ten sposób skonstruowany, aby zamykać szybko transakcje stratne, a zyskowne trzymać jak najdłużej.
+Tabela \ref{raport_mlot} zawiera najważniejsze wartości z raportu, na temat wyników jakie osiągnęła formacja młota na przestrzeni 1 roku, przy optymalnie dobranych parametrach. Jedna stratna transakcja stratna była spowodowana wystąpieniem zbyt dużej świecy potwierdzającej, jednak sam kierunek ruchu cen sprawdził się. Warto zwrócić uwagę, że średnia zyskowna transakcja jest większa od średniej stratnej, prawie o 9\%. Algorytm został w ten sposób skonstruowany, aby zamykać szybko transakcje stratne, a zyskowne trzymać jak najdłużej.
 \begin{table}[h!]
 \begin{center}
 \begin{tabular}{|c|c|}
@@ -806,7 +806,7 @@ Transakcje stratne & 1 (16.67\%) \\
 \label{opt_gwiazda}
 \end{center}
 \end{figure} 
-Proces optymalizacji parametrów formacji spadającej gwiazdy przedstawiono na wykresie \ref{opt_gwiazda}. Poszukiwane wartości to stosunek długości cienia górnego do korpusu, długość cienia dolnego oraz mnożnik długości cienia górnego. Najlepszy wynik został osiągnięty dla zestawu danych w iteracji 13. Otrzymano wynik 116.20\$ przy wysokim wskaźniku zysku wynoszącym, aż 9.13. Dodatkowo największa zanotowana strata w tym wypadku osiągnęła jedynie 3.44\%. Lepszy wskaźnik zysku uzyskano w opcji 7 i 8 jednak z powodu mniejszej ilości transakcji zanotowano znacznie mnejszy dochód netto. Optymalne wartości parametrów z przebiegu 13 zostały zebrane w tabeli \ref{parametry_gwiazda}. Znaczenie parametrów jest analogiczne do przypadku formacji młota. Warto zwrócić uwagę, że cien krótki może odstawać od korpusu, aż do 2 pipsów. Mniejsze wartości tego parametru powodowały brak rozpoznania jakichkolwiek formacji spadającej gwiazdy.
+Proces optymalizacji parametrów formacji spadającej gwiazdy przedstawiono na wykresie \ref{opt_gwiazda}. Poszukiwane wartości to stosunek długości cienia górnego do korpusu, długość cienia dolnego oraz mnożnik długości cienia górnego. Najlepszy wynik został osiągnięty dla zestawu danych w iteracji 13. Otrzymano wynik 116.20\$ przy wysokim wskaźniku zysku wynoszącym, aż 9.13. Dodatkowo największa zanotowana strata w tym wypadku osiągnęła jedynie 3.44\%. Lepszy wskaźnik zysku uzyskano w opcji 7 i 8 jednak z powodu mniejszej ilości transakcji zanotowano znacznie niższy dochód netto. Optymalne wartości parametrów z przebiegu 13 zostały zebrane w tabeli \ref{parametry_gwiazda}. Znaczenie parametrów jest analogiczne do przypadku formacji młota. Warto zwrócić uwagę, że cień krótki może odstawać od korpusu, aż do 2 pipsów. Mniejsze wartości tego parametru powodowały brak rozpoznania jakichkolwiek formacji spadającej gwiazdy.
 \begin{table}[h!]
 \begin{center}
 \begin{tabular}{|c|c|}
@@ -825,7 +825,7 @@ mnożnik długości cienia górnego & 2\\
 \end{center}
 \end{table}
 
-Przykład rozpoznania spadającej gwiazdy został przedstawiony na wykresie \ref{przyklad_gwiazda}. Na podstawie świecy, którą oznaczono żółtym prostokątem, dokonano transakcji sprzedaży. Zamknięcie nastąpiło przy przecięciiu dolnej wstęgi bollingera od dołu. Punkt ten okazał się optymalnym miejscem wyjścia z rynku Transakcja zakończyła się znaczącym zyskiem. Rozpoznana formacja przedstawia klasyczną spadającą, gwiazdę umiejscowioną na szczycie krótkoterminiowego trendu wzrostowego.
+Przykład rozpoznania spadającej gwiazdy został przedstawiony na wykresie \ref{przyklad_gwiazda}. Na podstawie świecy, którą oznaczono żółtym prostokątem, dokonano transakcji sprzedaży. Zamknięcie nastąpiło przy przecięciu dolnej wstęgi bollingera od dołu. Punkt ten okazał się optymalnym miejscem wyjścia z rynku Transakcja zakończyła się znaczącym zyskiem. Rozpoznana formacja przedstawia klasyczną spadającą, gwiazdę umiejscowioną na szczycie krótkoterminowego trendu wzrostowego.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=14cm]{shootingstar/przyklad.png}
@@ -833,7 +833,7 @@ Przykład rozpoznania spadającej gwiazdy został przedstawiony na wykresie \ref
 \label{przyklad_gwiazda}
 \end{center}
 \end{figure} 
-W tabeli \ref{raport_gwiazda} znajdują się wyniki symulacji dla formacji spadającej gwiazdy. Zysk netto, ilość transakcji oraz wskaźnik zysku są większę niż w przypadku formacji młota. Zanotowano więcej stratnych transakcji, jednak średnia ich wartość jest niewielka i wynosi 7.12\$ przy trzykrotnie większej średniej z transakcji przynoszących dochód.  
+W tabeli \ref{raport_gwiazda} znajdują się wyniki symulacji dla formacji spadającej gwiazdy. Zysk netto, ilość transakcji oraz wskaźnik zysku są większe niż w przypadku formacji młota. Zanotowano więcej stratnych transakcji, jednak średnia ich wartość jest niewielka i wynosi 7.12\$ przy trzykrotnie większej średniej z transakcji przynoszących dochód.  
 \begin{table}[h!]
 \begin{center}
 \begin{tabular}{|c|c|}
@@ -867,7 +867,7 @@ Transakcje stratne & 2 (25\%) \\
 \subsection{Formacje objęcia}
 \paragraph{}
 
-Warunki występujące w formacjach objęcia hossy i bessy są na tyle jasno określone, że jedynym parametrem, który został optymalizowany była relatywna wielkość pierwszej ze świec. Sprawdzane były 4 wartości z przedziału <1;2> z krokiem 0.5. W obu przypadkach optymalnym wynikiem była liczba 1. Okazało się, że jedynie dla tej wartości znajdywane były jakiekolwiek formacje objęcia. Ich liczba była niewielka, jednak transakcje przeprowadzane na ich podstawie dawały zyski. W przypadku formacji objęcia hossy była to jedna transakcja przynosząca 37\$. Dla formacji objęcia bessy znaleziono dwie sekwencje świec z czego pierwsza dała zysk w wysokości aż 95.75\$, a druga strate 10.80\$. Tabela \ref{objecie} zbiera wyniki z symulacji dla obu formacji objęcia.
+Warunki występujące w formacjach objęcia hossy i bessy są na tyle jasno określone, że jedynym parametrem, który został optymalizowany była relatywna wielkość pierwszej ze świec. Sprawdzane były 4 wartości z przedziału <1;2> z krokiem 0.5. W obu przypadkach optymalnym wynikiem była liczba 1. Okazało się, że jedynie dla tej wartości znajdywane były jakiekolwiek formacje objęcia. Ich liczba była niewielka, jednak transakcje przeprowadzane na ich podstawie dawały zyski. W przypadku formacji objęcia hossy była to jedna transakcja przynosząca 37\$. Dla formacji objęcia bessy znaleziono dwie sekwencje świec z czego pierwsza dała zysk w wysokości aż 95.75\$, a druga stratę 10.80\$. Tabela \ref{objecie} zbiera wyniki z symulacji dla obu formacji objęcia.
 \begin{table}[h!]
 \begin{center}
 \begin{tabular}{|c|c|}
@@ -912,7 +912,7 @@ Mimo wystąpienia jedynie 3 zleceń okazuje się, że formacje objęcia uzyskał
 \label{przyklad_objecie_bessy}
 \end{center}
 \end{figure} 
-Zamknięcie, które jest wykonywane po przekroczeniu od góry wstęgi bollingera następuje dopiero przy trzecim szczycie trendu. Dlatego zysk z tej transakcji jest tak duży. Warto jednak zauważyć, że znalezioną formację objęcia hossy można zaliczyć do idealnych przykładów tego rodzaju wzorca. Mogło mieć to wpływ na tak wyraźny wzrost cen w tym okresie. Na wykresie 30 minutowym, po złożeniu dwóch świec otrzymamy wyraźną świecę typu młot. Fakt ten mógł dodatkowo wpłynąć na siłę formacji objęcia hossy. W przypadku formacji bessy, znalezione świece na wykresie \ref{przyklad_objecie_bessy}, nie są aż tak jednoznaczne. Dodatkowo ich złożenie nie daje idealnej świecy typu spadająca gwiazda. Jednak jej kształ i usytułowanie wystarczyły, żeby rynek zawrócił w stronę wcześniejszego trendu spadkowego.
+Zamknięcie, które jest wykonywane po przekroczeniu od góry wstęgi bollingera następuje dopiero przy trzecim szczycie trendu. Dlatego zysk z tej transakcji jest tak duży. Warto jednak zauważyć, że znalezioną formację objęcia hossy można zaliczyć do idealnych przykładów tego rodzaju wzorca. Mogło mieć to wpływ na tak wyraźny wzrost cen w tym okresie. Na wykresie 30 minutowym, po złożeniu dwóch świec otrzymamy wyraźną świecę typu młot. Fakt ten mógł dodatkowo wpłynąć na siłę formacji objęcia hossy. W przypadku formacji bessy, znalezione świece na wykresie \ref{przyklad_objecie_bessy}, nie są aż tak jednoznaczne. Dodatkowo ich złożenie nie daje idealnej świecy typu spadająca gwiazda. Jednak jej kształt i usytuowanie wystarczyły, żeby rynek zawrócił w stronę wcześniejszego trendu spadkowego.
 
 
 \subsection{Formacje harami}
@@ -986,7 +986,7 @@ Transakcje stratne & 10 (41.67\%) \\
 \label{raport_harami_bessy}
 \end{center}
 \end{table}
-W szczególności niepokojące było obsunięcie kapitału rozpoczynające się od transakcji 17, które widać na wykresie \ref{linia_kap_harami} przedstawiającym przebieg lini kapitału. Były to 3 stratne zlecenia. Problemem znowu okazała się zbyt długa świeca potwierdzająca formację. Ruch cen w trakcie jej trwania był na tyl duży, że zajęcie pozycji po jej wystąpieniu nie przyniosło już żadnych zysków. Rynek zaczął zawracać znowu w przeciwną stronę, tworząc kolejną korektę. W ten sposób zostały osiągnięte limity stop loss i zaliczone 3 kolejne strante transakcje.
+W szczególności niepokojące było obsunięcie kapitału rozpoczynające się od transakcji 17, które widać na wykresie \ref{linia_kap_harami} przedstawiającym przebieg linii kapitału. Były to 3 stratne zlecenia. Problemem znowu okazała się zbyt długa świeca potwierdzająca formację. Ruch cen w trakcie jej trwania był na tyl duży, że zajęcie pozycji po jej wystąpieniu nie przyniosło już żadnych zysków. Rynek zaczął zawracać znowu w przeciwną stronę, tworząc kolejną korektę. W ten sposób zostały osiągnięte limity stop loss i zaliczone 3 kolejne stratne transakcje.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=16cm]{bearishharami/linia_kap.png}
@@ -995,7 +995,7 @@ W szczególności niepokojące było obsunięcie kapitału rozpoczynające się 
 \end{center}
 \end{figure} 
 
-Jedną z zyskownych transakcji ukazuje wykres \ref{przyklad_harami_bessy}. Widać delikatny trend spadkowy, następnie lekkie wybicie do góry, na którym pojawia się formacja harami spadkowego. Po potwierdzeniu kolejną świecą spadkową pojawiają się jescze 3 świece czarne. Zamknięcie przy dolnej wstędzie bollingera dało zysk w wysokości 43.10\$. 
+Jedną z zyskownych transakcji ukazuje wykres \ref{przyklad_harami_bessy}. Widać delikatny trend spadkowy, następnie lekkie wybicie do góry, na którym pojawia się formacja harami spadkowego. Po potwierdzeniu kolejną świecą spadkową pojawiają się jeszcze 3 świece czarne. Zamknięcie przy dolnej wstędze bollingera dało zysk w wysokości 43.10\$. 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=10cm]{bearishharami/przyklad.png}
@@ -1007,7 +1007,7 @@ Jedną z zyskownych transakcji ukazuje wykres \ref{przyklad_harami_bessy}. Wida�
 \subsection{Formacja zasłony ciemnej chmury}
 \paragraph{}
 
-Tak jak w poprzednich formacjach dwuświecowych formacja zasłony ciemnej chmury posiada do optymalizacji tylko jeden parametr. Zmienną tą jest relatywna wielkość drugiej ze świec. W tym wypadku równie dobrze warunek mógłbyć nałożony na świecę pierwszą. Określona wielkość świecy ma jedynie za zadanie wyłapać formacje, które są lepiej widoczne na wykresie. Podobnie jak we wcześniejszych optymalizacjach parametr został ustawiony na 1. Oznacza to, że wymagane jest aby świeca była wielkości przynajmniej średniej wielkości 100 ostatnich świec. Wieksza wartość powodowała, że nie zostały znalezione jakiekolwiek formacje zasłony ciemnej chmury. Tabela \ref{raport_zaslona} zawiera zestawienie wyników dla 4 znalezionych sekwencji świec. Zysk z tej formacji okazał się najmniejszy jednak wskaźnik zysku został utrzymany ciągle na wysokim poziomie. Średnia zyskowna transakcja znacznie przewyższa średnią ze zleceń stratnych. Pojedyncze obsuniecię kapitału to jedynie około 1\%. 
+Tak jak w poprzednich formacjach dwuświecowych formacja zasłony ciemnej chmury posiada do optymalizacji tylko jeden parametr. Zmienną tą jest relatywna wielkość drugiej ze świec. W tym wypadku równie dobrze warunek mógł być nałożony na świecę pierwszą. Określona wielkość świecy ma jedynie za zadanie wyłapać formacje, które są lepiej widoczne na wykresie. Podobnie jak we wcześniejszych optymalizacjach parametr został ustawiony na 1. Oznacza to, że wymagane jest aby świeca była wielkości przynajmniej średniej wielkości 100 ostatnich świec. Większa wartość powodowała, że nie zostały znalezione jakiekolwiek formacje zasłony ciemnej chmury. Tabela \ref{raport_zaslona} zawiera zestawienie wyników dla 4 znalezionych sekwencji świec. Zysk z tej formacji okazał się najmniejszy jednak wskaźnik zysku został utrzymany ciągle na wysokim poziomie. Średnia zyskowna transakcja znacznie przewyższa średnią ze zleceń stratnych. Pojedyncze obsunięci kapitału to jedynie około 1\%. 
 \begin{table}[h!]
 \begin{center}
 \begin{tabular}{|c|c|}
@@ -1049,7 +1049,7 @@ Rozpoznanie przykładowej formacji zasłony ciemnej chmury prezentuje wykres \re
 \subsection{Końcowa postać systemu}
 \paragraph{}
 
-Po fazach optymalizacji algorytmów rozpoznających każdą z opisanych formacji świec, został stworzony ostateczny system inwestycyjny. Okazało się, że w przypadku formacji wisielca, przenikania, gwiazdy wieczornej i porannej nie znaleziono parametrów, dla których formacje te przynosiłyby zyski. Warto zauważyć, że straty były osiągane tylko przy parametrach mniej rygorystycznych. Ustawienie wartości wyższych sprawiało, że wyszczególnione formacjie nie były w ogóle znajdowane. Z analizy transakcji stratnych, osiąganych przy parametrach ustawianych w sposób nierestrykcyjny, widać, że rozpoznane formacje nie można jednoznacznie sklasyfikować jako dane wzorzec. Bardzo prawdopodobne, że z tego powodu przynosiły one straty.
+Po fazach optymalizacji algorytmów rozpoznających każdą z opisanych formacji świec, został stworzony ostateczny system inwestycyjny. Okazało się, że w przypadku formacji wisielca, przenikania, gwiazdy wieczornej i porannej nie znaleziono parametrów, dla których formacje te przynosiłyby zyski. Warto zauważyć, że straty były osiągane tylko przy parametrach mniej rygorystycznych. Ustawienie wartości wyższych sprawiało, że wyszczególnione formacje nie były w ogóle znajdowane. Z analizy transakcji stratnych, osiąganych przy parametrach ustawianych w sposób nierestrykcyjny, widać, że rozpoznane formacje nie można jednoznacznie sklasyfikować jako dane wzorzec. Bardzo prawdopodobne, że z tego powodu przynosiły one straty.
 
 Ostatecznie do systemu zostały wybrane formacje:
 \begin{itemize}
@@ -1064,54 +1064,64 @@ Ostatecznie do systemu zostały wybrane formacje:
 W takiej też kolejności będą wyszukiwane w trakcie działania systemu. Kolejność ustalono na podstawie wskaźników zysku. W niektórych przypadkach w grupie kilku świec można rozpoznać wiele formacji. Dlatego, też faworyzowane są te, które posiadają większy wskaźnik zysku.
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=6cm]{wszystkie/linia_kap.png}
+\includegraphics[width=16cm]{wszystkie/linia_kap.png}
 \caption{Przebieg lini kapitału dla systemu końcowego w okresie od 1.05.2011 do 1.05.2012}
 \label{system_linia_kap}
 \end{center}
 \end{figure}
-Na wykresie \ref{system_linia_kap} został przedstawiony przebieg lini kapitału, otrzymany przy symulacji systemu na danych historycznych. Testowano okres 1 roku od 1.05.2011 do 1.05.2012. Zyski osiągane przez system, w przeciągu całego okresu, zwiększały się. Nie zarejestrowano również znaczących spadków. Można zauważyć, że większa część zysku została uzyskana dzięki kilku wysoko dochodowym transakcjom. Skoki te widoczne są na wykresie w okolicach 7., 33. i 73. transakcji. W okresach pomiędzy tymi punktami, linia kapitału wzrasta w sposób nieznaczny. Istotny jest fakt, że mimo braku występowania w tych okresach znaczących zysków, straty są minimalizowane. Rozwiązanie polegające na ustawianiu limitów stop loss, blisko punktów rozpoczęcia transakcji, przyniosło oczekiwane rezultaty.  
-
-
+Na wykresie \ref{system_linia_kap} został przedstawiony przebieg linii kapitału, otrzymany przy symulacji systemu na danych historycznych. Testowano okres 1 roku od 1.05.2011 do 1.05.2012. Zyski osiągane przez system, w przeciągu całego okresu, zwiększały się. Nie zarejestrowano również znaczących spadków. Można zauważyć, że większa część zysku została uzyskana dzięki kilku wysoko dochodowym transakcjom. Skoki te widoczne są na wykresie w okolicach 4., 20. i 38. transakcji. W okresach pomiędzy tymi punktami, linia kapitału wzrasta w sposób nieznaczny. Istotny jest fakt, że mimo braku występowania w tych okresach znaczących zysków, ewentualne straty zostały zminimalizowane. Rozwiązanie polegające na ustawianiu limitów stop loss, blisko punktów rozpoczęcia transakcji, przyniosło oczekiwane rezultaty i pozwoliło zredukować negatywny wpływ nietrafionych transakcji na saldo rachunku testowego. System gwarantuje, aż 66.67\% skuteczność, przy średniej zyskownej transakcji większej 1.7 razy od średniej straty. W przeciągu roku system zarobił 56\% kapitału startowego. Jest to wartość bardzo dobra biorąc pod uwagę fakt, że wszystkie zlecenia miały wartość 0.1 lota. Taka wartość transakcji przy kapitale startowym 1000\$ i dźwigni 1:100 gwarantuje stosunkowo bezpieczne i mało ryzykowne inwestycje. Strategia osiąga również zadowalający wskaźnik zysku, określający stosunek zysków do strat. 
 \begin{table}[h!]
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline 
-Całkowity zysk netto & 455.98\\
+Całkowity zysk netto & 562.25\\
 \hline
-Zysk brutto & 1078.16\\
+Zysk brutto & 801.55\\
 \hline
-Strata brutto & -622.18\\
+Strata brutto & -236.30\\
 \hline
-Wskaźnik zysku & 1.73 \\
-\hline
-\hline
-Ilość transakcji & 95 \\
-\hline
-Transakcje zyskowne & 3 (75\%) \\
-\hline
-Transakcje stratne & 1 (25\%) \\
+Wskaźnik zysku & 3.39 \\
 \hline
 \hline
-Średnia zyskowna transakcja & 17.07 \\
+Ilość transakcji & 48 \\
 \hline
-Średnia stratna transakcja & -10.10 \\
+Transakcje zyskowne & 32 (66.67\%) \\
+\hline
+Transakcje stratne & 16 (33.33\%) \\
+\hline
+\hline
+Średnia zyskowna transakcja & 25.05 \\
+\hline
+Średnia stratna transakcja & -14.77 \\
 \hline
 \end{tabular} 
 \caption{Wynik testu dla końcowego systemu}
 \label{raport_system}
 \end{center}
 \end{table}
-
+W algorytmie istnieje opcja przeprowadzania transakcji z użyciem możliwie największej ilości lotów. Oczywiście w takim przypadku ryzyko inwestora wynosi 100\%. Jedynym zabezpieczeniem, są limity stop loss ustawione blisko miejsc rozpoczęcia transakcji. Mimo to, kilka niewłaściwych decyzji mogłoby wyzerować rachunek. Linia kapitału wygenerowana przy symulacji z użyciem maksymalnej ilości lotów została przedstawiona na rysunku \ref{linia_kap_max}.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=16cm]{wszystkie/linia_kap_max.png}
+\caption{Przebieg lini kapitału dla systemu końcowego w okresie od 1.05.2011 do 1.05.2012 z użyciem maksymalnej ilości lotów}
+\label{linia_kap_max}
+\end{center}
+\end{figure}
+Symulacja pokazuje, że przy maksymalnym ryzyku, użycie systemu w ciągu roku dałoby dochód ponad 23 razy większy od kapitału początkowego. Maksymalna strata względna podczas działania systemu, przy takich ustawieniach, to 38\%. Niestety jest to już znaczny ubytek środków i taka strategie nie powinna być stosowana. Otrzymane wyniki na pewne nie będą, aż tak dobre przy inwestycjach na danych rzeczywistych. Trzeba pamiętać, że system był optymalizowany w testowanym okresie. Bardziej miarodajne, są testy na innych przedziałach czasowych, w których system nie podlegał optymalizacji. Cofając się 2 lata wstecz od roku w okresie od 1.05.2009-01.05.2010 system przyniósł zwrot w wysokości 29\%, zawierając przy tym 44.64\% zyskownych transakcji. Najważniejszy jest jednak fakt, że średnia zyskowna transakcja to 26.85\$ przy -12.31\$ dla transakcji stratnej. Można więc wnioskować, że system również w przyszłości będzie potrafił maksymalizować swoje zyski przy minimalizacji strat. Niestety dużo gorszy wynik został osiągnięty w okresie 1.05.2010-1.05.2011, gdyż strategia zarobiła jedynie 1\% kapitału początkowego przy sprawdzalności na poziomie 38\%. Jak widać mimo optymalizacji systemu, nie osiąga on tak samo zadawalających wyników w różnych okresach czasu.
 \chapter{Podsumowanie}
 \paragraph{}
-Celem pracy było zaprojektowanie oraz zaimplementowanie automatycznego systemu inwestycyjnego opartego na japońskich technikach analizy wykresy. Algorytm dostosowywany był do rynku Forex, a do jego implementacji posłużyła platforma MetaTrader wraz z językiem MQL. Testy zostały przeprowadzone na parze walutowej EUR/USD z wykorzystaniem świec 15-minutowych. System opiera się kilku podstawowych zasadach inwestowania: 
+Celem pracy było zaprojektowanie oraz zaimplementowanie automatycznego systemu inwestycyjnego opartego na japońskich technikach analizy wykresów. Opracowany system samodzielnie inwestuje na rynku Forex na dowolnej parze walutowej. Jedyną ingerencją gracza jest początkowe ustawienie parametrów programu. Najważniejszy z nich dotyczy ryzyka inwestycji, czyli ilości lotów za które będą przeprowadzane kolejne transakcje. Wszystkie akcje systemu są logowane za pośrednictwem platformy MetaTrader. Ewentualne błędy podczas działania programu zostają przechwycone, by następnie ponownie wznowić pracę systemu. Algorytm dostosowano do rynku Forex, a do jego implementacji posłużyła platforma MetaTrader wraz z językiem MQL. Testy zostały przeprowadzone na parze walutowej EUR/USD z wykorzystaniem świec 15-minutowych w okresie od 1.05.2011 do 1.05.2012. Stworzony automatyczny system inwestycyjny swoje decyzje opiera na sygnałach płynących z formacji świec japońskich z dodatkowym uwzględnieniem kilku podstawowych zasad inwestowania: 
 \begin{itemize}
 \item pozycje składane zgodnie z kierunkiem trendu
 \item maksymalizacja zysków
 \item minimalizacja strat
 \item poparcie decyzji innymi wskaźnikami
 \end{itemize}
+W celu dostosowania się do powyższych reguł w algorytmie zostało zaimplementowanych szereg rozwiązań. Transakcje otwierane są zgodnie z kierunkiem głównego trendu, rozpoznanego za pomocą dwóch wykładniczych średnich kroczących. Zyski realizowane są przy osiągnięciu pułapu skrajnych wstęg bollingera. W tych miejscach kursy osiągają swoje lokalne ekstrema. Limity stop loss, ustawiane są na wartości krańcowe z formacji, przez co pozycje stratne są szybko zamykane. Rozpoznawanie trendów lokalnych wspomagają wstęgi bollingera. Szereg testów do ostatecznego algorytmu wyłonił siedem formacji. Nieścisłości w kryteriach klasyfikujących dany wzorzec jako konkretną formację zostały zapisane w formie zmiennych, które w dalszej fazie projektu optymalizowano. Okazało się, że rygorystyczniejsze wartości zdefiniowanych parametrów, w lepszy sposób definiowały wygląd świec przynoszących zyski. Z drugiej strony występowało znacznie mniej sekwencji świec, które spełniałyby podane kryteria. Znalezione świece w wyraźny sposób tworzyły określone formacje. Można przypuszczać, że w takiej postaci, pozwoliły na zlokalizowanie ich na wykresie większej grupie inwestorów, tym samym zwiększając swoją wymowę. Spośród wszystkich formacji użytych w systemie największy zysk 116\$ przyniosła spadająca gwiazda. Najskuteczniejszy pod względem sprawdzalności 83\% okazał się wzorzec młota. Końcowy system w przeciągu jednego roku, przy nisko ryzykownych inwestycjach w wysokości 0.1 lota, osiągnął stopę zwrotu 56\% z kapitału początkowego 1000\$. Zwiększenie ryzyka do maksimum dał zwrot 23 razy większy od kapitału początkowego. Niestety zbudowany system nie przynosił tak znakomitych wyników w innych okresach czasu. Z dużym prawdopodobieństwem można stwierdzić, że system nie przyniesie, aż tak dużych zysków przy rzeczywistych inwestycjach. Główną zaletą systemu oprócz automatycznych inwestycji, jest jego niska stopa ryzyka oraz możliwość osiągania wysokich zysków w pojedynczych transakcjach. 
 
+Istnieje wiele teorii i metod analizy technicznej na której opierają się niezliczone systemy badające zachowanie rynków. Zmienność rynków sprawia, że stworzenie uniwersalnego systemu inwestycyjnego, który przynosiłby stałe wysokie zyski jest praktycznie niemożliwe. Mimo to na giełdach występują pewne prawidłowości, które co pewien czas się powtarzają. Badane w pracy, znane od setek lat, formacje świec japońskich nadal posiadają moc przepowiadania ruchów cenowych. Oprócz odpowiedniego miejsca wystąpienia danego wzorca, bardzo ważnym elementem okazał się właściwy wygląd formacji. 
+
+Zaimplementowany algorytm może stanowić bazę do dalszych badań nad formacjami świec japońskich. Dzięki szerokiemu dostępowi do wskaźników technicznych w platformie MetaTrader, możliwe jest również zastosowanie innych metod w stworzonym programie. Dalsze testy na rachunkach wirtualnych z ciągłym procesem ulepszania kryteriów przeprowadzania transakcji mogą pozwolić na osiągnięcie algorytmu gotowego do inwestycji na kontach realnych. Niestety nawet taki system, będzie wymagać ciągłego dostosowywania, ze względu na wysoką dynamikę rynku.
 % itd.
 % \appendix
 % \include{dodatekA}

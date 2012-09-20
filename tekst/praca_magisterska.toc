@@ -54,5 +54,5 @@
 \contentsline {paragraph}{}{57}
 \contentsline {subsection}{\numberline {4.3.6}Ko\IeC {\'n}cowa posta\IeC {\'c} systemu}{59}
 \contentsline {paragraph}{}{59}
-\contentsline {chapter}{\numberline {5}Podsumowanie}{61}
-\contentsline {paragraph}{}{61}
+\contentsline {chapter}{\numberline {5}Podsumowanie}{62}
+\contentsline {paragraph}{}{62}
