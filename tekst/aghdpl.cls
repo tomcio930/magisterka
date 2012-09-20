@@ -4,7 +4,7 @@
 %          
 % Author:  Marcin Szpyrka     (mszpyrka@agh.edu.pl)
 %          Grzegorz J. Nalepa (gjn@agh.edu.pl)
-%          AGH University of Science and Technology, Kraków, POLAND
+%          AGH University of Science and Technology, Krakï¿½w, POLAND
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -30,8 +30,6 @@
 \geometry{lmargin=30mm, rmargin=20mm, tmargin=25mm, bmargin=25mm, foot=10mm, head=10mm}
 \definecolor{Green}{rgb}{0.1,0.5,0.1}
 
-\def\shorttitlePL#1   {\gdef\@shorttitlePL{#1}}
-\def\shorttitleEN#1   {\gdef\@shorttitleEN{#1}}
 \def\shortauthor#1    {\gdef\@shortauthor{#1}}
 \def\titlePL#1        {\gdef\@titlePL{#1}}
 \def\titleEN#1        {\gdef\@titleEN{#1}}
@@ -153,15 +151,7 @@ University of Science and Technology in Krakow}}}
 
 }
 
-\def\thesisheaders{
-\fancyfoot[L]{\small \@shortauthor\quad\textit{\@shorttitlePL}}
-}
 
-\DeclareOption{en}{
-\def\thesisheaders{
-\fancyfoot[L]{\small \@shortauthor\quad\textit{\@shorttitleEN}}
-}
-}
 
 \ProcessOptions
 
@@ -169,13 +159,11 @@ University of Science and Technology in Krakow}}}
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
 \renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\footrulewidth}{0.5pt}
 \fancyhf{}
 \fancyhead{}
 \fancyhead[L]{\slshape{\small \rightmark}}
 \fancyhead[R]{\bfseries \thepage}
 
-\thesisheaders
 
 \frenchspacing
 \sloppy 
@@ -184,13 +172,13 @@ University of Science and Technology in Krakow}}}
 \flushbottom
 
 %---------------------------------------------------------------------------
-% Ustawienia parametrów dla tytu³ów rozdzia³ów, podrozdzia³ów, itd.
+% Ustawienia parametrï¿½w dla tytuï¿½ï¿½w rozdziaï¿½ï¿½w, podrozdziaï¿½ï¿½w, itd.
 %---------------------------------------------------------------------------
 
 
 \titleformat{\chapter}[block]
 {\bfseries\LARGE}{\filright \LARGE\thechapter. }{0ex}{}
-%odstêpy: lewy, góra, dó³
+%odstï¿½py: lewy, gï¿½ra, dï¿½ï¿½
 \titlespacing{\chapter}{0pt}{17mm}{19mm}
 \titleformat{\section}[block]
 {\bfseries\Large}{\filright \Large\thesection. }{0ex}{}
@@ -203,7 +191,7 @@ University of Science and Technology in Krakow}}}
 \titlespacing{\subsubsection}{7mm}{3mm}{1.5mm}
 
 %---------------------------------------------------------------------------
-% Ustawienia parametrów generowania spisu tre¶ci i spisu rysunków
+% Ustawienia parametrï¿½w generowania spisu treï¿½ci i spisu rysunkï¿½w
 %---------------------------------------------------------------------------
 
 \renewcommand{\cfttoctitlefont}{\bfseries\Large}
