@@ -39,7 +39,7 @@
 \def\thesistypeEN#1   {\gdef\@thesistypeEN{#1}}
 \def\supervisorPL#1   {\gdef\@supervisorPL{#1}}
 \def\supervisorEN#1   {\gdef\@supervisorEN{#1}}
-\def\acknowledgements#1   {\gdef\@acknowledgements{#1}}
+%\def\acknowledgements#1   {\gdef\@acknowledgements{#1}}
 \def\departmentPL#1   {\gdef\@departmentPL{#1}}
 \def\departmentEN#1   {\gdef\@departmentEN{#1}}
 
@@ -138,12 +138,12 @@ University of Science and Technology in Krakow}}}
 
 \clearpage \titlepage
 
-\vspace*{15cm} \vfill
-\begin{flushright} 
-\begin{minipage}[!h]{8cm}
-{\Large \@acknowledgements}
-\end{minipage}
-\end{flushright}
+%\vspace*{15cm} \vfill
+%\begin{flushright} 
+%\begin{minipage}[!h]{8cm}
+%{\Large \@acknowledgements}
+%\end{minipage}
+%\end{flushright}
 
 \clearpage
 

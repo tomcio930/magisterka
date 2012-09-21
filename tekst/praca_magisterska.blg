@@ -1,9 +1,19 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: praca_magisterska.aux
 The style file: plain.bst
 Database file #1: bibliografia.bib
-Repeated entry---line 64 of file bibliografia.bib
- : @manual{9
- :          ,
+Repeated entry---line 89 of file bibliografia.bib
+ : %@online{10
+ :            ,
 I'm skipping whatever remains of this entry
+"}" immediately follows an entry type---line 91 of file bibliografia.bib
+ : %title = {This is a test entry of type {@ONLINE
+ :                                                }},
+I'm skipping whatever remains of this entry
+Repeated entry---line 97 of file bibliografia.bib
+ : %@article{13
+ :             ,
+I'm skipping whatever remains of this entry
+Warning--empty year in 7
 Warning--empty publisher in 9
-(There was 1 error message)
+Warning--empty publisher in 13
+(There were 3 error messages)

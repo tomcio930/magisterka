@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.28)  20 SEP 2012 11:56
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.28)  21 SEP 2012 11:45
 entering extended mode
 **D:/magisterka/tekst/praca_magisterska.tex
 (D:/magisterka/tekst/praca_magisterska.tex
@@ -598,8 +598,6 @@ Package pdftex.def Info: agh.jpg used on input line 68.
 (pdftex.def)             Requested size: 43.94049pt x 85.4238pt.
  [1
 
-] [1
-
 ]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 70.
@@ -608,6 +606,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
  (D:\magisterka\tekst\praca_magisterska.toc)
 \tf@toc=\write3
  [5
+
 
 ]
 Rozdzia\l  1.
@@ -618,7 +617,7 @@ Rozdzia\l  1.
 Rozdzia\l  2.
 [8
 
-] [9] [10] [11] <candles.png, id=42, 619.56468pt x 430.60875pt>
+] [9] [10] [11] <candles.png, id=39, 619.56468pt x 430.60875pt>
 File: candles.png Graphic file (type png)
 
 <use candles.png>
@@ -627,7 +626,7 @@ Package pdftex.def Info: candles.png used on input line 189.
  [12]
 Underfull \vbox (badness 1024) has occurred while \output is active []
 
- [13 <D:/magisterka/tekst/candles.png>] [14] <ma.png, id=61, 621.07031pt x 432.
+ [13 <D:/magisterka/tekst/candles.png>] [14] <ma.png, id=58, 621.07031pt x 432.
 86719pt>
 File: ma.png Graphic file (type png)
 
@@ -635,7 +634,7 @@ File: ma.png Graphic file (type png)
 Package pdftex.def Info: ma.png used on input line 236.
 (pdftex.def)             Requested size: 426.79134pt x 297.46335pt.
  [15 <D:/magisterka/tekst/ma.png>]
-<bb.png, id=65, 624.83438pt x 432.86719pt>
+<bb.png, id=62, 624.83438pt x 432.86719pt>
 File: bb.png Graphic file (type png)
  <use bb.png>
 Package pdftex.def Info: bb.png used on input line 253.
@@ -645,19 +644,19 @@ Underfull \vbox (badness 1953) has occurred while \output is active []
 
  [16]
 [17 <D:/magisterka/tekst/bb.png>] [18]
-<macd.png, id=76, 624.08156pt x 431.36156pt>
+<macd.png, id=73, 624.08156pt x 431.36156pt>
 File: macd.png Graphic file (type png)
  <use macd.png>
 Package pdftex.def Info: macd.png used on input line 279.
 (pdftex.def)             Requested size: 426.79134pt x 295.0004pt.
- [19 <D:/magisterka/tekst/macd.png>] <reduction.png, id=81, 376.40625pt x 268.0
+ [19 <D:/magisterka/tekst/macd.png>] <reduction.png, id=77, 376.40625pt x 268.0
 0125pt>
 File: reduction.png Graphic file (type png)
 
 <use reduction.png>
 Package pdftex.def Info: reduction.png used on input line 296.
 (pdftex.def)             Requested size: 284.52756pt x 202.59937pt.
- [20] <hammer.png, id=86, 373.395pt x 270.25969pt>
+ [20] <hammer.png, id=83, 373.395pt x 270.25969pt>
 File: hammer.png Graphic file (type png)
 
 <use hammer.png>
@@ -667,7 +666,7 @@ Package pdftex.def Info: hammer.png used on input line 305.
 Underfull \vbox (badness 1303) has occurred while \output is active []
 
  [21 <D:/magisterka/tekst/reduction.png>]
-<invert_hammer.png, id=91, 373.395pt x 270.25969pt>
+<invert_hammer.png, id=88, 373.395pt x 270.25969pt>
 File: invert_hammer.png Graphic file (type png)
  <use invert_hammer.png>
 Package pdftex.def Info: invert_hammer.png used on input line 320.
@@ -675,7 +674,7 @@ Package pdftex.def Info: invert_hammer.png used on input line 320.
 
 Underfull \vbox (badness 4024) has occurred while \output is active []
 
- [22 <D:/magisterka/tekst/hammer.png>] <engulfing.png, id=96, 536.75531pt x 255
+ [22 <D:/magisterka/tekst/hammer.png>] <engulfing.png, id=93, 536.75531pt x 255
 .20343pt>
 File: engulfing.png Graphic file (type png)
 
@@ -686,18 +685,18 @@ Package pdftex.def Info: engulfing.png used on input line 333.
 Underfull \vbox (badness 2326) has occurred while \output is active []
 
  [23 <D:/magisterka/tekst/invert_hammer.png>]
-<harami.png, id=101, 489.32813pt x 258.9675pt>
+<harami.png, id=98, 489.32813pt x 258.9675pt>
 File: harami.png Graphic file (type png)
  <use harami.png>
 Package pdftex.def Info: harami.png used on input line 346.
 (pdftex.def)             Requested size: 284.52756pt x 150.58453pt.
  [24 <D:/magisterka/tekst/engulfing.png> <D:/magisterka/tekst/harami.png>]
-<piercing.png, id=107, 503.63156pt x 255.95625pt>
+<piercing.png, id=104, 503.63156pt x 255.95625pt>
 File: piercing.png Graphic file (type png)
  <use piercing.png>
 Package pdftex.def Info: piercing.png used on input line 359.
 (pdftex.def)             Requested size: 284.52756pt x 144.60382pt.
- [25 <D:/magisterka/tekst/piercing.png>] <stars.png, id=113, 611.28375pt x 255.
+ [25 <D:/magisterka/tekst/piercing.png>] <stars.png, id=109, 611.28375pt x 255.
 20343pt>
 File: stars.png Graphic file (type png)
 
@@ -707,7 +706,7 @@ Package pdftex.def Info: stars.png used on input line 374.
 
 Underfull \vbox (badness 2529) has occurred while \output is active []
 
- [26 <D:/magisterka/tekst/stars.png>] <metatrader.png, id=118, 1027.84pt x 770.
+ [26 <D:/magisterka/tekst/stars.png>] <metatrader.png, id=115, 1027.84pt x 770.
 88pt>
 File: metatrader.png Graphic file (type png)
 
@@ -725,12 +724,12 @@ Underfull \vbox (badness 7981) has occurred while \output is active []
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 449.
 
-<usecase.PNG, id=131, 624.08156pt x 475.7775pt>
+<usecase.PNG, id=128, 624.08156pt x 475.7775pt>
 File: usecase.PNG Graphic file (type png)
  <use usecase.PNG>
 Package pdftex.def Info: usecase.PNG used on input line 454.
 (pdftex.def)             Requested size: 455.24408pt x 347.06784pt.
- [31 <D:/magisterka/tekst/usecase.PNG>] <ogolny.png, id=136, 671.50874pt x 743.
+ [31 <D:/magisterka/tekst/usecase.PNG>] <ogolny.png, id=132, 671.50874pt x 743.
 02594pt>
 File: ogolny.png Graphic file (type png)
 
@@ -741,7 +740,7 @@ Package pdftex.def Info: ogolny.png used on input line 482.
 Underfull \vbox (badness 3590) has occurred while \output is active []
 
  [32 <D:/magisterka/tekst/ogolny.png>]
-<warunki_otwarcia.png, id=141, 604.50844pt x 840.13875pt>
+<warunki_otwarcia.png, id=138, 604.50844pt x 840.13875pt>
 File: warunki_otwarcia.png Graphic file (type png)
 
 <use warunki_otwarcia.png>
@@ -754,14 +753,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [34 <D:/magisterka/tekst/warunki_otwarcia.png>]
-<otwarcie.png, id=149, 320.69812pt x 392.96812pt>
+<otwarcie.png, id=146, 320.69812pt x 392.96812pt>
 File: otwarcie.png Graphic file (type png)
  <use otwarcie.png>
 Package pdftex.def Info: otwarcie.png used on input line 530.
 (pdftex.def)             Requested size: 341.43306pt x 418.38504pt.
  [35]
 [36 <D:/magisterka/tekst/otwarcie.png>]
-<sekwencji.png, id=157, 638.385pt x 887.56593pt>
+<sekwencji.png, id=154, 638.385pt x 887.56593pt>
 File: sekwencji.png Graphic file (type png)
  <use sekwencji.png>
 Package pdftex.def Info: sekwencji.png used on input line 544.
@@ -774,7 +773,7 @@ Overfull \vbox (8.51976pt too high) has occurred while \output is active []
 
 
 [38 <D:/magisterka/tekst/sekwencji.png>] [39]
-<trend.png, id=168, 356.0803pt x 488.57532pt>
+<trend.png, id=165, 356.0803pt x 488.57532pt>
 File: trend.png Graphic file (type png)
  <use trend.png>
 Package pdftex.def Info: trend.png used on input line 565.
@@ -787,7 +786,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Rozdzia\l  4.
 [44
 
-] [45] [46] <optymalizacja.png, id=191, 341.77687pt x 246.1697pt>
+] [45] [46] <optymalizacja.png, id=188, 341.77687pt x 246.1697pt>
 File: optymalizacja.png Graphic file (type png)
 
 <use optymalizacja.png>
@@ -797,14 +796,14 @@ Package pdftex.def Info: optymalizacja.png used on input line 701.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[47] <optymalizacja_zla.png, id=195, 800.9925pt x 232.61906pt>
+[47] <optymalizacja_zla.png, id=192, 800.9925pt x 232.61906pt>
 File: optymalizacja_zla.png Graphic file (type png)
 
 <use optymalizacja_zla.png>
 Package pdftex.def Info: optymalizacja_zla.png used on input line 713.
 (pdftex.def)             Requested size: 341.43306pt x 99.15816pt.
 
-<optymalizacja_dobra.png, id=196, 806.26219pt x 230.36063pt>
+<optymalizacja_dobra.png, id=193, 806.26219pt x 230.36063pt>
 File: optymalizacja_dobra.png Graphic file (type png)
 
 <use optymalizacja_dobra.png>
@@ -815,7 +814,7 @@ Package pdftex.def Info: optymalizacja_dobra.png used on input line 720.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [48 <D:/magisterka/tekst/optymalizacja.png> <D:/magisterka/tekst/optymalizacja_
-zla.png>] <hammer/optymalizacja.png, id=201, 619.56468pt x 642.90187pt>
+zla.png>] <hammer/optymalizacja.png, id=198, 619.56468pt x 642.90187pt>
 File: hammer/optymalizacja.png Graphic file (type png)
 
 <use hammer/optymalizacja.png>
@@ -828,7 +827,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<hammer/przyklad.png, id=202, 544.28343pt x 353.82187pt>
+<hammer/przyklad.png, id=199, 544.28343pt x 353.82187pt>
 File: hammer/przyklad.png Graphic file (type png)
 
 <use hammer/przyklad.png>
@@ -838,7 +837,7 @@ Package pdftex.def Info: hammer/przyklad.png used on input line 765.
 Underfull \vbox (badness 6575) has occurred while \output is active []
 
  [50 <D:/magisterka/tekst/hammer/optymalizacja.png>]
-<shootingstar/optymalizacja.png, id=211, 621.82312pt x 457.71pt>
+<shootingstar/optymalizacja.png, id=208, 621.82312pt x 457.71pt>
 File: shootingstar/optymalizacja.png Graphic file (type png)
 
 <use shootingstar/optymalizacja.png>
@@ -849,7 +848,7 @@ Package pdftex.def Info: shootingstar/optymalizacja.png used on input line 805.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [51 <D:/magisterka/tekst/hammer/przyklad.png>]
-<shootingstar/przyklad.png, id=215, 622.57594pt x 368.87813pt>
+<shootingstar/przyklad.png, id=212, 622.57594pt x 368.87813pt>
 File: shootingstar/przyklad.png Graphic file (type png)
 
 <use shootingstar/przyklad.png>
@@ -859,14 +858,14 @@ Package pdftex.def Info: shootingstar/przyklad.png used on input line 832.
 Underfull \vbox (badness 1552) has occurred while \output is active []
 
  [52 <D:/magisterka/tekst/shootingstar/optymalizacja.png>]
-<bullishengulfing/przyklad.png, id=219, 779.16093pt x 332.74312pt>
+<bullishengulfing/przyklad.png, id=216, 779.16093pt x 332.74312pt>
 File: bullishengulfing/przyklad.png Graphic file (type png)
 
 <use bullishengulfing/przyklad.png>
 Package pdftex.def Info: bullishengulfing/przyklad.png used on input line 904.
 (pdftex.def)             Requested size: 398.33858pt x 170.10799pt.
 
-<bearishengulfing/przyklad.png, id=220, 131.74219pt x 314.67563pt>
+<bearishengulfing/przyklad.png, id=217, 131.74219pt x 314.67563pt>
 File: bearishengulfing/przyklad.png Graphic file (type png)
 
 <use bearishengulfing/przyklad.png>
@@ -880,14 +879,14 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<bullishharami/przyklad.png, id=227, 579.66562pt x 371.88937pt>
+<bullishharami/przyklad.png, id=224, 579.66562pt x 371.88937pt>
 File: bullishharami/przyklad.png Graphic file (type png)
 
 <use bullishharami/przyklad.png>
 Package pdftex.def Info: bullishharami/przyklad.png used on input line 955.
 (pdftex.def)             Requested size: 398.33858pt x 255.55981pt.
 
-<bearishharami/linia_kap.png, id=228, 617.30624pt x 150.5625pt>
+<bearishharami/linia_kap.png, id=225, 617.30624pt x 150.5625pt>
 File: bearishharami/linia_kap.png Graphic file (type png)
 
 <use bearishharami/linia_kap.png>
@@ -907,7 +906,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<bearishharami/przyklad.png, id=233, 297.36093pt x 225.09094pt>
+<bearishharami/przyklad.png, id=229, 297.36093pt x 225.09094pt>
 File: bearishharami/przyklad.png Graphic file (type png)
 
 <use bearishharami/przyklad.png>
@@ -916,7 +915,7 @@ Package pdftex.def Info: bearishharami/przyklad.png used on input line 1002.
  [56 <D:/magisterka/tekst/bullishharami/przyklad.png>] [57 <D:/magisterka/tekst
 /bearishharami/linia_kap.png> <D:/magisterka/tekst/bearishharami/przyklad.png>]
 
-<darkcloudcover/przyklad.png, id=242, 277.035pt x 380.92313pt>
+<darkcloudcover/przyklad.png, id=239, 277.035pt x 380.92313pt>
 File: darkcloudcover/przyklad.png Graphic file (type png)
 
 <use darkcloudcover/przyklad.png>
@@ -926,14 +925,14 @@ Package pdftex.def Info: darkcloudcover/przyklad.png used on input line 1044.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[58] <wszystkie/linia_kap.png, id=246, 1419.80438pt x 552.56438pt>
+[58] <wszystkie/linia_kap.png, id=243, 1419.80438pt x 552.56438pt>
 File: wszystkie/linia_kap.png Graphic file (type png)
 
 <use wszystkie/linia_kap.png>
 Package pdftex.def Info: wszystkie/linia_kap.png used on input line 1068.
 (pdftex.def)             Requested size: 455.24408pt x 177.16989pt.
 
-<wszystkie/linia_kap_max.png, id=247, 1417.54594pt x 436.63126pt>
+<wszystkie/linia_kap_max.png, id=244, 1417.54594pt x 436.63126pt>
 File: wszystkie/linia_kap_max.png Graphic file (type png)
 
 <use wszystkie/linia_kap_max.png>
@@ -949,7 +948,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Rozdzia\l  5.
 [62
 
-] (D:\magisterka\tekst\praca_magisterska.bbl [63]) [64
+] (D:\magisterka\tekst\praca_magisterska.bbl [63]
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 17.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)) [64
 
 ]
 (D:\magisterka\tekst\praca_magisterska.aux)
@@ -958,11 +962,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5156 strings out of 494045
- 69824 string characters out of 3145963
- 163425 words of memory out of 3000000
- 8309 multiletter control sequences out of 15000+200000
- 87607 words of font info for 69 fonts, out of 3000000 for 9000
+ 5192 strings out of 494045
+ 70255 string characters out of 3145963
+ 163340 words of memory out of 3000000
+ 8340 multiletter control sequences out of 15000+200000
+ 88228 words of font info for 71 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  34i,12n,45p,2602b,341s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
@@ -974,14 +978,15 @@ les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
-w/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utm
-r8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on praca_magisterska.pdf (64 pages, 1132060 bytes).
+9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw
+/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/u
+tmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on praca_magisterska.pdf (63 pages, 1145716 bytes).
 PDF statistics:
- 314 PDF objects out of 1000 (max. 8388607)
+ 315 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  171 words of extra memory for PDF output out of 10000 (max. 10000000)
 
