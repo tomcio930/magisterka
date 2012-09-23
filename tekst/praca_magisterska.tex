@@ -37,10 +37,9 @@
 \shortauthor{T. Górny}
 
 \titlePL{Opracowanie systemu inwestycyjnego opartego na wybranych japońskich technikach analizy wykresów}
-\titleEN{Development of the investment system based on selected investment analysis techniques of Japanese charts}
+\titleEN{Development of the investment system based on selected analysis techniques of Japanese charts}
 
-\shorttitlePL{Opracowanie systemu inwestycyjnego opartego na świecach japońskich} % skrócona wersja tytułu jeśli jest bardzo długi
-\shorttitleEN{Development of the investment system based on the Japanese candles}
+
 
 \thesistypePL{Praca magisterska}
 \thesistypeEN{Master of Science Thesis}
@@ -50,13 +49,13 @@
 
 \date{2012}
 
-\departmentPL{Katedra Automatyki}
-\departmentEN{Department of Automatics}
+\departmentPL{Katedra Informatyki Stosowanej}
+\departmentEN{Department of Applied Informatics}
 
 \facultyPL{Wydział Elektrotechniki, Automatyki, Informatyki i Elektroniki}
 \facultyEN{Faculty of Electrical Engineering, Automatics, Computer Science and Electronics}
 
-\acknowledgements{}
+%\acknowledgements{Serdecznie dziękuję Doktorowi I}
 
 
 
@@ -74,19 +73,19 @@
 \chapter{Wstęp}
 \label{chap:wstep}
 \paragraph{}
-Trafne prognozowanie zachowania się rynków finansowych to zadanie niezwykle trudne. Stworzono wiele teorii na ten temat, z których każda ma swoich wiernych zwolenników. W ramach istniejących ideii zostały zbudowane metody, których realizacja może w różnym stopniu pozwolić inwestorowi przewidzieć zachowanie na giełdzie, a tym samym zapewnić mu zysk, bądź uchronić przed stratami. Informacje płynące z większości algorytmów wspierających inwestycje muszą być poparte szeroką wiedzą na temat danego rynku. Spowodowane jest to faktem, iż na ceny notowań wpływa wiele czynników, których interpretacja wymaga doświadczenia oraz znajomości tematu. Poza nabytą wiedzą z zakresu zasad funkcjonowania danej giełdy należy posiadać bezwzględną dyscyplinę przy kierowaniu się określonym algorytmem inwestycyjnym. Emocje i stres, towarzyszące ryzyku utraty środków pieniężnych, przeważnie dorowadzają inwestorów do nietrafnych wyborów, pomimo założonej strategii. Nieustanny postęp komputeryzacji daje okazję do konstruowania coraz to lepszych aplikacji do wspierania działań gracza giełdowego. Tego rodzaju systemy coraz częściej są stosowane z powodzeniem na wielu rynkach. Specjalistyczne aplikacje upraszczają pracę analityka, dostarczając wielu narzędzi i algorytmów. W istotnym stopniu redukują one czas potrzebny na analizę danych. Dodatkowo tego typu programy niwelują emocje, zapewniają dyscyplinę podczas podejmowaniu decyzji oraz są konsekwentne w ramach wybranej strategii. Dzięki temu inwestor może zwiększać swoje zyski przy jednoczesnym minimalizowaniu ewentualnych strat. Wyniki analiz, oferowane przez systemy inwestycyjne, są generowane za pomocą szeregu algorytmów. Procedury te zaiplementowane są na podstawie teoretycznych teorii inwestowania. Wraz z powstawaniem nowych teorii oraz strategii, programiści starają się stworzyć algorytmy, które będa je realizowały.  
+Trafne prognozowanie zachowania się rynków finansowych to zadanie niezwykle trudne. Stworzono wiele teorii na ten temat, z których każda ma swoich wiernych zwolenników. W ramach istniejących ideii zostały zbudowane metody, których realizacja może w różnym stopniu pozwolić inwestorowi przewidzieć zachowanie na giełdzie, a tym samym zapewnić mu zysk bądź uchronić przed stratami. Informacje płynące z większości algorytmów wspierających inwestycje muszą być poparte szeroką wiedzą na temat danego rynku. Spowodowane jest to faktem, że na ceny notowań wpływa wiele czynników, których interpretacja wymaga doświadczenia oraz znajomości tematu. Poza nabytą wiedzą z zakresu zasad funkcjonowania danej giełdy należy posiadać bezwzględną dyscyplinę przy kierowaniu się określonym algorytmem inwestycyjnym. Emocje i stres, towarzyszące ryzyku utraty środków pieniężnych, przeważnie dorowadzają inwestorów do nietrafnych wyborów, pomimo założonej strategii. Nieustanny postęp komputeryzacji daje okazję do konstruowania coraz to lepszych aplikacji do wspierania działań gracza giełdowego. Tego rodzaju systemy coraz częściej są stosowane z powodzeniem na wielu rynkach. Specjalistyczne aplikacje upraszczają pracę analityka, dostarczając wielu narzędzi i algorytmów. W istotnym stopniu redukują one czas potrzebny na analizę danych. Dodatkowo tego typu programy niwelują emocje, zapewniają dyscyplinę podczas podejmowaniu decyzji oraz są konsekwentne w ramach wybranej strategii. Dzięki temu inwestor może zwiększać swoje zyski przy jednoczesnym minimalizowaniu ewentualnych strat. Wyniki analiz, oferowane przez systemy inwestycyjne, są generowane za pomocą szeregu algorytmów. Procedury te zaiplementowane są na podstawie odpowiednich teorii inwestowania. Wraz z powstawaniem nowych teorii oraz strategii, programiści starają się stworzyć algorytmy, które będa je realizowały.  
 \section{Cele pracy}
 \paragraph{}
 Celem pracy jest stworzenie automatycznej strategii inwestycyjnej, prognozującej kursy walut na rynku Forex za pomocą algorytmów opartych na wybranych japońskich technikach analizy wykresów. Główne wymagania:
 \begin{itemize}
 \item
-zaimplementowanie algorytmów rozpoznających główne formacje świec japońskich
+zaimplementowanie algorytmów rozpoznających główne formacje świec japońskich,
 \item
-optymalizacja algorytmów pod kątem maksymalizacji zysku
+optymalizacja algorytmów pod kątem maksymalizacji zysku,
 \item
-zbudowanie strategii realizającej automatyczne transakcje bazujące na rozpoznanych wzorcach świec japońskich
+zbudowanie strategii realizającej automatyczne transakcje bazujące na rozpoznanych wzorcach świec japońskich,
 \item
-ocena sprawdzalności sygnałów płynących z japońskich technik analizy wykresów
+ocena sprawdzalności sygnałów płynących z japońskich technik analizy wykresów.
 \end{itemize}
 \section{Zawartość pracy}
 \paragraph{}
@@ -105,17 +104,17 @@ Rozdział szósty jest podsumowaniem pracy. Omawia aspekty postawionego problemu
 \section{Rynek Forex}
 \label{sec:forex}
 \paragraph{}
-Handel pieniędzmi rozpoczął się już we wrzesnym średniowieczu. Tamtejsi kupcy i bankierzy jako pierwsi używali kwitów wymiany umożliwiających rozwój i uelastycznienie handlu międzynarodowego. Współczesny rynek wymiany walutowej przechodzący przez okresy dużej zmienności i relatywnej stabilności uformował się dopiero w XX wieku. Londyn w latach trzydziestych XX wieku stał się głównym centrum wymiany walut. Jednocześnie funt brytyjsk rósł w siłę, należąc do najsilniejszych. Druga wojna światowa doprowadziła brytyjską ekonomie do skraju bankructwa. W tym samym czasie wzrostała pozycja Stanów Zjednoczonych. Kraj niezniszczony wojną zyskał silną pozycję ekonomiczną. W 1944 roku na mocy porozumienia z Bretton Woods między Stanami Zjednoczonymi, Wielką Brytanią oraz Francją, dolar amerykański stał się bazową walutą kapitalistycznych krajów. Wszystkie waluty oraz złoto zostały powiązane z walutą bazową. W ten sposób dolar stał się główną walutą całego finansowego świata. W ramach porozumienia powstał Międzynarodowy Fundusz Monetarny, który przyczynił się do finansowania byłych socjalistycznych krajów.\cite{9} 
+Handel pieniędzmi rozpoczął się już we wrzesnym średniowieczu. Tamtejsi kupcy i bankierzy jako pierwsi używali kwitów wymiany umożliwiających rozwój i uelastycznienie handlu międzynarodowego. Współczesny rynek wymiany walutowej przechodzący przez okresy dużej zmienności i relatywnej stabilności uformował się dopiero w XX wieku. Londyn w latach trzydziestych XX wieku stał się głównym centrum wymiany walut. Jednocześnie funt brytyjsk rósł w siłę, należąc do najsilniejszych walut. Druga wojna światowa doprowadziła brytyjską ekonomie do skraju bankructwa. W tym samym czasie wzrostała pozycja Stanów Zjednoczonych. Kraj niezniszczony wojną zyskał silną pozycję ekonomiczną. W 1944 roku na mocy porozumienia z Bretton Woods między Stanami Zjednoczonymi, Wielką Brytanią oraz Francją, dolar amerykański stał się bazową walutą kapitalistycznych krajów. Wszystkie waluty oraz złoto zostały powiązane z walutą bazową. W ten sposób dolar stał się główną walutą całego finansowego świata. W ramach porozumienia powstał Międzynarodowy Fundusz Monetarny, który przyczynił się do finansowania byłych krajów socjalistycznych\cite{9}. 
 
-W latach siedemdziesiątych kursy walut zostały uwolnione od cen złota. Wydarzenie to jest momentem powstania rynku wymiany walut jaki znamy do dziś. Termin Forex (ang. Foreign Exchange - wymiana walut) stał się potoczną nazwą największego międzynarodowego rynku na świecie na którym odbywa się wymiana walut. Wielkość dziennych obrotów przekracza 1,9 biliona USD, co stanowi trzykrotność łącznych obrotów na amerykańskim rynku akcji i obligacji. Forex jest rynkiem OTC (Over The Counter), co oznacza, że nie ma jednego miejsca usytuowania na świecie gdzie dokonuje się wszystkich operacji na tym rynku. Handel parami walut odbywa się głównie za pośrednictwem internetu, telefonów, globalnej sieci banków, brokerów, przesiębiorstw oraz inwestorów indywidualnych. Brak określonego miejsca fizycznej lokalizacji rynku walutowego umożliwia mu funkcjonowanie 24 godziny na dobę przez 5 dni w tygodniu, od godziny 23 w niedzielę do godziny 22 w piątek czasu środkowoeuropejskiego. Rynek ten obejmuje swym zasięgiem większość krajów świata, a do największych centrów transakcji walutowych należą Londyn, Nowy Jork i Tokio. Do najwazniejszych walut wymienianych na rynku Forex należą:
+W latach siedemdziesiątych kursy walut zostały uwolnione od cen złota. Wydarzenie to jest momentem powstania rynku wymiany walut jaki znamy do dziś. Termin Forex (ang. Foreign Exchange - wymiana walut) stał się potoczną nazwą największego międzynarodowego rynku na świecie na którym odbywa się wymiana walut. Wielkość dziennych obrotów przekracza 1,9 biliona USD, co stanowi trzykrotność łącznych obrotów na amerykańskim rynku akcji i obligacji. Forex jest rynkiem OTC (Over The Counter), co oznacza, że nie ma jednego miejsca usytuowania na świecie, gdzie dokonuje się wszystkich operacji na tym rynku. Handel parami walut odbywa się głównie za pośrednictwem internetu, telefonów, globalnej sieci banków, brokerów, przesiębiorstw oraz inwestorów indywidualnych. Brak określonego miejsca fizycznej lokalizacji rynku walutowego umożliwia mu funkcjonowanie 24 godziny na dobę przez 5 dni w tygodniu, od godziny 23 w niedzielę do godziny 22 w piątek czasu środkowoeuropejskiego. Rynek ten obejmuje swym zasięgiem większość krajów świata, a do największych centrów transakcji walutowych należą Londyn, Nowy Jork i Tokio. Do najwazniejszych walut wymienianych na rynku Forex należą:
 \begin{itemize}
-\item USD - dolar amerykański
-\item EUR - euro
-\item GBP - funt brytyjski
-\item JPY - jen japoński
-\item CHF - frank szwajcarski
-\item AUD - dolar australijski
-\item NZD - dolar nowozelandzki
+\item USD - dolar amerykański,
+\item EUR - euro,
+\item GBP - funt brytyjski,
+\item JPY - jen japoński,
+\item CHF - frank szwajcarski,
+\item AUD - dolar australijski,
+\item NZD - dolar nowozelandzki.
 \end{itemize}
 
 Olbrzymia liczba uczestników i ich różnorodność sprawia, że rynek walutowy jest najbardziej płynnym rynkiem finansowym świata, a manipulowanie nim jest wręcz niemożliwe, nawet dla takich instytucji jak banki centralne największych państw naszego globu. Sytuacja ta powoduje, że właściwie jedyną determinantą poziomu kursów walutowych jest zachowanie większości uczestników rynku, a nie tylko największych graczy, co sprawia, że inwestor, który trafnie potrafi przewidzieć zachowanie ,,tłumu'' może odnosić na tym rynku ponadprzeciętne zyski.
@@ -138,8 +137,8 @@ Do niedawna nawet osoby z pokaźnym kapitałem nie mogły w praktyce inwestować
 Forex jest ogromnym rynkiem, co sprawia, że jest również rynkiem wyjątkowo płynnym. Oznacza to, że można złożyć zlecenie mając pewność, że zostanie natychmiast zrealizowane. Dzięki tak wielkiej płynności rynek ten jest odporny na wszelkie manipulowanie kursami.
 \item Handel przez 24 godziny na dobę. 
 W odróżnieniu od innych rynków czy giełd papierów wartościowych, Forex jest czynny od poniedziałku do piątku przez 24 godziny na dobę. 
-\item Zarabianie zarówno przy trendzie zwyżkowym jak i zniżkowym.
-Na rynku akcji mamy możliwość zarabiania przede wszystkim na trendzie wzrostowym. Jedną z największych zalet Forexu jest możliwość osiągania zysków zarówno przy wzroście jak i przy spadku danej waluty.
+\item Zarabianie zarówno przy trendzie zwyżkowym, jak i zniżkowym.
+Na rynku akcji mamy możliwość zarabiania przede wszystkim na trendzie wzrostowym. Jedną z największych zalet Forexu jest możliwość osiągania zysków zarówno przy wzroście, jak i przy spadku danej waluty.
 \item Możliwość ,,lewarowania'' pozycji.
 Duża dźwignia handlowa, dochodząca do 200 : 1, oznacza że depozytem w wysokości np. 100\$ można kontrolować kupno lub sprzedaż walut o wartości 20.000\$. Jeśli przy takim lewarze kurs zakupionej waluty wzrośnie tylko o 0,1\%, zysk wyniesie 20\$, czyli 20\% w stosunku do kwoty przez nas zainwestowaną. Niestety niewielkie zmiany w przeciwną stronę mogą powodować szybkie wyzerowanie się rachunku.
 \end{itemize}
@@ -167,24 +166,24 @@ Ostatnie z kluczowych założeń analizy technicznej dotyczy powtarzającej się
 
 Dla zrozumienia metod analizy technicznej, które będą przytoczone w dalszej części tego rozdziału, należy pamiętać o podstawowych zasadach przedstawionych przez Pawła Perza:
 \begin{itemize}
-\item cena akcji jest określana przez relacje między popytem a podażą
-\item zmiany w popycie i podaży odzwierciedla akcjogram
-\item w zdecydowanej większości przypadków ceny akcji zmieniają się zgodnie z trwającym przez pewien czas trendem
-\item zmiany w trendzie wynikają ze zmian w popycie i podaży
-\item zmiany mają charakter prawidłowości i podlegają powtarzalności 
+\item cena akcji jest określana przez relacje między popytem a podażą,
+\item zmiany w popycie i podaży odzwierciedla akcjogram,
+\item w zdecydowanej większości przypadków ceny akcji zmieniają się zgodnie z trwającym przez pewien czas trendem,
+\item zmiany w trendzie wynikają ze zmian w popycie i podaży,
+\item zmiany mają charakter prawidłowości i podlegają powtarzalności .
 \end{itemize}
 Wyróżnia sie trzy podstawowe metody analizy technicznej:
 \begin{enumerate}
-\item analiza trendów cen akcji
-\item analiza formacji
-\item analiza wskaźników technicznych
+\item analiza trendów cen akcji,
+\item analiza formacji,
+\item analiza wskaźników technicznych.
 \end{enumerate}
 
 W metodzie analizy trendów ocenia się ogólną tendencję rozwojową cen akcji. Gdy trend zostanie rozpoznany, próbuje sie prognozować moment zwrotu trendu\cite{8}. Trend na akcjogramie zostaje wyznaczony poprzez połączenie lokalnych maksimów lub minimów jedną linią prostą. Im więcej takich punktów można połączyć linią trendu, tym większe prawdopodobieństwo prawidłowego wytyczenia trendu i jego większe znaczenie. Przy trendzie rosnącym używamy lokalnych minimów, zaś przy trendzie malejącym lokalnych maksimów. Ważnym elementem analizy trendów są linia oporu i wsparcia. Linia oporu to prosta łącząca maksima na akcjogramie. Prosta ta wyznacza granicę, do której kursy akcji dochodziły, jednak nigdy nie przekraczały jej istotnie. Analogicznie linia wsparcia to prosta linia trendu poprowadzona po minimach, gdzie ceny akcji nie spadały znacząco poniżej jej poziomu. Badając aktualne położenie cen akcji względem trendu, linii oporu i wsparcia oraz kanałów trendowych, które tworzą te linie, można podejmować decyzje o ewentualnym kupnie bądź sprzedaży. Dodatkowo inwestorzy powinni dokonywać transakcji zgodnie z kierunkiem trendu tzn. w trakcie trendu wzrostowego powinni zajmować pozycję długą (kupować dany instrument), w trakcie trendu spadkowego powinni zajmować pozycję krótką (sprzedawać dany instrument). W trendzie horyzontalnym wskazane jest unikanie zawierania transakcji\cite{6}.
 
 Drugim ważnym elementem analizy technicznej jest analiza formacji. Dzięki wieloletnim badaniom kształtowania się cen akcji na giełdach, zauważono powtarzające się zachowania kursów, układających sie na wykresach w charakterystyczne formacje. Poprawne rozpoznanie formacji daje możliwość znalezienia przybliżonego momentu zakupu lub sprzedaży akcji. 
 
-Szczególnym przypadkiem analizy formacji jest rozpoznawanie sekwencji ''świec,,. Metoda ta wywodzi się z Japonii, gdzie jest stosowana od wielu lat, a w ostatnim czasie zdobyła popularność również na Zachodzie. Analiza formacji świecowych może w znacznym stopniu usprawnić posługiwanie się popularnymi wskaźnikami technicznymi oraz uwiarygodnić ich wskazania\cite{3}. Analiza świecowa dotyczy dwóch różnych zagadnień. Po pierwsze zajmuje się odpowiednim prezentowaniem danych na wykresie, a po drugie rozpoznawaniem określonych sekwencji świec, które mają znaczenie prognostyczne. Do konstrukcji wykresów świecowych wymagane są: cena otwarcia, zamknięcia, cena minimalna oraz maksymalna. Często istnieje brak danych o cenach otwarcia, dlatego też w takim przypadku można zastępować je cenami zamknięcia z dnia poprzedniego. Wymienione dane na wykresach świecowych są prezentowane w sposób o wiele bardziej czytelny, niż w przypadku innego typu wykresów. Na rysunku \ref{swieca} przedstawiono przykład wykresu świecowego. Od razu widać, skąd wzięła sie jego nazwa: dane z dnia przypominają świece z knotem. Prostokąt, inaczej zwany korpusem, reprezentuje różnicę pomiędzy ceną otwarcia i cena zamknięcia. W klasycznej teorii istnieją dwa kolory korpusu: biały oznacza, że cena zamknięcia jest wyższa od ceny otwarcia, a korpus czarny mówi o tym, że cena zamknięcia jest mniejsza od ceny otwarcia. Na rysunku \ref{swieca} kolory korpusów zostały odwrócone. Czarny pełni funkcję białego, a biały czarnego korpusu z klasycznej teorii świecowej. Knoty, inaczej zwane cieniami, to linie powyżej i poniżej korpusu. Reprezentują cenę minimalną oraz maksymalną. 
+Szczególnym przypadkiem analizy formacji jest rozpoznawanie sekwencji ,,świec''. Metoda ta wywodzi się z Japonii, gdzie jest stosowana od wielu lat, a w ostatnim czasie zdobyła popularność również na Zachodzie. Analiza formacji świecowych może w znacznym stopniu usprawnić posługiwanie się popularnymi wskaźnikami technicznymi oraz uwiarygodnić ich wskazania\cite{3}. Analiza świecowa dotyczy dwóch różnych zagadnień. Po pierwsze zajmuje się odpowiednim prezentowaniem danych na wykresie, a po drugie rozpoznawaniem określonych sekwencji świec, które mają znaczenie prognostyczne. Do konstrukcji wykresów świecowych wymagane są: cena otwarcia, zamknięcia, cena minimalna oraz maksymalna. Często istnieje brak danych o cenach otwarcia, dlatego też w takim przypadku można zastępować je cenami zamknięcia z dnia poprzedniego. Wymienione dane na wykresach świecowych są prezentowane w sposób o wiele bardziej czytelny, niż w przypadku innego typu wykresów. Na rysunku \ref{swieca} przedstawiono przykład wykresu świecowego. Od razu widać, skąd wzięła sie jego nazwa: dane z dnia przypominają świece z knotem. Prostokąt, inaczej zwany korpusem, reprezentuje różnicę pomiędzy ceną otwarcia i cena zamknięcia. W klasycznej teorii istnieją dwa kolory korpusu: biały oznacza, że cena zamknięcia jest wyższa od ceny otwarcia, a korpus czarny mówi o tym, że cena zamknięcia jest mniejsza od ceny otwarcia. Na rysunku \ref{swieca} kolory korpusów zostały odwrócone. Czarny pełni funkcję białego, a biały czarnego korpusu z klasycznej teorii świecowej. Knoty, inaczej zwane cieniami, to linie powyżej i poniżej korpusu. Reprezentują cenę minimalną oraz maksymalną. 
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=15cm]{candles.png}
@@ -240,7 +239,7 @@ Najbardziej popularną zasadą w metodzie średnich kroczących, dotyczącą syg
 \end{center}
 \end{figure}
 
-Na rysunku \ref{ma} widać, że w dniach od 5 do 18 kwietnia, gdy trend nie jest do końca ukształtowany, prosta średnia ruchoma generuje sygnały nie przynoszące znaczących zysków. Dodatkowo często, są to sygnały mylne, które w dłuższym okresie przynoszą straty. Natomiast sygnał pojawiający się w czasie wyraźnego trendu wzrostowego, tworzącego się w okolicach 20 maja, daje okazję do osiągnięcia wysokiego zysku. W przypadku ukształtowania się trendu, istnieje mniej sygnałów ale są one o wiele bardziej wartościowe. Przytoczona sytuacja to jeden z przykładów na to, że średnie tego typu najlepiej sprawdzają się podczas wyraźnych trendów.
+Na rysunku \ref{ma} widać, że w dniach od 5 do 18 kwietnia, gdy trend nie jest do końca ukształtowany, prosta średnia ruchoma generuje sygnały nie przynoszące znaczących zysków. Dodatkowo często są to sygnały mylne, które w dłuższym okresie przynoszą straty. Natomiast sygnał pojawiający się w czasie wyraźnego trendu wzrostowego, tworzącego się w okolicach 20 maja, daje okazję do osiągnięcia wysokiego zysku. W przypadku ukształtowania się trendu, istnieje mniej sygnałów ale są one o wiele bardziej wartościowe. Przytoczona sytuacja to jeden z przykładów na to, że średnie tego typu najlepiej sprawdzają się podczas wyraźnych trendów.
 
 Jedną z popularnych metod podejmowania decyzji, opartej na prostej średniej kroczącej, jest metoda Wstęgi Bollingera. Nazwę zawdzięcza swojemu twórcy Johnowi Bollingerowi, amerykańskiemu analitykowi finansowemu, który prace nad wstęgami rozpoczął na początku lat 80, XX wieku. Wstęga powstaje przez narysowanie dwóch linii wzdłuż średniej ruchomej odległych o określoną ilość odchyleń standardowych, z dołu i z góry. Odchylenie standardowe to pojęcie statystyczne obrazujące rozproszenie wartości wokół średniej. Przyjmuje się, że średnią ruchomą wyznacza się z 20 sesji oraz odległość linii kontrolnych od niej ma wynieść 2 odchylenia standardowe. Przy zastosowaniu dwóch odchyleń standardowych, według panującej w statystyce reguły 2 sigm, 95 procent danych cenowych znajdzie się pomiędzy górną a dolną wstęgą\cite{5}. Odchylenie standardowe w metodzie Wstęg Bollingera jest obliczane w następujący sposób:
 \begin{equation}
@@ -248,7 +247,7 @@ Jedną z popularnych metod podejmowania decyzji, opartej na prostej średniej kr
 \label{eqn:wzor}
 \end{equation}
 
-Wstęgi Bollingera cechują się dodatkową własnością. Wstęgi Bollingera rozszerzają się i zwężają w zależności od zmienności w okresie ostatnich 20 dni. W czasie rosnącej zmienności cen odległość pomiędzy dwiema wstęgami będzie się zwiększać, natomiast w okresach niskiej zmienności, odległość ta będzie sie zmniejszać. Kiedy wstęgi są od siebie oddalone dużo bardziej niż zwykle, jest to często oznaką końca trendu. Kiedy zaś odległość ta zbytnio się zmniejsza, może to oznaczać rychły początek nowego trendu\cite{5}. Wstęgi Bollingera można stosować także na wykresach długoterminowych, przyjmując zamiast 20 dni 20 tygodniu lub 20 miesięcy. Wstęgi te najlepiej sprawdzają się w połączeniu z oscylatorami wykupienia i wyprzedania. W metodzie tej sygnał kupna występuje, gdy cena jest bliska dolnej wstęgi, a sygnał sprzedaży, gdy cena zbliża się do wstęgi górnej. Silny sygnał kupna występuje dodatkowo jeśli średnia ruchoma, czyli wstęga środkowa, rośnie. Metoda ta ma zmienną skuteczność w zależności od aktualnego trendu.
+Wstęgi Bollingera cechują się dodatkową własnością. Wstęgi Bollingera rozszerzają się i zwężają w zależności od zmienności w okresie ostatnich 20 dni. W czasie rosnącej zmienności cen odległość pomiędzy dwiema wstęgami będzie się zwiększać, natomiast w okresach niskiej zmienności, odległość ta będzie sie zmniejszać. Kiedy wstęgi są od siebie oddalone dużo bardziej niż zwykle, jest to często oznaką końca trendu. Kiedy zaś odległość ta zbytnio się zmniejsza, może to oznaczać rychły początek nowego trendu\cite{5}. Wstęgi Bollingera można stosować także na wykresach długoterminowych, przyjmując zamiast 20 dni 20 tygodniu lub 20 miesięcy. Wstęgi te najlepiej sprawdzają się w połączeniu z oscylatorami wykupienia i wyprzedania. W metodzie tej sygnał kupna występuje, gdy cena jest bliska dolnej wstęgi, a sygnał sprzedaży, gdy cena zbliża się do wstęgi górnej. Silny sygnał kupna występuje dodatkowo, jeśli średnia ruchoma, czyli wstęga środkowa rośnie. Metoda ta ma zmienną skuteczność w zależności od aktualnego trendu.
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=15cm]{bb.png}
@@ -272,7 +271,7 @@ Oscylatory mają wiele wspólnych cech. Przypominają poziomą wstęgę umieszcz
 
 MACD to jeden z oscylatorów, skonstruowany na podstawie średnich wykładniczych. Metoda MACD (ang. \textit{moving averages convergence, divergence}) została opracowana przez G. Appel’a. Narzędzie to jest bardzo użyteczne, ponieważ łączy w sobie pewne zasady dotyczące oscylatorów z metodą przecięcia dwóch średnich. W swojej pierwotnej wersji metoda MACD sugeruje posłużenie się średnimi wykładniczymi 26-tygodniową i 12-tygodniową, których różnica zostaje wygładzona za pomocą średniej wykładniczej 9-tygodniowej. Jednak na każdym z rynków występują różne odmiany opisywanej metody. W Polsce najpopularniejszym sposobem jest stosowanie 17-dniowej i 8-dniowej średniej wykładniczej\cite{1}. Różnica tych średnich jest nazywana linią MACD. Linia MACD, wygładzona średnią wykładniczą 9-dniową nazywana jest linią sygnału. W metodzie MACD można znaleźć kilka sposobów na generowanie sygnałów. Główna zasada, sprawdzająca się przy analizie średnich, mówi o tym, że sygnał kupna występuje przy przecięciu od dołu dłuższej średniej przez krótszą. Sygnał sprzedaży występuje, gdy średnia krótsza przebija od góry średnią dłuższą. Na wykresie MACD kupno i sprzedaż są zauważalne odpowiednio, gdy linia MACD przecina od dołu poziom 0 oraz gdy przecina od góry poziom 0. Można tu również obserwować dywergencje pomiędzy liniami MACD i ceną. Negatywna dywergencja występuje wówczas, gdy linie MACD znajdują sę wyraźnie powyżej poziomu zerowego (wykupienie) i zaczynają słabnąc, a ceny nadal rosną. Często jest to ostrzeżenie, że formuje się szczyt cenowy. Pozytywna dywergencja pojawia się, gdy linie MACD są wyraźnie poniżej poziomu zero (wyprzedanie) i zaczynają rosnąc, wyprzedzając ceny. Jest to często wczesny sygnał informujący, że ukształtowało się dno cenowe. Dla rozpoznawania istotnych zmian trendu można na wykresie MACD wytyczać linie trendu.
 
-Dodatkowe informacje o sygnałach kupna i sprzedaży można wyciągać z analizy wzajemnego położenia linii MACD oraz linii sygnału. Za pomocą różnicy między tymi dwoma średnimi kroczącymi konstruuje się histogram. W przypadku metody MACD składa się on z pionowych słupków, które pokazują różnicę pomiędzy dwiema liniami MACD. Ponownie ich wzajemne położenie będzie sugerować pewne decyzje. Gdy różnica między linią MACD, a linią sygnału przetnie od dołu poziom 0 należy spodziewać się wzrostu cen, a przecięcie od góry linii 0 sugeruje zbliżający się spadek kursów akcji. Główną zaletą histogramu jest możliwość określenia, kiedy rozstęp między dwiema liniami zwiększa się lub zmniejsza. Jeśli histogram przebiega powyżej swojego poziomu zerowego, ale zaczyna spadać ku niemu, to trend wzrostowy słabnie. I na odwrót, jeśli histogram znajduje się poniżej swojego poziomu zerowego, ale zaczyna rosnąc ku niemu, to trend spadkowy traci impet. Dopóki histogram nie przetnie swojego poziomu zerowego, nie ma jeszcze sygnałów kupna lub sprzedaży, ale te zmiany kierunku są wczesnymi ostrzeżeniami, że aktualny trend słabnie. Zwroty histogramu ku linii zero można wykorzystywać jako wczesne sygnały do zamykania pozycji. Dużo bardziej niebiezpieczne byłoby stosowanie ich jako sygnałów do otwierania nowych pozycji przeciw dominującemu trendowi. Przypadek w którym linia MACD i histogram przecinają od dołu poziom zero jest najpewniejszym sygnałem kupna, a dodatkowo wzrost średnich wykładniczych 17 i 8-dniowych daje silny sygnał kupna\cite{1}. Silny sygnał sprzedaży analogicznie generowany jest przy spadku obu średnich wykładniczych wraz ze spełnieniem obu wcześniejszych warunków. 
+Dodatkowe informacje o sygnałach kupna i sprzedaży można wyciągać z analizy wzajemnego położenia linii MACD oraz linii sygnału. Za pomocą różnicy między tymi dwoma średnimi kroczącymi konstruuje się histogram. W przypadku metody MACD składa się on z pionowych słupków, które pokazują różnicę pomiędzy dwiema liniami MACD. Ponownie ich wzajemne położenie będzie sugerować pewne decyzje. Gdy różnica między linią MACD, a linią sygnału przetnie od dołu poziom 0 należy spodziewać się wzrostu cen, a przecięcie od góry linii 0 sugeruje zbliżający się spadek kursów akcji. Główną zaletą histogramu jest możliwość określenia, kiedy rozstęp między dwiema liniami zwiększa się lub zmniejsza. Jeśli histogram przebiega powyżej swojego poziomu zerowego, ale zaczyna spadać ku niemu, to trend wzrostowy słabnie. I na odwrót, jeśli histogram znajduje się poniżej swojego poziomu zerowego, ale zaczyna rosnąc ku niemu, to trend spadkowy traci impet. Dopóki histogram nie przetnie swojego poziomu zerowego, nie ma jeszcze sygnałów kupna lub sprzedaży, ale te zmiany kierunku są wczesnymi ostrzeżeniami, że aktualny trend słabnie. Zwroty histogramu ku linii zero można wykorzystywać jako wczesne sygnały do zamykania pozycji. Dużo bardziej niebiezpieczne byłoby stosowanie ich jako sygnałów do otwierania nowych pozycji przeciw dominującemu trendowi. Przypadek, w którym linia MACD i histogram przecinają od dołu poziom zero jest najpewniejszym sygnałem kupna, a dodatkowo wzrost średnich wykładniczych 17 i 8-dniowych daje silny sygnał kupna\cite{1}. Silny sygnał sprzedaży analogicznie generowany jest przy spadku obu średnich wykładniczych wraz ze spełnieniem obu wcześniejszych warunków. 
 
 Podobnie jak w przypadku wszystkich wskaźników technicznych sygnały na wykresach sporządzanych w ujęciu tygodniowym są bardziej istotne od sygnałów występujących na wykresach dziennych. Najlepszym sposobem ich wykorzystywania jest stosowanie sygnałów tygodniowych do określania kierunku trendu, a sygnałów dziennych do sprecyzowania momentu zawarcia transakcji. Sygnał krótkoterminowy jest ważny tylko wówczas, gdy zgadza się z sygnałem długoteminowym. W ten oto sposób sygnały długoteminowe stają się filtrami dla sygnałów krótkoterminowych i zapobiegają dokonywaniu transakcji przeciw dominującemu trendowi\cite{5}.
 \begin{figure}[ht]
@@ -283,15 +282,15 @@ Podobnie jak w przypadku wszystkich wskaźników technicznych sygnały na wykres
 \end{center}
 \end{figure}
 
-Poniżej przedstawiono przykład interpretacji wskaźnika MACD. Notowania pary EUR/USD w przedstawionym okresie czasu początkowo charakteryzowały się trendem horyzontalnym. Następnie kurs skoczył do góry przyjmując stały trend wzrostowy. Metoda MACD wygenerowała wartościowe sygnały w obu przypadkach, które pozwoliłyby inwestorowi osiągnąć zyski. Sygnały te zostały stworzone, analizując jedynie przebieg linii MACD. Użycie dodatkowo różnicy linii MACD z linią sygnału w niektórych przypadkach daje o wiele większe zyski. Pierwszym z sygnałów jest zajęcie pozycji krótkiej sprzedaży na początku 22 czerwca. Wtedy linia MACD przecina od góry poziom 0. Zamknięcie pozycji następuje w połowie 27 czerwca. Pomimo trendu horyzontalnego, w którym cięzko przewidzieć ruchu cenowe, transakcja została zakończona niewielkim zyskiem. Po zamknięciu pozycji, powinna zostać otwarta pozycja kupna. Wyraźnie widać, że taki ruch okazałby się trafną decyzją gdyż zamknięcie kupna nastąpiłoby dopiero pod koniec 4 lipca z wyraźnym zyskiem. Dodatkowo opierając się na histogramie dzien 23 czerwca można uznać za moment wyprzedania i otworzyć pozycję długą (kupna). Za punkt wykupienia w tym przypadku mógłby posłużyć poziom osiągnięty pod koniec 27 czerwca. Również w ten sposób zostałaby zrealizowana zyskowna transakcja. Jak widać, wskaźnik MACD podlega wielu interpretacjom, które w określonych przypadkach przynoszą różne efekty. 
+Poniżej przedstawiono przykład interpretacji wskaźnika MACD. Notowania pary EUR/USD w przedstawionym okresie czasu początkowo charakteryzowały się trendem horyzontalnym. Następnie kurs skoczył do góry przyjmując stały trend wzrostowy. Metoda MACD wygenerowała wartościowe sygnały w obu przypadkach, które pozwoliłyby inwestorowi osiągnąć zyski. Sygnały te zostały stworzone, analizując jedynie przebieg linii MACD. Użycie dodatkowo różnicy linii MACD z linią sygnału w niektórych przypadkach daje o wiele większe zyski. Pierwszym z sygnałów jest zajęcie pozycji krótkiej sprzedaży na początku 22 czerwca. Wtedy linia MACD przecina od góry poziom 0. Zamknięcie pozycji następuje w połowie 27 czerwca. Pomimo trendu horyzontalnego, w którym cięzko przewidzieć ruchu cenowe, transakcja została zakończona niewielkim zyskiem. Po zamknięciu pozycji powinna zostać otwarta pozycja kupna. Wyraźnie widać, że taki ruch okazałby się trafną decyzją, gdyż zamknięcie kupna nastąpiłoby dopiero pod koniec 4 lipca z wyraźnym zyskiem. Dodatkowo opierając się na histogramie dzien 23 czerwca można uznać za moment wyprzedania i otworzyć pozycję długą (kupna). Za punkt wykupienia w tym przypadku mógłby posłużyć poziom osiągnięty pod koniec 27 czerwca. Również w ten sposób zostałaby zrealizowana zyskowna transakcja. Jak widać, wskaźnik MACD podlega wielu interpretacjom, które w określonych przypadkach przynoszą różne efekty. 
 \section{Formacje świec japońskich}
 \label{swiece_rozdzial}
 \paragraph{}
-Zadaniem japońskich technik analizy wykresów jest rozpoznawanie odpowiednich formacji składających się z jednej lub kilku świec. Każda z formacji posiada zdefiniowaną budowę oraz warunki występowania. Niestety informacje te nie zawierają ścisłych wytycznych przez co ich interpretacja podlega subiektywnym ocenom. Mimo tego, technika analizy świec japońskich staje się coraz bardziej popularna wśród zachodnich inwestorów. Metoda ta swoje uznanie zawdziecza możliwości obserwacji psychologii graczy, powodującej podejmowanie okreśłonych decyzcji na rynku. Emocje inwestorów takie jak strach, nadzieja czy chciwość mają bezpośredni wpływ na rynkową sytuację. Giełda Forex jako największy rynek, na którym dzienne obroty sięgają bilionów dolarów, nie ulega wpływom ,,wielkich'' graczy. Rynek ten to ciągła walka podaży i popytu większości inwestorów. Dlatego, też poznanie psychologii podejmowania decyzji przez ,,tłum'' stanowi klucz do osiągania sukcesów. Klucz ten, odzwierciedlający zachowanie graczy w okreśłonych momentach, znajduje się w poszczególnych formacjach świec japońskich. 
+Zadaniem japońskich technik analizy wykresów jest rozpoznawanie odpowiednich formacji składających się z jednej lub kilku świec. Każda z formacji posiada zdefiniowaną budowę oraz warunki występowania. Niestety, informacje te nie zawierają ścisłych wytycznych przez co ich interpretacja podlega subiektywnym ocenom. Mimo tego, technika analizy świec japońskich staje się coraz bardziej popularna wśród zachodnich inwestorów. Metoda ta swoje uznanie zawdziecza możliwości obserwacji psychologii graczy, powodującej podejmowanie okreśłonych decyzcji na rynku. Emocje inwestorów, takie jak strach, nadzieja czy chciwość mają bezpośredni wpływ na rynkową sytuację. Giełda Forex jako największy rynek, na którym dzienne obroty sięgają bilionów dolarów, nie ulega wpływom ,,wielkich'' graczy. Rynek ten to ciągła walka podaży i popytu większości inwestorów. Dlatego, też poznanie psychologii podejmowania decyzji przez ,,tłum'' stanowi klucz do osiągania sukcesów. Klucz ten, odzwierciedlający zachowanie graczy w okreśłonych momentach, znajduje się w poszczególnych formacjach świec japońskich. 
 
-Formacje można podzielić na trzy rodzaje. Pierwszym z nich są te które zapowiadają trend wzrostowy. Posiadają one swoje odpowiedniki w formacjach prognozujących spadki. Do ostatniej kategori należą formację kontynuacji trendu. W pracy tej zostaną omówione jedynie szablony świec znajdujące się w punktach zmiany trendu. Każda z formacji składa się w większości z jednej do pięciu świec. Już te składające się z pojedyńczych świec dają wiele informacji na temat runku. W wielu przypadkach są to sygnały o wiele bardziej wartościowe od tych płynących z bardziej rozbudowanych sekwencji świec. Jest to spowodowane możliwością ich prostszego identyfikowania na wykresie przez większą grupę inwestorów, co w oczywisty sposób wpływa na psychologie podjęcia konkretnej decyzji. 
+Formacje można podzielić na trzy rodzaje. Pierwszym z nich są te, które zapowiadają trend wzrostowy. Posiadają one swoje odpowiedniki w formacjach prognozujących spadki. Do ostatniej kategori należą formację kontynuacji trendu. W pracy tej zostaną omówione jedynie szablony świec znajdujące się w punktach zmiany trendu. Każda z formacji składa się w większości z jednej do pięciu świec. Już te składające się z pojedyńczych świec dają wiele informacji na temat runku. W wielu przypadkach są to sygnały o wiele bardziej wartościowe od tych płynących z bardziej rozbudowanych sekwencji świec. Jest to spowodowane możliwością ich prostszego identyfikowania na wykresie przez większą grupę inwestorów, co w oczywisty sposób wpływa na psychologie podjęcia konkretnej decyzji. 
 
-W metodzie świec japońskich istnieje powiązanie pomiędzy poszczególnymi typami formacji. Dla wzorców zapowiadających hosse istnieją odpowiednie formacje prognozujące spadki. Również dla formacji bardziej złożonych można znaleźć pojedyńcze świece, które im odpowiadają. Takie powiązania można wychwycić wybierając na wykresie okres prezentowanych danych, gdzie kolejne świece zmieniają swój przedział czasowy, który opisują. Do najpopularniejszych okresów przedstawiania danych należą przedziały 1-minutowe, 15-minutowe, 30-minutowe, godzinne, 4-godzinne, dzienne i tygodniowe. Z tego wynika, że na wykresie świeca 15-minutowa składa się z piętnastu świec 1-minutowych. Dlatego, też istnieje metoda pozwalająca na redukcję formacji skłądających się z kilku świeć do świec pojedyńczych. Żeby utworzyć korpus nowej świecy należ wybrać cenę otwarcia pierwszej oraz cenę zamknięcia świecy ostatniej. Na rysunku \ref{redukcja} cena otwarcia święcy pierwszej znajduje się u góry jej korpusu, ze względu na spadkowy charakter. Cena zamkniecia świecy białej, oznaczającej wzrost, występuje w tym wypadku również w górnej części korpusu. Po uzyskaniu korpusu nowej świecy należy określić jeszcze cene maksymalną oraz minimalną. W tym celu wybiera się cene maksymalną i minimalną z całej redukowanej formacji. W przypadku rysunku \ref{redukcja} będą to skrajne ceny ostatniej świecy. Zredukowana formacja ma tę samą wymowę co bardziej złożona sekwencja świec. 
+W metodzie świec japońskich istnieje powiązanie pomiędzy poszczególnymi typami formacji. Dla wzorców zapowiadających hosse istnieją odpowiednie formacje prognozujące spadki. Również dla formacji bardziej złożonych można znaleźć pojedyńcze świece, które im odpowiadają. Takie powiązania można wychwycić wybierając na wykresie okres prezentowanych danych, gdzie kolejne świece zmieniają swój przedział czasowy, który opisują. Do najpopularniejszych okresów przedstawiania danych należą przedziały 1-minutowe, 15-minutowe, 30-minutowe, godzinne, 4-godzinne, dzienne i tygodniowe. Z tego wynika, że na wykresie świeca 15-minutowa składa się z piętnastu świec 1-minutowych. Dlatego, też istnieje metoda pozwalająca na redukcję formacji skłądających się z kilku świeć do świec pojedyńczych. Żeby utworzyć korpus nowej świecy, należy wybrać cenę otwarcia pierwszej oraz cenę zamknięcia świecy ostatniej. Na rysunku \ref{redukcja} cena otwarcia święcy pierwszej znajduje się u góry jej korpusu, ze względu na spadkowy charakter. Cena zamkniecia świecy białej, oznaczającej wzrost, występuje w tym wypadku również w górnej części korpusu. Po uzyskaniu korpusu nowej świecy należy określić jeszcze cene maksymalną oraz minimalną. W tym celu wybiera się cene maksymalną i minimalną z całej redukowanej formacji. W przypadku rysunku \ref{redukcja} będą to skrajne ceny ostatniej świecy. Zredukowana formacja ma tę samą wymowę co bardziej złożona sekwencja świec. 
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=10cm]{reduction.png}
@@ -311,11 +310,11 @@ Formacji skłądających się z pojedyńczych świec istnieje stosunkowo niewiel
 
 Obie składają się z pojedyńczej swiecy. Posiadają długi dolny cień i małe korpusy, które znajduja sie na poziomie lub w pobliżu maksymalnego dziennego zasięgu zmian kursu. Co oznacza, że cień górny nie występuje lub jest bardzo krótki. Kolor korpusu świec nie jest aż tak istotny w przypadku tych formacji ze względu na jego nieduża wielkość.
 
-Formacja młota występuje w trendzie spadkowy i zapowiada trend wzrostowy. Stąd też bierze się jej nazwa, gdyż tak jak młot spada i odbija się ku górze. Moment kształtowania się formacji zaczyna się gdy rynek znajduje się w trendzie spadkowym. Wśród inwestorów dominuje wtedy nastawienei negatywne. Kolejne otwarcie następuje na pewnym poziomie, po czym kurs gwałtowanie spada. Jednakże ma miejsce osłabienia wyprzdaży i kurs powraca do maksymalnej ceny osiągniętej w czasie danej sesji lub w jej pobliżu. Nieudana próba kontynuacji trendu spadkowego w znacznym stopniu zmniejsza negatywne nastawienie rynku, a większość inwestorów posiadających pozycje krótkie znajdzie się w kłopotliwej sytuacji. Jeśli kurs zamknięcia znajduje się powyżej kursu otwarcia, powodując utworzenie się świecy w kolorze białym, sytuacja staje się jeszcze bardziej korzystna dla byków. Potwierdzeniem tej formacji będzie otwrcie na wyższym poziomie podczas kolejnej sesji, wraz z jeszcze wyższym zamknięciem.  
+Formacja młota występuje w trendzie spadkowy i zapowiada trend wzrostowy. Stąd też bierze się jej nazwa, gdyż tak jak młot spada i odbija się ku górze. Moment kształtowania się formacji zaczyna się, gdy rynek znajduje się w trendzie spadkowym. Wśród inwestorów dominuje wtedy nastawienei negatywne. Kolejne otwarcie następuje na pewnym poziomie, po czym kurs gwałtowanie spada. Jednakże ma miejsce osłabienia wyprzdaży i kurs powraca do maksymalnej ceny osiągniętej w czasie danej sesji lub w jej pobliżu. Nieudana próba kontynuacji trendu spadkowego w znacznym stopniu zmniejsza negatywne nastawienie rynku, a większość inwestorów posiadających pozycje krótkie znajdzie się w kłopotliwej sytuacji. Jeśli kurs zamknięcia znajduje się powyżej kursu otwarcia, powodując utworzenie się świecy w kolorze białym, sytuacja staje się jeszcze bardziej korzystna dla byków. Potwierdzeniem tej formacji będzie otwrcie na wyższym poziomie podczas kolejnej sesji, wraz z jeszcze wyższym zamknięciem.  
 
 Formacja wisielca występuje w czasie trwania trendu wzrostowego, a dokładnie w jego szczytowym momencie. Swoją nazwę wisielec zawdzięcza wyglądowi świecy, przypominającej wiszącego człowieka. W czasie tworzenia się formacji wisielca rynek uważany jest za rynek byka, gdyż od pewnego czasu trwa trend wzrostowy. Aby formacja wisielca mogła się ukształtować, kurs w czasie trwania sesji musi znacznie spaść z poziomu otwarcia, a następnie powrócić i zamknąć się w pobliżu maksymalnych wartości. Powoduje to utworzenie się długiego dolnego cienia, który wskazuje, że na rynku może rozpocząć się wyprzedaż. Jeśli podczas kolejnej sesji rynek otwiera się na niższym poziomie, może okazać się, że na rynku jest wielu inwestorów posiadających długie pozycje, którzy będą szukali okazji do sprzedaży. Potwierdzeniem spadkowej wymowy formacji wisielca może być czarny kolor korpusu oraz otwarcie na niższym poziomie podczas kolejnej sesji.
 
-Kolejnymi przykładami formacji jednoświecowych są ,,odwrócony młot'' oraz ,,spadająca gwiazda''. Obie posiadają pojedyńczą swiecę o niewielkim korpusie. Cień dolny praktycznie nie występuje, za to górny kilkakrotnie przewyższa długością korpus. Wymowa tych świec jest słabsza, niż młota i wisielca, dlatego niezbędne jest potwierdzenie.  
+Kolejnymi przykładami formacji jednoświecowych są ,,odwrócony młot'' oraz ,,spadająca gwiazda''. Obie posiadają pojedyńczą swiecę o niewielkim korpusie. Cień dolny praktycznie nie występuje, za to górny kilkakrotnie przewyższa długością korpus. Wymowa tych świec jest słabsza niż młota i wisielca, dlatego niezbędne jest potwierdzenie.  
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=10cm]{invert_hammer.png}
@@ -367,7 +366,7 @@ Pierwsza wysoka czarna świeca formacji, występująca w trendzie spadkowym, pod
 
 Zasłona ciemnej chmury jest formacja odwórcenia hossy. Ponieważ formacja ta występuje tylko w trendzie wzrostowym, pierwsza świeca ma wysoki biały korpus, który odzwierciedla kierunek trendu. Otwarcie kolejnego dnia następuje powyżej maksimum białej świecy z dnia poprzedniego. Jest to jeden z nielicznych przypadków. kiedy maksimum czy minimum śa wykorzystywane przy definiowaniu formacji świecowych. Spadek kursu w ciągu całego dnia powoduje, że zamknięcie nastepuje poniżej połowy wysokiej białej świecy. 
 
-Przy trendzie wzrostowym tworzy się typowa wysoka biała świeca. Podczas kolejnej sesji rynek otwiera się na wyższym poziomie, powodując utworzenie się luki cenowej, lecz jest to już ostatnio wzrost, na jaki stać rynek ,,byka''. Zaczynają się spadki aż do momentu zamknięcia, które następuje wewnątrz korpusu białej swiecy z poprzedniego dnia, lecz poniżej jej środka. Każdy inwestor, który uważał rynek za wzrostowy, z pewnościa przemyśli w takim momencie swoja strategię inwestycyjną. Podobnie jak w przypadku formacji przenikania, mamy do czynienia z jednoznacznym odwróceniem trendu.
+Przy trendzie wzrostowym tworzy się typowa wysoka biała świeca. Podczas kolejnej sesji rynek otwiera się na wyższym poziomie, powodując utworzenie się luki cenowej, lecz jest to już ostatnio wzrost, na jaki stać rynek ,,byka''. Zaczynają się spadki aż do momentu zamknięcia, które następuje wewnątrz korpusu białej swiecy z poprzedniego dnia, lecz poniżej jej środka. Każdy inwestor, który uważał rynek za wzrostowy, z pewnościa przemyśli w takim momencie swoją strategię inwestycyjną. Podobnie jak w przypadku formacji przenikania, mamy do czynienia z jednoznacznym odwróceniem trendu.
  
 Ostatnimi najbardziej rozbudowanymi formacjami opisywanymi w pracy są gwiazda poranna i gwiazda wieczorna. 
 \begin{figure}[ht]
@@ -388,9 +387,9 @@ Przedstawione przykłady świec japońskich stanowią niewielki odsetek formacji
  
 \section{Systemy transakcyjne}
 \paragraph{}
-W analizie technicznej komputer odgrywa coraz większą rolę. Należy podkreślić, że jest niezwykle cennym narzędziem w rękach tego, kto zna podstawy analizy technicznej. Jeśli nie ma się włąściwej znajomości koncepcji, jakie leżą u podstaw rozmaitych wskaźników i nie zna się sposobów ich interpretacji, można zagubić się w gąszczu dostępnych dziś programów komputerowych\cite{8}.
+W analizie technicznej komputer odgrywa coraz większą rolę. Należy podkreślić, że jest niezwykle cennym narzędziem w rękach tego, kto zna podstawy analizy technicznej. Jeśli nie ma się właściwej znajomości koncepcji, jakie leżą u podstaw rozmaitych wskaźników i nie zna się sposobów ich interpretacji, można zagubić się w gąszczu dostępnych dziś programów komputerowych\cite{8}.
 
-Na rynku istnieje wiele rozbudowanych systemów służących do analiz technicznych. Do najpopularniejszych należą MetaTrader, MetaStock, Amibroker, TradeStation, WealthLabl. Jednak najdynamiczniej rozwijającym się oprogramowaniem, z którego korzysta coraz większa ilość inwestorów, jest MetaTrader, stworzony przez firmę MetaQuotes Software Corp
+Na rynku istnieje wiele rozbudowanych systemów służących do analiz technicznych. Do najpopularniejszych należą MetaTrader, MetaStock, Amibroker, TradeStation, WealthLabl. Jednak najdynamiczniej rozwijającym się oprogramowaniem, z którego korzysta coraz większa ilość inwestorów, jest MetaTrader, stworzony przez firmę MetaQuotes Software Corp.
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=15cm]{metatrader.png}
@@ -407,38 +406,38 @@ MetaTrader to nowoczesna platforma handlu internetowego zaprojektowana w celu za
 \item MetaTrader Terminal mobilny - umożliwia zarządzanie kontem i analizę techniczną dla graczy posiadających urządzenia przenośne.
 \end{enumerate}
 
-Z punktu widzenia brokera MetaTrader oferuje możwliość łatwego i wydajnego zarządzania grupą klientów, instrumentów finansowych, baz danych i wiele innych. Graczom giełdowym oferuje niespotykana w innych programach liczba wskaźników, wykresów, gotowych strategii i analiz. Oprócz tego charakteryzuje się wysoką szybkością pracy oraz współpracą z pakietem Microsoft Office. Umożliwia tworzenie wskaźników oraz strategii inwestycyjnych przy użyciu własnego języka programowania mql. Istnieje możliwość testowania zarówno dostępnych strategii, jak i stworzonych samodzielnie. W aplikacji zaimplementowano moduł szukający najlepszych inwestycji przy zadanych kryteriach. Po uporządkowaniu dokonuje klasyfikacji otrzymanych wyników. Dzięki temu inwestor może skupić się na tych walorach, które w danej sytuacji pozwalają na osiągnięcie największego zysku. Dodatkowo system oferuje moduł do nauki. Polega on na podejmowaniu decyzji na danych historycznych i sprawdzaniu ich faktycznego zachowania w przyszłości.
+Z punktu widzenia brokera MetaTrader oferuje możwliość łatwego i wydajnego zarządzania grupą klientów, instrumentów finansowych, baz danych i wiele innych. Graczom giełdowym oferuje niespotykaną w innych programach liczbę wskaźników, wykresów, gotowych strategii i analiz. Oprócz tego charakteryzuje się wysoką szybkością pracy oraz współpracą z pakietem Microsoft Office. Umożliwia tworzenie wskaźników oraz strategii inwestycyjnych przy użyciu własnego języka programowania mql. Istnieje możliwość testowania zarówno dostępnych strategii, jak i stworzonych samodzielnie. W aplikacji zaimplementowano moduł szukający najlepszych inwestycji przy zadanych kryteriach. Po uporządkowaniu dokonuje klasyfikacji otrzymanych wyników. Dzięki temu inwestor może skupić się na tych walorach, które w danej sytuacji pozwalają na osiągnięcie największego zysku. Dodatkowo system oferuje moduł do nauki. Polega on na podejmowaniu decyzji na danych historycznych i sprawdzaniu ich faktycznego zachowania w przyszłości.
 
 Nie ma wątpliwości, że komputer zrewolucjonizował analizę rynków finansowych i świat transakcji. Programy komputerowe pozwalają łączyć analize techniczną z analizą fundamentalną. Wielką korzyścią wynikającą z posługiwania się komputerem jest możliwość uczenia się dzieki programom do analizy rynku. Podręczniki użytkownika mają nierzadko rozmiary pokaźnych ksiąg i zawierają wszelkiego rodzaju wyjaśnienia oraz wzory. Zdolności komputera do dawania sygnałów ostrzegawczych są szczególnie pomocne dla tych, którzy obserwują rynki akcji i obligacji na całym świecie oraz tysiące poszczególnych spółek. Algorytmy inwestycyjne tworzone w ramach systemów posiadają szereg zalet:
 \begin{enumerate}
-\item Eliminowane są emocje.
-\item Osiąga się większą dyscyplinę.
-\item Możliwa staje się większa konsekwencja.
-\item Transakcje są dokonywane zgodnie z kierunkiem trendu.
-\item Praktycznie gwarantowane jest uczestnictwo w każdym istotnym trendzie.
-\item Zyski mogą rosnąć.
-\item Straty są minimalizowane.
+\item eliminowane są emocje,
+\item osiąga się większą dyscyplinę,
+\item możliwa staje się większa konsekwencja,
+\item transakcje są dokonywane zgodnie z kierunkiem trendu,
+\item praktycznie gwarantowane jest uczestnictwo w każdym istotnym trendzie,
+\item zyski mogą rosnąć,
+\item straty są minimalizowane.
 \end{enumerate}
 
 Niestety większość z nich cechuje kilka wad:
 \begin{enumerate}
-\item Przeważająca ilość systemów mechanicznych podąża za trendem.
-\item Systemy podążające za trendem potrzebują wyraźnych trendów, aby przynosic zyski.
-\item Systemy zależne od trendu nie przynoszą na ogół zysków, kiedy na rynku nie ma wyraźnego trendu.
-\item Okresy bez wyraźnych trendów bywają bardzo długie, co utrudnia stosowanie tego podejścia.
+\item przeważająca ilość systemów mechanicznych podąża za trendem,
+\item systemy podążające za trendem potrzebują wyraźnych trendów, aby przynosic zyski,
+\item systemy zależne od trendu nie przynoszą na ogół zysków, kiedy na rynku nie ma wyraźnego trendu,
+\item okresy bez wyraźnych trendów bywają bardzo długie, co utrudnia stosowanie tego podejścia.
 \end{enumerate}
 
 \chapter{Projekt systemu}
 \label{chap:projekt}
 \paragraph{}
-W poprzednich rozdziałach pracy przedstawione zostały teoretyczne zasady analizy technicznej. Dzięki właściwemu stosowaniu prezentowanych metod można osiągać wymierne korzyści na rynkach finansowych. Opierając się na tychże zasadach istnieje możliwość skonstruowania efektywnego automatycznego systemu inwestycyjnego. Oprócz przynoszenia zysków tego typu system stawia wiele innych wymagań, które zostaną przedstawione w dalszej części rozdziału wraz ze sposobem realizacji projektu.
+W poprzednich rozdziałach pracy przedstawione zostały teoretyczne zasady analizy technicznej. Dzięki właściwemu stosowaniu prezentowanych metod można osiągać wymierne korzyści na rynkach finansowych. Opierając się na wymienionych zasadach istnieje możliwość skonstruowania efektywnego automatycznego systemu inwestycyjnego. Oprócz kwestii przynoszenia zysków tego typu system stawia wiele innych wymagań, które zostaną przedstawione w dalszej części rozdziału wraz ze sposobem realizacji projektu.
 
 \section{Określenie wymagań i założeń projektu}
 \paragraph{}
 
-Opisywany automatyczny system inwestycyjny stawia szereg wymogów. Głównym zadaniem tworzonego algorytmu jest zdolność do przeprowadzania transakcji na rynku Forex przy minimalnej ingerencji gracza. Użytkownik oprócz wyboru waluty na której będzie działał system, powinien mieć możliwość jedynie zmiany podstawowych parametrów działania programu przed jego uruchomieniem. Oczywiście tego typu system powinien zapewniać zyski przy jednoczesnej ochronie kapitału gracza. Na użytkowniku powinna spoczywać decyzja co do stopnia ryzyka przeprowadzanych inwestycji. W trakcie ciągłej pracy aplikacji, może pojawiać się wiele wyjątków, które zakłócą działanie systemu. Każdy z nich musi być obsłużony. Jeśli to możliwe, po wystąpieniu takiej sytuacji, powinna zostać wznowiona praca programu. W innym wypadku działanie aplikacji powinno zostać natychmiast przerwane, a użytkownik poinformowany o zaistniałym zdarzeniu. Dodatkowo inne istotne sytuacje powinny zostać zaraportowane i udostępnione użytkownikowi.  
+Opisywany automatyczny system inwestycyjny stawia szereg wymogów. Głównym zadaniem tworzonego algorytmu jest zdolność do przeprowadzania transakcji na rynku Forex przy minimalnej ingerencji gracza. Użytkownik oprócz wyboru waluty, na której będzie działał system, powinien mieć możliwość jedynie zmiany podstawowych parametrów działania programu przed jego uruchomieniem. Oczywiście tego typu system powinien zapewniać zyski przy jednoczesnej ochronie kapitału gracza. Na użytkowniku powinna spoczywać decyzja co do stopnia ryzyka przeprowadzanych inwestycji. W trakcie ciągłej pracy aplikacji może pojawiać się wiele wyjątków, które zakłócą działanie systemu. Każdy z nich musi być obsłużony. Jeśli to możliwe, po wystąpieniu takiej sytuacji powinna zostać wznowiona praca programu. W innym wypadku działanie aplikacji powinno zostać natychmiast przerwane, a użytkownik poinformowany o zaistniałym zdarzeniu. Dodatkowo inne istotne sytuacje powinny zostać zaraportowane i udostępnione użytkownikowi.  
 
-Projekt systemu został opracowany przy uwzględnieniu kilku założeń. Algorytm dostosowano do najpopularniejszej pary walutowej EUR/USD. Oznacza to, że wszystkie domyślne parametry zostały zoptymalizowane pod kątem tego instrumentu. Mimo to, sprawdzają się również na innych parach walutowych. W celu dopasowania ustawień użyte zostały dane historyczne z różnych okresów. Analizie poddano świece 15-miutowe. W celu prostszego testowania strategii, w każdym momencie działania programu, dopuszcza się istnienie jedynie jednej otwartej pozycji. Do stworzenia algorytmów została użyta platforma Metatrader 4 wraz z językiem mql4. Testy przeprowadzono na koncie demo największego polskiego brokera XTB. 
+Projekt systemu został opracowany przy uwzględnieniu kilku założeń. Algorytm dostosowano do najpopularniejszej pary walutowej EUR/USD. Oznacza to, że wszystkie domyślne parametry zostały zoptymalizowane pod kątem tego instrumentu. Mimo to sprawdzają się również na innych parach walutowych. W celu dopasowania ustawień użyte zostały dane historyczne z różnych okresów. Analizie poddano świece 15-miutowe. W celu prostszego testowania strategii w każdym momencie działania programu, dopuszcza się istnienie jedynie jednej otwartej pozycji. Do stworzenia algorytmów została użyta platforma Metatrader 4 wraz z językiem mql4. Testy przeprowadzono na koncie demo największego polskiego brokera XTB. 
 
 W dalszej części pracy zostaną zaprezentowane diagramy UML obrazujące funkcjonalność systemu, sposób działania zaimplementowanych algorytmów oraz interakcje z innymi systemami.
 
@@ -486,7 +485,7 @@ Ustaw parametry świec - Ustawienie parametrów odpowiedzialnych za rozpoznawani
 \end{center}
 \end{figure} 
 
-Diagram \ref{ogolny} obrazuje ogólny algorytm przeprowadzania transakcji w systemie. Przedstawiona procedura zostaje uruchomiona każdorazowo po pojawieniu się nowej świecy 15-minutowej. Program obsługuje jedynie jedno zlecenie w danym momencie. Dlatego, jeśli zlecenie jest otwarte sprawdzane są warunki zamknięcia pozycji. W przeciwnym razie sprawdzana jest możliwość złożenia zlecenia zakupu, bądź sprzedaży. Ze względu na fakt, że rynek Forex nie działa w weekendy, zamykane są pozycje, które chwile przed końcem sesji piątkowej są nadal otwarte. Dodatkowo w tym czasie nie przeprowadzane są inne transakcje. Takie postępowanie, chroni gracza przed ewentualną utratą kapitału po wystąpieniu luki cenowej. Zjawisko to opisane jest dokładniej w rozdziale \ref{sec:forex}. Przy wystąpieniu sygnału kupna, bądź sprzedaży zostaje wysłane żądanie otwarcia danej pozycji. W tym momencie następuje obsłużenie ewentualnych błędów. 
+Diagram \ref{ogolny} obrazuje ogólny algorytm przeprowadzania transakcji w systemie. Przedstawiona procedura zostaje uruchomiona każdorazowo po pojawieniu się nowej świecy 15-minutowej. Program obsługuje jedynie jedno zlecenie w danym momencie. Dlatego, jeśli zlecenie jest otwarte, sprawdzane są warunki zamknięcia pozycji. W przeciwnym razie sprawdzana jest możliwość złożenia zlecenia zakupu bądź sprzedaży. Ze względu na fakt, że rynek Forex nie działa w weekendy, zamykane są pozycje, które chwilę przed końcem sesji piątkowej są nadal otwarte. Dodatkowo w tym czasie nie przeprowadzane są inne transakcje. Takie postępowanie chroni gracza przed ewentualną utratą kapitału po wystąpieniu luki cenowej. Zjawisko to opisane jest dokładniej w rozdziale \ref{sec:forex}. Przy wystąpieniu sygnału kupna bądź sprzedaży zostaje wysłane żądanie otwarcia danej pozycji. W tym momencie następuje obsłużenie ewentualnych błędów. 
 
 \begin{figure}[H]
 \begin{center}
@@ -496,7 +495,7 @@ Diagram \ref{ogolny} obrazuje ogólny algorytm przeprowadzania transakcji w syst
 \end{center}
 \end{figure} 
 
-Na diagramie \ref{warunki_otwarcia} przedstawiono sposób generowania sygnałów kupna, bądź sprzedaży. Znalezienie konkretnej formacji nie może być podstawą do podejmowania decyzji na rynku. Oprócz zidentyfikowania określonej sekwencji świec, należy również przeanalizować miejsce, w którym dana formacja się znajduje. Przedstawiony algorytm opiera się na wyszukiwaniu świec w miejscach korekt rynku. Dlatego, też elementami algorytmu są fazy rozpoznania trendów długoterminowego i krótkoterminowego. Trend dłuższy oznaczać będzie główny kierunek rynku, w którym zawierane będą transakcje. Natomiast trend krótszy używany będzie do zlokalizowania korekt trendu długoterminowego. Oczekiwaną sytuacją będzie, moment w którym trend długoterminowy będzie w kierunku przeciwnym do trendu krótkoterminowego. W tych miejscach poszukiwane będą formacje odwrócenia trendu prognozujące zmianę trendu którkookresowego w kierunku trendu głównego. 
+Na diagramie \ref{warunki_otwarcia} przedstawiono sposób generowania sygnałów kupna i sprzedaży. Znalezienie konkretnej formacji nie może być podstawą do podejmowania decyzji na rynku. Oprócz zidentyfikowania określonej sekwencji świec, należy również przeanalizować miejsce, w którym dana formacja się znajduje. Przedstawiony algorytm opiera się na wyszukiwaniu świec w miejscach korekt rynku. Dlatego też elementami algorytmu są fazy rozpoznania trendów długoterminowego i krótkoterminowego. Trend dłuższy oznaczać będzie główny kierunek rynku, w którym zawierane będą transakcje. Natomiast trend krótszy używany będzie do zlokalizowania korekt trendu długoterminowego. Oczekiwaną sytuacją będzie moment, w którym trend długoterminowy będzie w kierunku przeciwnym do trendu krótkoterminowego. W tych miejscach poszukiwane będą formacje odwrócenia trendu prognozujące zmianę trendu którkookresowego w kierunku trendu głównego. 
 
 %\begin{figure}[ht]
 %\begin{center}
@@ -508,23 +507,23 @@ Na diagramie \ref{warunki_otwarcia} przedstawiono sposób generowania sygnałów
 
 Poszukiwanie formacji hossy lub bessy, w algorytmie z diagramu \ref{warunki_otwarcia}, opiera się na próbie znalezienia sekwencji świeć, pasującej do grupy obsługiwanych przez program wzorców. W przypadku analizy formacji hossy odpowiedni fragment kodu wywołuje się w momencie wystąpienia trendu głównego o kierunku wzrostowym wraz z krótkookresowym trendem malejącym. Opisywana część algorytmu dzieli się na szukanie formacji:
 \begin{enumerate}
-\item młota
-\item gwiazdy porannej
-\item objęcia hossy
-\item harami wzrostowego
-\item przenikania
+\item młota,
+\item gwiazdy porannej,
+\item objęcia hossy,
+\item harami wzrostowego,
+\item przenikania.
 \end{enumerate}
 
 Proces znajdowania formacji bessy uruchamiany jest w momencie znalezienia rosnącego trendu krótkookresowego przy malejącym trendzie głównym. Poszukiwane formacje to:
 \begin{enumerate}
-\item wisielec
-\item spadająca gwiazda
-\item objęcia bessy
-\item harami spadkowe
-\item zasłona ciemnej chmury
+\item wisielec,
+\item spadająca gwiazda,
+\item objęcia bessy,
+\item harami spadkowe,
+\item zasłona ciemnej chmury.
 \end{enumerate}
 
-Problem subiektywizmu, przy klasyfikacji danego zbioru świec do odpowiedniego wzorca, uniemożliwia zdefiniowanie jednoznacznych wytycznych opisujących konkretną formację. Każdy z przedstawionych warunków w rozdziale \ref{swiece_rozdzial}, w którym opisanywany jest wygląd poszczególnych sekwencji świec, daje pewien zakres dowolnej interpretacji. 
+Problem subiektywizmu przy klasyfikacji danego zbioru świec do odpowiedniego wzorca uniemożliwia zdefiniowanie jednoznacznych wytycznych opisujących konkretną formację. Każdy z przedstawionych warunków w rozdziale \ref{swiece_rozdzial}, w którym opisanywany jest wygląd poszczególnych sekwencji świec, daje pewien zakres dowolnej interpretacji. 
 
 \begin{figure}[H]
 \begin{center}
@@ -534,9 +533,9 @@ Problem subiektywizmu, przy klasyfikacji danego zbioru świec do odpowiedniego w
 \end{center}
 \end{figure} 
 
-Powyższy diagram objaśnia proces składania zlecenia kupna, bądź sprzedaży. Jeśli przed uruchomieniem systemu użytkownik nie poda ilości lotów do transakcji, zostanie ona automatycznie obliczona jako wartość maksymalna. Takie postępowanie zwiększa ryzyko zawieranych transakcji. Jego ograniczeniem będzie ustawienie zarówno limitów stop loss jak i take profit. Sposób określenia limitów oraz typ transakcji będzie się różnić w zależności od tego czy wcześniej wystąpiła formacja hossy czy bessy, . Dla większości rozpoznawanych formacji pułap stop loss będzie ustawiany na krańcową wartość. W przypadku formacji hossy będzie to minimalna cena z całej formacji, a w formacji bessy wartość maksymalna. Zamykanie transakcji będzie opierać się głównie na oddzielnym algorytmie, dlatego pułap take profit ustawiany będzie na stałą wartość. Przy wystąpieniu formacji hossy wysyłane będzie zlecenie kupna, a zlecenie sprzedaży podczas znalezienia formacji bessy. 
+Powyższy diagram objaśnia proces składania zlecenia kupna bądź sprzedaży. Jeśli przed uruchomieniem systemu użytkownik nie poda ilości lotów do transakcji, zostanie ona automatycznie obliczona jako wartość maksymalna. Takie postępowanie zwiększa ryzyko zawieranych transakcji. Jego ograniczeniem będzie ustawienie zarówno limitów stop loss jak i take profit. Sposób określenia limitów oraz typ transakcji będzie się różnić w zależności od tego czy wcześniej wystąpiła formacja hossy czy bessy. Dla większości rozpoznawanych formacji pułap stop loss będzie ustawiany na krańcową wartość. W przypadku formacji hossy będzie to minimalna cena z całej formacji, a w formacji bessy wartość maksymalna. Zamykanie transakcji będzie opierać się głównie na oddzielnym algorytmie, dlatego pułap take profit ustawiany będzie na stałą wartość. Przy wystąpieniu formacji hossy wysyłane będzie zlecenie kupna, a zlecenie sprzedaży podczas znalezienia formacji bessy. 
 
-Znalezienie konkretnej formacji i ruch cen w odpowiednim kierunku nie gwarantują zysku. Jednym z najważniejszych elementów jest odpowiedni czas wyjścia z rynku, czyli zamknięcia zlecenia. Często inwestorzy robią to zbyt wcześnie, ograniczając swoje zyski. Innym razem moment ten jest zbyt długo przeciągany i ostatecznie pozycja zamykana jest ze znacznie mniejszym zyskiem lub nawet stratą. Sam proces zamykania zlecenia został dobrany po wielu testach. Ostatecznie moment zamykania pozycji ustalają krańcowe wstęgi bollingera. W przypadku pozycji długiej zlecenie zamyka się gdy ceny przetną od góry górną wstęgę. Pozycje krótkie są natomias zamykane w czasie przecięcia od dołu dolnej wstęgi. Takie rozwiązanie pozwala na maksymalnie długie trzymanie pozycji zyskownych. Inne rozwiązania, które testowano to ustalanie limitów take profit na poziomie kilkukrotnie wyższym niż stop loss. Próbując dobierać różne poziomy okazało się, że często mimo ruchu cen w pożądanym kierunku limit nie został osiągany. Tym samym pozycja nie została zamykana z zyskiem, a zamiast tego często osiągany był poziom stop loss. Ustalenie obu limitów na tym samym poziomie, również nie przynosiło zadowalających rezultatów. Mimo tego, że sprawdzalność była powyżej 50\% to sposób ten nie pozwalał na osiąganie większych zysków. Problem tkwił w dużej zmienności dynamiki kursów. Dlatego w niektórych momentach poziom take profit był absolutnie nie do osiągnięcia, a w innych zbyt mały. Kolejne rozwiązanie opierało się na modyfikacji poziomu stop loss w czasie trwania zlecenia. W tym przypadku poziom take profit był praktycznie nie używany. Metoda opierała się na stopniowym przesuwaniu poziomu stop loss w kierunku poruszających się cen, zachowując przy tym pewną odległość. Odległość ta stanowiła zabezpieczenie przed możliwymi wachaniami kursu. Zbyt mała mogła prowadzic do szybkiego zakończenia zlecenia, natomiast zbyt duża ograniczać zyski. Niestety w tym przypadku problem zmiennej dynamiki rynku również nie został do końca rozwiązany. W niektórych przypadkach ruchy cen były na tyle małe, że próg stop loss nie był w ogóle zmieniany. W innych przypadkach wysokie skoki notowań zbyt szybko osiągały ustalony limit. Zastosowanie wstęg bollingera pozwoliło na dostosowanie się algorytmu do aktualnej siły rynku. Przykłady otwierania i zamykania zleceń zostaną przedstawione w rozdziale \ref{sec:wyniki_optymalizacji}.
+Znalezienie konkretnej formacji i ruch cen w odpowiednim kierunku nie gwarantują zysku. Jednym z najważniejszych elementów jest odpowiedni czas wyjścia z rynku, czyli zamknięcia zlecenia. Często inwestorzy robią to zbyt wcześnie, ograniczając swoje zyski. Innym razem moment ten jest zbyt długo przeciągany i ostatecznie pozycja zamykana jest ze znacznie mniejszym zyskiem lub nawet stratą. Sam proces zamykania zlecenia został dobrany po wielu testach. Ostatecznie moment zamykania pozycji ustalają krańcowe wstęgi bollingera. W przypadku pozycji długiej zlecenie zamyka się, gdy ceny przetną od góry górną wstęgę. Pozycje krótkie są natomiast zamykane w czasie przecięcia od dołu dolnej wstęgi. Takie rozwiązanie pozwala na maksymalnie długie trzymanie pozycji zyskownych. Inne rozwiązania, które testowano, to ustalanie limitów take profit na poziomie kilkukrotnie wyższym niż stop loss. Próbując dobierać różne poziomy okazało się, że często mimo ruchu cen w pożądanym kierunku limit nie został osiągany. Tym samym pozycja nie została zamykana z zyskiem, a zamiast tego często osiągany był poziom stop loss. Ustalenie obu limitów na tym samym poziomie, również nie przynosiło zadowalających rezultatów. Mimo tego, że sprawdzalność była powyżej 50\% to sposób ten nie pozwalał na osiąganie większych zysków. Problem tkwił w dużej zmienności dynamiki kursów. Dlatego w niektórych momentach poziom take profit był absolutnie nie do osiągnięcia, a w innych zbyt mały. Kolejne rozwiązanie opierało się na modyfikacji poziomu stop loss w czasie trwania zlecenia. W tym przypadku poziom take profit był praktycznie nie używany. Metoda opierała się na stopniowym przesuwaniu poziomu stop loss w kierunku poruszających się cen, zachowując przy tym pewną odległość. Odległość ta stanowiła zabezpieczenie przed możliwymi wachaniami kursu. Zbyt mała mogła prowadzic do szybkiego zakończenia zlecenia, natomiast zbyt duża ograniczać zyski. Niestety w tym przypadku problem zmiennej dynamiki rynku również nie został do końca rozwiązany. W niektórych przypadkach ruchy cen były na tyle małe, że próg stop loss nie był w ogóle zmieniany. W innych przypadkach wysokie skoki notowań zbyt szybko osiągały ustalony limit. Zastosowanie wstęg bollingera pozwoliło na dostosowanie się algorytmu do aktualnej siły rynku. Przykłady otwierania i zamykania zleceń zostaną przedstawione w rozdziale \ref{sec:wyniki_optymalizacji}.
 \subsection{Diagramy sekwencjii}
 \paragraph{}
 
@@ -548,18 +547,18 @@ Znalezienie konkretnej formacji i ruch cen w odpowiednim kierunku nie gwarantuj�
 \end{center}
 \end{figure} 
 
-Na diagramie \ref{sekwencji} został przedstawiony sposób komunikacji pomiędzy zaimplementowanym algorytmem, a systemami, które uczestniczą w czasie działania programu. Wyszczególnione zostały komunikaty, pojawiające się podczas procesu zamykania zlecenia. Do podejmowania decyzji na rynku Forex niezbędne są aktualne notowania. Najnowsze dane są pobierane przez brokerów bezpośrednio z rynku Forex. Jednak nie są one natychmiast przekazywane do klientów. Broker, po analizie aktualnie otwartych pozycji, może zmienić dane notowanie. Po przeanalizowaniu danych oraz ewentualnej korekcie, notowanie trafia do platformy inwestycyjnej. Aplikacja kliencka odpytuje co pewien czas serwer brokera w celu pobrania aktualnie dostępnych danych. Algorytm uruchomiony na platformie odczytuje wcześniej pobrane notowanie. Opisywany system analizuje każdą, nowo przychodzącą, daną. W pierwszym etapie sprawdzana jest ilość otwartych zleceń. Dane o zleceniach są przechowywane zarówno przez platformę inwestycyjną jak i system brokera. Algorytm poddaje analizie istniejące zlecenia. W przypadku decyzji o zamknięciu pozycji wysyłana jest odpowiednia informacja do MetaTrader'a wraz z niezbędnymi danymi. Platforma sprawdza poprawność przesłanych danych i w przypadku braku błędów wysyła żądanie zamknięcia pozycji do brokera. Wystąpienie błędu powoduje przesłanie sterowania do algorytmu wraz z komunikatem o błędzie. Błąd zostaje obsłużony, po czym następuje ponowienie akcji zamknięcia zlecenia. Żądanie zostaje dalej przekazane z platformy handlowej do systemu brokera. Tam poddawane jest analizie przez system brokerski. W przypadku akceptacji zlecenie zostaje ostatecznie zamknięte. Przesyłane są komunikaty zwrotne do każdego z systemów oraz odświeżane informacje o obecnych pozycjach. Informacja o ewentualnie pojawiającym się błędzie zostaje przekazana, aż do algorytmu inwestycyjnego, gdzie następuje obsługa oraz ponowne wykonanie akcji.
+Na diagramie \ref{sekwencji} został przedstawiony sposób komunikacji pomiędzy zaimplementowanym algorytmem a systemami, które uczestniczą w czasie działania programu. Wyszczególnione zostały komunikaty, pojawiające się podczas procesu zamykania zlecenia. Do podejmowania decyzji na rynku Forex niezbędne są aktualne notowania. Najnowsze dane są pobierane przez brokerów bezpośrednio z rynku Forex. Jednak nie są one natychmiast przekazywane do klientów. Broker, po analizie aktualnie otwartych pozycji, może zmienić dane notowanie. Po przeanalizowaniu danych oraz ewentualnej korekcie, notowanie trafia do platformy inwestycyjnej. Aplikacja kliencka odpytuje co pewien czas serwer brokera w celu pobrania aktualnie dostępnych danych. Algorytm uruchomiony na platformie odczytuje wcześniej pobrane notowanie. Opisywany system analizuje każdą nowo przychodzącą daną. W pierwszym etapie sprawdzana jest ilość otwartych zleceń. Dane o zleceniach są przechowywane zarówno przez platformę inwestycyjną, jak i system brokera. Algorytm poddaje analizie istniejące zlecenia. W przypadku decyzji o zamknięciu pozycji wysyłana jest odpowiednia informacja do MetaTrader'a wraz z niezbędnymi danymi. Platforma sprawdza poprawność przesłanych danych i w przypadku braku błędów wysyła żądanie zamknięcia pozycji do brokera. Wystąpienie błędu powoduje przesłanie sterowania do algorytmu wraz z komunikatem o błędzie. Błąd zostaje obsłużony, po czym następuje ponowienie akcji zamknięcia zlecenia. Żądanie zostaje dalej przekazane z platformy handlowej do systemu brokera. Tam poddawane jest analizie przez system brokerski. W przypadku akceptacji zlecenie zostaje ostatecznie zamknięte. Przesyłane są komunikaty zwrotne do każdego z systemów oraz odświeżane informacje o obecnych pozycjach. Informacja o ewentualnie pojawiającym się błędzie zostaje przekazana aż do algorytmu inwestycyjnego, gdzie następuje obsługa oraz ponowne wykonanie akcji.
 
 \section{Algorytmy rozpoznawania formacji świec japońskich}
 \paragraph{}
 
-W podrozdziale zostanie przedstawiony sposób w jaki identyfikowane będą poszczególne formacje świec japońskich. Opierając się na informacjach teoretycznych zawartych w rozdziale \ref{swiece_rozdzial}, zostały stworzone algorytmy realizujące kolejne reguły. 
+W podrozdziale zostanie przedstawiony sposób, w jaki identyfikowane będą poszczególne formacje świec japońskich. Opierając się na informacjach teoretycznych zawartych w rozdziale \ref{swiece_rozdzial}, zostały stworzone algorytmy realizujące kolejne reguły. 
 
-Najważniejszym elementem przy klasyfikacji świec do odpowiedniego wzorca jest poprawne rozpoznanie trendu. Często miejsce wystąpienia formacji w odniesieniu do aktualnego trendu decyduje o tym czy mamy do czynienia z formacja hossy czy bessy.  Miejscami szczególnymi, w których wyszukiwane będą szablony świec japońskich są obszary korekt trendów głównych. Według diagramu \ref{warunki_otwarcia} w takich punktach można wyznaczyć trend główny oraz trend krótkookresowy. Wystąpienie w tym momencie formacji odwrócenia może świadczyć o końcu korekty i powrocie notowań do trendu głównego. Ewentualne decyzje o transakcji będą zgodne z głównym trendem na rynku.
+Najważniejszym elementem przy klasyfikacji świec do odpowiedniego wzorca jest poprawne rozpoznanie trendu. Często miejsce wystąpienia formacji w odniesieniu do aktualnego trendu decyduje o tym czy mamy do czynienia z formacja hossy czy bessy.  Miejscami szczególnymi, w których wyszukiwane będą szablony świec japońskich, są obszary korekt trendów głównych. Według diagramu \ref{warunki_otwarcia} w takich punktach można wyznaczyć trend główny oraz trend krótkookresowy. Wystąpienie w tym momencie formacji odwrócenia może świadczyć o końcu korekty i powrocie notowań do trendu głównego. Ewentualne decyzje o transakcji będą zgodne z głównym trendem na rynku.
 
-Trend długookresowy, oznaczający trend główny, wyznaczono za pomocą przecięcia dwóch średnich wykładniczych. Ten sposób rozpoznawania trendu cieszy się duża popularnością wśród inwestorów i z powodzeniem sprawdza się na wielu rynkach.  Algorytm polega na odjęciu od siebie dwóch średnich wykładniczych z różnych okresów. Średnia biorąca pod uwagę mniej okresów odpowiada trendowi krótkookresowemu. Od niej odejmowana jest wartość średniej biorącej pod uwagę większą ilość notowań historycznych. Ilości okresów obu średnich to dwie zmienne, które należy odpowiednio dobrać w drodze optymalizacji. Dodatkowo w celu wykluczenia pomyłek przy trendach horyzontalnych, został wprowadzony parametr, który określa poziom oddalenia dwóch średnich. Jeśli wartość różnicy jest wystarczająco większa od 0 trend uznawany jest za rosnący. Wartości bliskie 0 to trend horyzontalny, w trakcie którego nie są podejmowane decyzje o kupnie, bądź sprzedaży. Wynik odpowiednio mniejszy od 0 mówi o pojawieniu się trendu spadkowego. 
+Trend długookresowy, oznaczający trend główny, wyznaczono za pomocą przecięcia dwóch średnich wykładniczych. Ten sposób rozpoznawania trendu cieszy się duża popularnością wśród inwestorów i z powodzeniem sprawdza się na wielu rynkach.  Algorytm polega na odjęciu od siebie dwóch średnich wykładniczych z różnych okresów. Średnia biorąca pod uwagę mniej okresów odpowiada trendowi krótkookresowemu. Od niej odejmowana jest wartość średniej biorącej pod uwagę większą ilość notowań historycznych. Ilości okresów obu średnich to dwie zmienne, które należy odpowiednio dobrać w drodze optymalizacji. Dodatkowo w celu wykluczenia pomyłek przy trendach horyzontalnych, został wprowadzony parametr, który określa poziom oddalenia dwóch średnich. Jeśli wartość różnicy jest wystarczająco większa od 0, trend uznawany jest za rosnący. Wartości bliskie 0 to trend horyzontalny, w trakcie którego nie są podejmowane decyzje o kupnie lub sprzedaży. Wynik odpowiednio mniejszy od 0 mówi o pojawieniu się trendu spadkowego. 
 
-Po rozpoznaniu trendu głównego poszukiwany jest moment w którym występuje korekta notowań. Do tego celu została użyta metoda Wstęg Bollingera omówiona w rozdziale \ref{sec:srednie}. Chwilowe odwrócenie rynku sygnalizowane jest pojawieniem się trendu krótkookresowego. Wstęgi Bollingera, opierając się na założeniach średnich kroczących, często używane są do identyfikowania zmian trendu. W metodzie używane są dwa parametry. Pierwszy z nich określa ilość okresów branych pod uwagę przy wyznaczaniu średniej kroczącej, która wyznacza środkową wstęgę. Drugi parametr oznacza o ile odchyleń standardowych odległe są wstęgi skrajne od wstęgi środkowej. Te dwie wartości można poddawać optymalizacji jednak na rynkach najczęściej używa się 20 okresów oraz 2 odchyleń standardowych. 
+Po rozpoznaniu trendu głównego poszukiwany jest moment, w którym występuje korekta notowań. Do tego celu została użyta metoda Wstęg Bollingera omówiona w rozdziale \ref{sec:srednie}. Chwilowe odwrócenie rynku sygnalizowane jest pojawieniem się trendu krótkookresowego. Wstęgi Bollingera opierając się na założeniach średnich kroczących, często używane są do identyfikowania zmian trendu. W metodzie używane są dwa parametry. Pierwszy z nich określa ilość okresów branych pod uwagę przy wyznaczaniu średniej kroczącej, która wyznacza środkową wstęgę. Drugi parametr oznacza, o ile odchyleń standardowych odległe są wstęgi skrajne od wstęgi środkowej. Te dwie wartości można poddawać optymalizacji, jednak na rynkach najczęściej używa się 20 okresów oraz 2 odchyleń standardowych. 
 
 \begin{figure}[h!]
 \begin{center}
@@ -569,15 +568,15 @@ Po rozpoznaniu trendu głównego poszukiwany jest moment w którym występuje ko
 \end{center}
 \end{figure} 
 
-W przypadku istnienia trendu głównego linia notowań znajduje się blisko skrajnych Wstęg Bollingera. Początek korekty występuje w sytuacji gdy wstęga środkowa zostaje przecięta przez notowania. W momencie gdy ceny oscylują pomiędzy środkową, a skrajną wstęgą wyszukiwane są formacje świec. Sytuacja taka została przedstawiona na wykresie \ref{trend}. Linie czerwona i żółta oznaczają odpowiednio średnią wykładniczą krótszą oraz dłuższą. Położenie średniej krótszej poniżej średniej dłuższej, wskazuje na występowanie spadkowego trendu długookresowego. Niebieskie linie to wstęgi bollingera. Obszar pomiędzy pionowymi czerwonymi liniami wskazuje miejsce korekty trendu. W takim miejscu poszukiwane są formacje świec zapowiadające koniec korekty i powrót do trendu głównego. Będą to formacje odwrócenia trendu prognozujące kolejne spadki. Sekwencje świec zwiastujące wzrosty będą występować przy rosnącym trendzie głównym oraz oscylacji notowań pomiędzy środkową, a dolną wstęgą bollingera.  
+W przypadku istnienia trendu głównego linia notowań znajduje się blisko skrajnych Wstęg Bollingera. Początek korekty występuje w sytuacji, gdy wstęga środkowa zostaje przecięta przez notowania. W momencie gdy ceny oscylują pomiędzy środkową, a skrajną wstęgą wyszukiwane są formacje świec. Sytuacja taka została przedstawiona na wykresie \ref{trend}. Linie czerwona i żółta oznaczają odpowiednio średnią wykładniczą krótszą oraz dłuższą. Położenie średniej krótszej poniżej średniej dłuższej, wskazuje na występowanie spadkowego trendu długookresowego. Niebieskie linie to wstęgi Bollingera. Obszar pomiędzy pionowymi czerwonymi liniami wskazuje miejsce korekty trendu. W takim miejscu poszukiwane są formacje świec zapowiadające koniec korekty i powrót do trendu głównego. Będą to formacje odwrócenia trendu prognozujące kolejne spadki. Sekwencje świec zwiastujące wzrosty będą występować przy rosnącym trendzie głównym oraz oscylacji notowań pomiędzy środkową, a dolną wstęgą bollingera.  
 
-Kolejność rozpoznawania formacji zależy od sprawdzalności sygnałów z niej płynących. Świece, które w danym momencie najlepiej prognozują przyszłą sytuację na rynku będą poszukiwane na początku. Do najbardziej popularnych świeć należy formacja młota opisana w rozdziale \ref{swiece_rozdzial}. Tak jak inne formacje zapowiadające wzrosty będzie ona wyszukiwana w momencie wystąpienia korekty trendu rosnącego. Z informacji teoretycznych wynika, że świeca powinna mieć krótki cień górny oraz kilkakrotnie dłuższy cień dolny od korpusu. Wysokość cienia górnego to pierwszy parametr, który zostanie poddany optymalizacji. Jest to próg powyżej którego analizowana świeca nie zostanie zaklasyfikowana do wzorca młota. W fazie optymalizacji poszukiwana wartość znajdować się będzie w przedziale <0;2>. Kolejny parametr określa stosunek długości cienia dolnego do wysokości korpusu świecy. Poszukiwana wartość zawiera się w przedziale <2;5>. Dodatkowo dodano warunek sprawdzający relatywną wysokość dolnego cienia w stosunku do świec poprzednich. W tym celu została zliczona średnia wysokość świec historycznych oraz przemnożona przez zmienną z zakresu <1;2>. Do średniej branych jest 100 ostatnich świec. Potwierdzeniem formacji jest zamknięcie się kolejnej świecy na wyższym poziomie. Ewentualna decyzja o zajęciu pozycji długiej, następuje dopiero po 15 minutach od pojawienia się formacji młota. Zakładamy, że analizie zostały poddane świece 15 minutowe. 
+Kolejność rozpoznawania formacji zależy od sprawdzalności sygnałów z niej płynących. Świece, które w danym momencie najlepiej prognozują przyszłą sytuację na rynku będą poszukiwane na początku. Do najbardziej popularnych świeć należy formacja młota opisana w rozdziale \ref{swiece_rozdzial}. Tak jak inne formacje zapowiadające wzrosty będzie ona wyszukiwana w momencie wystąpienia korekty trendu rosnącego. Z informacji teoretycznych wynika, że świeca powinna mieć krótki cień górny oraz kilkakrotnie dłuższy cień dolny od korpusu. Wysokość cienia górnego to pierwszy parametr, który zostanie poddany optymalizacji. Jest to próg, powyżej którego analizowana świeca nie zostanie zaklasyfikowana do wzorca młota. W fazie optymalizacji poszukiwana wartość znajdować się będzie w przedziale <0;2>. Kolejny parametr określa stosunek długości cienia dolnego do wysokości korpusu świecy. Poszukiwana wartość zawiera się w przedziale <2;5>. Dodatkowo dodano warunek sprawdzający relatywną wysokość dolnego cienia w stosunku do świec poprzednich. W tym celu została zliczona średnia wysokość świec historycznych oraz przemnożona przez zmienną z zakresu <1;2>. Do średniej branych jest 100 ostatnich świec. Potwierdzeniem formacji jest zamknięcie się kolejnej świecy na wyższym poziomie. Ewentualna decyzja o zajęciu pozycji długiej, następuje dopiero po 15 minutach od pojawienia się formacji młota. Zakładamy, że analizie zostały poddane świece 15 minutowe. 
 
 Wisielec jest formacją przeciwną do młota. Algorytm rozpoznający ten wzorzec ma warunki podobne do tych zdefiniowanych w formacji młota. Posiada jednak własne parametry, które zostaną poddane optymalizacji niezależnie od zmiennych z algorytmu młota. Dodatkowo wisielec poszukiwany jest w obszarach korekt trendu spadkowego, gdyż zalicza się do formacji zapowiadających odwrócenie trendu wzrostowego. W celu zaostrzenia warunków wybierane są jedynie świece z czarnym korpusem.
 
-Ostatnią z formacji zawierających pojedynczą świecę jest spadająca gwiazda. Wyszukiwana jest w momentach korekt rynku niedźwiedzia. Górny cień musi mieć kilkakrotnie dłuższy od wysokości świecy. Do zapisu tego warunki posłużył oddzielny parametr, którego wartości są z przedziału <2;4>. Również długość dolnego cienia będzie oznaczona przez zmienną, której zakres zawiera się w <0;3>. Wartości te określają długość cienia w pipsach. Ostatnim warunkiem, wybierającym jedynie zauważalne dla większości graczy świece, jest wymóg dużej dłogości cienia górnego w stosunku do aktualnie występujących świec. Parametr jest z przedziału <1; 2> i dotyczy mnożnika średniej wielkości świec w danym okresie czasowym.  
+Ostatnią z formacji zawierających pojedynczą świecę jest spadająca gwiazda. Wyszukiwana jest w momentach korekt rynku niedźwiedzia. Górny cień musi mieć kilkakrotnie dłuższy od wysokości świecy. Do zapisu tego warunku posłużył oddzielny parametr, którego wartości są z przedziału <2;4>. Również długość dolnego cienia będzie oznaczona przez zmienną, której zakres zawiera się w <0;3>. Wartości te określają długość cienia w pipsach. Ostatnim warunkiem, wybierającym jedynie zauważalne dla większości graczy świece, jest wymóg dużej dłogości cienia górnego w stosunku do aktualnie występujących świec. Parametr jest z przedziału <1; 2> i dotyczy mnożnika średniej wielkości świec w danym okresie czasowym.  
 
-Objęcie hossy to kolejna formacja zapowiadająca wzrosty. Składa się z dwóch świec przez co ilość warunków pozwalających na zakwalifikowanie danej sekwencji świec do tego wzorca wzrasta. Oprócz występowania w obszarze korekty trendu wzrostowego od formacji wymagane jest aby pierwsza świeca była koloru czarnego, druga kolory białego oraz korpus świecy białej w całości obejmował świecę czarną. Dodatkowo dodany został warunek na wielkość świecy czarnej, po to by cała formacja była bardziej znacząca. Parametr odpowiedzialny za przemnożenie średniej wielkości świec  zawiera się w przedziale <1; 2>. W przypadku formacji objęcia bessy nie było stosowane potwierdzenie.
+Objęcie hossy to kolejna formacja zapowiadająca wzrosty. Składa się z dwóch świec, przez co ilość warunków pozwalających na zakwalifikowanie danej sekwencji świec do tego wzorca wzrasta. Oprócz występowania w obszarze korekty trendu wzrostowego od formacji wymagane jest, aby pierwsza świeca była koloru czarnego, druga kolory białego oraz korpus świecy białej w całości obejmował świecę czarną. Dodatkowo dodany został warunek na wielkość świecy czarnej, po to by cała formacja była bardziej znacząca. Parametr odpowiedzialny za przemnożenie średniej wielkości świec  zawiera się w przedziale <1; 2>. W przypadku formacji objęcia bessy nie było stosowane potwierdzenie.
 
 Algorytm rozpoznający formację objęcia bessy posiada podobną konstrukcję jak w przypadku objęcia hossy. Różnicą są jedynie warunki, które zostały zdefiniowane na podstawie informacji zawartych w rozdziale \ref{swiece_rozdzial}. W formacji występuje parametr określający wielkość pierwszej ze świec.
 
@@ -587,14 +586,15 @@ Harami spodkowe jako formacja odwrotna do harami wzrostowego jest rozpoznawana p
 
 Sposób identyfikowania formacji przenikania posiada jednoznaczne warunki. Pierwsza ze świec ma kolor czarny, druga biały, otwarcie drugiej jest poniżej minimum świecy poprzedniej, a zamknięcie powyżej połowy korpusu świecy pierwszej. Tak jak w poprzednich algorytmach istnieje dodatkowo parametr opisujący wielkość jednej ze świec. W tym przypadku odnosi się on do wysokości drugiej świecy. Wzorzec ten zapowiada odwrócenie trenu spadkowego, więc będzie wyszukiwany w momencie korekty trendu rosnącego.
 
-Zasłona ciemnej chmury jest odpowiednikiem poprzedniej formacji. Występuje przy malejącym trendzie długoterminowym. W miejscach korekt zapowiada powrót do głównego kierunku rynku. Algorytm klasyfikuje pary świec z których pierwsza jest biała, druga czarna, otwarcie drugiej jest większe od maksimum świecy poprzedniej, zamknięcie drugiej występuje w połowie korpusu świecy poprzedniej oraz otwarcie pierwszej jest poniżej zamknięcia drugiej świecy. Warunkiem zawężającym ilość sekwencji zaliczających się do tego wzorca jest parametr określający wysokość drugiej świecy. Analogicznie jak w poprzednich przypadkach jest on oddzielnie optymalizowany i może zawierać się w przedziale <1;1,5>. Algorytm nie wymaga potwierdzenia pojawiającej się formacji.
+Zasłona ciemnej chmury jest odpowiednikiem poprzedniej formacji. Występuje przy malejącym trendzie długoterminowym. W miejscach korekt zapowiada powrót do głównego kierunku rynku. Algorytm klasyfikuje pary świec, z których pierwsza jest biała, druga czarna, otwarcie drugiej jest większe od maksimum świecy poprzedniej, zamknięcie drugiej występuje w połowie korpusu świecy poprzedniej oraz otwarcie pierwszej jest poniżej zamknięcia drugiej świecy. Warunkiem zawężającym ilość sekwencji zaliczających się do tego wzorca jest parametr określający wysokość drugiej świecy. Analogicznie jak w poprzednich przypadkach jest on oddzielnie optymalizowany i może zawierać się w przedziale <1;1,5>. Algorytm nie wymaga potwierdzenia pojawiającej się formacji.
 
 Formacje gwiazdy wieczornej i porannej składają się z trzech świec. Dlatego posiadają najbardziej złożone warunki. Gwiazda poranna występuje w obszarze korekty trendu wzrostowego. Zapowiada powrót do głównego kierunku rynku. Pierwsza świeca musi być koloru czarnego, natomiast trzecia ma mieć barwę białą. W formacji występuje parametr określający wielkość luki cenowej pomiędzy drugą swiecą, zwaną gwiazdą, a świecami sąsiadującymi. Dodatkowo w celu znalezienia bardziej znaczących przypadków, poszukiwane są trójki świec, w których pierwsza i druga świeca nie są małe. W algorytmie istnieje funkcja, która określa stopień wielkości danej świecy w odniesieniu do świec ostatnio pojawiających się. W fazie testów zostały dobrane wartości parametrów, które pozwalają na sklasyfikowanie danej świecy pod kątem wielkości.
 
-Gwiazda wieczorna posiada szereg warunków analogicznych do gwiazdy porannej. Należy do formacji zwiastujących trend spadkowy. W algorytmie proces jej wykrywania uruchamiany jest w momencie korekty trendu spadkowego. Pojawienie się opisywanej formacji w punkcie krótkotrwałego trendu wzrostowego daje sygnał na powrót rynku w kierunku spadkowym. Oprócz sprawdzenia czy pierwsza świeca jest koloru białego i trzecia koloru czarnego wymagane jest aby świeca środkowa była ponad sąsiadującymi z nią świecami. Wielkość występującej luki cenowej posiada oddzielny parametr, który również będzie poddany optymalizacji. Dodatkowo, tak jak w przypadku gwiazdy porannej, nałożony jest warunek na wielkości krańcowych świec. 
+Gwiazda wieczorna posiada szereg warunków analogicznych do gwiazdy porannej. Należy do formacji zwiastujących trend spadkowy. W algorytmie proces jej wykrywania uruchamiany jest w momencie korekty trendu spadkowego. Pojawienie się opisywanej formacji w punkcie krótkotrwałego trendu wzrostowego daje sygnał na powrót rynku w kierunku spadkowym. Oprócz sprawdzenia, czy pierwsza świeca jest koloru białego i trzecia koloru czarnego wymagane jest, aby świeca środkowa była ponad sąsiadującymi z nią świecami. Wielkość występującej luki cenowej posiada oddzielny parametr, który również będzie poddany optymalizacji. Dodatkowo, tak jak w przypadku gwiazdy porannej, nałożony jest warunek na wielkości krańcowych świec. 
 
 W tabeli \ref{parametry_przedzialy} zostały zebrane przedziały wartości parametrów dla poszczególnych formacji. Sposób wyznaczania optymalnych wartości zostanie przedstawiony w kolejnym rozdziale.  
 \begin{table}[H]
+\caption{Przedziały wartości parametrów dla poszczególnych formacji}
 \begin{center}
 \begin{tabular}{|c|c|c|}
 \hline 
@@ -629,7 +629,7 @@ gwiazda poranna & wielkość luki cenowej & <1; 5>\\
 gwiazda wieczorna & wielkość luki cenowej & <1; 5>\\
 \hline
 \end{tabular} 
-\caption{Przedziały wartości parametrów dla poszczególnych formacji}
+
 \label{parametry_przedzialy}
 \end{center}
 \end{table}
@@ -639,7 +639,7 @@ gwiazda wieczorna & wielkość luki cenowej & <1; 5>\\
 \paragraph{}
 Każdy system transakcyjny zawiera określony zestaw zasad, według których otwierane i zamykane są długie i krótkie pozycje. Zasady te zazwyczaj wymagają wprowadzenia parametrów, od których zależeć będzie moment wygenerowania sygnału kupna lub sprzedaży. Zmiana tych parametrów spowoduje również zmianę dochodowości całego systemu, dlatego kluczowa jest ich optymalizacja. Każdy z algorytmów, rozpoznających konkretną formację, zostanie poddany oddzielnej optymalizacji. Następnie będzie przetestowany na danych historycznych z różnych okresów. Po przeprowadzeniu cząstkowych optymalizacji i testów, do końcowego algorytmu, zostaną wybrane formacje przynoszące największy zwrot. Dodatkowo kolejność ich rozpoznawania, będzie również zależeć od wyników jakie osiągnęły. 
 
-Przed optymalizacją kolejnych, cząstkowych algorytmów, zostanie opisany sposób w jaki przebiega proces optymalizacji na platformie MetaTrader. Zostanie również poruszony problem doboru odpowiednich opcji. Przedstawione zostaną najważniejsze zasady poprawnego wykonania optymalizacji oraz jej interpretacji. 
+Przed optymalizacją kolejnych, cząstkowych algorytmów, zostanie opisany sposób, w jaki przebiega proces optymalizacji na platformie MetaTrader. Zostanie również poruszony problem doboru odpowiednich opcji. Przedstawione zostaną najważniejsze zasady poprawnego wykonania optymalizacji oraz jej interpretacji. 
 
 \section{Sposób działania optymalizatora w MetaTrader}
 \paragraph{}
@@ -648,38 +648,38 @@ Najpopularniejszy program do handlowania na Forexie, MetaTrader, udostępnia nar
 
 Narzędzie testowe w MetaTrader podczas optymalizacji wykorzystuje dane historyczne. Każda ze świec posiada jedynie dane o poziomie otwarcia, zamknięcia, cenie maksymalnej i minimalnej. Zachowanie kursu pomiędzy otwarciem, a zamknięciem musi być więc modelowane. MetaTrader umożliwia wybranie jednego z trzech sposobów:
 \begin{itemize}
-\item tylko ceny otwarcia
-\item kontrola punktów
-\item każdy tick
+\item tylko ceny otwarcia,
+\item kontrola punktów,
+\item każdy tick.
 \end{itemize}
 Pierwszy ze sposobów jest użyteczny tylko dla strategii, która generuje sygnały wyłącznie w oparciu o ceny otwarcia świec. Pozwala na znaczne skrócenie procesu optymalizacji. Metoda kontroli punktów modeluje zachowanie kursu na podstawie danych z najbliższego krótszego okresu czasowego. Przykładowo dla świec jednogodzinnych użyte zostaną dane trzydziestominutowe. Metoda daje bardzo uproszczone wyniki. Powinna być wykorzystywana podczas pierwszego testu strategii w trybie wizualnym, aby sprawdzić, czy sygnały są generowane prawidłowo. Najbardziej dokładna metoda, każdy tick, wykorzystuje najmniejszy dostępny przedział czasowy do modelowania zachowania kursu wewnątrz świecy. Najczęściej są to dane jednominutowe, gdyż poszczególne ticki nie są udostępniane przez dostawców notowań. MetaTrader przechowuje dane o pojedynczych tikach jedynie z krótkiego przedziału czasowego. Są one jednak systematycznie usuwane wraz z pojawianiem się nowych.
 
 Proces optymalizacji można przeprowadzać na kilku różnych parametrach decydujących o jakości danej strategii. Użytkownik ma możliwość wybory optymalizacji:
 \begin{itemize}
-\item zysku
-\item stosunku sumy transakcji zyskownych do transakcji stratnych
-\item średniego zysku z jednej transakcji
-\item najniższej wartości środków
-\item procentowo najniższej wartości środków
+\item zysku,
+\item stosunku sumy transakcji zyskownych do transakcji stratnych,
+\item średniego zysku z jednej transakcji,
+\item najniższej wartości środków,
+\item procentowo najniższej wartości środków.
 \end{itemize}
 Dodatkowo istnieje możliwość określenia granic dla niektórych parametrów. Rozwiązania nie spełniające założonych warunków, nie będą brane pod uwagę. Limity można ustawiać na poniższe wartości: 
 \begin{itemize}
-\item minimalny zysk
-\item maksymalny zysk
-\item minimalny poziom zabezpieczenia
-\item maksymalna strata względna
-\item ilość transakcji stratnych
-\item ilość transakcji stratnych pod rząd
-\item ilość transakcji zyskownych
-\item ilość transakcji zyskownych pod rząd
+\item minimalny zysk,
+\item maksymalny zysk,
+\item minimalny poziom zabezpieczenia,
+\item maksymalna strata względna,
+\item ilość transakcji stratnych,
+\item ilość transakcji stratnych pod rząd,
+\item ilość transakcji zyskownych,
+\item ilość transakcji zyskownych pod rząd.
 \end{itemize}
 
-Dostępne są dwie opcje przeprowadzenia procesy optymalizacji z wykorzystaniem platformy Meta Trader. Pierwsza polega na stworzeniu wszystkich możliwych kombinacji wartości optymalizowanych parametrów. Następnie każde zestawienie wartości zostaje użyte do wykonania testu na danych historycznych. Sposób ten gwarantuje znalezienie najlepszych parametrów dla strategii. Główną wadą tej metody jest czas wykonania. Przykładowo dla dwóch parametrów z zakresu <0;5>, gdzie krok wynosi 1, metoda musi wykonać 6*6=36 symulacji. Przy szerokim zakresie testowanych danych, czas wykonania optymalizacji taką metodą może być nieakceptowalny. Dlatego też. istnieje możliwość wyboru alternatywnej metody optymalizacji parametrów. Opiera się ona na algorytmie genetycznym. Początkowo wykonuje się kilka testów na losowych wartościach parametrów. Następnie te, które okazały się najlepsze zostają użyte do stworzenia kolejnych zbiorów wartości parametrów. Z każdą iteracją osiągane wyniki, są coraz lepsze. Algorytm pozwala na znaczną redukcję ilości przebiegów, a tym samym ograniczenie czasu trwania optymalizacji. Istnieje jednak zagrożenie, że algorytm pominie w ten sposób kombinacje, które w rzeczywistości przyniosły by bardzo dobre wyniki. Taką sytuację można ominąć stosując pierwszą metodę, z umiejętnym doborem parametrów do optymalizacji oraz ich wartości. Można również przeprowadzić więcej cząstkowych optymalizacji na każdym z parametrów. 
+Dostępne są dwie opcje przeprowadzenia procesy optymalizacji z wykorzystaniem platformy Meta Trader. Pierwsza polega na stworzeniu wszystkich możliwych kombinacji wartości optymalizowanych parametrów. Następnie każde zestawienie wartości zostaje użyte do wykonania testu na danych historycznych. Sposób ten gwarantuje znalezienie najlepszych parametrów dla strategii. Główną wadą tej metody jest czas wykonania. Przykładowo dla dwóch parametrów z zakresu <0;5>, gdzie krok wynosi 1, metoda musi wykonać 6*6=36 symulacji. Przy szerokim zakresie testowanych danych czas wykonania optymalizacji taką metodą może być nieakceptowalny. Dlatego też istnieje możliwość wyboru alternatywnej metody optymalizacji parametrów. Opiera się ona na algorytmie genetycznym. Początkowo wykonuje się kilka testów na losowych wartościach parametrów. Następnie te, które okazały się najlepsze, zostają użyte do stworzenia kolejnych zbiorów wartości parametrów. Z każdą iteracją osiągane wyniki, są coraz lepsze. Algorytm pozwala na znaczną redukcję ilości przebiegów, a tym samym ograniczenie czasu trwania optymalizacji. Istnieje jednak zagrożenie, że algorytm pominie w ten sposób kombinacje, które w rzeczywistości przyniosły by bardzo dobre wyniki. Taką sytuację można ominąć stosując pierwszą metodę, z umiejętnym doborem parametrów do optymalizacji oraz ich wartości. Można również przeprowadzić więcej cząstkowych optymalizacji na każdym z parametrów. 
 
 \section{Najczęstsze problemy i błędy w procesie optymalizacji}
 \paragraph{}
 
-Konieczność posiadania szerokiej bazy danych notowań, przy procesie optymalizacji i testowania rodzi wiele problemów. Najmniejszy okres, z którego dane są przechowywane na platformie Meta Trader to jedna minuta. Pojedynczy rekord opisujący jedno minutową daną, zawiera informację o cenie otwarcia, zamknięcia, cenie maksymalnej, minimalnej oraz o obrotach. Wykorzystanie danych jednominutowych zamiast ticków sprawia, że testowanie jakiegokolwiek systemu skalpingowego lub docelowo mającego handlować na wykresie jednominutowym mija się z celem. Jedyny sposób na poradzenie sobie z tym problemem to odpowiednie dostosowanie kodu strategii tak, aby zachowanie kursu wewnątrz świecy nie było kluczowym czynnikiem generującym sygnały kupna i sprzedaży. W budowanym systemie opartym na analizie formacji świec japońskich decyzje podejmowane są na podstawie nowo pojawiającej się świecy 15-minutowej. Problem nie dotyczy jednak wyłącznie świec jednominutowych. Pojawia się również w przypadku optymalizacji strategii z użyciem świec o większych okresach, na szerokich przedziałach czasowych. Narzędzie do testowania, w chwili uruchomienia, wyszuka świece o najmniejszym okresie pokrywające wybrane większe świece. Zazwyczaj, do tego celu, MetaTrader będzie chciał użyć świec jednominutowych. Jednak większość brokerów nie udostępnia tak dużych baz danych świec jednominutowych. Istnieje więc możliwość, że do modelowania użyte zostaną świece o większych okresach. W celu zapewnienia najwyższej jakości modelowania, konieczne jest posiadanie szerokiej bazy danych świec jednominutowych.
+Konieczność posiadania szerokiej bazy danych notowań, przy procesie optymalizacji i testowania rodzi wiele problemów. Najmniejszy okres, z którego dane są przechowywane na platformie Meta Trader, to jedna minuta. Pojedynczy rekord opisujący jednominutową daną, zawiera informację o cenie otwarcia, zamknięcia, cenie maksymalnej, minimalnej oraz o obrotach. Wykorzystanie danych jednominutowych zamiast ticków sprawia, że testowanie jakiegokolwiek systemu skalpingowego lub docelowo mającego handlować na wykresie jednominutowym mija się z celem. Jedyny sposób na poradzenie sobie z tym problemem to odpowiednie dostosowanie kodu strategii tak, aby zachowanie kursu wewnątrz świecy nie było kluczowym czynnikiem generującym sygnały kupna i sprzedaży. W budowanym systemie opartym na analizie formacji świec japońskich decyzje podejmowane są na podstawie nowo pojawiającej się świecy 15-minutowej. Problem nie dotyczy jednak wyłącznie świec jednominutowych. Pojawia się również w przypadku optymalizacji strategii z użyciem świec o większych okresach, na szerokich przedziałach czasowych. Narzędzie do testowania, w chwili uruchomienia, wyszuka świece o najmniejszym okresie pokrywające wybrane większe świece. Zazwyczaj do tego celu MetaTrader będzie chciał użyć świec jednominutowych. Jednak większość brokerów nie udostępnia tak dużych baz danych świec jednominutowych. Istnieje więc możliwość, że do modelowania użyte zostaną świece o większych okresach. W celu zapewnienia najwyższej jakości modelowania, konieczne jest posiadanie szerokiej bazy danych świec jednominutowych.
 MetaTrader umożliwia importowanie zewnętrznych danych z plików tekstowych lub CSV. Dane takie można ściągnąć za darmo z kilku serwisów forexowych. Niestety dane darmowe często nie są najlepszej jakości i zawierają przekłamania. Istnieje więc możliwość, że zaimportowane dane jednominutowe nie będą się pokrywać z wyższymi przedziałami czasowymi, tworząc niespójność. W takim wypadku tester odrzuci wartości jednominutowe, tym samym obniżając jakość modelowania.
  
 Rynek Forex wykazuje się duża dynamiką. Prawidłowości, które można było zauważyć na niektórych parach walutowych, po kilku latach, a nawet miesiącach mogą się już nie sprawdzać. Dlatego też, optymalizowanie strategii na danych późniejszych niż rok wstecz nie ma sensu. Budowany system został więc przetestowany i zoptymalizowany na podstawie ostatnich 12 miesięcy. Dokładne dane o świecach jednominutowych z takiego okresu, są dostępne na serwerze MetaTrader. Niestety mogą się one różnić od danych dostarczonych przez brokera.
@@ -739,8 +739,9 @@ Testy przeprowadzono dla każdego rodzaju formacji opisanej w pracy. Zbiory wart
 \label{opt_mlot}
 \end{center}
 \end{figure} 
-Wykres \ref{opt_mlot} przedstawia częściowy raport z optymalizacji formacji młota. Poszukiwano odpowiednich wartości dla 3 parametrów: stosunku długości cienia dolnego do korpusu, długości cienia górnego oraz zmiennej określającej długość cienia dolnego. Największy osiągnięto w przebiegu 13. Wynosił on 112.41\$, jednak wartość wskaźnika zysku była w tym przypadku zbyt mała. Wskaźnik ten określa stosunek zysku brutto do straty brutto. Wartość 1.84 oznacza, że suma transakcji zyskownych wynosiła 1.84 sumy transakcji stratnych. Pod tym względem znacznie lepszy wynik osiągnięto w iteracji 4. W tym wypadku wskaźnik zysku wynosił, aż 4.65. Przy jedynie 6 transakcjach osiągnięto wynik 103.70\$, który jest tylko o niecałe 10\$ gorszy od opcji w której przeprowadzono aż 17 transakcji. Wariant numer 4 został wybrany za optymalny również ze względu na niską maksymalną stratę kapitału wynoszącą jedynie 3.67\%. Wartości parametrów dla wybranej optymalizacji zostały przedstawione w tabeli \ref{parametry_mlot}. Mnożnik długości cienia dolnego wynoszący 1.5 oznacza, że cień dolny musi być przynajmniej 1.5 razy większy od średniej wysokości 100 ostatnich świec. Dodatkowo warunek na brak cienia górnego oraz przynajmniej dwa razy mniejszy korpus od cienia dolnego w sposób drastyczny zaostrzają warunki na klasyfikacje świecy jako młota. 
+Wykres \ref{opt_mlot} przedstawia częściowy raport z optymalizacji formacji młota. Poszukiwano odpowiednich wartości dla 3 parametrów: stosunku długości cienia dolnego do korpusu, długości cienia górnego oraz zmiennej określającej długość cienia dolnego. Największy osiągnięto w przebiegu 13. Wynosił on 112.41\$, jednak wartość wskaźnika zysku była w tym przypadku zbyt mała. Wskaźnik ten określa stosunek zysku brutto do straty brutto. Wartość 1.84 oznacza, że suma transakcji zyskownych wynosiła 1.84 sumy transakcji stratnych. Pod tym względem znacznie lepszy wynik osiągnięto w iteracji 4. W tym wypadku wskaźnik zysku wynosił, aż 4.65. Przy jedynie 6 transakcjach osiągnięto wynik 103.70\$, który jest tylko o niecałe 10\$ gorszy od opcji, w której przeprowadzono aż 17 transakcji. Wariant numer 4 został wybrany za optymalny również ze względu na niską maksymalną stratę kapitału wynoszącą jedynie 3.67\%. Wartości parametrów dla wybranej optymalizacji zostały przedstawione w tabeli \ref{parametry_mlot}. Mnożnik długości cienia dolnego wynoszący 1.5 oznacza, że cień dolny musi być przynajmniej 1.5 razy większy od średniej wysokości 100 ostatnich świec. Dodatkowo warunek na brak cienia górnego oraz przynajmniej dwa razy mniejszy korpus od cienia dolnego w sposób drastyczny zaostrzają warunki na klasyfikacje świecy jako młota. 
 \begin{table}[h!]
+\caption{Optymalne parametry dla formacji młota}
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline 
@@ -753,20 +754,21 @@ długość cienia górnego & 0\\
 mnożnik długości cienia dolnego & 1.5\\
 \hline
 \end{tabular} 
-\caption{Optymalne parametry dla formacji młota}
 \label{parametry_mlot}
 \end{center}
 \end{table}
+
 Wykres \ref{przyklad_mlot} przedstawia rozpoznaną formację młota oraz transakcje wykonaną na jej podstawie. Świece oznaczono żółtym prostokątem. Wyraźnie widać, że rozpoznana świeca to klasyczna formacja młota, którą z pewnością dostrzegł każdy gracz. Dlatego też jej wymowa jest znacząca i w tym wypadku przyczynia się do uzyskania zysku. Analizując wyniki optymalizacji formacji młota okazuje się, że surowsze warunki, pozwalają osiągnąć duże zyski, mimo małej ilości transakcji. Dzieje się tak, gdyż każda z rozpoznanych w ten sposób formacji jest bardziej wiarygodna, a tym samym przynosi większe zyski. 
 \begin{figure}[h!]
+\caption{Przykład rozpoznania formacji młota wraz z transakcją kupna}
 \begin{center}
 \includegraphics[width=14cm]{hammer/przyklad.png}
-\caption{Przykład rozpoznania formacji młota wraz z transakcją kupna}
 \label{przyklad_mlot}
 \end{center}
 \end{figure} 
-Tabela \ref{raport_mlot} zawiera najważniejsze wartości z raportu, na temat wyników jakie osiągnęła formacja młota na przestrzeni 1 roku, przy optymalnie dobranych parametrach. Jedna stratna transakcja stratna była spowodowana wystąpieniem zbyt dużej świecy potwierdzającej, jednak sam kierunek ruchu cen sprawdził się. Warto zwrócić uwagę, że średnia zyskowna transakcja jest większa od średniej stratnej, prawie o 9\%. Algorytm został w ten sposób skonstruowany, aby zamykać szybko transakcje stratne, a zyskowne trzymać jak najdłużej.
+Tabela \ref{raport_mlot} zawiera najważniejsze wartości z raportu, na temat wyników, jakie osiągnęła formacja młota na przestrzeni 1 roku, przy optymalnie dobranych parametrach. Jedna stratna transakcja stratna była spowodowana wystąpieniem zbyt dużej świecy potwierdzającej, jednak sam kierunek ruchu cen sprawdził się. Warto zwrócić uwagę, że średnia zyskowna transakcja jest większa od średniej stratnej, prawie o 9\%. Algorytm został w ten sposób skonstruowany, aby zamykać szybko transakcje stratne, a zyskowne trzymać jak najdłużej.
 \begin{table}[h!]
+\caption{Wynik testu dla formacji młota}
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline 
@@ -791,7 +793,6 @@ Transakcje stratne & 1 (16.67\%) \\
 Średnia stratna transakcja & -28.40 \\
 \hline
 \end{tabular} 
-\caption{Wynik testu dla formacji młota}
 \label{raport_mlot}
 \end{center}
 \end{table}
@@ -806,8 +807,9 @@ Transakcje stratne & 1 (16.67\%) \\
 \label{opt_gwiazda}
 \end{center}
 \end{figure} 
-Proces optymalizacji parametrów formacji spadającej gwiazdy przedstawiono na wykresie \ref{opt_gwiazda}. Poszukiwane wartości to stosunek długości cienia górnego do korpusu, długość cienia dolnego oraz mnożnik długości cienia górnego. Najlepszy wynik został osiągnięty dla zestawu danych w iteracji 13. Otrzymano wynik 116.20\$ przy wysokim wskaźniku zysku wynoszącym, aż 9.13. Dodatkowo największa zanotowana strata w tym wypadku osiągnęła jedynie 3.44\%. Lepszy wskaźnik zysku uzyskano w opcji 7 i 8 jednak z powodu mniejszej ilości transakcji zanotowano znacznie niższy dochód netto. Optymalne wartości parametrów z przebiegu 13 zostały zebrane w tabeli \ref{parametry_gwiazda}. Znaczenie parametrów jest analogiczne do przypadku formacji młota. Warto zwrócić uwagę, że cień krótki może odstawać od korpusu, aż do 2 pipsów. Mniejsze wartości tego parametru powodowały brak rozpoznania jakichkolwiek formacji spadającej gwiazdy.
+Proces optymalizacji parametrów formacji spadającej gwiazdy przedstawiono na wykresie \ref{opt_gwiazda}. Poszukiwane wartości to stosunek długości cienia górnego do korpusu, długość cienia dolnego oraz mnożnik długości cienia górnego. Najlepszy wynik został osiągnięty dla zestawu danych w iteracji 13. Otrzymano wynik 116.20\$ przy wysokim wskaźniku zysku wynoszącym, aż 9.13. Dodatkowo największa zanotowana strata w tym wypadku osiągnęła jedynie 3.44\%. Lepszy wskaźnik zysku uzyskano w opcji 7 i 8 jednak z powodu mniejszej ilości transakcji zanotowano znacznie niższy dochód netto. Optymalne wartości parametrów z przebiegu 13 zostały zebrane w tabeli \ref{parametry_gwiazda}. Znaczenie parametrów jest analogiczne do przypadku formacji młota. Warto zwrócić uwagę, że cień krótki może odstawać od korpusu aż do 2 pipsów. Mniejsze wartości tego parametru powodowały brak rozpoznania jakichkolwiek formacji spadającej gwiazdy.
 \begin{table}[h!]
+\caption{Optymalne parametry dla formacji młota}
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline 
@@ -820,7 +822,6 @@ długość cienia dolnego & 2\\
 mnożnik długości cienia górnego & 2\\
 \hline
 \end{tabular} 
-\caption{Optymalne parametry dla formacji młota}
 \label{parametry_gwiazda}
 \end{center}
 \end{table}
@@ -835,6 +836,7 @@ Przykład rozpoznania spadającej gwiazdy został przedstawiony na wykresie \ref
 \end{figure} 
 W tabeli \ref{raport_gwiazda} znajdują się wyniki symulacji dla formacji spadającej gwiazdy. Zysk netto, ilość transakcji oraz wskaźnik zysku są większe niż w przypadku formacji młota. Zanotowano więcej stratnych transakcji, jednak średnia ich wartość jest niewielka i wynosi 7.12\$ przy trzykrotnie większej średniej z transakcji przynoszących dochód.  
 \begin{table}[h!]
+\caption{Wynik testu dla formacji spadającej gwiazdy}
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline 
@@ -859,7 +861,6 @@ Transakcje stratne & 2 (25\%) \\
 Średnia stratna transakcja & 7.15 \\
 \hline
 \end{tabular} 
-\caption{Wynik testu dla formacji spadającej gwiazdy}
 \label{raport_gwiazda}
 \end{center}
 \end{table}
@@ -867,8 +868,9 @@ Transakcje stratne & 2 (25\%) \\
 \subsection{Formacje objęcia}
 \paragraph{}
 
-Warunki występujące w formacjach objęcia hossy i bessy są na tyle jasno określone, że jedynym parametrem, który został optymalizowany była relatywna wielkość pierwszej ze świec. Sprawdzane były 4 wartości z przedziału <1;2> z krokiem 0.5. W obu przypadkach optymalnym wynikiem była liczba 1. Okazało się, że jedynie dla tej wartości znajdywane były jakiekolwiek formacje objęcia. Ich liczba była niewielka, jednak transakcje przeprowadzane na ich podstawie dawały zyski. W przypadku formacji objęcia hossy była to jedna transakcja przynosząca 37\$. Dla formacji objęcia bessy znaleziono dwie sekwencje świec z czego pierwsza dała zysk w wysokości aż 95.75\$, a druga stratę 10.80\$. Tabela \ref{objecie} zbiera wyniki z symulacji dla obu formacji objęcia.
+Warunki występujące w formacjach objęcia hossy i bessy są na tyle jasno określone, że jedynym parametrem, który został optymalizowany była relatywna wielkość pierwszej ze świec. Sprawdzane były 4 wartości z przedziału <1;2> z krokiem 0.5. W obu przypadkach optymalnym wynikiem była liczba 1. Okazało się, że jedynie dla tej wartości znajdywane były jakiekolwiek formacje objęcia. Ich liczba była niewielka, jednak transakcje przeprowadzane na ich podstawie dawały zyski. W przypadku formacji objęcia hossy była to jedna transakcja przynosząca 37\$. Dla formacji objęcia bessy znaleziono dwie sekwencje świec, z czego pierwsza dała zysk w wysokości aż 95.75\$, a druga stratę 10.80\$. Tabela \ref{objecie} zbiera wyniki z symulacji dla obu formacji objęcia.
 \begin{table}[h!]
+\caption{Wynik testu dla formacji objęcia}
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline 
@@ -893,7 +895,6 @@ Transakcje stratne & 1 (33\%) \\
 Średnia stratna transakcja & -10.80 \\
 \hline
 \end{tabular} 
-\caption{Wynik testu dla formacji objęcia}
 \label{raport_objecie}
 \end{center}
 \end{table}
@@ -907,7 +908,7 @@ Mimo wystąpienia jedynie 3 zleceń okazuje się, że formacje objęcia uzyskał
 \end{figure} 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=2cm]{bearishengulfing/przyklad.png}
+\includegraphics[width=4cm]{bearishengulfing/przyklad.png}
 \caption{Przykład rozpoznania formacji objęcia bessy wraz z transakcją sprzedaży}
 \label{przyklad_objecie_bessy}
 \end{center}
@@ -919,6 +920,7 @@ Zamknięcie, które jest wykonywane po przekroczeniu od góry wstęgi bollingera
 \paragraph{}
 Pary świec harami są bardzo zbliżone do formacji objęcia. Optymalizacji podlega parametr odpowiadający za relatywną wielkość drugiej ze świec. W tym przypadku został on również ustawiony na wartość 1. W tabeli \ref{raport_harami_hossy} przedstawiono wyniki symulacji systemu opartego na formacji harami hossy. Zanotowano jedynie 4 transakcje, jednak 3 z nich były zyskowne i dały wysoki wskaźnik zysku. Dodatkowo strata osiągnięta przy jednej transakcji była niewielka. 
 \begin{table}[h!]
+\caption{Wynik testu dla formacji harami hossy}
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline 
@@ -943,7 +945,6 @@ Transakcje stratne & 1 (25\%) \\
 Średnia stratna transakcja & -11.80 \\
 \hline
 \end{tabular} 
-\caption{Wynik testu dla formacji harami hossy}
 \label{raport_harami_hossy}
 \end{center}
 \end{table}
@@ -958,6 +959,7 @@ Wykres \ref{przyklad_harami_hossy} pokazuje przykładowo znalezioną formację h
 \end{figure} 
 Znacznie więcej formacji wystąpiło w przypadku harami bessy. Wyniki znajdują się w tabeli \ref{raport_harami_bessy}. Jak widać osiągnięto porównywalny zysk jak w poprzednich formacjach. Niestety wskaźnik zysku nie jest już tak duży. Na jego wartość wpłynęło kilka stratnych transakcji. 
 \begin{table}[h!]
+\caption{Wynik testu dla formacji harami bessy}
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline 
@@ -982,7 +984,6 @@ Transakcje stratne & 10 (41.67\%) \\
 Średnia stratna transakcja & -16.09 \\
 \hline
 \end{tabular} 
-\caption{Wynik testu dla formacji harami bessy}
 \label{raport_harami_bessy}
 \end{center}
 \end{table}
@@ -995,7 +996,7 @@ W szczególności niepokojące było obsunięcie kapitału rozpoczynające się 
 \end{center}
 \end{figure} 
 
-Jedną z zyskownych transakcji ukazuje wykres \ref{przyklad_harami_bessy}. Widać delikatny trend spadkowy, następnie lekkie wybicie do góry, na którym pojawia się formacja harami spadkowego. Po potwierdzeniu kolejną świecą spadkową pojawiają się jeszcze 3 świece czarne. Zamknięcie przy dolnej wstędze bollingera dało zysk w wysokości 43.10\$. 
+Jedną z zyskownych transakcji ukazuje wykres \ref{przyklad_harami_bessy}. Widać delikatny trend spadkowy, następnie lekkie wybicie do góry, na którym pojawia się formacja harami spadkowego. Po potwierdzeniu kolejną świecą spadkową pojawiają się jeszcze 3 świece czarne. Zamknięcie przy dolnej wstędze Bollingera dało zysk w wysokości 43.10\$. 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=10cm]{bearishharami/przyklad.png}
@@ -1007,8 +1008,9 @@ Jedną z zyskownych transakcji ukazuje wykres \ref{przyklad_harami_bessy}. Wida�
 \subsection{Formacja zasłony ciemnej chmury}
 \paragraph{}
 
-Tak jak w poprzednich formacjach dwuświecowych formacja zasłony ciemnej chmury posiada do optymalizacji tylko jeden parametr. Zmienną tą jest relatywna wielkość drugiej ze świec. W tym wypadku równie dobrze warunek mógł być nałożony na świecę pierwszą. Określona wielkość świecy ma jedynie za zadanie wyłapać formacje, które są lepiej widoczne na wykresie. Podobnie jak we wcześniejszych optymalizacjach parametr został ustawiony na 1. Oznacza to, że wymagane jest aby świeca była wielkości przynajmniej średniej wielkości 100 ostatnich świec. Większa wartość powodowała, że nie zostały znalezione jakiekolwiek formacje zasłony ciemnej chmury. Tabela \ref{raport_zaslona} zawiera zestawienie wyników dla 4 znalezionych sekwencji świec. Zysk z tej formacji okazał się najmniejszy jednak wskaźnik zysku został utrzymany ciągle na wysokim poziomie. Średnia zyskowna transakcja znacznie przewyższa średnią ze zleceń stratnych. Pojedyncze obsunięci kapitału to jedynie około 1\%. 
+Tak jak w poprzednich formacjach dwuświecowych formacja zasłony ciemnej chmury posiada do optymalizacji tylko jeden parametr. Zmienną tą jest relatywna wielkość drugiej ze świec. W tym wypadku równie dobrze warunek mógł być nałożony na świecę pierwszą. Określona wielkość świecy ma jedynie za zadanie wyłapać formacje, które są lepiej widoczne na wykresie. Podobnie jak we wcześniejszych optymalizacjach parametr został ustawiony na 1. Oznacza to, że wymagane jest, aby świeca była wielkości przynajmniej średniej wielkości 100 ostatnich świec. Większa wartość powodowała, że nie zostały znalezione jakiekolwiek formacje zasłony ciemnej chmury. Tabela \ref{raport_zaslona} zawiera zestawienie wyników dla 4 znalezionych sekwencji świec. Zysk z tej formacji okazał się najmniejszy, jednak wskaźnik zysku został utrzymany ciągle na wysokim poziomie. Średnia zyskowna transakcja znacznie przewyższa średnią ze zleceń stratnych. Pojedyncze obsunięci kapitału to jedynie około 1\%. 
 \begin{table}[h!]
+\caption{Wynik testu dla formacji zasłony ciemnej chmury}
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline 
@@ -1033,11 +1035,10 @@ Transakcje stratne & 1 (25\%) \\
 Średnia stratna transakcja & -10.10 \\
 \hline
 \end{tabular} 
-\caption{Wynik testu dla formacji zasłony ciemnej chmury}
 \label{raport_zaslona}
 \end{center}
 \end{table}
-Rozpoznanie przykładowej formacji zasłony ciemnej chmury prezentuje wykres \ref{przyklad_zaslona}. W czasie pojawienia się wzorca występuje wyraźny długookresowy trend spadkowy. Formacja ciemnej chmury tworzy pewną korektę trendu. Natychmiast po jej wystąpieniu kurs wraca do trendu głównego. W przypadku zasłony ciemnej chmury nie było stosowane potwierdzenie formacji. Kolejna świeca występująca po formacji posiada bardzo długi korpus. Jeśli byłaby świecą potwierdzającą, to zysk osiągnięty w tej transakcji byłby o wiele mniejszy. Problem ten występował w innych formacjach gdzie wymagane było potwierdzenie. Często długie świece potwierdzające formację, znacząco zmniejszały dochód z transakcji a nawet powodowały straty. Z drugiej strony, brak warunku potwierdzającego prowadził często prowadził do generacji mylnych sygnałów. Obie świece tworzące zasłonę ciemnej chmury są stosunkowo wysokie w porównaniu do świec z widocznego okresu. Dzięki temu cała formacja, jest dobrze widoczna.
+Rozpoznanie przykładowej formacji zasłony ciemnej chmury prezentuje wykres \ref{przyklad_zaslona}. W czasie pojawienia się wzorca występuje wyraźny długookresowy trend spadkowy. Formacja ciemnej chmury tworzy pewną korektę trendu. Natychmiast po jej wystąpieniu kurs wraca do trendu głównego. W przypadku zasłony ciemnej chmury nie było stosowane potwierdzenie formacji. Kolejna świeca występująca po formacji posiada bardzo długi korpus. Jeśli byłaby świecą potwierdzającą, to zysk osiągnięty w tej transakcji byłby o wiele mniejszy. Problem ten występował w innych formacjach, gdzie wymagane było potwierdzenie. Często długie świece potwierdzające formację, znacząco zmniejszały dochód z transakcji, a nawet powodowały straty. Z drugiej strony, brak warunku potwierdzającego prowadził często prowadził do generacji mylnych sygnałów. Obie świece tworzące zasłonę ciemnej chmury są stosunkowo wysokie w porównaniu do świec z widocznego okresu. Dzięki temu cała formacja, jest dobrze widoczna.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=6cm]{darkcloudcover/przyklad.png}
@@ -1049,19 +1050,19 @@ Rozpoznanie przykładowej formacji zasłony ciemnej chmury prezentuje wykres \re
 \subsection{Końcowa postać systemu}
 \paragraph{}
 
-Po fazach optymalizacji algorytmów rozpoznających każdą z opisanych formacji świec, został stworzony ostateczny system inwestycyjny. Okazało się, że w przypadku formacji wisielca, przenikania, gwiazdy wieczornej i porannej nie znaleziono parametrów, dla których formacje te przynosiłyby zyski. Warto zauważyć, że straty były osiągane tylko przy parametrach mniej rygorystycznych. Ustawienie wartości wyższych sprawiało, że wyszczególnione formacje nie były w ogóle znajdowane. Z analizy transakcji stratnych, osiąganych przy parametrach ustawianych w sposób nierestrykcyjny, widać, że rozpoznane formacje nie można jednoznacznie sklasyfikować jako dane wzorzec. Bardzo prawdopodobne, że z tego powodu przynosiły one straty.
+Po fazach optymalizacji algorytmów rozpoznających każdą z opisanych formacji świec, został stworzony ostateczny system inwestycyjny. Okazało się, że w przypadku formacji wisielca, przenikania, gwiazdy wieczornej i porannej nie znaleziono parametrów, dla których formacje te przynosiłyby zyski. Warto zauważyć, że straty były osiągane tylko przy parametrach mniej rygorystycznych. Ustawienie wartości wyższych sprawiało, że wyszczególnione formacje nie były w ogóle znajdowane. Z analizy transakcji stratnych, osiąganych przy parametrach ustawianych w sposób nierestrykcyjny, widać, że rozpoznane formacje nie można jednoznacznie sklasyfikować jako dany wzorzec. Bardzo prawdopodobne, że z tego powodu przynosiły one straty.
 
 Ostatecznie do systemu zostały wybrane formacje:
 \begin{itemize}
-\item objęcia hossy
-\item objęcie bessy
-\item spadająca gwiazda
-\item harami hossy
-\item zasłona ciemnej chmury
-\item młot
-\item harami bessy
+\item objęcia hossy,
+\item objęcie bessy,
+\item spadająca gwiazda,
+\item harami hossy,
+\item zasłona ciemnej chmury,
+\item młot,
+\item harami bessy.
 \end{itemize}
-W takiej też kolejności będą wyszukiwane w trakcie działania systemu. Kolejność ustalono na podstawie wskaźników zysku. W niektórych przypadkach w grupie kilku świec można rozpoznać wiele formacji. Dlatego, też faworyzowane są te, które posiadają większy wskaźnik zysku.
+W takiej też kolejności będą wyszukiwane w trakcie działania systemu. Kolejność ustalono na podstawie wskaźników zysku. W niektórych przypadkach w grupie kilku świec można rozpoznać wiele formacji. Dlatego też faworyzowane są te, które posiadają większy wskaźnik zysku.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=16cm]{wszystkie/linia_kap.png}
@@ -1069,8 +1070,9 @@ W takiej też kolejności będą wyszukiwane w trakcie działania systemu. Kolej
 \label{system_linia_kap}
 \end{center}
 \end{figure}
-Na wykresie \ref{system_linia_kap} został przedstawiony przebieg linii kapitału, otrzymany przy symulacji systemu na danych historycznych. Testowano okres 1 roku od 1.05.2011 do 1.05.2012. Zyski osiągane przez system, w przeciągu całego okresu, zwiększały się. Nie zarejestrowano również znaczących spadków. Można zauważyć, że większa część zysku została uzyskana dzięki kilku wysoko dochodowym transakcjom. Skoki te widoczne są na wykresie w okolicach 4., 20. i 38. transakcji. W okresach pomiędzy tymi punktami, linia kapitału wzrasta w sposób nieznaczny. Istotny jest fakt, że mimo braku występowania w tych okresach znaczących zysków, ewentualne straty zostały zminimalizowane. Rozwiązanie polegające na ustawianiu limitów stop loss, blisko punktów rozpoczęcia transakcji, przyniosło oczekiwane rezultaty i pozwoliło zredukować negatywny wpływ nietrafionych transakcji na saldo rachunku testowego. System gwarantuje, aż 66.67\% skuteczność, przy średniej zyskownej transakcji większej 1.7 razy od średniej straty. W przeciągu roku system zarobił 56\% kapitału startowego. Jest to wartość bardzo dobra biorąc pod uwagę fakt, że wszystkie zlecenia miały wartość 0.1 lota. Taka wartość transakcji przy kapitale startowym 1000\$ i dźwigni 1:100 gwarantuje stosunkowo bezpieczne i mało ryzykowne inwestycje. Strategia osiąga również zadowalający wskaźnik zysku, określający stosunek zysków do strat. 
+Na wykresie \ref{system_linia_kap} został przedstawiony przebieg linii kapitału, otrzymany przy symulacji systemu na danych historycznych. Testowano okres 1 roku od 1.05.2011 do 1.05.2012. Zyski osiągane przez system, w przeciągu całego okresu, zwiększały się. Nie zarejestrowano również znaczących spadków. Można zauważyć, że większa część zysku została uzyskana dzięki kilku wysoko dochodowym transakcjom. Skoki te widoczne są na wykresie w okolicach 4., 20. i 38. transakcji. W okresach pomiędzy tymi punktami, linia kapitału wzrasta w sposób nieznaczny. Istotny jest fakt, że mimo braku występowania w tych okresach znaczących zysków, ewentualne straty zostały zminimalizowane. Rozwiązanie polegające na ustawianiu limitów stop loss, blisko punktów rozpoczęcia transakcji, przyniosło oczekiwane rezultaty i pozwoliło zredukować negatywny wpływ nietrafionych transakcji na saldo rachunku testowego. System gwarantuje, aż 66.67\% skuteczność, przy średniej zyskownej transakcji większej 1.7 razy od średniej straty. W przeciągu roku system zarobił 56\% kapitału startowego. Jest to wartość bardzo dobra, biorąc pod uwagę fakt, że wszystkie zlecenia miały wartość 0.1 lota. Taka wartość transakcji przy kapitale startowym 1000\$ i dźwigni 1:100 gwarantuje stosunkowo bezpieczne i mało ryzykowne inwestycje. Strategia osiąga również zadowalający wskaźnik zysku, określający stosunek zysków do strat. 
 \begin{table}[h!]
+\caption{Wynik testu dla końcowego systemu}
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline 
@@ -1095,7 +1097,6 @@ Transakcje stratne & 16 (33.33\%) \\
 Średnia stratna transakcja & -14.77 \\
 \hline
 \end{tabular} 
-\caption{Wynik testu dla końcowego systemu}
 \label{raport_system}
 \end{center}
 \end{table}
@@ -1107,21 +1108,21 @@ W algorytmie istnieje opcja przeprowadzania transakcji z użyciem możliwie najw
 \label{linia_kap_max}
 \end{center}
 \end{figure}
-Symulacja pokazuje, że przy maksymalnym ryzyku, użycie systemu w ciągu roku dałoby dochód ponad 23 razy większy od kapitału początkowego. Maksymalna strata względna podczas działania systemu, przy takich ustawieniach, to 38\%. Niestety jest to już znaczny ubytek środków i taka strategie nie powinna być stosowana. Otrzymane wyniki na pewne nie będą, aż tak dobre przy inwestycjach na danych rzeczywistych. Trzeba pamiętać, że system był optymalizowany w testowanym okresie. Bardziej miarodajne, są testy na innych przedziałach czasowych, w których system nie podlegał optymalizacji. Cofając się 2 lata wstecz od roku w okresie od 1.05.2009-01.05.2010 system przyniósł zwrot w wysokości 29\%, zawierając przy tym 44.64\% zyskownych transakcji. Najważniejszy jest jednak fakt, że średnia zyskowna transakcja to 26.85\$ przy -12.31\$ dla transakcji stratnej. Można więc wnioskować, że system również w przyszłości będzie potrafił maksymalizować swoje zyski przy minimalizacji strat. Niestety dużo gorszy wynik został osiągnięty w okresie 1.05.2010-1.05.2011, gdyż strategia zarobiła jedynie 1\% kapitału początkowego przy sprawdzalności na poziomie 38\%. Jak widać mimo optymalizacji systemu, nie osiąga on tak samo zadawalających wyników w różnych okresach czasu.
+Symulacja pokazuje, że przy maksymalnym ryzyku, użycie systemu w ciągu roku dałoby dochód ponad 23 razy większy od kapitału początkowego. Maksymalna strata względna podczas działania systemu, przy takich ustawieniach, to 38\%. Niestety jest to już znaczny ubytek środków i taka strategie nie powinna być stosowana. Otrzymane wyniki na pewno nie będą aż tak dobre przy inwestycjach na danych rzeczywistych. Trzeba pamiętać, że system był optymalizowany w testowanym okresie. Bardziej miarodajne, są testy na innych przedziałach czasowych, w których system nie podlegał optymalizacji. Cofając się 2 lata wstecz od roku w okresie od 1.05.2009-01.05.2010 system przyniósł zwrot w wysokości 29\%, zawierając przy tym 44.64\% zyskownych transakcji. Najważniejszy jest jednak fakt, że średnia zyskowna transakcja to 26.85\$ przy -12.31\$ dla transakcji stratnej. Można więc wnioskować, że system również w przyszłości będzie potrafił maksymalizować swoje zyski przy minimalizacji strat. Niestety dużo gorszy wynik został osiągnięty w okresie 1.05.2010-1.05.2011, gdyż strategia zarobiła jedynie 1\% kapitału początkowego przy sprawdzalności na poziomie 38\%. Jak widać ,mimo optymalizacji systemu, nie osiąga on tak samo zadawalających wyników w różnych okresach czasu.
 \chapter{Podsumowanie}
 \paragraph{}
-Celem pracy było zaprojektowanie oraz zaimplementowanie automatycznego systemu inwestycyjnego opartego na japońskich technikach analizy wykresów. Opracowany system samodzielnie inwestuje na rynku Forex na dowolnej parze walutowej. Jedyną ingerencją gracza jest początkowe ustawienie parametrów programu. Najważniejszy z nich dotyczy ryzyka inwestycji, czyli ilości lotów za które będą przeprowadzane kolejne transakcje. Wszystkie akcje systemu są logowane za pośrednictwem platformy MetaTrader. Ewentualne błędy podczas działania programu zostają przechwycone, by następnie ponownie wznowić pracę systemu. Algorytm dostosowano do rynku Forex, a do jego implementacji posłużyła platforma MetaTrader wraz z językiem MQL. Testy zostały przeprowadzone na parze walutowej EUR/USD z wykorzystaniem świec 15-minutowych w okresie od 1.05.2011 do 1.05.2012. Stworzony automatyczny system inwestycyjny swoje decyzje opiera na sygnałach płynących z formacji świec japońskich z dodatkowym uwzględnieniem kilku podstawowych zasad inwestowania: 
+Celem pracy było zaprojektowanie oraz zaimplementowanie automatycznego systemu inwestycyjnego opartego na japońskich technikach analizy wykresów. Opracowany system samodzielnie inwestuje na rynku Forex na dowolnej parze walutowej. Jedyną ingerencją gracza jest początkowe ustawienie parametrów programu. Najważniejszy z nich dotyczy ryzyka inwestycji, czyli ilości lotów, za które będą przeprowadzane kolejne transakcje. Wszystkie akcje systemu są logowane za pośrednictwem platformy MetaTrader. Ewentualne błędy podczas działania programu zostają przechwycone, by następnie ponownie wznowić pracę systemu. Algorytm dostosowano do rynku Forex, a do jego implementacji posłużyła platforma MetaTrader wraz z językiem MQL. Testy zostały przeprowadzone na parze walutowej EUR/USD z wykorzystaniem świec 15-minutowych w okresie od 1.05.2011 do 1.05.2012. Stworzony automatyczny system inwestycyjny swoje decyzje opiera na sygnałach płynących z formacji świec japońskich z dodatkowym uwzględnieniem kilku podstawowych zasad inwestowania: 
 \begin{itemize}
-\item pozycje składane zgodnie z kierunkiem trendu
-\item maksymalizacja zysków
-\item minimalizacja strat
-\item poparcie decyzji innymi wskaźnikami
+\item pozycje składane zgodnie z kierunkiem trendu,
+\item maksymalizacja zysków,
+\item minimalizacja strat,
+\item poparcie decyzji innymi wskaźnikami.
 \end{itemize}
-W celu dostosowania się do powyższych reguł w algorytmie zostało zaimplementowanych szereg rozwiązań. Transakcje otwierane są zgodnie z kierunkiem głównego trendu, rozpoznanego za pomocą dwóch wykładniczych średnich kroczących. Zyski realizowane są przy osiągnięciu pułapu skrajnych wstęg bollingera. W tych miejscach kursy osiągają swoje lokalne ekstrema. Limity stop loss, ustawiane są na wartości krańcowe z formacji, przez co pozycje stratne są szybko zamykane. Rozpoznawanie trendów lokalnych wspomagają wstęgi bollingera. Szereg testów do ostatecznego algorytmu wyłonił siedem formacji. Nieścisłości w kryteriach klasyfikujących dany wzorzec jako konkretną formację zostały zapisane w formie zmiennych, które w dalszej fazie projektu optymalizowano. Okazało się, że rygorystyczniejsze wartości zdefiniowanych parametrów, w lepszy sposób definiowały wygląd świec przynoszących zyski. Z drugiej strony występowało znacznie mniej sekwencji świec, które spełniałyby podane kryteria. Znalezione świece w wyraźny sposób tworzyły określone formacje. Można przypuszczać, że w takiej postaci, pozwoliły na zlokalizowanie ich na wykresie większej grupie inwestorów, tym samym zwiększając swoją wymowę. Spośród wszystkich formacji użytych w systemie największy zysk 116\$ przyniosła spadająca gwiazda. Najskuteczniejszy pod względem sprawdzalności 83\% okazał się wzorzec młota. Końcowy system w przeciągu jednego roku, przy nisko ryzykownych inwestycjach w wysokości 0.1 lota, osiągnął stopę zwrotu 56\% z kapitału początkowego 1000\$. Zwiększenie ryzyka do maksimum dał zwrot 23 razy większy od kapitału początkowego. Niestety zbudowany system nie przynosił tak znakomitych wyników w innych okresach czasu. Z dużym prawdopodobieństwem można stwierdzić, że system nie przyniesie, aż tak dużych zysków przy rzeczywistych inwestycjach. Główną zaletą systemu oprócz automatycznych inwestycji, jest jego niska stopa ryzyka oraz możliwość osiągania wysokich zysków w pojedynczych transakcjach. 
+W celu dostosowania się do powyższych reguł w algorytmie zostało zaimplementowanych szereg rozwiązań. Transakcje otwierane są zgodnie z kierunkiem głównego trendu, rozpoznanego za pomocą dwóch wykładniczych średnich kroczących. Zyski realizowane są przy osiągnięciu pułapu skrajnych wstęg Bollingera. W tych miejscach kursy osiągają swoje lokalne ekstrema. Limity stop loss, ustawiane są na wartości krańcowe z formacji, przez co pozycje stratne są szybko zamykane. Rozpoznawanie trendów lokalnych wspomagają wstęgi bollingera. Szereg testów do ostatecznego algorytmu wyłonił siedem formacji. Nieścisłości w kryteriach klasyfikujących dany wzorzec jako konkretną formację zostały zapisane w formie zmiennych, które w dalszej fazie projektu optymalizowano. Okazało się, że rygorystyczniejsze wartości zdefiniowanych parametrów w lepszy sposób definiowały wygląd świec przynoszących zyski. Z drugiej strony występowało znacznie mniej sekwencji świec, które spełniałyby podane kryteria. Znalezione świece w wyraźny sposób tworzyły określone formacje. Można przypuszczać, że w takiej postaci, pozwoliły na zlokalizowanie ich na wykresie większej grupie inwestorów, tym samym zwiększając swoją wymowę. Spośród wszystkich formacji użytych w systemie największy zysk 116\$ przyniosła spadająca gwiazda. Najskuteczniejszy pod względem sprawdzalności 83\% okazał się wzorzec młota. Końcowy system w przeciągu jednego roku, przy nisko ryzykownych inwestycjach w wysokości 0.1 lota osiągnął stopę zwrotu 56\% z kapitału początkowego 1000\$. Zwiększenie ryzyka do maksimum dało zwrot 23 razy większy od kapitału początkowego. Niestety zbudowany system nie przynosił tak znakomitych wyników w innych okresach czasu. Z dużym prawdopodobieństwem można stwierdzić, że system nie przyniesie, aż tak dużych zysków przy rzeczywistych inwestycjach. Główną zaletą systemu oprócz automatycznych inwestycji, jest jego niska stopa ryzyka oraz możliwość osiągania wysokich zysków w pojedynczych transakcjach. 
 
-Istnieje wiele teorii i metod analizy technicznej na której opierają się niezliczone systemy badające zachowanie rynków. Zmienność rynków sprawia, że stworzenie uniwersalnego systemu inwestycyjnego, który przynosiłby stałe wysokie zyski jest praktycznie niemożliwe. Mimo to na giełdach występują pewne prawidłowości, które co pewien czas się powtarzają. Badane w pracy, znane od setek lat, formacje świec japońskich nadal posiadają moc przepowiadania ruchów cenowych. Oprócz odpowiedniego miejsca wystąpienia danego wzorca, bardzo ważnym elementem okazał się właściwy wygląd formacji. 
+Istnieje wiele teorii i metod analizy technicznej, na której opierają się niezliczone systemy badające zachowanie rynków. Zmienność rynków sprawia, że stworzenie uniwersalnego systemu inwestycyjnego, który przynosiłby stałe wysokie zyski jest praktycznie niemożliwe. Mimo to na giełdach występują pewne prawidłowości, które co pewien czas się powtarzają. Badane w pracy, znane od setek lat, formacje świec japońskich nadal posiadają moc przepowiadania ruchów cenowych. Oprócz odpowiedniego miejsca wystąpienia danego wzorca bardzo ważnym elementem okazał się właściwy wygląd formacji. 
 
-Zaimplementowany algorytm może stanowić bazę do dalszych badań nad formacjami świec japońskich. Dzięki szerokiemu dostępowi do wskaźników technicznych w platformie MetaTrader, możliwe jest również zastosowanie innych metod w stworzonym programie. Dalsze testy na rachunkach wirtualnych z ciągłym procesem ulepszania kryteriów przeprowadzania transakcji mogą pozwolić na osiągnięcie algorytmu gotowego do inwestycji na kontach realnych. Niestety nawet taki system, będzie wymagać ciągłego dostosowywania, ze względu na wysoką dynamikę rynku.
+Zaimplementowany algorytm może stanowić bazę do dalszych badań nad formacjami świec japońskich. Dzięki szerokiemu dostępowi do wskaźników technicznych w platformie MetaTrader możliwe jest również zastosowanie innych metod w stworzonym programie. Dalsze testy na rachunkach wirtualnych z ciągłym procesem ulepszania kryteriów przeprowadzania transakcji mogą pozwolić na osiągnięcie algorytmu gotowego do inwestycji na kontach realnych. Niestety nawet taki system, będzie wymagać ciągłego dostosowywania, ze względu na wysoką dynamikę rynku.
 % itd.
 % \appendix
 % \include{dodatekA}
@@ -1129,6 +1130,7 @@ Zaimplementowany algorytm może stanowić bazę do dalszych badań nad formacjam
 % itd.
 
 \bibliographystyle{plain}
+\nocite{*}
 \bibliography{bibliografia}
 
 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{1}
 M.~Czekała.
@@ -6,29 +6,66 @@ M.~Czekała.
 \newblock Wydawnictwo Akademii Ekonomicznej im. Oskara Langego we Wrocławiu,
   1997.
 
+\bibitem{2}
+J.~Krutsinger.
+\newblock {\em Systemy Transakcyjne Sekrety Mistrzów}.
+\newblock WIG PRESS, 1998.
+
+\bibitem{12}
+MetaQuotes.
+\newblock {\em MetaTrader4}, 2012.
+\newblock \\\texttt{http://www.metaquotes.net/en/metatrader4}.
+
 \bibitem{3}
 G.~L. Morris.
 \newblock {\em Wykresy Świecowe}.
 \newblock Dom Wydawniczy ABN, 1998.
+
+\bibitem{10}
+mql4 community.
+\newblock {\em MQL4 Documentation}, 2012.
+\newblock \\\texttt{http://docs.mql4.com}.
 
 \bibitem{5}
 J.J. Murphy.
 \newblock {\em Analiza Techniczna Rynków Finansowych}.
 \newblock WIG PRESS, 1999.
 
+\bibitem{4}
+S.~Nison.
+\newblock {\em Świece i Inne Japońskie Techniki Analizowania Wykresów}.
+\newblock WIG PRESS, 1996.
+
 \bibitem{6}
 P.~Perz.
 \newblock {\em Sztuka Inwestowania}.
 \newblock K. E. Liber, 2008.
+
+\bibitem{7}
+M.~J. Pring.
+\newblock {\em Technical Analysis Explained: The Successful Investors's Guide
+  to Spotting Invenstment Trends and Turning Points}.
+\newblock Mcgraw-Hill.
 
 \bibitem{9}
 P.~Sudel.
 \newblock {\em Wprowadzenie Do Gry Na Giełdzie Walutowej}.
 \newblock 2000.
 
+\bibitem{13}
+P.~Sudel.
+\newblock {\em Forex : podstawy giełdy walutowej : poznaj tajniki rynków
+  finansowych, które znają tylko nieliczni}.
+\newblock 2006.
+
 \bibitem{8}
 W.~Tarczyński.
 \newblock {\em Dywersyfikacja Ryzyka Na Polskim Rynku Kapitałowym}.
 \newblock Placet, 2004.
+
+\bibitem{11}
+XTB.
+\newblock {\em XTB Academy}, 2012.
+\newblock \\\texttt{http://www.xtb.pl/xtb-academy}.
 
 \end{thebibliography}

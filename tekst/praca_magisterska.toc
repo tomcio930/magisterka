@@ -44,15 +44,15 @@
 \contentsline {paragraph}{}{49}
 \contentsline {subsection}{\numberline {4.3.1}Formacja m\IeC {\l }ota}{49}
 \contentsline {paragraph}{}{49}
-\contentsline {subsection}{\numberline {4.3.2}Formacja spadaj\IeC {\k a}cej gwiazdy}{51}
-\contentsline {paragraph}{}{51}
-\contentsline {subsection}{\numberline {4.3.3}Formacje obj\IeC {\k e}cia}{53}
-\contentsline {paragraph}{}{53}
+\contentsline {subsection}{\numberline {4.3.2}Formacja spadaj\IeC {\k a}cej gwiazdy}{52}
+\contentsline {paragraph}{}{52}
+\contentsline {subsection}{\numberline {4.3.3}Formacje obj\IeC {\k e}cia}{54}
+\contentsline {paragraph}{}{54}
 \contentsline {subsection}{\numberline {4.3.4}Formacje harami}{55}
 \contentsline {paragraph}{}{55}
-\contentsline {subsection}{\numberline {4.3.5}Formacja zas\IeC {\l }ony ciemnej chmury}{57}
-\contentsline {paragraph}{}{57}
-\contentsline {subsection}{\numberline {4.3.6}Ko\IeC {\'n}cowa posta\IeC {\'c} systemu}{59}
-\contentsline {paragraph}{}{59}
+\contentsline {subsection}{\numberline {4.3.5}Formacja zas\IeC {\l }ony ciemnej chmury}{58}
+\contentsline {paragraph}{}{58}
+\contentsline {subsection}{\numberline {4.3.6}Ko\IeC {\'n}cowa posta\IeC {\'c} systemu}{58}
+\contentsline {paragraph}{}{58}
 \contentsline {chapter}{\numberline {5}Podsumowanie}{62}
 \contentsline {paragraph}{}{62}
